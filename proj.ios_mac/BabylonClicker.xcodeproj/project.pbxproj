@@ -24,6 +24,8 @@
 		14AC775C196E4C65005047F1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775B196E4C65005047F1 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		14AC775E196E4C6F005047F1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775D196E4C6F005047F1 /* Security.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		14AC7760196E4C7D005047F1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775F196E4C7D005047F1 /* ImageIO.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		14AC7777196E5897005047F1 /* NendModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AC7775196E5897005047F1 /* NendModule.mm */; };
+		14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AC7776196E5897005047F1 /* NendIconModule.mm */; };
 		14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */; };
 		14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */; };
 		1ACB3244164770DE00914215 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACB3243164770DE00914215 /* libcurl.a */; };
@@ -254,6 +256,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		144FAD38196E5BA600F787E5 /* NendIconModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendIconModule.h; path = ../Classes/NendIconModule.h; sourceTree = "<group>"; };
+		144FAD3F196E5BC600F787E5 /* NendModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendModule.h; path = ../Classes/NendModule.h; sourceTree = "<group>"; };
 		145D32041907B8130067B357 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../Classes/AppMacros.h; sourceTree = "<group>"; };
 		145D32071907B8130067B357 /* OpeningLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpeningLayer.cpp; path = ../Classes/OpeningLayer.cpp; sourceTree = "<group>"; };
 		145D32081907B8130067B357 /* OpeningLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpeningLayer.h; path = ../Classes/OpeningLayer.h; sourceTree = "<group>"; };
@@ -278,6 +282,8 @@
 		14AC775B196E4C65005047F1 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		14AC775D196E4C6F005047F1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		14AC775F196E4C7D005047F1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
+		14AC7775196E5897005047F1 /* NendModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NendModule.mm; path = ios/NendModule.mm; sourceTree = SOURCE_ROOT; };
+		14AC7776196E5897005047F1 /* NendIconModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NendIconModule.mm; path = ios/NendIconModule.mm; sourceTree = SOURCE_ROOT; };
 		14DADDDA193F27AB0026DEE0 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "../Classes/GLES-Render.h"; sourceTree = "<group>"; };
 		14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "../Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
 		14DADDE6193F2B120026DEE0 /* LiquidScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiquidScene.h; path = ../Classes/LiquidScene.h; sourceTree = "<group>"; };
@@ -386,6 +392,8 @@
 		080E96DDFE201D6D7F000001 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				14AC7775196E5897005047F1 /* NendModule.mm */,
+				14AC7776196E5897005047F1 /* NendIconModule.mm */,
 				5087E77117EB970100C73F5D /* Icons */,
 				503AE0FA17EB989F00D1A890 /* AppController.h */,
 				503AE0FB17EB989F00D1A890 /* AppController.mm */,
@@ -415,6 +423,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				144FAD3F196E5BC600F787E5 /* NendModule.h */,
+				144FAD38196E5BA600F787E5 /* NendIconModule.h */,
 				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
 				14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */,
 				14DADDDA193F27AB0026DEE0 /* GLES-Render.h */,
@@ -797,12 +807,14 @@
 			files = (
 				14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
+				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				145D32121907B8130067B357 /* RigidScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
+				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

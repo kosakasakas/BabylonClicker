@@ -35,7 +35,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     searchPath.push_back(res.directory);
     auto fileutil = FileUtils::getInstance();
     fileutil->setSearchResolutionsOrder(searchPath);
-    eglView->setDesignResolutionSize(res.size.width, res.size.height, ResolutionPolicy::FIXED_HEIGHT);
+    eglView->setDesignResolutionSize(res.size.width, res.size.height, ResolutionPolicy::FIXED_WIDTH);
     director->setContentScaleFactor(res.scaleFactor);
     
     // ccbiのロード

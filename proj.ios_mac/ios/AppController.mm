@@ -3,7 +3,6 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "NADView.h"
 
 @implementation AppController
 
@@ -102,6 +101,11 @@ static AppDelegate s_sharedApplication;
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
+
+
+- (RootViewController *) getGlViewController {
+    return  viewController;
+};
 
 
 - (void)dealloc {

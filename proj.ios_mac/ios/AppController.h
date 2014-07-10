@@ -6,6 +6,6 @@
     UIWindow *window;
     RootViewController    *viewController;
 }
-
+- (RootViewController *) getGlViewController;
 @end
 
