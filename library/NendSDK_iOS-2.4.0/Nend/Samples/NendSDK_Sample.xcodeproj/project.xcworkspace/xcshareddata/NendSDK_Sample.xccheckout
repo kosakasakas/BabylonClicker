@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2644CC76-7B8B-4D17-9D7C-FD28F32C5F2C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NendSDK_Sample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>175BDCEB-5851-422E-AC87-09B305770B0D</key>
+		<string>ssh://192.168.193.64/iOSSdkSample</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NendSDK_Sample/NendSDK_Sample/NendSDK_Sample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>175BDCEB-5851-422E-AC87-09B305770B0D</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://192.168.193.64/iOSSdkSample</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>175BDCEB-5851-422E-AC87-09B305770B0D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>175BDCEB-5851-422E-AC87-09B305770B0D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sample</string>
+		</dict>
+	</array>
+</dict>
+</plist>
