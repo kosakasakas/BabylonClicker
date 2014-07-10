@@ -7,7 +7,7 @@
 //
 
 #import "OpeningLayer.h"
-#import "RigidScene.h"
+#import "MainScene.h"
 #import "LiquidScene.h"
 
 USING_NS_CC;
@@ -76,7 +76,7 @@ void OpeningLayer::startLiquidPhysScene() {
 void OpeningLayer::startMainScene() {
     auto director = Director::getInstance();
     NodeLoaderLibrary* nodeLoaderLibrary = NodeLoaderLibrary::getInstance();
-    nodeLoaderLibrary->registerNodeLoader("MainScene", RigidSceneLoader::loader());
+    nodeLoaderLibrary->registerNodeLoader("MainScene", MainSceneLoader::loader());
     CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
     Node* node = ccbReader->readNodeGraphFromFile("MainScene.ccbi");
     Scene* scene = Scene::create();

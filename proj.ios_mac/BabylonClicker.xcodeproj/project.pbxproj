@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D32071907B8130067B357 /* OpeningLayer.cpp */; };
-		145D32121907B8130067B357 /* RigidScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D320C1907B8130067B357 /* RigidScene.cpp */; };
+		145D32121907B8130067B357 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D320C1907B8130067B357 /* MainScene.cpp */; };
 		145D32261907B8270067B357 /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = 145D32191907B8270067B357 /* ccbResources */; };
 		145D32271907B8270067B357 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145D321A1907B8270067B357 /* fileLookup.plist */; };
 		145D32281907B8270067B357 /* Footer.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D321B1907B8270067B357 /* Footer.ccbi */; };
@@ -261,8 +261,8 @@
 		145D32041907B8130067B357 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppMacros.h; path = ../Classes/AppMacros.h; sourceTree = "<group>"; };
 		145D32071907B8130067B357 /* OpeningLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpeningLayer.cpp; path = ../Classes/OpeningLayer.cpp; sourceTree = "<group>"; };
 		145D32081907B8130067B357 /* OpeningLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpeningLayer.h; path = ../Classes/OpeningLayer.h; sourceTree = "<group>"; };
-		145D320C1907B8130067B357 /* RigidScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RigidScene.cpp; path = ../Classes/RigidScene.cpp; sourceTree = "<group>"; };
-		145D320D1907B8130067B357 /* RigidScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RigidScene.h; path = ../Classes/RigidScene.h; sourceTree = "<group>"; };
+		145D320C1907B8130067B357 /* MainScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MainScene.cpp; path = ../Classes/MainScene.cpp; sourceTree = "<group>"; };
+		145D320D1907B8130067B357 /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainScene.h; path = ../Classes/MainScene.h; sourceTree = "<group>"; };
 		145D32191907B8270067B357 /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
 		145D321A1907B8270067B357 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fileLookup.plist; sourceTree = "<group>"; };
 		145D321B1907B8270067B357 /* Footer.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Footer.ccbi; sourceTree = "<group>"; };
@@ -432,8 +432,8 @@
 				145D32041907B8130067B357 /* AppMacros.h */,
 				145D32071907B8130067B357 /* OpeningLayer.cpp */,
 				145D32081907B8130067B357 /* OpeningLayer.h */,
-				145D320C1907B8130067B357 /* RigidScene.cpp */,
-				145D320D1907B8130067B357 /* RigidScene.h */,
+				145D320C1907B8130067B357 /* MainScene.cpp */,
+				145D320D1907B8130067B357 /* MainScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 			);
@@ -812,7 +812,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				145D32121907B8130067B357 /* RigidScene.cpp in Sources */,
+				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
 			);

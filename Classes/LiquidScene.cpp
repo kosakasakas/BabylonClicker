@@ -8,7 +8,6 @@
 
 #import "LiquidScene.h"
 #import "OpeningLayer.h"
-#include "NendModule.h"
 
 LiquidScene::LiquidScene()
 : world(NULL)
@@ -73,10 +72,6 @@ bool LiquidScene::init() {
     
     scheduleUpdate();
     
-    
-    char apiKey[] = "a6eca9dd074372c898dd1df549301f277c53f2b9";
-    char spotID[] = "3172";
-    NendModule::createNADViewTop(apiKey, spotID);
     
     return true;
 }

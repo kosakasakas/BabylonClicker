@@ -1,13 +1,13 @@
 //
-//  RigidScene.h
+//  MainScene.h
 //  Casidra
 //
 //  Created by Takahiro Kosaka on 2014/01/04.
 //
 //
 
-#ifndef __Casidra__RigidScene__
-#define __Casidra__RigidScene__
+#ifndef __Casidra__MainScene__
+#define __Casidra__MainScene__
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
@@ -17,7 +17,7 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-class RigidScene : public Layer
+class MainScene : public Layer
 , public CCBSelectorResolver
 {
 private:
@@ -61,21 +61,21 @@ public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
     
-    RigidScene();
-    virtual ~RigidScene();
+    MainScene();
+    virtual ~MainScene();
     
-    CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(RigidScene, create);
+    CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
 
 };
 
-class RigidSceneLoader : public cocos2d::extension::LayerLoader
+class MainSceneLoader : public cocos2d::extension::LayerLoader
 {
 public:
-    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(RigidSceneLoader, loader);
+    CCB_STATIC_NEW_AUTORELEASE_OBJECT_METHOD(MainSceneLoader, loader);
     
 protected:
-    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(RigidScene);
+    CCB_VIRTUAL_NEW_AUTORELEASE_CREATECCNODE_METHOD(MainScene);
 };
 
 
-#endif /* defined(__Casidra__RigidScene__) */
+#endif /* defined(__Casidra__MainScene__) */

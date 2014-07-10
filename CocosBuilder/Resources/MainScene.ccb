@@ -122,7 +122,7 @@
 								<key>value</key>
 								<array>
 									<real>16.875</real>
-									<real>28.521127700805664</real>
+									<real>20.950704574584961</real>
 									<integer>4</integer>
 								</array>
 							</dict>
@@ -330,7 +330,7 @@
 								<key>value</key>
 								<array>
 									<real>160</real>
-									<real>163</real>
+									<real>119</real>
 									<integer>5</integer>
 								</array>
 							</dict>
@@ -537,8 +537,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>267</real>
-									<real>163</real>
+									<real>266</real>
+									<real>119</real>
 									<integer>5</integer>
 								</array>
 							</dict>
@@ -794,7 +794,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>MainScene</string>
 		<key>displayName</key>
 		<string>CCLayer</string>
 		<key>jsController</key>
