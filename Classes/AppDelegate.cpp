@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "AppMacros.h"
+#include "AppManager.h"
 #include "OpeningLayer.h"
 
 USING_NS_CC;
@@ -17,11 +17,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
     auto eglView = EGLView::getInstance();
+    auto fileutil = FileUtils::getInstance();
     
     director->setOpenGLView(eglView);
 	
     // turn on display FPS
-    director->setDisplayStats(false);
+    director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
@@ -29,14 +30,13 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     //auto scene = HelloWorld::createScene();
     
-    // とりあえず解像度系はiphone5にしておく。iPadも対応可能
-    Resource res  = iphone5;
+    // Resolution設定
+    const Resource* res = AppManager::getInstance()->getResource();
     std::vector<std::string> searchPath;
-    searchPath.push_back(res.directory);
-    auto fileutil = FileUtils::getInstance();
+    searchPath.push_back(res->directory);
     fileutil->setSearchResolutionsOrder(searchPath);
-    eglView->setDesignResolutionSize(res.size.width, res.size.height, ResolutionPolicy::FIXED_WIDTH);
-    director->setContentScaleFactor(res.scaleFactor);
+    eglView->setDesignResolutionSize(res->size.width, res->size.height, res->policy);
+    director->setContentScaleFactor(res->scaleFactor);
     
     // ccbiのロード
     NodeLoaderLibrary* nodeLoaderLibrary = NodeLoaderLibrary::getInstance();

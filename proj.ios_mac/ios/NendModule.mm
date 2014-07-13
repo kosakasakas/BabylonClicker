@@ -155,7 +155,9 @@ void setPositionButtom(){
     CGRect mainViewRect = CGRectMake((float)point.x, (float)point.y, winSize.width, winSize.height);
     
     //NADViewの位置を変更
-    [nadView setFrame:CGRectMake((mainViewRect.size.width - nadView.frame.size.width) /2, mainViewRect.size.height - nadView.frame.size.height, nadView.frame.size.width, nadView.frame.size.height)];
+    int a = mainViewRect.size.width - nadView.frame.size.width;
+    int b = mainViewRect.size.height - nadView.frame.size.height;
+    [nadView setFrame:CGRectMake((mainViewRect.size.width - nadView.frame.size.width) /2, mainViewRect.size.height - nadView.frame.size.height, nadView.frame.size.width*2, nadView.frame.size.height)];
     
     
     return;

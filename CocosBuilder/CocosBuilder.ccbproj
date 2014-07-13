@@ -25,21 +25,21 @@
 	<key>javascriptMainCCB</key>
 	<string></string>
 	<key>needRepublish</key>
-	<false/>
+	<true/>
 	<key>onlyPublishCCBs</key>
 	<false/>
 	<key>publishDirectory</key>
 	<string>../Resources</string>
 	<key>publishDirectoryAndroid</key>
-	<string>Published-Android</string>
+	<string>../Resources</string>
 	<key>publishDirectoryHTML5</key>
 	<string>Published-HTML5</string>
 	<key>publishEnabledAndroid</key>
-	<false/>
+	<true/>
 	<key>publishEnabledHTML5</key>
 	<false/>
 	<key>publishEnablediPhone</key>
-	<true/>
+	<false/>
 	<key>publishResolutionHTML5_height</key>
 	<integer>320</integer>
 	<key>publishResolutionHTML5_scale</key>
@@ -63,7 +63,7 @@
 	<key>publishResolution_xlarge</key>
 	<true/>
 	<key>publishResolution_xsmall</key>
-	<true/>
+	<false/>
 	<key>publishToZipFile</key>
 	<false/>
 	<key>resourceAutoScaleFactor</key>
