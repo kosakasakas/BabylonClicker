@@ -276,6 +276,7 @@
 		145D321F1907B8270067B357 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 		145D32211907B8270067B357 /* Opening.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Opening.ccbi; sourceTree = "<group>"; };
 		145D32251907B8270067B357 /* SelectZoneScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectZoneScene.ccbi; sourceTree = "<group>"; };
+		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14998D731945B9C70062FF0A /* RigidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = RigidScene.ccbi; sourceTree = "<group>"; };
 		14998D741945B9C70062FF0A /* LiquidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = LiquidScene.ccbi; sourceTree = "<group>"; };
 		14AC774D196E4C2B005047F1 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
@@ -590,6 +591,7 @@
 				145D321F1907B8270067B357 /* MainScene.ccbi */,
 				145D32211907B8270067B357 /* Opening.ccbi */,
 				145D32251907B8270067B357 /* SelectZoneScene.ccbi */,
+				14991090197FD474004672FA /* config.plist */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -804,6 +806,7 @@
 				F8F56D7D197104250011EE0C /* resources-small in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				F8F56D7B197104250011EE0C /* resources-large in Resources */,
+				14991091197FD474004672FA /* config.plist in Resources */,
 				145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,

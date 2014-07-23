@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>nendID</key>
+	<dict>
+		<key>spotID</key>
+		<string>3172</string>
+		<key>apiKey</key>
+		<string>a6eca9dd074372c898dd1df549301f277c53f2b9</string>
+	</dict>
+</dict>
 </plist>

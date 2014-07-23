@@ -44,9 +44,12 @@ bool MainScene::init() {
     
     scheduleUpdate();
     
-    char apiKey[] = "a6eca9dd074372c898dd1df549301f277c53f2b9";
-    char spotID[] = "3172";
-    NendModule::createNADViewBottom(apiKey, spotID);
+    // read config.plist
+    Dictionary *plistDic = Dictionary::createWithContentsOfFile("config.plist");
+    Dictionary *Items = (Dictionary*)plistDic->objectForKey("nendID");
+    char* apiKey = (char*)((String*)Items->objectForKey("apiKey"))->getCString();
+    char* spotID = (char*)((String*)Items->objectForKey("spotID"))->getCString();
+    //NendModule::createNADViewBottom(apiKey, spotID);
     
     return true;
 }
