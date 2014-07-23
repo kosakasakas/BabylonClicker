@@ -71,6 +71,7 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
 }
 
 void MainScene::onTouchEnded(Touch *touch, Event *event) {
+    CCLOG("====onTouchEnded====");
 }
 
 void MainScene::onTouchMoved(Touch *touch, Event *event) {
