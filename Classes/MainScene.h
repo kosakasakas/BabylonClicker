@@ -20,7 +20,15 @@ class MainScene : public Layer
 , public CCBSelectorResolver
 {
 private:
+    enum {
+        NodeTag_UINode = 1,
+        NodeTag_BattleStage = 100
+    } NodeTag;
+    
+    bool _needToDraw = true;
+    
     void update(float delta);
+    void draw(float delta);
     void initTouchEventListener();
     
     void tappedPreviousButton(Object* pSender, Control::EventType pControlEventType);

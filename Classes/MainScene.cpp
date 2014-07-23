@@ -81,8 +81,19 @@ void MainScene::onTouchCancelled(Touch *touch, Event *event) {
 }
 
 void MainScene::update(float delta){
+    if (_needToDraw) {
+        draw(delta);
+    }
 }
 
+void MainScene::draw(float delta) {
+    auto sprite = Sprite::create("circle.png");
+    auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
+    Size size = battleStage->getContentSize();
+    sprite->setPosition(Point(size.width/2.0, size.height/2.0));
+    battleStage->addChild(sprite);
+    _needToDraw = false;
+}
 
 void MainScene::tappedPreviousButton(Object* pSender, Control::EventType pControlEventType)
 {
