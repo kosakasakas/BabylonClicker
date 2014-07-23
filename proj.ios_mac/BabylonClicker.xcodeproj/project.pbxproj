@@ -15,6 +15,7 @@
 		145D322C1907B8270067B357 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D321F1907B8270067B357 /* MainScene.ccbi */; };
 		145D322E1907B8270067B357 /* Opening.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32211907B8270067B357 /* Opening.ccbi */; };
 		145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32251907B8270067B357 /* SelectZoneScene.ccbi */; };
+		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
 		14998D761945B9C70062FF0A /* LiquidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D741945B9C70062FF0A /* LiquidScene.ccbi */; };
 		14AC7753196E4C2B005047F1 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC774D196E4C2B005047F1 /* libNendAd.a */; };
