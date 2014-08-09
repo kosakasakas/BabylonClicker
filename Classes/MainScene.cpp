@@ -50,7 +50,7 @@ bool MainScene::init() {
     if (Items != NULL) {
         char* apiKey = (char*)((String*)Items->objectForKey("apiKey"))->getCString();
         char* spotID = (char*)((String*)Items->objectForKey("spotID"))->getCString();
-        //NendModule::createNADViewBottom(apiKey, spotID);
+        NendModule::createNADViewBottom(apiKey, spotID);
     }
     
     return true;
@@ -87,7 +87,7 @@ void MainScene::update(float delta){
 }
 
 void MainScene::draw(float delta) {
-    auto sprite = Sprite::create("circle.png");
+    auto sprite = Sprite::create("star.png");
     auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
     Size size = battleStage->getContentSize();
     sprite->setPosition(Point(size.width/2.0, size.height/2.0));
