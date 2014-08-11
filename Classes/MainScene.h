@@ -25,7 +25,8 @@ private:
         NodeTag_BattleStage = 100
     } NodeTag;
     
-    bool _needToDraw = true;
+    bool _doneInitDraw = false;
+    Sprite* _bossSprite;
     
     void update(float delta);
     void draw(float delta);
@@ -40,6 +41,10 @@ private:
     void onTouchEnded(Touch *touch, Event *event);
     void onTouchMoved(Touch *touch, Event *event);
     void onTouchCancelled(Touch *touch, Event *event);
+    
+    void initDraw();
+    void addBossNode();
+    void addUnitNode();
     
 public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);

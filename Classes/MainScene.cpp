@@ -9,8 +9,10 @@
 #import "MainScene.h"
 #import "OpeningLayer.h"
 #include "NendModule.h"
+#import "UCAnimation.h"
 
 MainScene::MainScene()
+: _bossSprite(NULL)
 {
 }
 
@@ -50,7 +52,7 @@ bool MainScene::init() {
     if (Items != NULL) {
         char* apiKey = (char*)((String*)Items->objectForKey("apiKey"))->getCString();
         char* spotID = (char*)((String*)Items->objectForKey("spotID"))->getCString();
-        NendModule::createNADViewBottom(apiKey, spotID);
+        //NendModule::createNADViewBottom(apiKey, spotID);
     }
     
     return true;
@@ -67,6 +69,16 @@ void MainScene::initTouchEventListener() {
 }
 
 bool MainScene::onTouchBegan(Touch *touch, Event *event) {
+    if (!_doneInitDraw) {
+        return true;
+    }
+    
+    auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
+    if (battleStage->getBoundingBox().containsPoint(touch->getLocation())) {
+        if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
+            _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
+        }
+    }
     return true;
 }
 
@@ -81,18 +93,33 @@ void MainScene::onTouchCancelled(Touch *touch, Event *event) {
 }
 
 void MainScene::update(float delta){
-    if (_needToDraw) {
-        draw(delta);
+    if (!_doneInitDraw) {
+        initDraw();
+        _doneInitDraw = true;
+    }
+    draw(delta);
+}
+
+void MainScene::initDraw() {
+    addBossNode();
+    addUnitNode();
+}
+
+void MainScene::addBossNode() {
+    if (_bossSprite == NULL) {
+        _bossSprite = Sprite::create("star.png");
+        auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
+        Size size = battleStage->getContentSize();
+        _bossSprite->setPosition(Point(size.width/2.0, size.height/2.0));
+        battleStage->addChild(_bossSprite);
     }
 }
 
+void MainScene::addUnitNode() {
+    
+}
+
 void MainScene::draw(float delta) {
-    auto sprite = Sprite::create("star.png");
-    auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
-    Size size = battleStage->getContentSize();
-    sprite->setPosition(Point(size.width/2.0, size.height/2.0));
-    battleStage->addChild(sprite);
-    _needToDraw = false;
 }
 
 void MainScene::tappedPreviousButton(Object* pSender, Control::EventType pControlEventType)

@@ -15,6 +15,7 @@
 		145D322C1907B8270067B357 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D321F1907B8270067B357 /* MainScene.ccbi */; };
 		145D322E1907B8270067B357 /* Opening.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32211907B8270067B357 /* Opening.ccbi */; };
 		145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32251907B8270067B357 /* SelectZoneScene.ccbi */; };
+		147947C01998990D00649875 /* UCAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 147947BE1998990D00649875 /* UCAnimation.cpp */; };
 		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
@@ -277,6 +278,8 @@
 		145D321F1907B8270067B357 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 		145D32211907B8270067B357 /* Opening.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Opening.ccbi; sourceTree = "<group>"; };
 		145D32251907B8270067B357 /* SelectZoneScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectZoneScene.ccbi; sourceTree = "<group>"; };
+		147947BE1998990D00649875 /* UCAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCAnimation.cpp; sourceTree = "<group>"; };
+		147947BF1998990D00649875 /* UCAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCAnimation.h; sourceTree = "<group>"; };
 		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
@@ -614,6 +617,8 @@
 				F8F56D8A1971180A0011EE0C /* AppMacros.h */,
 				F8F56D8B1971183B0011EE0C /* AppManager.cpp */,
 				F8F56D8C1971183B0011EE0C /* AppManager.h */,
+				147947BE1998990D00649875 /* UCAnimation.cpp */,
+				147947BF1998990D00649875 /* UCAnimation.h */,
 			);
 			name = UnicornEngine;
 			path = ../UnicornEngine;
@@ -869,6 +874,7 @@
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
+				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -942,6 +948,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -989,6 +999,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
