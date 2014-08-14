@@ -16,3 +16,6 @@ Unit::~Unit()
 {
 }
 
+const char* Unit::say(){
+    return "Im Unit.";
+}

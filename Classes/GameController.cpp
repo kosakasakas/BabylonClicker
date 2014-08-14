@@ -15,10 +15,16 @@ GameController* GameController::_singleton = NULL;
 
 GameController::GameController()
 {
+    unitFactory = new UnitFactory();
+    itemFactory = new ItemFactory();
+    magicFactory = new MagicFactory();
 }
 
 GameController::~GameController()
 {
+    unitFactory->release();
+    itemFactory->release();
+    magicFactory->release();
 }
 
 GameController* GameController::getInstance()

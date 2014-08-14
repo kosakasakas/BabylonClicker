@@ -24,6 +24,7 @@
 		1483412B199CBF3000717A59 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834129199CBF3000717A59 /* Item.cpp */; };
 		1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483412C199CC05300717A59 /* MagicFactory.cpp */; };
 		14834131199CC12800717A59 /* Magic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483412F199CC12800717A59 /* Magic.cpp */; };
+		14834134199CC58600717A59 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834132199CC58600717A59 /* Test.cpp */; };
 		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
@@ -304,6 +305,8 @@
 		1483412D199CC05300717A59 /* MagicFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicFactory.h; path = ../Classes/MagicFactory.h; sourceTree = "<group>"; };
 		1483412F199CC12800717A59 /* Magic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Magic.cpp; path = ../Classes/Magic.cpp; sourceTree = "<group>"; };
 		14834130199CC12800717A59 /* Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magic.h; path = ../Classes/Magic.h; sourceTree = "<group>"; };
+		14834132199CC58600717A59 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = ../Classes/Test.cpp; sourceTree = "<group>"; };
+		14834133199CC58600717A59 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test.h; path = ../Classes/Test.h; sourceTree = "<group>"; };
 		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
@@ -503,6 +506,8 @@
 				1483412D199CC05300717A59 /* MagicFactory.h */,
 				1483412F199CC12800717A59 /* Magic.cpp */,
 				14834130199CC12800717A59 /* Magic.h */,
+				14834132199CC58600717A59 /* Test.cpp */,
+				14834133199CC58600717A59 /* Test.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -904,6 +909,7 @@
 				1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */,
 				14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */,
 				1483411C199CB31F00717A59 /* GameObject.cpp in Sources */,
+				14834134199CC58600717A59 /* Test.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
@@ -1176,6 +1182,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1189,6 +1196,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";

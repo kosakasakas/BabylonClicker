@@ -11,17 +11,21 @@
 
 #include <iostream>
 #include "cocos2d.h"
+#include "UnitFactory.h"
+#include "ItemFactory.h"
+#include "MagicFactory.h"
 
 class GameController
 {
-private:
-    
 private:
     GameController();
     ~GameController();
     static GameController* _singleton;
 public:
     static GameController* getInstance();
+    CC_SYNTHESIZE_READONLY(UnitFactory*, unitFactory, UnitFactory);
+    CC_SYNTHESIZE_READONLY(ItemFactory*, itemFactory, ItemFactory);
+    CC_SYNTHESIZE_READONLY(MagicFactory*, magicFactory, MagicFactory);
 };
 
 #endif /* defined(__UnicornEngine__GameController__) */

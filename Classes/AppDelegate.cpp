@@ -1,6 +1,9 @@
 #include "AppDelegate.h"
 #include "AppManager.h"
 #include "OpeningLayer.h"
+#ifdef COCOS2D_DEBUG
+#include "Test.h"
+#endif
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -21,8 +24,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     director->setOpenGLView(eglView);
 	
+#ifdef COCOS2D_DEBUG
     // turn on display FPS
     director->setDisplayStats(true);
+    Test *test = new Test();
+    test->run();
+#endif
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
@@ -52,6 +59,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     // run
     director->runWithScene(scene);
+    
+    // test
+    
 
     return true;
 }

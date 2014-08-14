@@ -17,6 +17,7 @@ class GameObject : public cocos2d::Object
 public:
     GameObject();
     ~GameObject();
+    virtual const char* say() = 0;
 };
 
 #endif /* defined(__BabylonClicker__GameObject__) */

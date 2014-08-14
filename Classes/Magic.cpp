@@ -15,3 +15,7 @@ Magic::Magic()
 Magic::~Magic()
 {
 }
+
+const char* Magic::say() {
+    return "Im magic!";
+}

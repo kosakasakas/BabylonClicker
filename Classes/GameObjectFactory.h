@@ -10,14 +10,15 @@
 #define __BabylonClicker__GameObjectFactory__
 
 #include <iostream>
+#include "cocos2d.h"
 #include "GameObject.h"
 
-class GameObjectFactory
+class GameObjectFactory : public cocos2d::Object
 {
 public:
     GameObjectFactory();
     ~GameObjectFactory();
-    GameObject* create();
+    virtual GameObject* create();
 protected:
     virtual GameObject* createObject() = 0;
 };

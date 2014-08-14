@@ -17,6 +17,7 @@ class Unit : public GameObject
 public:
     Unit();
     ~Unit();
+    virtual const char* say();
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

@@ -15,3 +15,7 @@ Item::Item()
 Item::~Item()
 {
 }
+
+const char* Item::say() {
+    return "Im Item.";
+}
