@@ -16,6 +16,14 @@
 		145D322E1907B8270067B357 /* Opening.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32211907B8270067B357 /* Opening.ccbi */; };
 		145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32251907B8270067B357 /* SelectZoneScene.ccbi */; };
 		147947C01998990D00649875 /* UCAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 147947BE1998990D00649875 /* UCAnimation.cpp */; };
+		1483411C199CB31F00717A59 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483411A199CB31F00717A59 /* GameObject.cpp */; };
+		1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483411D199CB81E00717A59 /* GameObjectFactory.cpp */; };
+		14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834120199CBBF400717A59 /* UnitFactory.cpp */; };
+		14834125199CBCCF00717A59 /* Unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834123199CBCCF00717A59 /* Unit.cpp */; };
+		14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834126199CBE6D00717A59 /* ItemFactory.cpp */; };
+		1483412B199CBF3000717A59 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834129199CBF3000717A59 /* Item.cpp */; };
+		1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483412C199CC05300717A59 /* MagicFactory.cpp */; };
+		14834131199CC12800717A59 /* Magic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483412F199CC12800717A59 /* Magic.cpp */; };
 		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
@@ -280,6 +288,22 @@
 		145D32251907B8270067B357 /* SelectZoneScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectZoneScene.ccbi; sourceTree = "<group>"; };
 		147947BE1998990D00649875 /* UCAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCAnimation.cpp; sourceTree = "<group>"; };
 		147947BF1998990D00649875 /* UCAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCAnimation.h; sourceTree = "<group>"; };
+		1483411A199CB31F00717A59 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../Classes/GameObject.cpp; sourceTree = "<group>"; };
+		1483411B199CB31F00717A59 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = ../Classes/GameObject.h; sourceTree = "<group>"; };
+		1483411D199CB81E00717A59 /* GameObjectFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObjectFactory.cpp; path = ../Classes/GameObjectFactory.cpp; sourceTree = "<group>"; };
+		1483411E199CB81E00717A59 /* GameObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObjectFactory.h; path = ../Classes/GameObjectFactory.h; sourceTree = "<group>"; };
+		14834120199CBBF400717A59 /* UnitFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitFactory.cpp; path = ../Classes/UnitFactory.cpp; sourceTree = "<group>"; };
+		14834121199CBBF400717A59 /* UnitFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitFactory.h; path = ../Classes/UnitFactory.h; sourceTree = "<group>"; };
+		14834123199CBCCF00717A59 /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Unit.cpp; path = ../Classes/Unit.cpp; sourceTree = "<group>"; };
+		14834124199CBCCF00717A59 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = ../Classes/Unit.h; sourceTree = "<group>"; };
+		14834126199CBE6D00717A59 /* ItemFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemFactory.cpp; path = ../Classes/ItemFactory.cpp; sourceTree = "<group>"; };
+		14834127199CBE6D00717A59 /* ItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemFactory.h; path = ../Classes/ItemFactory.h; sourceTree = "<group>"; };
+		14834129199CBF3000717A59 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Item.cpp; path = ../Classes/Item.cpp; sourceTree = "<group>"; };
+		1483412A199CBF3000717A59 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Classes/Item.h; sourceTree = "<group>"; };
+		1483412C199CC05300717A59 /* MagicFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MagicFactory.cpp; path = ../Classes/MagicFactory.cpp; sourceTree = "<group>"; };
+		1483412D199CC05300717A59 /* MagicFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicFactory.h; path = ../Classes/MagicFactory.h; sourceTree = "<group>"; };
+		1483412F199CC12800717A59 /* Magic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Magic.cpp; path = ../Classes/Magic.cpp; sourceTree = "<group>"; };
+		14834130199CC12800717A59 /* Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magic.h; path = ../Classes/Magic.h; sourceTree = "<group>"; };
 		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
@@ -463,6 +487,22 @@
 				145D320D1907B8130067B357 /* MainScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				1483411A199CB31F00717A59 /* GameObject.cpp */,
+				1483411B199CB31F00717A59 /* GameObject.h */,
+				1483411D199CB81E00717A59 /* GameObjectFactory.cpp */,
+				1483411E199CB81E00717A59 /* GameObjectFactory.h */,
+				14834120199CBBF400717A59 /* UnitFactory.cpp */,
+				14834121199CBBF400717A59 /* UnitFactory.h */,
+				14834123199CBCCF00717A59 /* Unit.cpp */,
+				14834124199CBCCF00717A59 /* Unit.h */,
+				14834126199CBE6D00717A59 /* ItemFactory.cpp */,
+				14834127199CBE6D00717A59 /* ItemFactory.h */,
+				14834129199CBF3000717A59 /* Item.cpp */,
+				1483412A199CBF3000717A59 /* Item.h */,
+				1483412C199CC05300717A59 /* MagicFactory.cpp */,
+				1483412D199CC05300717A59 /* MagicFactory.h */,
+				1483412F199CC12800717A59 /* Magic.cpp */,
+				14834130199CC12800717A59 /* Magic.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -861,20 +901,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F56D9619711AFA0011EE0C /* Utility.cpp in Sources */,
+				1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */,
 				14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */,
+				1483411C199CB31F00717A59 /* GameObject.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
+				1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				14834125199CBCCF00717A59 /* Unit.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1499109A197FDFDE004672FA /* GameController.cpp in Sources */,
+				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
+				14834131199CC12800717A59 /* Magic.cpp in Sources */,
+				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
 				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
+				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
