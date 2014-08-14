@@ -7,7 +7,6 @@
 //
 
 #include "GameController.h"
-#include "cocos2d.h"
 
 USING_NS_CC;
 
@@ -18,6 +17,7 @@ GameController::GameController()
     unitFactory = new UnitFactory();
     itemFactory = new ItemFactory();
     magicFactory = new MagicFactory();
+    bossFactory = new BossFactory();
 }
 
 GameController::~GameController()
@@ -25,6 +25,7 @@ GameController::~GameController()
     unitFactory->release();
     itemFactory->release();
     magicFactory->release();
+    bossFactory->release();
 }
 
 GameController* GameController::getInstance()

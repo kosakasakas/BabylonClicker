@@ -25,6 +25,9 @@
 		1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483412C199CC05300717A59 /* MagicFactory.cpp */; };
 		14834131199CC12800717A59 /* Magic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483412F199CC12800717A59 /* Magic.cpp */; };
 		14834134199CC58600717A59 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834132199CC58600717A59 /* Test.cpp */; };
+		14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483413E199CCF4C00717A59 /* BossFactory.cpp */; };
+		14834143199CD05700717A59 /* Boss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834141199CD05700717A59 /* Boss.cpp */; };
+		14834146199CD22900717A59 /* BattleController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834144199CD22900717A59 /* BattleController.cpp */; };
 		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
@@ -307,6 +310,12 @@
 		14834130199CC12800717A59 /* Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Magic.h; path = ../Classes/Magic.h; sourceTree = "<group>"; };
 		14834132199CC58600717A59 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Test.cpp; path = ../Classes/Test.cpp; sourceTree = "<group>"; };
 		14834133199CC58600717A59 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Test.h; path = ../Classes/Test.h; sourceTree = "<group>"; };
+		1483413E199CCF4C00717A59 /* BossFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossFactory.cpp; path = ../Classes/BossFactory.cpp; sourceTree = "<group>"; };
+		1483413F199CCF4C00717A59 /* BossFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossFactory.h; path = ../Classes/BossFactory.h; sourceTree = "<group>"; };
+		14834141199CD05700717A59 /* Boss.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Boss.cpp; path = ../Classes/Boss.cpp; sourceTree = "<group>"; };
+		14834142199CD05700717A59 /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Boss.h; path = ../Classes/Boss.h; sourceTree = "<group>"; };
+		14834144199CD22900717A59 /* BattleController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleController.cpp; path = ../Classes/BattleController.cpp; sourceTree = "<group>"; };
+		14834145199CD22900717A59 /* BattleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleController.h; path = ../Classes/BattleController.h; sourceTree = "<group>"; };
 		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
@@ -508,6 +517,12 @@
 				14834130199CC12800717A59 /* Magic.h */,
 				14834132199CC58600717A59 /* Test.cpp */,
 				14834133199CC58600717A59 /* Test.h */,
+				1483413E199CCF4C00717A59 /* BossFactory.cpp */,
+				1483413F199CCF4C00717A59 /* BossFactory.h */,
+				14834141199CD05700717A59 /* Boss.cpp */,
+				14834142199CD05700717A59 /* Boss.h */,
+				14834144199CD22900717A59 /* BattleController.cpp */,
+				14834145199CD22900717A59 /* BattleController.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -905,6 +920,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14834143199CD05700717A59 /* Boss.cpp in Sources */,
 				F8F56D9619711AFA0011EE0C /* Utility.cpp in Sources */,
 				1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */,
 				14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */,
@@ -920,10 +936,12 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
 				1499109A197FDFDE004672FA /* GameController.cpp in Sources */,
 				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
+				14834146199CD22900717A59 /* BattleController.cpp in Sources */,
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
 				14834131199CC12800717A59 /* Magic.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
