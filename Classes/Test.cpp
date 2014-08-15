@@ -18,7 +18,8 @@
 #include "User.h"
 #include "Magic.h"
 #include "cocos2d.h"
-#include "GameData.h"
+#include "UnitDataFactory.h"
+#include "UnitData.h"
 
 USING_NS_CC;
 
@@ -34,13 +35,14 @@ void Test::run() {
     
     CCLOG("******Settings******");
     
-    
-    CCLOG("******GmaeData Class******");
-    GameData* uData = new GameData("unitData.plist");
+    CCLOG("******UnitDataFactory class******");
+    UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
+    udFactory->dump();
+    UnitData* uData = (UnitData*)udFactory->create(0);
     uData->dump();
-    uData->dumpPropertyValueAtIndex(0);
-    uData->dumpPropertyValueAtIndex(5);
-    uData->dumpPropertyValueAtIndex(10);
+    uData->setCost(100);
+    uData->setLevel(50);
+    uData->dump();
     
     CCLOG("******User class******");
     User* user = (User*)GameController::getInstance()->getUser();

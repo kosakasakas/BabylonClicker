@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14151C36199DB8BC0097B3A1 /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14151C34199DB8BC0097B3A1 /* GameData.cpp */; };
+		14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */; };
 		145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D32071907B8130067B357 /* OpeningLayer.cpp */; };
 		145D32121907B8130067B357 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D320C1907B8130067B357 /* MainScene.cpp */; };
 		145D32271907B8270067B357 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145D321A1907B8270067B357 /* fileLookup.plist */; };
@@ -16,6 +16,9 @@
 		145D322C1907B8270067B357 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D321F1907B8270067B357 /* MainScene.ccbi */; };
 		145D322E1907B8270067B357 /* Opening.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32211907B8270067B357 /* Opening.ccbi */; };
 		145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 145D32251907B8270067B357 /* SelectZoneScene.ccbi */; };
+		145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145F0D8A199DCF930063F8FB /* ObjectData.cpp */; };
+		145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145F0D93199DDD830063F8FB /* UnitData.cpp */; };
+		145F0D98199DDEA00063F8FB /* UnitDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */; };
 		147947C01998990D00649875 /* UCAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 147947BE1998990D00649875 /* UCAnimation.cpp */; };
 		1483411C199CB31F00717A59 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483411A199CB31F00717A59 /* GameObject.cpp */; };
 		1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483411D199CB81E00717A59 /* GameObjectFactory.cpp */; };
@@ -283,8 +286,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14151C34199DB8BC0097B3A1 /* GameData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameData.cpp; path = ../Classes/GameData.cpp; sourceTree = "<group>"; };
-		14151C35199DB8BC0097B3A1 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameData.h; path = ../Classes/GameData.h; sourceTree = "<group>"; };
+		14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectDataFactory.cpp; path = ../Classes/ObjectDataFactory.cpp; sourceTree = "<group>"; };
+		14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDataFactory.h; path = ../Classes/ObjectDataFactory.h; sourceTree = "<group>"; };
 		144FAD38196E5BA600F787E5 /* NendIconModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendIconModule.h; path = ../Classes/NendIconModule.h; sourceTree = "<group>"; };
 		144FAD3F196E5BC600F787E5 /* NendModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendModule.h; path = ../Classes/NendModule.h; sourceTree = "<group>"; };
 		145D32071907B8130067B357 /* OpeningLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpeningLayer.cpp; path = ../Classes/OpeningLayer.cpp; sourceTree = "<group>"; };
@@ -297,6 +300,12 @@
 		145D321F1907B8270067B357 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 		145D32211907B8270067B357 /* Opening.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Opening.ccbi; sourceTree = "<group>"; };
 		145D32251907B8270067B357 /* SelectZoneScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectZoneScene.ccbi; sourceTree = "<group>"; };
+		145F0D8A199DCF930063F8FB /* ObjectData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectData.cpp; path = ../Classes/ObjectData.cpp; sourceTree = "<group>"; };
+		145F0D8B199DCF930063F8FB /* ObjectData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectData.h; path = ../Classes/ObjectData.h; sourceTree = "<group>"; };
+		145F0D93199DDD830063F8FB /* UnitData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitData.cpp; path = ../Classes/UnitData.cpp; sourceTree = "<group>"; };
+		145F0D94199DDD830063F8FB /* UnitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitData.h; path = ../Classes/UnitData.h; sourceTree = "<group>"; };
+		145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitDataFactory.cpp; path = ../Classes/UnitDataFactory.cpp; sourceTree = "<group>"; };
+		145F0D97199DDEA00063F8FB /* UnitDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitDataFactory.h; path = ../Classes/UnitDataFactory.h; sourceTree = "<group>"; };
 		147947BE1998990D00649875 /* UCAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCAnimation.cpp; sourceTree = "<group>"; };
 		147947BF1998990D00649875 /* UCAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCAnimation.h; sourceTree = "<group>"; };
 		1483411A199CB31F00717A59 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../Classes/GameObject.cpp; sourceTree = "<group>"; };
@@ -501,8 +510,8 @@
 			children = (
 				14991098197FDFDE004672FA /* GameController.h */,
 				14991099197FDFDE004672FA /* GameController.cpp */,
-				14151C34199DB8BC0097B3A1 /* GameData.cpp */,
-				14151C35199DB8BC0097B3A1 /* GameData.h */,
+				14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */,
+				14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */,
 				144FAD3F196E5BC600F787E5 /* NendModule.h */,
 				144FAD38196E5BA600F787E5 /* NendIconModule.h */,
 				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
@@ -545,6 +554,12 @@
 				1483414B199CDF3100717A59 /* User.h */,
 				1483414D199CE46400717A59 /* BaseObject.cpp */,
 				1483414E199CE46400717A59 /* BaseObject.h */,
+				145F0D8A199DCF930063F8FB /* ObjectData.cpp */,
+				145F0D8B199DCF930063F8FB /* ObjectData.h */,
+				145F0D93199DDD830063F8FB /* UnitData.cpp */,
+				145F0D94199DDD830063F8FB /* UnitData.h */,
+				145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */,
+				145F0D97199DDEA00063F8FB /* UnitDataFactory.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -952,16 +967,18 @@
 				14834134199CC58600717A59 /* Test.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
+				145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */,
 				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
 				1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				145F0D98199DDEA00063F8FB /* UnitDataFactory.cpp in Sources */,
 				14834125199CBCCF00717A59 /* Unit.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				14151C36199DB8BC0097B3A1 /* GameData.cpp in Sources */,
+				14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */,
 				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
 				1499109A197FDFDE004672FA /* GameController.cpp in Sources */,
 				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
@@ -972,6 +989,7 @@
 				14834131199CC12800717A59 /* Magic.cpp in Sources */,
 				1483414C199CDF3100717A59 /* User.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
+				145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */,
 				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,

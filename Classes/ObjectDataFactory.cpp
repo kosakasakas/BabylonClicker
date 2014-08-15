@@ -1,24 +1,24 @@
 //
-//  GameData.cpp
+//  ObjectDataFactory.cpp
 //  BabylonClicker
 //
 //  Created by Takahiro Kosaka on 2014/08/15.
 //
 //
 
-#include "GameData.h"
+#include "ObjectDataFactory.h"
 
-GameData::GameData(const char* filePath)
+ObjectDataFactory::ObjectDataFactory(const char* filePath)
 {
     dictionary = Dictionary::createWithContentsOfFile(filePath);
 }
 
-GameData::~GameData()
+ObjectDataFactory::~ObjectDataFactory()
 {
     dictionary->release();
 }
 
-void GameData::dump() {
+void ObjectDataFactory::dump() {
     CCLOG("======Game Data======");
     if (dictionary != NULL) {
         CCLOG("property num: %d", getPropertyNum());
@@ -47,8 +47,8 @@ void GameData::dump() {
     CCLOG("dump ended.");
 }
 
-void GameData::dumpPropertyValueAtIndex(int index) {
-    CCLOG("======Game Data======");
+void ObjectDataFactory::dumpPropertyValueAtIndex(int index) {
+    CCLOG("======ObjectDataFactory======");
     CCLOG("dumpPropertyValueAtIndex: %d", index);
     if(0 > index || index > getObjectNum()) {
         CCLOG("index over flow..");
@@ -67,7 +67,7 @@ void GameData::dumpPropertyValueAtIndex(int index) {
     CCLOG("dump ended.");
 }
 
-int GameData::getPropertyNum() {
+int ObjectDataFactory::getPropertyNum() {
     Array* array = getPropertyArray();
     if (array != NULL) {
         return array->count();
@@ -76,7 +76,7 @@ int GameData::getPropertyNum() {
     }
 }
 
-int GameData::getObjectNum() {
+int ObjectDataFactory::getObjectNum() {
     if (dictionary != NULL) {
         Array* property = getPropertyArray();
         if(property != NULL) {
@@ -90,7 +90,7 @@ int GameData::getObjectNum() {
     return 0;
 }
 
-Array* GameData::getPropertyArray() {
+Array* ObjectDataFactory::getPropertyArray() {
     if (dictionary != NULL) {
         return dictionary->allKeys();
     } else {
@@ -98,7 +98,7 @@ Array* GameData::getPropertyArray() {
     }
 }
 
-Dictionary* GameData::getPropertyValueAtIndex(int index) {
+Dictionary* ObjectDataFactory::getPropertyValueAtIndex(int index) {
     if(0 > index || index > getObjectNum()) {
         return NULL;
     }
@@ -117,4 +117,9 @@ Dictionary* GameData::getPropertyValueAtIndex(int index) {
         }
     }
     return result;
+}
+
+ObjectData* ObjectDataFactory::create(int index){
+    ObjectData* obj = createObjectData(index);
+    return obj;
 }
