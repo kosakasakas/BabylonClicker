@@ -24,6 +24,11 @@ float BossData::getHP() {
     return getFloatValue(HP_KEY);
 }
 
+void BossData::reduceHP(float damage) {
+    float hp = getHP();
+    setFloatValue(hp - damage, HP_KEY);
+}
+
 void BossData::dump() {
     UnitData::dump();
     CCLOG("hp: %f", getHP());

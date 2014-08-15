@@ -17,6 +17,7 @@ public:
     BossData(Dictionary* data);
     virtual ~BossData();
     float getHP();
+    void reduceHP(float damage);
     virtual void dump();
 protected:
     static const char* HP_KEY;
