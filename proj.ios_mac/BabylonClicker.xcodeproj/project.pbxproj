@@ -110,6 +110,7 @@
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
+		F8E592DF199E657300306809 /* UnitCage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592DD199E657300306809 /* UnitCage.cpp */; };
 		F8F56D7B197104250011EE0C /* resources-large in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D77197104250011EE0C /* resources-large */; };
 		F8F56D7C197104250011EE0C /* resources-medium in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D78197104250011EE0C /* resources-medium */; };
 		F8F56D7D197104250011EE0C /* resources-small in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D79197104250011EE0C /* resources-small */; };
@@ -425,6 +426,9 @@
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F8E592D5199E642000306809 /* Iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Iterator.h; path = ../Classes/Iterator.h; sourceTree = "<group>"; };
+		F8E592DD199E657300306809 /* UnitCage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitCage.cpp; path = ../Classes/UnitCage.cpp; sourceTree = "<group>"; };
+		F8E592DE199E657300306809 /* UnitCage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitCage.h; path = ../Classes/UnitCage.h; sourceTree = "<group>"; };
 		F8F56D77197104250011EE0C /* resources-large */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-large"; sourceTree = "<group>"; };
 		F8F56D78197104250011EE0C /* resources-medium */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-medium"; sourceTree = "<group>"; };
 		F8F56D79197104250011EE0C /* resources-small */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-small"; sourceTree = "<group>"; };
@@ -592,6 +596,9 @@
 				143C5C4F199E2C6F0041FFEB /* MagicData.h */,
 				143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */,
 				143C5C52199E31E70041FFEB /* MagicDataFactory.h */,
+				F8E592D5199E642000306809 /* Iterator.h */,
+				F8E592DD199E657300306809 /* UnitCage.cpp */,
+				F8E592DE199E657300306809 /* UnitCage.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1026,6 +1033,7 @@
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
 				14834131199CC12800717A59 /* Magic.cpp in Sources */,
 				1483414C199CDF3100717A59 /* User.cpp in Sources */,
+				F8E592DF199E657300306809 /* UnitCage.cpp in Sources */,
 				143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
 				145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */,

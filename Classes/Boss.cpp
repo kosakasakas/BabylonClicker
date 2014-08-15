@@ -7,6 +7,7 @@
 //
 
 #include "Boss.h"
+#include "BattleController.h"
 
 Boss::Boss(BossData* data)
 : Unit(data)
@@ -22,5 +23,15 @@ const char* Boss::say() {
 }
 
 void Boss::damage(float val) {
-    data->reduceHP(val);
+    BossData* bData = (BossData*)objectData;
+    (bData)->reduceHP(val);
+    
+    if (bData->getHP() <= 0) {
+        onDestroyed();
+    }
+}
+
+void Boss::onDestroyed() {
+    CCLOG("Boss is destroyed..");
+    BattleController::getInstance()->onTargetBossDestroyed();
 }

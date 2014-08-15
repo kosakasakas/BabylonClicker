@@ -7,6 +7,7 @@
 //
 
 #include "Unit.h"
+#include "BattleController.h"
 
 Unit::Unit(UnitData* data)
 : GameObject(data)
@@ -31,5 +32,6 @@ bool Unit::canSummon() {
 }
 
 void Unit::attack() {
-    
+    float attack = ((UnitData*)objectData)->getAttack();
+    BattleController::getInstance()->getTargetBoss()->damage(attack);
 }

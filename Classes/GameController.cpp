@@ -28,8 +28,8 @@ GameController::~GameController()
     itemFactory->release();
     magicFactory->release();
     bossFactory->release();*/
-    delete field;
-    delete user;
+    field->release();
+    user->release();
 }
 
 GameController* GameController::getInstance()

@@ -17,6 +17,7 @@ BattleController::BattleController()
 {
     BossFactory* bFactory = new BossFactory();
     targetBoss = (Boss*)bFactory->create(0); // todo set index from field object.
+    activeUnitCage = new UnitCage(100); // todo set active num from config.
 }
 
 BattleController::~BattleController()
@@ -30,4 +31,12 @@ BattleController* BattleController::getInstance()
         _singleton = new BattleController();
     }
     return _singleton;
+}
+
+void BattleController::onTargetBossDestroyed() {
+    targetBoss->release();
+    targetBoss = NULL;
+    BossFactory* bFactory = new BossFactory();
+    targetBoss = (Boss*)bFactory->create(1); // todo set index from field object.
+    CCLOG("new boss is created..");
 }

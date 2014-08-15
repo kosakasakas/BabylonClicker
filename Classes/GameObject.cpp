@@ -53,9 +53,6 @@ void GameObject::summon() {
 
 void GameObject::dump() {
     CCLOG("======GameObject Class======");
-    CCLOG("level: %d", objectData->getLevel());
-    CCLOG("cost: %d", objectData->getCost());
-    CCLOG("objectID: %d", objectData->getObjectID());
     CCLOG("canPurchase: %d", canPurchase());
     CCLOG("canSacriface: %d", canSacrifice());
     CCLOG("canSummon: %d", canSummon());

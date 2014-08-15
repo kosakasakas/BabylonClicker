@@ -12,6 +12,7 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "Boss.h"
+#include "UnitCage.h"
 
 class BattleController
 {
@@ -22,6 +23,8 @@ private:
 public:
     static BattleController* getInstance();
     CC_SYNTHESIZE(Boss*, targetBoss, TargetBoss);
+    CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
+    void onTargetBossDestroyed();
 };
 
 #endif /* defined(__BabylonClicker__BattleController__) */

@@ -16,7 +16,7 @@
 
 USING_NS_CC;
 
-class GameObject : public cocos2d::Object, public BaseObject
+class GameObject : public BaseObject
 {
 public:
     GameObject(ObjectData* data);

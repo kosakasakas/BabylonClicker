@@ -10,8 +10,11 @@
 #define __BabylonClicker__BaseObject__
 
 #include <iostream>
+#include "cocos2d.h"
 
-class BaseObject {
+USING_NS_CC;
+
+class BaseObject : public Object {
 public:
     BaseObject();
     ~BaseObject();
