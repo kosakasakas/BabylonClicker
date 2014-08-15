@@ -18,6 +18,7 @@
 #include "User.h"
 #include "Magic.h"
 #include "cocos2d.h"
+#include "GameData.h"
 
 USING_NS_CC;
 
@@ -32,9 +33,14 @@ Test::~Test()
 void Test::run() {
     
     CCLOG("******Settings******");
-    Dictionary *plistDic = Dictionary::createWithContentsOfFile("unitData.plist");
-    Array *nameArray = (Array*)plistDic->objectForKey("name");
-    Array *costArray = (Array*)plistDic->objectForKey("cost");
+    
+    
+    CCLOG("******GmaeData Class******");
+    GameData* uData = new GameData("unitData.plist");
+    uData->dump();
+    uData->dumpPropertyValueAtIndex(0);
+    uData->dumpPropertyValueAtIndex(5);
+    uData->dumpPropertyValueAtIndex(10);
     
     CCLOG("******User class******");
     User* user = (User*)GameController::getInstance()->getUser();
@@ -42,15 +48,18 @@ void Test::run() {
     user->dump();
     
     CCLOG("******Unit class******");
-    Unit* unit = (Unit*)GameController::getInstance()->getUnitFactory()->create();
+    UnitFactory* ufact = new UnitFactory();
+    Unit* unit = (Unit*)ufact->create();
     unit->dump();
     
     CCLOG("******Item class******");
-    Item* item = (Item*)GameController::getInstance()->getItemFactory()->create();
+    ItemFactory* ifact = new ItemFactory();
+    Item* item = (Item*)ifact->create();
     item->dump();
     
     CCLOG("******Magic class******");
-    Magic* magic = (Magic*)GameController::getInstance()->getMagicFactory()->create();
+    MagicFactory* mfact = new MagicFactory();
+    Magic* magic = (Magic*)mfact->create();
     magic->dump();
     
     CCLOG("******BattleController class******");

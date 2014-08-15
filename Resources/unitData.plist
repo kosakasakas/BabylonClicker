@@ -2,12 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>nendID</key>
-	<dict>
-		<key>spotID</key>
-		<string>3172</string>
-		<key>apiKey</key>
-		<string>a6eca9dd074372c898dd1df549301f277c53f2b9</string>
-	</dict>
+	<key>cost</key>
+	<array>
+		<integer>5</integer>
+		<integer>6</integer>
+		<integer>6</integer>
+		<integer>6</integer>
+		<integer>6</integer>
+		<integer>12</integer>
+	</array>
+	<key>name</key>
+	<array>
+		<string>バビロン素体</string>
+		<string>水ハナアルキ</string>
+		<string>火ハナアルキ</string>
+		<string>木ハナアルキ</string>
+		<string>魔法少女まりりか</string>
+		<string>真・バビロン</string>
+	</array>
 </dict>
 </plist>

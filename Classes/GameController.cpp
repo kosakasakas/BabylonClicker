@@ -14,20 +14,20 @@ GameController* GameController::_singleton = NULL;
 
 GameController::GameController()
 {
-    unitFactory = new UnitFactory();
+    /*unitFactory = new UnitFactory();
     itemFactory = new ItemFactory();
     magicFactory = new MagicFactory();
-    bossFactory = new BossFactory();
+    bossFactory = new BossFactory();*/
     field = new Field();
     user = new User();
 }
 
 GameController::~GameController()
 {
-    unitFactory->release();
+    /*unitFactory->release();
     itemFactory->release();
     magicFactory->release();
-    bossFactory->release();
+    bossFactory->release();*/
     delete field;
     delete user;
 }

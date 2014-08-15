@@ -10,7 +10,8 @@
 #include "GameController.h"
 
 GameObject::GameObject()
-: level(0)
+: objectData(NULL)
+, level(0)
 , cost(0)
 , objectID(0)
 {

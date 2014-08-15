@@ -49,10 +49,12 @@ bool MainScene::init() {
     // read config.plist
     Dictionary *plistDic = Dictionary::createWithContentsOfFile("config.plist");
     Dictionary *Items = (Dictionary*)plistDic->objectForKey("nendID");
+    //Array *property = (Array*)plistDic->objectForKey("nendID");
     if (Items != NULL) {
         char* apiKey = (char*)((String*)Items->objectForKey("apiKey"))->getCString();
         char* spotID = (char*)((String*)Items->objectForKey("spotID"))->getCString();
         //NendModule::createNADViewBottom(apiKey, spotID);
+        //Array* object = (Array*)plistDic->objectForKey((const char*)(property->getObjectAtIndex(0)));
     }
     
     return true;

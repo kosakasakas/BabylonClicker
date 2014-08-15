@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14151C36199DB8BC0097B3A1 /* GameData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14151C34199DB8BC0097B3A1 /* GameData.cpp */; };
 		145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D32071907B8130067B357 /* OpeningLayer.cpp */; };
 		145D32121907B8130067B357 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D320C1907B8130067B357 /* MainScene.cpp */; };
 		145D32271907B8270067B357 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145D321A1907B8270067B357 /* fileLookup.plist */; };
@@ -31,8 +32,8 @@
 		14834149199CD6D200717A59 /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834147199CD6D200717A59 /* Field.cpp */; };
 		1483414C199CDF3100717A59 /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483414A199CDF3100717A59 /* User.cpp */; };
 		1483414F199CE46400717A59 /* BaseObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483414D199CE46400717A59 /* BaseObject.cpp */; };
-		14834151199CEE7800717A59 /* unitData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14834150199CEE7800717A59 /* unitData.plist */; };
-		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
+		14834151199CEE7800717A59 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14834150199CEE7800717A59 /* config.plist */; };
+		14991091197FD474004672FA /* unitData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* unitData.plist */; };
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
 		14998D761945B9C70062FF0A /* LiquidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D741945B9C70062FF0A /* LiquidScene.ccbi */; };
@@ -282,6 +283,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14151C34199DB8BC0097B3A1 /* GameData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameData.cpp; path = ../Classes/GameData.cpp; sourceTree = "<group>"; };
+		14151C35199DB8BC0097B3A1 /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameData.h; path = ../Classes/GameData.h; sourceTree = "<group>"; };
 		144FAD38196E5BA600F787E5 /* NendIconModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendIconModule.h; path = ../Classes/NendIconModule.h; sourceTree = "<group>"; };
 		144FAD3F196E5BC600F787E5 /* NendModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendModule.h; path = ../Classes/NendModule.h; sourceTree = "<group>"; };
 		145D32071907B8130067B357 /* OpeningLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpeningLayer.cpp; path = ../Classes/OpeningLayer.cpp; sourceTree = "<group>"; };
@@ -326,8 +329,8 @@
 		1483414B199CDF3100717A59 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../Classes/User.h; sourceTree = "<group>"; };
 		1483414D199CE46400717A59 /* BaseObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseObject.cpp; path = ../Classes/BaseObject.cpp; sourceTree = "<group>"; };
 		1483414E199CE46400717A59 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseObject.h; path = ../Classes/BaseObject.h; sourceTree = "<group>"; };
-		14834150199CEE7800717A59 /* unitData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = unitData.plist; sourceTree = "<group>"; };
-		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		14834150199CEE7800717A59 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
+		14991090197FD474004672FA /* unitData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = unitData.plist; sourceTree = "<group>"; };
 		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
 		14998D731945B9C70062FF0A /* RigidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = RigidScene.ccbi; sourceTree = "<group>"; };
@@ -498,6 +501,8 @@
 			children = (
 				14991098197FDFDE004672FA /* GameController.h */,
 				14991099197FDFDE004672FA /* GameController.cpp */,
+				14151C34199DB8BC0097B3A1 /* GameData.cpp */,
+				14151C35199DB8BC0097B3A1 /* GameData.h */,
 				144FAD3F196E5BC600F787E5 /* NendModule.h */,
 				144FAD38196E5BA600F787E5 /* NendIconModule.h */,
 				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
@@ -663,7 +668,6 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				14834150199CEE7800717A59 /* unitData.plist */,
 				F8F56D7F197104330011EE0C /* ccbResources */,
 				F8F56D77197104250011EE0C /* resources-large */,
 				F8F56D78197104250011EE0C /* resources-medium */,
@@ -677,7 +681,8 @@
 				145D321F1907B8270067B357 /* MainScene.ccbi */,
 				145D32211907B8270067B357 /* Opening.ccbi */,
 				145D32251907B8270067B357 /* SelectZoneScene.ccbi */,
-				14991090197FD474004672FA /* config.plist */,
+				14834150199CEE7800717A59 /* config.plist */,
+				14991090197FD474004672FA /* unitData.plist */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -891,11 +896,11 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				F8F56D7C197104250011EE0C /* resources-medium in Resources */,
-				14834151199CEE7800717A59 /* unitData.plist in Resources */,
+				14834151199CEE7800717A59 /* config.plist in Resources */,
 				F8F56D7D197104250011EE0C /* resources-small in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				F8F56D7B197104250011EE0C /* resources-large in Resources */,
-				14991091197FD474004672FA /* config.plist in Resources */,
+				14991091197FD474004672FA /* unitData.plist in Resources */,
 				145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -956,6 +961,7 @@
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				14151C36199DB8BC0097B3A1 /* GameData.cpp in Sources */,
 				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
 				1499109A197FDFDE004672FA /* GameController.cpp in Sources */,
 				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
