@@ -17,6 +17,6 @@ GameObjectFactory::~GameObjectFactory()
 }
 
 GameObject* GameObjectFactory::create(){
-    GameObject* obj = createObject();
+    GameObject* obj = createObject(0);
     return obj;
 }

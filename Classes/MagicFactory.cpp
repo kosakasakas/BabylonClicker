@@ -17,7 +17,7 @@ MagicFactory::~MagicFactory()
 {
 }
 
-GameObject* MagicFactory::createObject()
+GameObject* MagicFactory::createObject(int objectID)
 {
     Magic* magic = new Magic();
     return magic;

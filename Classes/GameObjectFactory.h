@@ -18,9 +18,9 @@ class GameObjectFactory : public cocos2d::Object
 public:
     GameObjectFactory();
     ~GameObjectFactory();
-    virtual GameObject* create();
+    GameObject* create();
 protected:
-    virtual GameObject* createObject() = 0;
+    virtual GameObject* createObject(int ObjectID) = 0;
 };
 
 #endif /* defined(__BabylonClicker__GameObjectFactory__) */

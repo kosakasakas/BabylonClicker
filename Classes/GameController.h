@@ -15,6 +15,8 @@
 #include "ItemFactory.h"
 #include "MagicFactory.h"
 #include "BossFactory.h"
+#include "Field.h"
+#include "User.h"
 
 class GameController
 {
@@ -28,6 +30,8 @@ public:
     CC_SYNTHESIZE_READONLY(ItemFactory*, itemFactory, ItemFactory);
     CC_SYNTHESIZE_READONLY(MagicFactory*, magicFactory, MagicFactory);
     CC_SYNTHESIZE_READONLY(BossFactory*, bossFactory, BossFactory);
+    CC_SYNTHESIZE_READONLY(Field*, field, Field);
+    CC_SYNTHESIZE_READONLY(User*, user, User);
 };
 
 #endif /* defined(__UnicornEngine__GameController__) */

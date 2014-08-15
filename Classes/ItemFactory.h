@@ -18,7 +18,7 @@ public:
     ItemFactory();
     ~ItemFactory();
 protected:
-    virtual GameObject* createObject();
+    virtual GameObject* createObject(int objectID);
 };
 
 #endif /* defined(__BabylonClicker__ItemFactory__) */

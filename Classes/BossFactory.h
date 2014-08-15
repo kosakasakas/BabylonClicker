@@ -17,7 +17,7 @@ public:
     BossFactory();
     ~BossFactory();
 protected:
-    virtual GameObject* createObject();
+    virtual GameObject* createObject(int objectID);
 };
 
 #endif /* defined(__BabylonClicker__BossFactory__) */

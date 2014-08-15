@@ -28,6 +28,10 @@
 		14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483413E199CCF4C00717A59 /* BossFactory.cpp */; };
 		14834143199CD05700717A59 /* Boss.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834141199CD05700717A59 /* Boss.cpp */; };
 		14834146199CD22900717A59 /* BattleController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834144199CD22900717A59 /* BattleController.cpp */; };
+		14834149199CD6D200717A59 /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834147199CD6D200717A59 /* Field.cpp */; };
+		1483414C199CDF3100717A59 /* User.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483414A199CDF3100717A59 /* User.cpp */; };
+		1483414F199CE46400717A59 /* BaseObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483414D199CE46400717A59 /* BaseObject.cpp */; };
+		14834151199CEE7800717A59 /* unitData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14834150199CEE7800717A59 /* unitData.plist */; };
 		14991091197FD474004672FA /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* config.plist */; };
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
@@ -316,6 +320,13 @@
 		14834142199CD05700717A59 /* Boss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Boss.h; path = ../Classes/Boss.h; sourceTree = "<group>"; };
 		14834144199CD22900717A59 /* BattleController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleController.cpp; path = ../Classes/BattleController.cpp; sourceTree = "<group>"; };
 		14834145199CD22900717A59 /* BattleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleController.h; path = ../Classes/BattleController.h; sourceTree = "<group>"; };
+		14834147199CD6D200717A59 /* Field.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Field.cpp; path = ../Classes/Field.cpp; sourceTree = "<group>"; };
+		14834148199CD6D200717A59 /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Field.h; path = ../Classes/Field.h; sourceTree = "<group>"; };
+		1483414A199CDF3100717A59 /* User.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = User.cpp; path = ../Classes/User.cpp; sourceTree = "<group>"; };
+		1483414B199CDF3100717A59 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../Classes/User.h; sourceTree = "<group>"; };
+		1483414D199CE46400717A59 /* BaseObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BaseObject.cpp; path = ../Classes/BaseObject.cpp; sourceTree = "<group>"; };
+		1483414E199CE46400717A59 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseObject.h; path = ../Classes/BaseObject.h; sourceTree = "<group>"; };
+		14834150199CEE7800717A59 /* unitData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = unitData.plist; sourceTree = "<group>"; };
 		14991090197FD474004672FA /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
@@ -523,6 +534,12 @@
 				14834142199CD05700717A59 /* Boss.h */,
 				14834144199CD22900717A59 /* BattleController.cpp */,
 				14834145199CD22900717A59 /* BattleController.h */,
+				14834147199CD6D200717A59 /* Field.cpp */,
+				14834148199CD6D200717A59 /* Field.h */,
+				1483414A199CDF3100717A59 /* User.cpp */,
+				1483414B199CDF3100717A59 /* User.h */,
+				1483414D199CE46400717A59 /* BaseObject.cpp */,
+				1483414E199CE46400717A59 /* BaseObject.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -646,6 +663,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14834150199CEE7800717A59 /* unitData.plist */,
 				F8F56D7F197104330011EE0C /* ccbResources */,
 				F8F56D77197104250011EE0C /* resources-large */,
 				F8F56D78197104250011EE0C /* resources-medium */,
@@ -873,6 +891,7 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				F8F56D7C197104250011EE0C /* resources-medium in Resources */,
+				14834151199CEE7800717A59 /* unitData.plist in Resources */,
 				F8F56D7D197104250011EE0C /* resources-small in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				F8F56D7B197104250011EE0C /* resources-large in Resources */,
@@ -928,6 +947,7 @@
 				14834134199CC58600717A59 /* Test.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
+				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
 				1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -944,8 +964,10 @@
 				14834146199CD22900717A59 /* BattleController.cpp in Sources */,
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
 				14834131199CC12800717A59 /* Magic.cpp in Sources */,
+				1483414C199CDF3100717A59 /* User.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
 				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
+				14834149199CD6D200717A59 /* Field.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
 			);

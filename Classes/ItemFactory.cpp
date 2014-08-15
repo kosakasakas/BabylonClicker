@@ -17,7 +17,7 @@ ItemFactory::~ItemFactory()
 {
 }
 
-GameObject* ItemFactory::createObject() {
+GameObject* ItemFactory::createObject(int objectID) {
     Item* item = new Item();
     return item;
 }

@@ -18,6 +18,8 @@ public:
     Unit();
     ~Unit();
     virtual const char* say();
+    virtual void summon();
+    virtual bool canSummon();
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

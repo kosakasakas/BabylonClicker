@@ -18,7 +18,7 @@ public:
     MagicFactory();
     ~MagicFactory();
 protected:
-    virtual GameObject* createObject();
+    virtual GameObject* createObject(int objectID);
 };
 
 #endif /* defined(__BabylonClicker__MagicFactory__) */

@@ -18,6 +18,8 @@ GameController::GameController()
     itemFactory = new ItemFactory();
     magicFactory = new MagicFactory();
     bossFactory = new BossFactory();
+    field = new Field();
+    user = new User();
 }
 
 GameController::~GameController()
@@ -26,6 +28,8 @@ GameController::~GameController()
     itemFactory->release();
     magicFactory->release();
     bossFactory->release();
+    delete field;
+    delete user;
 }
 
 GameController* GameController::getInstance()

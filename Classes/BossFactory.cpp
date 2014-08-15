@@ -17,7 +17,7 @@ BossFactory::~BossFactory()
 {
 }
 
-GameObject* BossFactory::createObject() {
+GameObject* BossFactory::createObject(int objectID) {
     Boss* boss = new Boss();
     return boss;
 }
