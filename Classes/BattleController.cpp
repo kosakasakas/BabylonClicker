@@ -7,14 +7,16 @@
 //
 
 #include "BattleController.h"
+#include "BossFactory.h"
 
 USING_NS_CC;
 
 BattleController* BattleController::_singleton = NULL;
 
 BattleController::BattleController()
-: targetBoss(NULL)
 {
+    BossFactory* bFactory = new BossFactory();
+    targetBoss = (Boss*)bFactory->create(0); // todo set index from field object.
 }
 
 BattleController::~BattleController()

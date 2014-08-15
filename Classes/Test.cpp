@@ -35,6 +35,7 @@ void Test::run() {
     
     CCLOG("******Settings******");
     
+    /*
     CCLOG("******UnitDataFactory class******");
     UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
     udFactory->dump();
@@ -43,6 +44,7 @@ void Test::run() {
     uData->setCost(100);
     uData->setLevel(50);
     uData->dump();
+     */
     
     CCLOG("******User class******");
     User* user = (User*)GameController::getInstance()->getUser();
@@ -55,8 +57,11 @@ void Test::run() {
     unit->dump();
     unit = (Unit*)ufact->create(3);
     unit->dump();
-    unit = (Unit*)ufact->create(10);
+    unit = (Unit*)ufact->create(5);
     unit->dump();
+    
+    Boss* boss = BattleController::getInstance()->getTargetBoss();
+    boss->dump();
     
     CCLOG("******Item class******");
     ItemFactory* ifact = new ItemFactory();

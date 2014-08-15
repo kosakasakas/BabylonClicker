@@ -32,6 +32,14 @@ int ObjectData::getIntValue(const char* key) {
     return 0;
 }
 
+float ObjectData::getFloatValue(const char* key) {
+    if (objData != NULL) {
+        String* val = (String*)objData->objectForKey(key);
+        return (val != NULL) ? val->floatValue() : 0.f;
+    }
+    return 0.f;
+}
+
 const char* ObjectData::getCharValue(const char* key) {
     if (objData != NULL) {
         String* name = (String*) objData->objectForKey(key);
@@ -43,6 +51,13 @@ const char* ObjectData::getCharValue(const char* key) {
 void ObjectData::setIntValue(int val, const char* key) {
     if (objData != NULL) {
         String* str = String::createWithFormat("%d", val);
+        objData->setObject(str, key);
+    }
+}
+
+void ObjectData::setFloatValue(float val, const char* key) {
+    if (objData != NULL) {
+        String* str = String::createWithFormat("%f", val);
         objData->setObject(str, key);
     }
 }

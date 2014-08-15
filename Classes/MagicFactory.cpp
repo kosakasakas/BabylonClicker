@@ -21,7 +21,7 @@ MagicFactory::~MagicFactory()
 
 GameObject* MagicFactory::createObject(int objectID)
 {
-    MagicDataFactory* udFactory = new MagicDataFactory("MagicData.plist");
+    MagicDataFactory* udFactory = new MagicDataFactory("magicData.plist");
     MagicData* mData = (MagicData*)udFactory->create(objectID);
     Magic* magic = new Magic(mData);
     return magic;

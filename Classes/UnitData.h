@@ -16,6 +16,10 @@ class UnitData : public ObjectData {
 public:
     UnitData(Dictionary* data);
     virtual ~UnitData();
+    float getAttack();
+    virtual void dump();
+protected:
+    static const char* ATTACK_KEY;
 };
 
 #endif /* defined(__BabylonClicker__UnitData__) */

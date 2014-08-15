@@ -9,6 +9,8 @@
 
 #include "BossData.h"
 
+const char* BossData::HP_KEY = "hp";
+
 BossData::BossData(Dictionary* data)
 :UnitData(data)
 {
@@ -18,3 +20,11 @@ BossData::~BossData()
 {
 }
 
+float BossData::getHP() {
+    return getFloatValue(HP_KEY);
+}
+
+void BossData::dump() {
+    UnitData::dump();
+    CCLOG("hp: %f", getHP());
+}

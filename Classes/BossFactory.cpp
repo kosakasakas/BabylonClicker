@@ -20,7 +20,7 @@ BossFactory::~BossFactory()
 }
 
 GameObject* BossFactory::createObject(int objectID) {
-    BossDataFactory* bdFactory = new BossDataFactory("BossData.plist");
+    BossDataFactory* bdFactory = new BossDataFactory("bossData.plist");
     BossData* bData = (BossData*)bdFactory->create(objectID);
     Boss* boss = new Boss(bData);
     return boss;

@@ -15,8 +15,11 @@
 class BossData : public UnitData {
 public:
     BossData(Dictionary* data);
-    virtual
-    ~BossData();
+    virtual ~BossData();
+    float getHP();
+    virtual void dump();
+protected:
+    static const char* HP_KEY;
 };
 
 #endif /* defined(__BabylonClicker__BossData__) */

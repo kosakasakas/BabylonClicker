@@ -2,14 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>attack</key>
+	<key>hp</key>
 	<array>
-		<real>10</real>
-		<real>5.5</real>
-		<real>5.5</real>
-		<real>5.5</real>
-		<real>1</real>
-		<integer>30</integer>
+		<integer>100</integer>
+		<integer>150</integer>
+		<integer>1000</integer>
+		<integer>5000</integer>
+		<integer>20000</integer>
+		<integer>600000</integer>
 	</array>
 	<key>objectID</key>
 	<array>
@@ -40,12 +40,12 @@
 	</array>
 	<key>name</key>
 	<array>
-		<string>バビロン素体</string>
-		<string>水ハナアルキ</string>
-		<string>火ハナアルキ</string>
-		<string>木ハナアルキ</string>
-		<string>魔法少女まりりか</string>
-		<string>真・バビロン</string>
+		<string>マジカルサイコパピヨン</string>
+		<string>デストロイパピヨン</string>
+		<string>アルキメデスパピヨン</string>
+		<string>リリースバビロン</string>
+		<string>かおるちゃん</string>
+		<string>ドリルウサギ</string>
 	</array>
 </dict>
 </plist>

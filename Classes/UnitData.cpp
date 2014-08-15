@@ -8,6 +8,8 @@
 
 #include "UnitData.h"
 
+const char* UnitData::ATTACK_KEY = "attack";
+
 UnitData::UnitData(Dictionary* data)
 : ObjectData(data)
 {
@@ -15,4 +17,13 @@ UnitData::UnitData(Dictionary* data)
 
 UnitData::~UnitData()
 {
+}
+
+float UnitData::getAttack() {
+    return getFloatValue(ATTACK_KEY);
+}
+
+void UnitData::dump() {
+    ObjectData::dump();
+    CCLOG("attack: %f", getAttack());
 }

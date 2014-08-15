@@ -29,3 +29,7 @@ void Unit::summon() {
 bool Unit::canSummon() {
     return false;
 }
+
+void Unit::attack() {
+    
+}

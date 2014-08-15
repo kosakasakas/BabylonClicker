@@ -21,6 +21,7 @@ public:
     virtual const char* say();
     virtual void summon();
     virtual bool canSummon();
+    void attack();
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */
