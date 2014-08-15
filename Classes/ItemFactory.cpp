@@ -8,6 +8,8 @@
 
 #include "ItemFactory.h"
 #include "Item.h"
+#include "ItemDataFactory.h"
+#include "ItemData.h"
 
 ItemFactory::ItemFactory()
 {
@@ -18,6 +20,8 @@ ItemFactory::~ItemFactory()
 }
 
 GameObject* ItemFactory::createObject(int objectID) {
-    Item* item = new Item();
+    ItemDataFactory* idFactory = new ItemDataFactory("itemData.plist");
+    ItemData* iData = (ItemData*)idFactory->create(objectID);
+    Item* item = new Item(iData);
     return item;
 }

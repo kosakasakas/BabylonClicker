@@ -11,11 +11,12 @@
 
 #include <iostream>
 #include "Unit.h"
+#include "BossData.h"
 
 class Boss : public Unit {
 public:
-    Boss();
-    ~Boss();
+    Boss(BossData* data);
+    virtual ~Boss();
     virtual const char* say();
 };
 

@@ -16,7 +16,7 @@
 class Field : public BaseObject {
 public:
     Field();
-    ~Field();
+    virtual ~Field();
     CC_SYNTHESIZE(int, maxActiveUnitNum, MaxActiveUnitNum);
     CC_SYNTHESIZE(int, maxInactiveUnitNum, MaxInctiveUnitNum);
     CC_SYNTHESIZE(float, babylonOffset, BabylonOffset);

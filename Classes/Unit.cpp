@@ -8,7 +8,8 @@
 
 #include "Unit.h"
 
-Unit::Unit()
+Unit::Unit(UnitData* data)
+: GameObject(data)
 {
 }
 

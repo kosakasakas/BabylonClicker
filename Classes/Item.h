@@ -15,8 +15,8 @@
 class Item : public GameObject
 {
 public:
-    Item();
-    ~Item();
+    Item(ObjectData* data);
+    virtual ~Item();
     virtual const char* say();
 };
 

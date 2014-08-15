@@ -17,8 +17,8 @@ class GameObjectFactory : public cocos2d::Object
 {
 public:
     GameObjectFactory();
-    ~GameObjectFactory();
-    GameObject* create();
+    virtual ~GameObjectFactory();
+    GameObject* create(int ObjectID);
 protected:
     virtual GameObject* createObject(int ObjectID) = 0;
 };

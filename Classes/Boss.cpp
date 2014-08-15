@@ -8,7 +8,8 @@
 
 #include "Boss.h"
 
-Boss::Boss()
+Boss::Boss(BossData* data)
+: Unit(data)
 {
 }
 

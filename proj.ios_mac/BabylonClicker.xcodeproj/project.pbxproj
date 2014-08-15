@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */; };
+		143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */; };
+		143C5C47199E26650041FFEB /* BossData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C45199E26650041FFEB /* BossData.cpp */; };
+		143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */; };
+		143C5C4D199E2BEF0041FFEB /* ItemData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C4B199E2BEF0041FFEB /* ItemData.cpp */; };
+		143C5C50199E2C6F0041FFEB /* MagicData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C4E199E2C6F0041FFEB /* MagicData.cpp */; };
+		143C5C53199E31E70041FFEB /* MagicDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */; };
 		145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D32071907B8130067B357 /* OpeningLayer.cpp */; };
 		145D32121907B8130067B357 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D320C1907B8130067B357 /* MainScene.cpp */; };
 		145D32271907B8270067B357 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145D321A1907B8270067B357 /* fileLookup.plist */; };
@@ -288,6 +294,18 @@
 /* Begin PBXFileReference section */
 		14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectDataFactory.cpp; path = ../Classes/ObjectDataFactory.cpp; sourceTree = "<group>"; };
 		14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDataFactory.h; path = ../Classes/ObjectDataFactory.h; sourceTree = "<group>"; };
+		143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDataFactory.cpp; path = ../Classes/BossDataFactory.cpp; sourceTree = "<group>"; };
+		143C5C3D199E25A10041FFEB /* BossDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossDataFactory.h; path = ../Classes/BossDataFactory.h; sourceTree = "<group>"; };
+		143C5C45199E26650041FFEB /* BossData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossData.cpp; path = ../Classes/BossData.cpp; sourceTree = "<group>"; };
+		143C5C46199E26650041FFEB /* BossData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossData.h; path = ../Classes/BossData.h; sourceTree = "<group>"; };
+		143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemDataFactory.cpp; path = ../Classes/ItemDataFactory.cpp; sourceTree = "<group>"; };
+		143C5C49199E2AED0041FFEB /* ItemDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemDataFactory.h; path = ../Classes/ItemDataFactory.h; sourceTree = "<group>"; };
+		143C5C4B199E2BEF0041FFEB /* ItemData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemData.cpp; path = ../Classes/ItemData.cpp; sourceTree = "<group>"; };
+		143C5C4C199E2BEF0041FFEB /* ItemData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemData.h; path = ../Classes/ItemData.h; sourceTree = "<group>"; };
+		143C5C4E199E2C6F0041FFEB /* MagicData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MagicData.cpp; path = ../Classes/MagicData.cpp; sourceTree = "<group>"; };
+		143C5C4F199E2C6F0041FFEB /* MagicData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicData.h; path = ../Classes/MagicData.h; sourceTree = "<group>"; };
+		143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MagicDataFactory.cpp; path = ../Classes/MagicDataFactory.cpp; sourceTree = "<group>"; };
+		143C5C52199E31E70041FFEB /* MagicDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicDataFactory.h; path = ../Classes/MagicDataFactory.h; sourceTree = "<group>"; };
 		144FAD38196E5BA600F787E5 /* NendIconModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendIconModule.h; path = ../Classes/NendIconModule.h; sourceTree = "<group>"; };
 		144FAD3F196E5BC600F787E5 /* NendModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendModule.h; path = ../Classes/NendModule.h; sourceTree = "<group>"; };
 		145D32071907B8130067B357 /* OpeningLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpeningLayer.cpp; path = ../Classes/OpeningLayer.cpp; sourceTree = "<group>"; };
@@ -560,6 +578,18 @@
 				145F0D94199DDD830063F8FB /* UnitData.h */,
 				145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */,
 				145F0D97199DDEA00063F8FB /* UnitDataFactory.h */,
+				143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */,
+				143C5C3D199E25A10041FFEB /* BossDataFactory.h */,
+				143C5C45199E26650041FFEB /* BossData.cpp */,
+				143C5C46199E26650041FFEB /* BossData.h */,
+				143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */,
+				143C5C49199E2AED0041FFEB /* ItemDataFactory.h */,
+				143C5C4B199E2BEF0041FFEB /* ItemData.cpp */,
+				143C5C4C199E2BEF0041FFEB /* ItemData.h */,
+				143C5C4E199E2C6F0041FFEB /* MagicData.cpp */,
+				143C5C4F199E2C6F0041FFEB /* MagicData.h */,
+				143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */,
+				143C5C52199E31E70041FFEB /* MagicDataFactory.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -966,8 +996,10 @@
 				1483411C199CB31F00717A59 /* GameObject.cpp in Sources */,
 				14834134199CC58600717A59 /* Test.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
+				143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */,
+				143C5C47199E26650041FFEB /* BossData.cpp in Sources */,
 				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
 				1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */,
@@ -976,20 +1008,24 @@
 				145F0D98199DDEA00063F8FB /* UnitDataFactory.cpp in Sources */,
 				14834125199CBCCF00717A59 /* Unit.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				143C5C53199E31E70041FFEB /* MagicDataFactory.cpp in Sources */,
 				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */,
 				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
 				1499109A197FDFDE004672FA /* GameController.cpp in Sources */,
 				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
+				143C5C50199E2C6F0041FFEB /* MagicData.cpp in Sources */,
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
 				14834146199CD22900717A59 /* BattleController.cpp in Sources */,
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
 				14834131199CC12800717A59 /* Magic.cpp in Sources */,
 				1483414C199CDF3100717A59 /* User.cpp in Sources */,
+				143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
 				145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */,
+				143C5C4D199E2BEF0041FFEB /* ItemData.cpp in Sources */,
 				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,

@@ -15,7 +15,7 @@
 class BossFactory : public GameObjectFactory {
 public:
     BossFactory();
-    ~BossFactory();
+    virtual ~BossFactory();
 protected:
     virtual GameObject* createObject(int objectID);
 };

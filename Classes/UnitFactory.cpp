@@ -9,6 +9,7 @@
 #include "UnitFactory.h"
 #include "Unit.h"
 #include "cocos2d.h"
+#include "UnitDataFactory.h"
 
 USING_NS_CC;
 
@@ -20,11 +21,9 @@ UnitFactory::~UnitFactory()
 {
 }
 
-GameObject* UnitFactory::createObject(int ObjectID) {
-    Unit* unit = new Unit();
+GameObject* UnitFactory::createObject(int objectID) {
+    UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
+    UnitData* uData = (UnitData*)udFactory->create(objectID);
+    Unit* unit = new Unit(uData);
     return unit;
-    
-    Dictionary *plistDic = Dictionary::createWithContentsOfFile("unitData.plist");
-    String *name = (String*)((Array*)plistDic->objectForKey("name"))->objectAtIndex(ObjectID);
-    String *cost = (String*)((Array*)plistDic->objectForKey("cost"))->objectAtIndex(ObjectID);
 }

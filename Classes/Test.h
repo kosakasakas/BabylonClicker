@@ -13,7 +13,7 @@
 class Test {
 public:
     Test();
-    ~Test();
+    virtual ~Test();
     void run();
 };
 #endif /* defined(__BabylonClicker__Test__) */

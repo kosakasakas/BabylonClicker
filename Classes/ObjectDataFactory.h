@@ -19,7 +19,7 @@ USING_NS_CC;
 class ObjectDataFactory : public BaseObject {
 public:
     ObjectDataFactory(const char* filePath);
-    ~ObjectDataFactory();
+    virtual ~ObjectDataFactory();
     CC_SYNTHESIZE_READONLY(Dictionary*, dictionary, Ditctionary);
     virtual void dump();
     void dumpPropertyValueAtIndex(int index);

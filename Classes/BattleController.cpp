@@ -13,8 +13,8 @@ USING_NS_CC;
 BattleController* BattleController::_singleton = NULL;
 
 BattleController::BattleController()
+: targetBoss(NULL)
 {
-    targetBoss = new Boss();
 }
 
 BattleController::~BattleController()

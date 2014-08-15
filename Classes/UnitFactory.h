@@ -16,7 +16,7 @@ class UnitFactory : public GameObjectFactory
 {
 public:
     UnitFactory();
-    ~UnitFactory();
+    virtual ~UnitFactory();
 protected:
     virtual GameObject* createObject(int ObjectID);
 };

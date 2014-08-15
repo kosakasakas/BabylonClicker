@@ -22,7 +22,7 @@ class GameController
 {
 private:
     GameController();
-    ~GameController();
+    virtual ~GameController();
     static GameController* _singleton;
 public:
     static GameController* getInstance();

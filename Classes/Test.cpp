@@ -51,21 +51,24 @@ void Test::run() {
     
     CCLOG("******Unit class******");
     UnitFactory* ufact = new UnitFactory();
-    Unit* unit = (Unit*)ufact->create();
+    Unit* unit = (Unit*)ufact->create(0);
+    unit->dump();
+    unit = (Unit*)ufact->create(3);
+    unit->dump();
+    unit = (Unit*)ufact->create(10);
     unit->dump();
     
     CCLOG("******Item class******");
     ItemFactory* ifact = new ItemFactory();
-    Item* item = (Item*)ifact->create();
+    Item* item = (Item*)ifact->create(0);
     item->dump();
     
     CCLOG("******Magic class******");
     MagicFactory* mfact = new MagicFactory();
-    Magic* magic = (Magic*)mfact->create();
+    Magic* magic = (Magic*)mfact->create(0);
     magic->dump();
     
     CCLOG("******BattleController class******");
-    CCLOG("who are you?: %s",BattleController::getInstance()->getTargetBoss()->say());
     
     CCLOG("******Field class******");
     GameController::getInstance()->getField()->dump();

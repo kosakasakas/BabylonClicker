@@ -9,21 +9,19 @@
 #include "GameObject.h"
 #include "GameController.h"
 
-GameObject::GameObject()
-: objectData(NULL)
-, level(0)
-, cost(0)
-, objectID(0)
+GameObject::GameObject(ObjectData* data)
 {
+    objectData = data;
 }
 
 GameObject::~GameObject()
 {
+    delete objectData;
 }
 
 bool GameObject::canPurchase() {
     int soul = GameController::getInstance()->getUser()->getSoul();
-    return (cost <= soul) ? true : false;
+    return (objectData->getCost() <= soul) ? true : false;
 }
 
 bool GameObject::canSacrifice() {
@@ -36,7 +34,7 @@ bool GameObject::canSummon() {
 
 void GameObject::purchase() {
     if (canSacrifice()) {
-        GameController::getInstance()->getUser()->reduceSoul(cost);
+        GameController::getInstance()->getUser()->reduceSoul(objectData->getCost());
     } else {
         CCLOG("con not pay summon cost!");
     }
@@ -55,10 +53,11 @@ void GameObject::summon() {
 
 void GameObject::dump() {
     CCLOG("======GameObject Class======");
-    CCLOG("level: %d", level);
-    CCLOG("cost: %d", cost);
-    CCLOG("objectID: %d", objectID);
+    CCLOG("level: %d", objectData->getLevel());
+    CCLOG("cost: %d", objectData->getCost());
+    CCLOG("objectID: %d", objectData->getObjectID());
     CCLOG("canPurchase: %d", canPurchase());
     CCLOG("canSacriface: %d", canSacrifice());
     CCLOG("canSummon: %d", canSummon());
+    objectData->dump();
 }

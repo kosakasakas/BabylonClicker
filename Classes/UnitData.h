@@ -15,7 +15,7 @@
 class UnitData : public ObjectData {
 public:
     UnitData(Dictionary* data);
-    ~UnitData();
+    virtual ~UnitData();
 };
 
 #endif /* defined(__BabylonClicker__UnitData__) */

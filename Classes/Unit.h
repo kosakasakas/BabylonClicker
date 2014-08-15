@@ -11,12 +11,13 @@
 
 #include <iostream>
 #include "GameObject.h"
+#include "UnitData.h"
 
 class Unit : public GameObject
 {
 public:
-    Unit();
-    ~Unit();
+    Unit(UnitData* data);
+    virtual ~Unit();
     virtual const char* say();
     virtual void summon();
     virtual bool canSummon();

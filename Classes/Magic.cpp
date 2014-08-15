@@ -8,7 +8,8 @@
 
 #include "Magic.h"
 
-Magic::Magic()
+Magic::Magic(ObjectData* data)
+: GameObject(data)
 {
 }
 

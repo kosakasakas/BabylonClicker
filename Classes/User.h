@@ -16,7 +16,7 @@
 class User : public BaseObject {
 public:
     User();
-    ~User();
+    virtual ~User();
     CC_SYNTHESIZE(int, soul, Soul);
     virtual void dump();
     void addSoul(int soul);

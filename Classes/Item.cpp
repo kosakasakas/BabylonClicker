@@ -8,7 +8,8 @@
 
 #include "Item.h"
 
-Item::Item()
+Item::Item(ObjectData* data)
+: GameObject(data)
 {
 }
 

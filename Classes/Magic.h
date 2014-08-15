@@ -15,8 +15,8 @@
 class Magic : public GameObject
 {
 public:
-    Magic();
-    ~Magic();
+    Magic(ObjectData* data);
+    virtual ~Magic();
     virtual const char* say();
 };
 

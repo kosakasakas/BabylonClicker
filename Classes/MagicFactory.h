@@ -16,7 +16,7 @@ class MagicFactory : public GameObjectFactory
 {
 public:
     MagicFactory();
-    ~MagicFactory();
+    virtual ~MagicFactory();
 protected:
     virtual GameObject* createObject(int objectID);
 };
