@@ -32,6 +32,9 @@ bool Unit::canSummon() {
 }
 
 void Unit::attack() {
-    float attack = ((UnitData*)objectData)->getAttack();
+    UnitData* uData = (UnitData*)objectData;
+    CCLOG("Attacker name: %s", uData->getName());
+    CCLOG("Attacker power: %f", uData->getAttack());
+    float attack = uData->getAttack();
     BattleController::getInstance()->getTargetBoss()->damage(attack);
 }

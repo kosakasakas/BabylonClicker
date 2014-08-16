@@ -8,10 +8,13 @@
 
 #include "Boss.h"
 #include "BattleController.h"
+#include "BossDataDisplay.h"
 
 Boss::Boss(BossData* data)
 : Unit(data)
 {
+    BossDataDisplay* bdDisplay = new BossDataDisplay();
+    data->registerObserver(bdDisplay);
 }
 
 Boss::~Boss()

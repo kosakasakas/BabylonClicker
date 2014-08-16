@@ -65,7 +65,7 @@ void Test::run() {
     BattleController::getInstance()->getTargetBoss()->dump();
     for(int i = 0; i < 5; ++i) {
         cage->attackAll();
-        BattleController::getInstance()->getTargetBoss()->dump();
+        //BattleController::getInstance()->getTargetBoss()->dump();
     }
     
     CCLOG("******Item class******");

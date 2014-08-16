@@ -11,14 +11,20 @@
 
 #include <iostream>
 #include "UnitData.h"
+#include "Subject.h"
 
-class BossData : public UnitData {
+class BossData : public UnitData, public Subject {
 public:
     BossData(Dictionary* data);
     virtual ~BossData();
     float getHP();
     void reduceHP(float damage);
     virtual void dump();
+    CC_SYNTHESIZE_READONLY(Array*, observers, Observers);
+    virtual void registerObserver(Observer* o);
+    virtual void removeObserver(Observer* o);
+    virtual void notifyObservers();
+    
 protected:
     static const char* HP_KEY;
 };

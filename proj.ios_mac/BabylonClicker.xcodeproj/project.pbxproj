@@ -111,6 +111,7 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		F8E592DF199E657300306809 /* UnitCage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592DD199E657300306809 /* UnitCage.cpp */; };
+		F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */; };
 		F8F56D7B197104250011EE0C /* resources-large in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D77197104250011EE0C /* resources-large */; };
 		F8F56D7C197104250011EE0C /* resources-medium in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D78197104250011EE0C /* resources-medium */; };
 		F8F56D7D197104250011EE0C /* resources-small in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D79197104250011EE0C /* resources-small */; };
@@ -429,6 +430,11 @@
 		F8E592D5199E642000306809 /* Iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Iterator.h; path = ../Classes/Iterator.h; sourceTree = "<group>"; };
 		F8E592DD199E657300306809 /* UnitCage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitCage.cpp; path = ../Classes/UnitCage.cpp; sourceTree = "<group>"; };
 		F8E592DE199E657300306809 /* UnitCage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitCage.h; path = ../Classes/UnitCage.h; sourceTree = "<group>"; };
+		F8E592E4199F127800306809 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subject.h; path = ../Classes/Subject.h; sourceTree = "<group>"; };
+		F8E592ED199F143C00306809 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Observer.h; path = ../Classes/Observer.h; sourceTree = "<group>"; };
+		F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDataDisplay.h; path = ../Classes/ObjectDataDisplay.h; sourceTree = "<group>"; };
+		F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDataDisplay.cpp; path = ../Classes/BossDataDisplay.cpp; sourceTree = "<group>"; };
+		F8E592F2199F20DE00306809 /* BossDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossDataDisplay.h; path = ../Classes/BossDataDisplay.h; sourceTree = "<group>"; };
 		F8F56D77197104250011EE0C /* resources-large */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-large"; sourceTree = "<group>"; };
 		F8F56D78197104250011EE0C /* resources-medium */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-medium"; sourceTree = "<group>"; };
 		F8F56D79197104250011EE0C /* resources-small */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-small"; sourceTree = "<group>"; };
@@ -599,6 +605,11 @@
 				F8E592D5199E642000306809 /* Iterator.h */,
 				F8E592DD199E657300306809 /* UnitCage.cpp */,
 				F8E592DE199E657300306809 /* UnitCage.h */,
+				F8E592E4199F127800306809 /* Subject.h */,
+				F8E592ED199F143C00306809 /* Observer.h */,
+				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
+				F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */,
+				F8E592F2199F20DE00306809 /* BossDataDisplay.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1010,6 +1021,7 @@
 				143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */,
+				F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */,
 				143C5C47199E26650041FFEB /* BossData.cpp in Sources */,
 				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
