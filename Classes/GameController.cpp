@@ -14,20 +14,14 @@ GameController* GameController::_singleton = NULL;
 
 GameController::GameController()
 {
-    /*unitFactory = new UnitFactory();
-    itemFactory = new ItemFactory();
-    magicFactory = new MagicFactory();
-    bossFactory = new BossFactory();*/
+    config = new GameConfig();
     field = new Field();
     user = new User();
 }
 
 GameController::~GameController()
 {
-    /*unitFactory->release();
-    itemFactory->release();
-    magicFactory->release();
-    bossFactory->release();*/
+    config->release();
     field->release();
     user->release();
 }

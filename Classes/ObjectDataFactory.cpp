@@ -123,3 +123,8 @@ ObjectData* ObjectDataFactory::create(int index){
     ObjectData* obj = createObjectData(index);
     return obj;
 }
+
+ObjectData* ObjectDataFactory::createObjectData(int index){
+    ObjectData* data = new ObjectData(getPropertyValueAtIndex(index));
+    return data;
+}

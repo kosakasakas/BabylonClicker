@@ -20,6 +20,7 @@
 #include "cocos2d.h"
 #include "UnitDataFactory.h"
 #include "UnitData.h"
+#include "GameConfig.h"
 
 USING_NS_CC;
 
@@ -35,16 +36,9 @@ void Test::run() {
     
     CCLOG("******Settings******");
     
-    /*
     CCLOG("******UnitDataFactory class******");
-    UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
-    udFactory->dump();
-    UnitData* uData = (UnitData*)udFactory->create(0);
-    uData->dump();
-    uData->setCost(100);
-    uData->setLevel(50);
-    uData->dump();
-     */
+    GameConfig* config = GameController::getInstance()->getConfig();
+    config->dump();
     
     CCLOG("******User class******");
     User* user = (User*)GameController::getInstance()->getUser();

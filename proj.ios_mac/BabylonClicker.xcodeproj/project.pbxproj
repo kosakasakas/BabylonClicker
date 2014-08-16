@@ -112,6 +112,7 @@
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		F8E592DF199E657300306809 /* UnitCage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592DD199E657300306809 /* UnitCage.cpp */; };
 		F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */; };
+		F8E592F6199F262200306809 /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F4199F262200306809 /* GameConfig.cpp */; };
 		F8F56D7B197104250011EE0C /* resources-large in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D77197104250011EE0C /* resources-large */; };
 		F8F56D7C197104250011EE0C /* resources-medium in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D78197104250011EE0C /* resources-medium */; };
 		F8F56D7D197104250011EE0C /* resources-small in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D79197104250011EE0C /* resources-small */; };
@@ -435,6 +436,8 @@
 		F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDataDisplay.h; path = ../Classes/ObjectDataDisplay.h; sourceTree = "<group>"; };
 		F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDataDisplay.cpp; path = ../Classes/BossDataDisplay.cpp; sourceTree = "<group>"; };
 		F8E592F2199F20DE00306809 /* BossDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossDataDisplay.h; path = ../Classes/BossDataDisplay.h; sourceTree = "<group>"; };
+		F8E592F4199F262200306809 /* GameConfig.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameConfig.cpp; path = ../Classes/GameConfig.cpp; sourceTree = "<group>"; };
+		F8E592F5199F262200306809 /* GameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameConfig.h; path = ../Classes/GameConfig.h; sourceTree = "<group>"; };
 		F8F56D77197104250011EE0C /* resources-large */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-large"; sourceTree = "<group>"; };
 		F8F56D78197104250011EE0C /* resources-medium */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-medium"; sourceTree = "<group>"; };
 		F8F56D79197104250011EE0C /* resources-small */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-small"; sourceTree = "<group>"; };
@@ -610,6 +613,8 @@
 				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
 				F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */,
 				F8E592F2199F20DE00306809 /* BossDataDisplay.h */,
+				F8E592F4199F262200306809 /* GameConfig.cpp */,
+				F8E592F5199F262200306809 /* GameConfig.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1054,6 +1059,7 @@
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
+				F8E592F6199F262200306809 /* GameConfig.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

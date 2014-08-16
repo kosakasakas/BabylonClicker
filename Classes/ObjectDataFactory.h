@@ -29,7 +29,7 @@ public:
     Dictionary* getPropertyValueAtIndex(int index);
     ObjectData* create(int index);
 protected:
-    virtual ObjectData* createObjectData(int index) = 0;
+    virtual ObjectData* createObjectData(int index);
 };
 
 #endif /* defined(__BabylonClicker__ObjectDataFactory__) */

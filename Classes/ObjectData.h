@@ -28,6 +28,12 @@ public:
     virtual void dump();
     void setCost(int value);
     void setLevel(int value);
+    int getIntValue(const char* key);
+    const char* getCharValue(const char* key);
+    float getFloatValue(const char* key);
+    void setIntValue(int val, const char* key);
+    void setFloatValue(float val, const char* key);
+    void setCharValue(const char* val, const char* key);
     
 protected:
     static const char* COST_KEY;
@@ -35,12 +41,6 @@ protected:
     static const char* OBJECTID_KEY;
     static const char* NAME_KEY;
     static const char* DESCRIPTION_KEY;
-    int getIntValue(const char* key);
-    const char* getCharValue(const char* key);
-    float getFloatValue(const char* key);
-    void setIntValue(int val, const char* key);
-    void setFloatValue(float val, const char* key);
-    void setCharValue(const char* val, const char* key);
 };
 
 #endif /* defined(__BabylonClicker__ObjectData__) */

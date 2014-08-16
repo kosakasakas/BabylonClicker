@@ -10,6 +10,7 @@
 #import "OpeningLayer.h"
 #include "NendModule.h"
 #import "UCAnimation.h"
+#include "GameController.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
@@ -46,16 +47,10 @@ bool MainScene::init() {
     
     scheduleUpdate();
     
-    // read config.plist
-    Dictionary *plistDic = Dictionary::createWithContentsOfFile("config.plist");
-    Dictionary *Items = (Dictionary*)plistDic->objectForKey("nendID");
-    //Array *property = (Array*)plistDic->objectForKey("nendID");
-    if (Items != NULL) {
-        char* apiKey = (char*)((String*)Items->objectForKey("apiKey"))->getCString();
-        char* spotID = (char*)((String*)Items->objectForKey("spotID"))->getCString();
-        //NendModule::createNADViewBottom(apiKey, spotID);
-        //Array* object = (Array*)plistDic->objectForKey((const char*)(property->getObjectAtIndex(0)));
-    }
+    GameConfig* config = GameController::getInstance()->getConfig();
+    char* apiKey = (char*)config->getNendApiKey();
+    char* spotID = (char*)config->getNendSpotID();
+    //NendModule::createNADViewBottom(apiKey, spotID);
     
     return true;
 }
