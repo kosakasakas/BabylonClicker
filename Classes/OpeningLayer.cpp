@@ -9,11 +9,19 @@
 #import "OpeningLayer.h"
 #import "MainScene.h"
 #import "LiquidScene.h"
+#include "BattleController.h"
 
 USING_NS_CC;
 
 OpeningLayer::OpeningLayer()
 {
+    Array* unitArray = BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
+    Object* it;
+    CCARRAY_FOREACH(unitArray, it)
+    {
+        Unit* u = dynamic_cast<Unit*>(it);
+        this->addChild(u->getUnitNode());
+    }
 }
 
 OpeningLayer::~OpeningLayer()

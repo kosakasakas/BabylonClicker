@@ -56,12 +56,6 @@ void Test::run() {
     cage->addUnit(unit3);
     cage->dump();
     
-    BattleController::getInstance()->getTargetBoss()->dump();
-    for(int i = 0; i < 5; ++i) {
-        cage->attackAll();
-        //BattleController::getInstance()->getTargetBoss()->dump();
-    }
-    
     CCLOG("******Item class******");
     ItemFactory* ifact = new ItemFactory();
     Item* item = (Item*)ifact->create(0);

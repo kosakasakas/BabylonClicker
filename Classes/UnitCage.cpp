@@ -7,33 +7,35 @@
 //
 
 #include "UnitCage.h"
+#include "UnitNode.h"
 
 UnitCage::UnitCage(int unitNum)
 : maxUnitNum(unitNum)
 {
-    unitcage = Array::create();
+    unitArray = Array::create();
 }
 
 UnitCage::~UnitCage()
 {
-    unitcage->release();
+    unitArray->release();
 }
 
 void UnitCage::addUnit(Unit *unit) {
     if (canAddUnit()) {
-        unitcage->addObject(unit);
+        unitArray->addObject(unit);
+        //scheduleOnce(schedule_selector(unit->onAction, 1.0));
     } else {
         CCLOG("active unit num is already over..");
     }
 }
 
 bool UnitCage::canAddUnit() {
-    return (unitcage->count() < maxUnitNum) ? true : false;
+    return (unitArray->count() < maxUnitNum) ? true : false;
 }
 
 void UnitCage::attackAll() {
     Object *it;
-    CCARRAY_FOREACH(unitcage, it)
+    CCARRAY_FOREACH(unitArray, it)
     {
         Unit* unit = dynamic_cast<Unit*>(it);
         unit->attack();
@@ -43,9 +45,9 @@ void UnitCage::attackAll() {
 void UnitCage::dump() {
     CCLOG("======UnitCage Class======");
     CCLOG("maxUnitNum: %d", maxUnitNum);
-    CCLOG("holdUnitNum: %d", unitcage->count());
+    CCLOG("holdUnitNum: %d", unitArray->count());
     Object *it;
-    CCARRAY_FOREACH(unitcage, it)
+    CCARRAY_FOREACH(unitArray, it)
     {
         Unit* unit = dynamic_cast<Unit*>(it);
         unit->dump();

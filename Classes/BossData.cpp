@@ -8,13 +8,15 @@
 //
 
 #include "BossData.h"
+#include "GameController.h"
 
 const char* BossData::HP_KEY = "hp";
 
 BossData::BossData(Dictionary* data)
 :UnitData(data)
 {
-    observers = Array::create();
+    observers = Array::createWithCapacity(GameController::getInstance()->getConfig()->getMaxUnitNum());
+    observers->retain();
 }
 
 BossData::~BossData()

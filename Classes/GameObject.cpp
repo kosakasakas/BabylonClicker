@@ -16,7 +16,7 @@ GameObject::GameObject(ObjectData* data)
 
 GameObject::~GameObject()
 {
-    delete objectData;
+    objectData->release();
 }
 
 bool GameObject::canPurchase() {

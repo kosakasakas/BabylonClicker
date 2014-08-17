@@ -17,9 +17,11 @@ public:
     UnitData(Dictionary* data);
     virtual ~UnitData();
     float getAttack();
+    float getInterval();
     virtual void dump();
 protected:
     static const char* ATTACK_KEY;
+    static const char* INTERVAL_KEY;
 };
 
 #endif /* defined(__BabylonClicker__UnitData__) */

@@ -9,6 +9,7 @@
 #include "UnitData.h"
 
 const char* UnitData::ATTACK_KEY = "attack";
+const char* UnitData::INTERVAL_KEY = "interval";
 
 UnitData::UnitData(Dictionary* data)
 : ObjectData(data)
@@ -21,6 +22,10 @@ UnitData::~UnitData()
 
 float UnitData::getAttack() {
     return getFloatValue(ATTACK_KEY);
+}
+
+float UnitData::getInterval() {
+    return  getFloatValue(INTERVAL_KEY);
 }
 
 void UnitData::dump() {

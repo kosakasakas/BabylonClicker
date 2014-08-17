@@ -8,14 +8,17 @@
 
 #include "Unit.h"
 #include "BattleController.h"
+#include "UnitNode.h"
 
 Unit::Unit(UnitData* data)
 : GameObject(data)
 {
+    unitNode = new UnitNode(this);
 }
 
 Unit::~Unit()
 {
+    unitNode->release();
 }
 
 const char* Unit::say(){
@@ -37,4 +40,18 @@ void Unit::attack() {
     CCLOG("Attacker power: %f", uData->getAttack());
     float attack = uData->getAttack();
     BattleController::getInstance()->getTargetBoss()->damage(attack);
+}
+
+void Unit::onAction() {
+    CCLOG("Unit onAction called");
+    attack();
+}
+
+bool Unit::isHoldingNode() {
+    return (unitNode != NULL) ? true : false;
+}
+
+void Unit::dump() {
+    ((UnitData*)objectData)->dump();
+    CCLOG("isHoldingNode: %d", isHoldingNode());
 }

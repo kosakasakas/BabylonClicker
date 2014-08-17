@@ -20,7 +20,7 @@ public:
     UnitCage(int unitNum);
     virtual ~UnitCage();
     CC_SYNTHESIZE_READONLY(int, maxUnitNum, MaxUnitNum);
-    CC_SYNTHESIZE(Array*, unitcage, UnitCage);
+    CC_SYNTHESIZE(Array*, unitArray, UnitArray);
     bool canAddUnit();
     void addUnit(Unit* unit);
     virtual void dump();

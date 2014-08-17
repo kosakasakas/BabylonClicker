@@ -22,6 +22,10 @@ public:
     virtual void summon();
     virtual bool canSummon();
     void attack();
+    void onAction();
+    CC_SYNTHESIZE(Node*, unitNode, UnitNode);
+    bool isHoldingNode();
+    virtual void dump();
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

@@ -4,12 +4,12 @@
 <dict>
 	<key>hp</key>
 	<array>
-		<integer>100</integer>
-		<integer>150</integer>
 		<integer>1000</integer>
-		<integer>5000</integer>
-		<integer>20000</integer>
-		<integer>600000</integer>
+		<integer>1500</integer>
+		<real>7000</real>
+		<real>15000</real>
+		<real>40000</real>
+		<real>600000</real>
 	</array>
 	<key>objectID</key>
 	<array>
