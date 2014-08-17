@@ -15,17 +15,11 @@ USING_NS_CC;
 
 OpeningLayer::OpeningLayer()
 {
-    Array* unitArray = BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
-    Object* it;
-    CCARRAY_FOREACH(unitArray, it)
-    {
-        Unit* u = dynamic_cast<Unit*>(it);
-        this->addChild(u->getUnitNode());
-    }
 }
 
 OpeningLayer::~OpeningLayer()
 {
+    this->removeAllChildren();
 }
 
 SEL_MenuHandler OpeningLayer::onResolveCCBCCMenuItemSelector(cocos2d::Object *pTarget, const char *pSelectorName)

@@ -11,10 +11,18 @@
 #include "NendModule.h"
 #import "UCAnimation.h"
 #include "GameController.h"
+#include "BattleController.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
 {
+    Array* unitArray = BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
+    Object* it;
+    CCARRAY_FOREACH(unitArray, it)
+    {
+        Unit* u = dynamic_cast<Unit*>(it);
+        this->addChild(u->getUnitNode());
+    }
 }
 
 MainScene::~MainScene()
@@ -74,6 +82,7 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
     if (battleStage->getBoundingBox().containsPoint(touch->getLocation())) {
         if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
             _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
+            BattleController::getInstance()->getTargetBoss()->damage(100.f);
         }
     }
     return true;

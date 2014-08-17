@@ -17,8 +17,6 @@ class Field : public BaseObject {
 public:
     Field();
     virtual ~Field();
-    CC_SYNTHESIZE(int, maxActiveUnitNum, MaxActiveUnitNum);
-    CC_SYNTHESIZE(int, maxInactiveUnitNum, MaxInctiveUnitNum);
     CC_SYNTHESIZE(float, babylonOffset, BabylonOffset);
     CC_SYNTHESIZE(float, marikaOffset, MarikaOffset);
     CC_SYNTHESIZE(float, hanaarukiOffset, HanaarukiOffset);

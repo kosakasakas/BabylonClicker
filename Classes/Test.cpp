@@ -51,9 +51,11 @@ void Test::run() {
     Unit* unit1 = (Unit*)ufact->create(0);
     Unit* unit2 = (Unit*)ufact->create(3);
     Unit* unit3 = (Unit*)ufact->create(5);
+    Unit* unit4 = (Unit*)ufact->create(2);
     cage->addUnit(unit1);
     cage->addUnit(unit2);
     cage->addUnit(unit3);
+    cage->addUnit(unit4);
     cage->dump();
     
     CCLOG("******Item class******");
@@ -70,8 +72,6 @@ void Test::run() {
     
     CCLOG("******Field class******");
     GameController::getInstance()->getField()->dump();
-    GameController::getInstance()->getField()->setMaxActiveUnitNum(100);
-    GameController::getInstance()->getField()->setMaxInctiveUnitNum(10);
     GameController::getInstance()->getField()->setMarikaOffset(3.f);
     GameController::getInstance()->getField()->setHanaarukiOffset(2.f);
     GameController::getInstance()->getField()->setBabylonOffset(4.f);

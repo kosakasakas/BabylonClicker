@@ -12,7 +12,8 @@
 UnitCage::UnitCage(int unitNum)
 : maxUnitNum(unitNum)
 {
-    unitArray = Array::create();
+    unitArray = Array::createWithCapacity(unitNum);
+    unitArray->retain();
 }
 
 UnitCage::~UnitCage()

@@ -8,6 +8,7 @@
 
 #include "BattleController.h"
 #include "BossFactory.h"
+#include "GameController.h"
 
 USING_NS_CC;
 
@@ -17,7 +18,7 @@ BattleController::BattleController()
 {
     BossFactory* bFactory = new BossFactory();
     targetBoss = (Boss*)bFactory->create(0); // todo set index from field object.
-    activeUnitCage = new UnitCage(100); // todo set active num from config.
+    activeUnitCage = new UnitCage(GameController::getInstance()->getConfig()->getMaxUnitNum());
 }
 
 BattleController::~BattleController()
