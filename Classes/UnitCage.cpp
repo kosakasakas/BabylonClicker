@@ -8,6 +8,8 @@
 
 #include "UnitCage.h"
 #include "UnitNode.h"
+#include "GameController.h"
+#include "UnitField.h"
 
 UnitCage::UnitCage(int unitNum)
 : maxUnitNum(unitNum)
@@ -24,6 +26,8 @@ UnitCage::~UnitCage()
 void UnitCage::addUnit(Unit *unit) {
     if (canAddUnit()) {
         unitArray->addObject(unit);
+        UnitField* fo =  (UnitField*)GameController::getInstance()->getField()->getUnitField()->getObjectAtIndex(unit->getObjectData()->getObjectID());
+        fo->incrementUnitNum();
         //scheduleOnce(schedule_selector(unit->onAction, 1.0));
     } else {
         CCLOG("active unit num is already over..");

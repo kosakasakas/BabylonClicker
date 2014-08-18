@@ -71,9 +71,11 @@ void Test::run() {
     CCLOG("******BattleController class******");
     
     CCLOG("******Field class******");
-    GameController::getInstance()->getField()->dump();
-    GameController::getInstance()->getField()->setMarikaOffset(3.f);
-    GameController::getInstance()->getField()->setHanaarukiOffset(2.f);
-    GameController::getInstance()->getField()->setBabylonOffset(4.f);
-    GameController::getInstance()->getField()->dump();
+    Field* field = GameController::getInstance()->getField();
+    field->dump();
+    FieldObject* fo = (FieldObject*)field->getUnitField()->getObjectAtIndex(0);
+    FieldObject* fire = (FieldObject*)field->getUnitMagicField()->getObjectAtIndex(Field::MFT_Fire);
+    fo->incrementLevel();
+    fire->incrementLevel();
+    field->dump();
 }
