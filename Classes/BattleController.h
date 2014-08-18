@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "Boss.h"
 #include "UnitCage.h"
+#include "Field.h"
 
 class BattleController
 {
@@ -24,7 +25,11 @@ public:
     static BattleController* getInstance();
     CC_SYNTHESIZE(Boss*, targetBoss, TargetBoss);
     CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
+    CC_SYNTHESIZE_READONLY(Field*, field, Field);
     void onTargetBossDestroyed();
+    UnitData* getSharedUnitData(int objectID) const;
+    void setSharedUnitData(UnitData* unitData);
+    bool isHavingSharedUnitData(int objectID) const;
 };
 
 #endif /* defined(__BabylonClicker__BattleController__) */

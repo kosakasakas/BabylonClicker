@@ -12,10 +12,11 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "Unit.h"
+#include "BaseObject.h"
 
 USING_NS_CC;
 
-class UnitCage {
+class UnitCage : public BaseObject {
 public:
     UnitCage(int unitNum);
     virtual ~UnitCage();
@@ -23,6 +24,7 @@ public:
     CC_SYNTHESIZE(Array*, unitArray, UnitArray);
     bool canAddUnit() const;
     void addUnit(Unit* unit);
+    void removeUnit(Unit* unit);
     virtual void dump() const;
     void attackAll();
 };

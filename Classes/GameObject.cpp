@@ -56,5 +56,6 @@ void GameObject::dump() const{
     CCLOG("canPurchase: %d", canPurchase());
     CCLOG("canSacriface: %d", canSacrifice());
     CCLOG("canSummon: %d", canSummon());
+    CCLOG("objectData RetainCount: %d", objectData->retainCount());
     objectData->dump();
 }

@@ -10,6 +10,7 @@
 
 UnitField::UnitField()
 : unitNum(0)
+, sharedUnitData(NULL)
 {
 }
 
@@ -24,4 +25,8 @@ void UnitField::dump() const {
 
 void UnitField::incrementUnitNum() {
     ++unitNum;
+}
+
+bool UnitField::isHoldingSharedUnitData() const {
+    return (sharedUnitData != NULL) ? true : false;
 }

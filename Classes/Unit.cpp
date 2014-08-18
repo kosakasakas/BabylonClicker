@@ -14,10 +14,13 @@ Unit::Unit(UnitData* data)
 : GameObject(data)
 {
     unitNode = new UnitNode(this);
+    UnitData* uData = (UnitData*)getObjectData();
+    unitNode->schedule(schedule_selector(UnitNode::onScheduleUpdate), uData->getInterval());
 }
 
 Unit::~Unit()
 {
+    unitNode->unscheduleAllSelectors();
     unitNode->release();
 }
 
@@ -49,5 +52,6 @@ bool Unit::isHoldingNode() const{
 
 void Unit::dump() const{
     ((UnitData*)objectData)->dump();
+    CCLOG("unitNode RetainCount: %d", unitNode->retainCount());
     CCLOG("isHoldingNode: %d", isHoldingNode());
 }

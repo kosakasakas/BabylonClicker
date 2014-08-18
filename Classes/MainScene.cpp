@@ -12,6 +12,7 @@
 #import "UCAnimation.h"
 #include "GameController.h"
 #include "BattleController.h"
+#include "UnitField.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
@@ -82,7 +83,12 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
     if (battleStage->getBoundingBox().containsPoint(touch->getLocation())) {
         if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
             _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
-            BattleController::getInstance()->getTargetBoss()->damage(100.f);
+            
+            // remove unit node
+            UnitCage* uc = BattleController::getInstance()->getActiveUnitCage();
+            Array* array = uc->getUnitArray();
+            Unit* unit = (Unit*)array->getObjectAtIndex(0);
+            uc->removeUnit(unit);
         }
     }
     return true;

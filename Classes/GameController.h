@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include "cocos2d.h"
-#include "Field.h"
 #include "User.h"
 #include "GameConfig.h"
 
@@ -24,7 +23,6 @@ private:
 public:
     static GameController* getInstance();
     CC_SYNTHESIZE_READONLY(GameConfig*, config, Config);
-    CC_SYNTHESIZE_READONLY(Field*, field, Field);
     CC_SYNTHESIZE_READONLY(User*, user, User);
 };
 
