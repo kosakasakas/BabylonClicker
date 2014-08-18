@@ -52,6 +52,7 @@ bool Unit::isHoldingNode() const{
 
 void Unit::dump() const{
     ((UnitData*)objectData)->dump();
+    CCLOG("unitData RetainCount: %d", objectData->retainCount());
     CCLOG("unitNode RetainCount: %d", unitNode->retainCount());
     CCLOG("isHoldingNode: %d", isHoldingNode());
 }

@@ -49,9 +49,9 @@ void Test::run() {
     UnitCage* cage = BattleController::getInstance()->getActiveUnitCage();
     UnitFactory* ufact = new UnitFactory();
     Unit* unit1 = (Unit*)ufact->create(0);
-    Unit* unit2 = (Unit*)ufact->create(1);
-    Unit* unit3 = (Unit*)ufact->create(2);
-    Unit* unit4 = (Unit*)ufact->create(4);
+    Unit* unit2 = (Unit*)ufact->create(0);
+    Unit* unit3 = (Unit*)ufact->create(0);
+    Unit* unit4 = (Unit*)ufact->create(0);
     cage->addUnit(unit1);
     cage->addUnit(unit2);
     cage->addUnit(unit3);
@@ -72,10 +72,5 @@ void Test::run() {
     
     CCLOG("******Field class******");
     Field* field = BattleController::getInstance()->getField();
-    field->dump();
-    FieldObject* fo = (FieldObject*)field->getUnitField()->getObjectAtIndex(0);
-    FieldObject* fire = (FieldObject*)field->getUnitMagicField()->getObjectAtIndex(Field::MFT_Fire);
-    fo->incrementLevel();
-    fire->incrementLevel();
     field->dump();
 }

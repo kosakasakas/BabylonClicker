@@ -26,7 +26,7 @@ UnitCage::~UnitCage()
 void UnitCage::addUnit(Unit *unit) {
     if (canAddUnit()) {
         unitArray->addObject(unit);
-        UnitField* fo =  (UnitField*)BattleController::getInstance()->getField()->getUnitField()->getObjectAtIndex(unit->getObjectData()->getObjectID());
+        UnitField* fo = (UnitField*)BattleController::getInstance()->getField()->getUnitField()->getObjectAtIndex(unit->getObjectData()->getObjectID());
         fo->incrementUnitNum();
     } else {
         CCLOG("active unit num is already over..");
@@ -36,6 +36,11 @@ void UnitCage::addUnit(Unit *unit) {
 void UnitCage::removeUnit(Unit* unit) {
     unitArray->removeObject(unit);
     const char* name = unit->getObjectData()->getName();
+    UnitField* fo = (UnitField*)BattleController::getInstance()->getField()->getUnitField()->getObjectAtIndex(unit->getObjectData()->getObjectID());
+    unit->dump();
+    CCLOG("unitNum: %d", fo->getUnitNum());
+    fo->decrementUnitNum();
+    unit->release();
     CCLOG("remove unit: %s", name);
 }
 

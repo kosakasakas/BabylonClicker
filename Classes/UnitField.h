@@ -21,6 +21,7 @@ public:
     CC_SYNTHESIZE(int, unitNum, UnitNum);
     CC_SYNTHESIZE(UnitData*, sharedUnitData, SharedUnitData);
     void incrementUnitNum();
+    void decrementUnitNum();
     bool isHoldingSharedUnitData() const;
 };
 #endif /* defined(__BabylonClicker__UnitField__) */
