@@ -20,6 +20,6 @@ public:
     CC_SYNTHESIZE(float, babylonOffset, BabylonOffset);
     CC_SYNTHESIZE(float, marikaOffset, MarikaOffset);
     CC_SYNTHESIZE(float, hanaarukiOffset, HanaarukiOffset);
-    virtual void dump();
+    virtual void dump() const;
 };
 #endif /* defined(__BabylonClicker__Field__) */

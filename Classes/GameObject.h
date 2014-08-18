@@ -21,15 +21,14 @@ class GameObject : public BaseObject
 public:
     GameObject(ObjectData* data);
     virtual ~GameObject();
-    virtual const char* say() = 0;
     CC_SYNTHESIZE_READONLY(ObjectData*, objectData, ObjectData);
-    virtual bool canPurchase();
-    virtual bool canSacrifice();
-    virtual bool canSummon();
-    virtual void purchase();
+    virtual bool canPurchase() const;
+    virtual bool canSacrifice() const;
+    virtual bool canSummon() const;
+    virtual void purchase() const;
     virtual void sacrifice();
     virtual void summon();
-    virtual void dump();
+    virtual void dump() const;
 };
 
 #endif /* defined(__BabylonClicker__GameObject__) */

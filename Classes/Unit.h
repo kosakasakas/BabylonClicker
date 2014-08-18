@@ -18,14 +18,13 @@ class Unit : public GameObject
 public:
     Unit(UnitData* data);
     virtual ~Unit();
-    virtual const char* say();
     virtual void summon();
-    virtual bool canSummon();
+    virtual bool canSummon() const;
     void attack();
     void onAction();
     CC_SYNTHESIZE(Node*, unitNode, UnitNode);
-    bool isHoldingNode();
-    virtual void dump();
+    bool isHoldingNode() const;
+    virtual void dump() const;
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

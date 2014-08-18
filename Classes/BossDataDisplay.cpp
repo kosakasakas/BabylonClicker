@@ -17,11 +17,11 @@ BossDataDisplay::~BossDataDisplay()
 {
 }
 
-void BossDataDisplay::update(ObjectData* data) {
+void BossDataDisplay::update(const ObjectData* data) {
     draw(data);
 }
 
-void BossDataDisplay::draw(ObjectData* data) {
+void BossDataDisplay::draw(const ObjectData* data) {
     BossData* bData = (BossData*)data;
     CCLOG("Boss name: %s", bData->getName());
     CCLOG("Boss hp: %f", bData->getHP());

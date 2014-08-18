@@ -16,8 +16,8 @@ class BossDataDisplay : public ObjectDataDisplay {
 public:
     BossDataDisplay();
     ~BossDataDisplay();
-    virtual void update(ObjectData* data);
-    virtual void draw(ObjectData* data);
+    virtual void update(const ObjectData* data);
+    virtual void draw(const ObjectData* data);
 };
 
 #endif /* defined(__BabylonClicker__BossDataDisplay__) */

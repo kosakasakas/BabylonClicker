@@ -20,23 +20,23 @@ GameConfig::~GameConfig()
     data->release();
 }
 
-int GameConfig::getAttackInterval() {
+int GameConfig::getAttackInterval() const{
     return data->getIntValue("interval");
 }
 
-int GameConfig::getMaxUnitNum() {
+int GameConfig::getMaxUnitNum() const{
     return data->getIntValue("maxUnitNum");
 }
 
-const char* GameConfig::getNendSpotID() {
+const char* GameConfig::getNendSpotID() const{
     return data->getCharValue("nendSpotID");
 }
 
-const char* GameConfig::getNendApiKey() {
+const char* GameConfig::getNendApiKey() const{
     return data->getCharValue("nendApiKey");
 }
 
-void GameConfig::dump() {
+void GameConfig::dump() const{
     CCLOG("======GameConfig Class======");
     CCLOG("interval: %d", getAttackInterval());
     CCLOG("maxUnitNum: %d", getMaxUnitNum());

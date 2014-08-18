@@ -18,7 +18,7 @@ class BaseObject : public Object {
 public:
     BaseObject();
     ~BaseObject();
-    virtual void dump();
+    virtual void dump() const;
 };
 
 #endif /* defined(__BabylonClicker__BaseObject__) */

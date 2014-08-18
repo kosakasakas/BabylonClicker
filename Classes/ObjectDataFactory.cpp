@@ -18,7 +18,7 @@ ObjectDataFactory::~ObjectDataFactory()
     dictionary->release();
 }
 
-void ObjectDataFactory::dump() {
+void ObjectDataFactory::dump() const {
     CCLOG("======Game Data======");
     if (dictionary != NULL) {
         CCLOG("property num: %d", getPropertyNum());
@@ -47,7 +47,7 @@ void ObjectDataFactory::dump() {
     CCLOG("dump ended.");
 }
 
-void ObjectDataFactory::dumpPropertyValueAtIndex(int index) {
+void ObjectDataFactory::dumpPropertyValueAtIndex(int index) const {
     CCLOG("======ObjectDataFactory======");
     CCLOG("dumpPropertyValueAtIndex: %d", index);
     if(0 > index || index > getObjectNum()) {
@@ -67,7 +67,7 @@ void ObjectDataFactory::dumpPropertyValueAtIndex(int index) {
     CCLOG("dump ended.");
 }
 
-int ObjectDataFactory::getPropertyNum() {
+int ObjectDataFactory::getPropertyNum() const {
     Array* array = getPropertyArray();
     if (array != NULL) {
         return array->count();
@@ -76,7 +76,7 @@ int ObjectDataFactory::getPropertyNum() {
     }
 }
 
-int ObjectDataFactory::getObjectNum() {
+int ObjectDataFactory::getObjectNum() const {
     if (dictionary != NULL) {
         Array* property = getPropertyArray();
         if(property != NULL) {
@@ -90,7 +90,7 @@ int ObjectDataFactory::getObjectNum() {
     return 0;
 }
 
-Array* ObjectDataFactory::getPropertyArray() {
+Array* ObjectDataFactory::getPropertyArray() const {
     if (dictionary != NULL) {
         return dictionary->allKeys();
     } else {
@@ -98,7 +98,7 @@ Array* ObjectDataFactory::getPropertyArray() {
     }
 }
 
-Dictionary* ObjectDataFactory::getPropertyValueAtIndex(int index) {
+Dictionary* ObjectDataFactory::getPropertyValueAtIndex(int index) const {
     if(0 > index || index > getObjectNum()) {
         return NULL;
     }

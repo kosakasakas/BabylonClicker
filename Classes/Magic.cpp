@@ -16,7 +16,3 @@ Magic::Magic(ObjectData* data)
 Magic::~Magic()
 {
 }
-
-const char* Magic::say() {
-    return "Im magic!";
-}

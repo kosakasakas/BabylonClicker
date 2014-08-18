@@ -17,7 +17,7 @@ class Observer : public BaseObject {
 public:
     Observer(){};
     virtual ~Observer(){};
-    virtual void update(ObjectData* data) = 0;
+    virtual void update(const ObjectData* data) = 0;
 };
 
 #endif

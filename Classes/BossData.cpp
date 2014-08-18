@@ -23,7 +23,7 @@ BossData::~BossData()
     observers->release();
 }
 
-float BossData::getHP() {
+float BossData::getHP() const{
     return getFloatValue(HP_KEY);
 }
 
@@ -33,7 +33,7 @@ void BossData::reduceHP(float damage) {
     notifyObservers();
 }
 
-void BossData::dump() {
+void BossData::dump() const{
     UnitData::dump();
     CCLOG("hp: %f", getHP());
 }
@@ -46,7 +46,7 @@ void BossData::removeObserver(Observer* o) {
     observers->removeObject(o);
 }
 
-void BossData::notifyObservers() {
+void BossData::notifyObservers() const{
     CCLOG("notify BossData observers!!");
     Object* it;
     CCARRAY_FOREACH(observers, it)

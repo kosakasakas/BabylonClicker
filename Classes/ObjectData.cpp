@@ -24,7 +24,7 @@ ObjectData::~ObjectData()
     objData->release();
 }
 
-int ObjectData::getIntValue(const char* key) {
+int ObjectData::getIntValue(const char* key) const{
     if (objData != NULL) {
         String* val = (String*)objData->objectForKey(key);
         return (val != NULL) ? val->intValue() : 0;
@@ -32,7 +32,7 @@ int ObjectData::getIntValue(const char* key) {
     return 0;
 }
 
-float ObjectData::getFloatValue(const char* key) {
+float ObjectData::getFloatValue(const char* key) const{
     if (objData != NULL) {
         String* val = (String*)objData->objectForKey(key);
         return (val != NULL) ? val->floatValue() : 0.f;
@@ -40,7 +40,7 @@ float ObjectData::getFloatValue(const char* key) {
     return 0.f;
 }
 
-const char* ObjectData::getCharValue(const char* key) {
+const char* ObjectData::getCharValue(const char* key) const{
     if (objData != NULL) {
         String* name = (String*) objData->objectForKey(key);
         return (name != NULL) ? name->getCString() : "";
@@ -65,23 +65,23 @@ void ObjectData::setFloatValue(float val, const char* key) {
 void ObjectData::setCharValue(const char* val, const char* key) {
 }
 
-int ObjectData::getCost(){
+int ObjectData::getCost() const{
     return getIntValue(COST_KEY);
 }
 
-int ObjectData::getObjectID(){
+int ObjectData::getObjectID() const{
     return getIntValue(OBJECTID_KEY);
 }
 
-int ObjectData::getLevel(){
+int ObjectData::getLevel() const{
     return getIntValue(LEVEL_KEY);
 }
 
-const char* ObjectData::getName() {
+const char* ObjectData::getName() const{
     return getCharValue(NAME_KEY);
 }
 
-const char* ObjectData::getDescription() {
+const char* ObjectData::getDescription() const{
     return getCharValue(DESCRIPTION_KEY);
 }
 
@@ -93,7 +93,7 @@ void ObjectData::setLevel(int value) {
     setIntValue(value, LEVEL_KEY);
 }
 
-void ObjectData::dump() {
+void ObjectData::dump() const{
     CCLOG("======ObjectData Class======");
     CCLOG("cost: %d", getCost());
     CCLOG("level: %d", getLevel());

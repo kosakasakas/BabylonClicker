@@ -20,15 +20,15 @@ UnitData::~UnitData()
 {
 }
 
-float UnitData::getAttack() {
+float UnitData::getAttack() const{
     return getFloatValue(ATTACK_KEY);
 }
 
-float UnitData::getInterval() {
+float UnitData::getInterval() const{
     return  getFloatValue(INTERVAL_KEY);
 }
 
-void UnitData::dump() {
+void UnitData::dump() const{
     ObjectData::dump();
     CCLOG("attack: %f", getAttack());
 }

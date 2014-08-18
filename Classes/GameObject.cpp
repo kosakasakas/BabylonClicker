@@ -19,20 +19,20 @@ GameObject::~GameObject()
     objectData->release();
 }
 
-bool GameObject::canPurchase() {
+bool GameObject::canPurchase() const{
     int soul = GameController::getInstance()->getUser()->getSoul();
     return (objectData->getCost() <= soul) ? true : false;
 }
 
-bool GameObject::canSacrifice() {
+bool GameObject::canSacrifice() const{
     return true;
 }
 
-bool GameObject::canSummon() {
+bool GameObject::canSummon() const{
     return (canPurchase() && canSacrifice()) ? true : false;
 }
 
-void GameObject::purchase() {
+void GameObject::purchase() const{
     if (canSacrifice()) {
         GameController::getInstance()->getUser()->reduceSoul(objectData->getCost());
     } else {
@@ -51,7 +51,7 @@ void GameObject::summon() {
     }
 }
 
-void GameObject::dump() {
+void GameObject::dump() const{
     CCLOG("======GameObject Class======");
     CCLOG("canPurchase: %d", canPurchase());
     CCLOG("canSacriface: %d", canSacrifice());

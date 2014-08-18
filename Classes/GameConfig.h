@@ -17,11 +17,11 @@ class GameConfig : public BaseObject {
 public:
     GameConfig();
     virtual ~GameConfig();
-    int getAttackInterval();
-    int getMaxUnitNum();
-    const char* getNendSpotID();
-    const char* getNendApiKey();
-    virtual void dump();
+    int getAttackInterval() const;
+    int getMaxUnitNum() const;
+    const char* getNendSpotID() const;
+    const char* getNendApiKey() const;
+    virtual void dump() const;
 private:
     ObjectData* data;
 };

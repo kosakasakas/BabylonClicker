@@ -30,7 +30,7 @@ void UnitCage::addUnit(Unit *unit) {
     }
 }
 
-bool UnitCage::canAddUnit() {
+bool UnitCage::canAddUnit() const{
     return (unitArray->count() < maxUnitNum) ? true : false;
 }
 
@@ -43,7 +43,7 @@ void UnitCage::attackAll() {
     }
 }
 
-void UnitCage::dump() {
+void UnitCage::dump() const{
     CCLOG("======UnitCage Class======");
     CCLOG("maxUnitNum: %d", maxUnitNum);
     CCLOG("holdUnitNum: %d", unitArray->count());

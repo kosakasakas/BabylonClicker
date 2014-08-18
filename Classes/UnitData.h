@@ -16,9 +16,9 @@ class UnitData : public ObjectData {
 public:
     UnitData(Dictionary* data);
     virtual ~UnitData();
-    float getAttack();
-    float getInterval();
-    virtual void dump();
+    float getAttack() const;
+    float getInterval() const;
+    virtual void dump() const;
 protected:
     static const char* ATTACK_KEY;
     static const char* INTERVAL_KEY;

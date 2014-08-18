@@ -18,7 +18,6 @@ public:
     Boss(BossData* data);
     virtual ~Boss();
     void damage(float val);
-    virtual const char* say();
 private:
     void onDestroyed();
 };

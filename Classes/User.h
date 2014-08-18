@@ -18,7 +18,7 @@ public:
     User();
     virtual ~User();
     CC_SYNTHESIZE(int, soul, Soul);
-    virtual void dump();
+    virtual void dump() const;
     void addSoul(int soul);
     void reduceSoul(int soul);
 };

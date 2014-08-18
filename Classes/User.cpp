@@ -17,7 +17,7 @@ User::~User()
 {
 }
 
-void User::dump() {
+void User::dump() const{
     CCLOG("======User Class======");
     CCLOG("soul : %d", soul);
 }

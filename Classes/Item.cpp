@@ -16,7 +16,3 @@ Item::Item(ObjectData* data)
 Item::~Item()
 {
 }
-
-const char* Item::say() {
-    return "Im Item.";
-}

@@ -21,9 +21,9 @@ public:
     virtual ~UnitCage();
     CC_SYNTHESIZE_READONLY(int, maxUnitNum, MaxUnitNum);
     CC_SYNTHESIZE(Array*, unitArray, UnitArray);
-    bool canAddUnit();
+    bool canAddUnit() const;
     void addUnit(Unit* unit);
-    virtual void dump();
+    virtual void dump() const;
     void attackAll();
 };
 

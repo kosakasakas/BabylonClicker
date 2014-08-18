@@ -21,10 +21,6 @@ Boss::~Boss()
 {
 }
 
-const char* Boss::say() {
-    return "Im boss. haha!";
-}
-
 void Boss::damage(float val) {
     BossData* bData = (BossData*)objectData;
     (bData)->reduceHP(val);

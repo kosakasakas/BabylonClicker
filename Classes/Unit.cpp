@@ -21,16 +21,12 @@ Unit::~Unit()
     unitNode->release();
 }
 
-const char* Unit::say(){
-    return "Im Unit.";
-}
-
 void Unit::summon() {
     // 召喚された事を通知。ユニットカウントを上げる。
     CCLOG("Unit summon called");
 }
 
-bool Unit::canSummon() {
+bool Unit::canSummon() const{
     return false;
 }
 
@@ -47,11 +43,11 @@ void Unit::onAction() {
     attack();
 }
 
-bool Unit::isHoldingNode() {
+bool Unit::isHoldingNode() const{
     return (unitNode != NULL) ? true : false;
 }
 
-void Unit::dump() {
+void Unit::dump() const{
     ((UnitData*)objectData)->dump();
     CCLOG("isHoldingNode: %d", isHoldingNode());
 }

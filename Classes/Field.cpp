@@ -19,7 +19,7 @@ Field::~Field()
 {
 }
 
-void Field::dump() {
+void Field::dump() const{
     CCLOG("======Field Class======");
     CCLOG("babylonOffset: %f", babylonOffset);
     CCLOG("marikaOffset: %f", marikaOffset);

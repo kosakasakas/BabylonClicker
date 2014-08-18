@@ -17,7 +17,6 @@ class Magic : public GameObject
 public:
     Magic(ObjectData* data);
     virtual ~Magic();
-    virtual const char* say();
 };
 
 #endif /* defined(__BabylonClicker__Magic__) */

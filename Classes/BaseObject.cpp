@@ -17,6 +17,6 @@ BaseObject::~BaseObject()
 {
 }
 
-void BaseObject::dump() {
+void BaseObject::dump() const{
     CCLOG("this object is not defined dump().");
 }

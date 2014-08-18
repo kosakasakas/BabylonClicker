@@ -17,7 +17,6 @@ class Item : public GameObject
 public:
     Item(ObjectData* data);
     virtual ~Item();
-    virtual const char* say();
 };
 
 #endif /* defined(__BabylonClicker__Item__) */

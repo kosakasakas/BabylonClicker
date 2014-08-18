@@ -21,12 +21,12 @@ public:
     ObjectDataFactory(const char* filePath);
     virtual ~ObjectDataFactory();
     CC_SYNTHESIZE_READONLY(Dictionary*, dictionary, Ditctionary);
-    virtual void dump();
-    void dumpPropertyValueAtIndex(int index);
-    int getPropertyNum();
-    int getObjectNum();
-    Array* getPropertyArray();
-    Dictionary* getPropertyValueAtIndex(int index);
+    virtual void dump() const;
+    void dumpPropertyValueAtIndex(int index) const;
+    int getPropertyNum() const;
+    int getObjectNum() const;
+    Array* getPropertyArray() const;
+    Dictionary* getPropertyValueAtIndex(int index) const;
     ObjectData* create(int index);
 protected:
     virtual ObjectData* createObjectData(int index);

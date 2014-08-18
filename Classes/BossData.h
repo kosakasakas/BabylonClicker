@@ -17,13 +17,13 @@ class BossData : public UnitData, public Subject {
 public:
     BossData(Dictionary* data);
     virtual ~BossData();
-    float getHP();
+    float getHP() const;
     void reduceHP(float damage);
-    virtual void dump();
+    virtual void dump() const;
     CC_SYNTHESIZE_READONLY(Array*, observers, Observers);
     virtual void registerObserver(Observer* o);
     virtual void removeObserver(Observer* o);
-    virtual void notifyObservers();
+    virtual void notifyObservers() const;
     
 protected:
     static const char* HP_KEY;
