@@ -49,9 +49,9 @@ void Test::run() {
     UnitCage* cage = BattleController::getInstance()->getActiveUnitCage();
     UnitFactory* ufact = new UnitFactory();
     Unit* unit1 = (Unit*)ufact->create(0);
-    Unit* unit2 = (Unit*)ufact->create(0);
-    Unit* unit3 = (Unit*)ufact->create(0);
-    Unit* unit4 = (Unit*)ufact->create(0);
+    Unit* unit2 = (Unit*)ufact->create(1);
+    Unit* unit3 = (Unit*)ufact->create(4);
+    Unit* unit4 = (Unit*)ufact->create(5);
     cage->addUnit(unit1);
     cage->addUnit(unit2);
     cage->addUnit(unit3);

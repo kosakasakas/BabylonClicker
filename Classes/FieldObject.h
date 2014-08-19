@@ -10,9 +10,9 @@
 #define __BabylonClicker__FieldObject__
 
 #include <iostream>
-#include "BaseObject.h"
+#include "Subject.h"
 
-class FieldObject : public BaseObject {
+class FieldObject : public Subject {
 public:
     FieldObject();
     ~FieldObject();

@@ -13,8 +13,9 @@
 #include "cocos2d.h"
 #include "BaseObject.h"
 #include "FieldObject.h"
+#include "UnitData.h"
 
-class Field : public BaseObject {
+class Field : virtual public BaseObject {
 public:
     Field();
     virtual ~Field();
@@ -47,5 +48,12 @@ public:
     CC_SYNTHESIZE_READONLY(Array*, userField, UserField);
     CC_SYNTHESIZE_READONLY(Array*, userMagicField, UserMagicField);
     virtual void dump() const;
+    void registUnitFamiryFieldObserver(UnitData* uData);
+    void registUnitMagicFieldObserver(Observer* o);
+    void registUnitFieldObserver(Observer* o);
+    void registUserField(Observer* o);
+    void registUserMagicField(Observer* o);
+private:
+    UnitFamilyFieldType getUnitFamilyFieldType(const char* name);
 };
 #endif /* defined(__BabylonClicker__Field__) */

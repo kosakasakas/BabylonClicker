@@ -84,11 +84,9 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
         if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
             _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
             
-            // remove unit node
-            UnitCage* uc = BattleController::getInstance()->getActiveUnitCage();
-            Array* array = uc->getUnitArray();
-            Unit* unit = (Unit*)array->getObjectAtIndex(0);
-            uc->removeUnit(unit);
+            // family level up
+            FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitFamilyField()->getObjectAtIndex(Field::UFFT_Babylon));
+            fo->incrementLevel();
         }
     }
     return true;

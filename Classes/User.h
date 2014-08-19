@@ -13,7 +13,7 @@
 #include "cocos2d.h"
 #include "BaseObject.h"
 
-class User : public BaseObject {
+class User : virtual public BaseObject {
 public:
     User();
     virtual ~User();

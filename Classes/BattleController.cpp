@@ -49,16 +49,16 @@ void BattleController::onTargetBossDestroyed() {
 
 
 UnitData* BattleController::getSharedUnitData(int objectID) const {
-    UnitField* uf = (UnitField*)field->getUnitField()->getObjectAtIndex(objectID);
+    UnitField* uf = dynamic_cast<UnitField*>(field->getUnitField()->getObjectAtIndex(objectID));
     return uf->getSharedUnitData();
 }
 
 void BattleController::setSharedUnitData(UnitData* unitData) {
-    UnitField* uf = (UnitField*)field->getUnitField()->getObjectAtIndex(unitData->getObjectID());
+    UnitField* uf = dynamic_cast<UnitField*>(field->getUnitField()->getObjectAtIndex(unitData->getObjectID()));
     uf->setSharedUnitData(unitData);
 }
 
 bool BattleController::isHavingSharedUnitData(int objectID) const {
-    UnitField* uf = (UnitField*)field->getUnitField()->getObjectAtIndex(objectID);
+    UnitField* uf = dynamic_cast<UnitField*>(field->getUnitField()->getObjectAtIndex(objectID));
     return (uf->isHoldingSharedUnitData()) ? true : false;
 }

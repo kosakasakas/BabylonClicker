@@ -16,8 +16,8 @@ class ObjectDataDisplay : public Observer {
 public:
     ObjectDataDisplay(){};
     virtual ~ObjectDataDisplay(){};
-    virtual void update(const ObjectData* data) = 0;
-    virtual void draw(const ObjectData* data) = 0;
+    virtual void updateStatus(const BaseObject* data) = 0;
+    virtual void draw(const BaseObject* data) = 0;
 };
 
 #endif /* defined(__BabylonClicker__ObjectDataDisplay__) */

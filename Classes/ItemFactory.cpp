@@ -21,7 +21,7 @@ ItemFactory::~ItemFactory()
 
 GameObject* ItemFactory::createObject(int objectID) {
     ItemDataFactory* idFactory = new ItemDataFactory("itemData.plist");
-    ItemData* iData = (ItemData*)idFactory->create(objectID);
+    ItemData* iData = dynamic_cast<ItemData*>(idFactory->create(objectID));
     Item* item = new Item(iData);
     return item;
 }

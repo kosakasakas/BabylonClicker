@@ -24,4 +24,5 @@ void FieldObject::dump() const {
 
 void FieldObject::incrementLevel() {
     ++level;
+    notifyObservers();
 }

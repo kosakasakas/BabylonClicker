@@ -20,10 +20,6 @@ public:
     float getHP() const;
     void reduceHP(float damage);
     virtual void dump() const;
-    CC_SYNTHESIZE_READONLY(Array*, observers, Observers);
-    virtual void registerObserver(Observer* o);
-    virtual void removeObserver(Observer* o);
-    virtual void notifyObservers() const;
     
 protected:
     static const char* HP_KEY;

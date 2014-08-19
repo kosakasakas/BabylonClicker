@@ -25,6 +25,7 @@ void UnitField::dump() const {
 
 void UnitField::incrementUnitNum() {
     ++unitNum;
+    notifyObservers();
 }
 
 void UnitField::decrementUnitNum() {

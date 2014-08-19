@@ -10,14 +10,13 @@
 #define BabylonClicker_Observer_h
 
 #include <iostream>
-#include "ObjectData.h"
 #include "BaseObject.h"
 
-class Observer : public BaseObject {
+class Observer : virtual public BaseObject {
 public:
     Observer(){};
     virtual ~Observer(){};
-    virtual void update(const ObjectData* data) = 0;
+    virtual void updateStatus(const BaseObject* data) = 0;
 };
 
 #endif

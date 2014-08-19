@@ -7,6 +7,7 @@
 //
 
 #include "ObjectData.h"
+#include "FieldObject.h"
 
 const char* ObjectData::COST_KEY = "cost";
 const char* ObjectData::LEVEL_KEY = "level";
@@ -91,6 +92,11 @@ void ObjectData::setCost(int value) {
 
 void ObjectData::setLevel(int value) {
     setIntValue(value, LEVEL_KEY);
+}
+
+void ObjectData::updateStatus(const BaseObject* data){
+    const FieldObject* fo = dynamic_cast<const FieldObject*>(data);
+    CCLOG("level: %d", fo->getLevel());
 }
 
 void ObjectData::dump() const{

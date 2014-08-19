@@ -2,6 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>attackGrouth</key>
+	<array>
+		<real>1.05</real>
+		<real>1.05</real>
+		<real>1.05</real>
+		<real>1.05</real>
+		<real>1.08</real>
+		<real>1.08</real>
+	</array>
+	<key>magic</key>
+	<array>
+		<string>dark</string>
+		<string>water</string>
+		<string>fire</string>
+		<string>wood</string>
+		<string>shine</string>
+		<string>dark</string>
+	</array>
+	<key>family</key>
+	<array>
+		<string>バビロン</string>
+		<string>ハナアルキ</string>
+		<string>ハナアルキ</string>
+		<string>ハナアルキ</string>
+		<string>マリリカ</string>
+		<string>バビロン</string>
+	</array>
 	<key>interval</key>
 	<array>
 		<integer>5</integer>
@@ -13,7 +40,7 @@
 	</array>
 	<key>attack</key>
 	<array>
-		<real>10</real>
+		<integer>10</integer>
 		<real>5.5</real>
 		<real>5.5</real>
 		<real>5.5</real>

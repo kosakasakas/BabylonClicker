@@ -17,12 +17,13 @@ BossDataDisplay::~BossDataDisplay()
 {
 }
 
-void BossDataDisplay::update(const ObjectData* data) {
+void BossDataDisplay::updateStatus(const BaseObject* data) {
+    CCLOG("BossDataDisplay updated");
     draw(data);
 }
 
-void BossDataDisplay::draw(const ObjectData* data) {
-    BossData* bData = (BossData*)data;
+void BossDataDisplay::draw(const BaseObject* data) {
+    const BossData* bData = dynamic_cast<const BossData*>(data);
     CCLOG("Boss name: %s", bData->getName());
     CCLOG("Boss hp: %f", bData->getHP());
 }

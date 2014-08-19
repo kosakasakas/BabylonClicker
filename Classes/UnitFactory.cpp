@@ -30,7 +30,12 @@ GameObject* UnitFactory::createObject(int objectID) {
     } else {
         UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
         uData = (UnitData*)udFactory->create(objectID);
-        BattleController::getInstance()->setSharedUnitData(uData);
+        BattleController* bc = BattleController::getInstance();
+        bc->setSharedUnitData(uData);
+        Field* field = bc->getField();
+        uData->dump();
+        field->registUnitFamiryFieldObserver(uData);
+        field->registUnitMagicFieldObserver(uData);
     }
     Unit* unit = new Unit(uData);
     return unit;

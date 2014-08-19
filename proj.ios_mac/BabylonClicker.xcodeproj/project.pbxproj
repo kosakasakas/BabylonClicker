@@ -58,6 +58,7 @@
 		14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */; };
 		14ED3CC019A1DB37002D5CF0 /* FieldObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */; };
 		14ED3CCA19A1F230002D5CF0 /* UnitField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CC819A1F230002D5CF0 /* UnitField.cpp */; };
+		14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CD119A22360002D5CF0 /* Subject.cpp */; };
 		1ACB3244164770DE00914215 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACB3243164770DE00914215 /* libcurl.a */; };
 		1AF4C2F417865DCB00122817 /* libbox2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C2E317865D9500122817 /* libbox2d iOS.a */; };
 		1AF4C2F517865DCB00122817 /* libchipmunk iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4C2E117865D9500122817 /* libchipmunk iOS.a */; };
@@ -389,6 +390,7 @@
 		14ED3CBF19A1DB37002D5CF0 /* FieldObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FieldObject.h; path = ../Classes/FieldObject.h; sourceTree = "<group>"; };
 		14ED3CC819A1F230002D5CF0 /* UnitField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitField.cpp; path = ../Classes/UnitField.cpp; sourceTree = "<group>"; };
 		14ED3CC919A1F230002D5CF0 /* UnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitField.h; path = ../Classes/UnitField.h; sourceTree = "<group>"; };
+		14ED3CD119A22360002D5CF0 /* Subject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Subject.cpp; path = ../Classes/Subject.cpp; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1AF4C2BB17865D9500122817 /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../../../cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
@@ -617,6 +619,7 @@
 				F8E592D5199E642000306809 /* Iterator.h */,
 				F8E592DD199E657300306809 /* UnitCage.cpp */,
 				F8E592DE199E657300306809 /* UnitCage.h */,
+				14ED3CD119A22360002D5CF0 /* Subject.cpp */,
 				F8E592E4199F127800306809 /* Subject.h */,
 				F8E592ED199F143C00306809 /* Observer.h */,
 				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
@@ -1043,6 +1046,7 @@
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */,
 				F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */,
+				14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */,
 				143C5C47199E26650041FFEB /* BossData.cpp in Sources */,
 				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,

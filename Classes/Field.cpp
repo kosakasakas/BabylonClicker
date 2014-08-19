@@ -51,6 +51,7 @@ Field::Field()
 
 Field::~Field()
 {
+    unitField->release();
     unitFamilyField->release();
     unitMagicField->release();
     userField->release();
@@ -89,5 +90,83 @@ void Field::dump() const{
     {
         FieldObject* fo = dynamic_cast<FieldObject*>(it);
         fo->dump();
+    }
+}
+
+void Field::registUnitFamiryFieldObserver(UnitData* uData) {
+    UnitFamilyFieldType ufft = getUnitFamilyFieldType(uData->getFamily());
+    FieldObject* fo = dynamic_cast<FieldObject*>(unitFamilyField->getObjectAtIndex(ufft));
+    if (fo->hasObserver(uData)) {
+        CCLOG("Observer is already registered.");
+    } else {
+        fo->registerObserver(uData);
+    }
+}
+
+void Field::registUnitMagicFieldObserver(Observer* o) {
+    Object* it;
+    CCARRAY_FOREACH(unitMagicField, it)
+    {
+        FieldObject* fo = dynamic_cast<FieldObject*>(it);
+        if (fo->hasObserver(o)) {
+            CCLOG("Observer is already registered.");
+        } else {
+            fo->registerObserver(o);
+        }
+    }
+}
+
+void Field::registUnitFieldObserver(Observer* o) {
+    Object* it;
+    CCARRAY_FOREACH(unitField, it)
+    {
+        FieldObject* fo = dynamic_cast<FieldObject*>(it);
+        if (fo->hasObserver(o)) {
+            CCLOG("Observer is already registered.");
+        } else {
+            fo->registerObserver(o);
+        }
+    }
+}
+
+void Field::registUserField(Observer* o) {
+    Object* it;
+    CCARRAY_FOREACH(userField, it)
+    {
+        FieldObject* fo = dynamic_cast<FieldObject*>(it);
+        if (fo->hasObserver(o)) {
+            CCLOG("Observer is already registered.");
+        } else {
+            fo->registerObserver(o);
+        }
+    }
+}
+
+void Field::registUserMagicField(Observer* o) {
+    Object* it;
+    CCARRAY_FOREACH(userMagicField, it)
+    {
+        FieldObject* fo = dynamic_cast<FieldObject*>(it);
+        if (fo->hasObserver(o)) {
+            CCLOG("Observer is already registered.");
+        } else {
+            fo->registerObserver(o);
+        }
+    }
+}
+
+Field::UnitFamilyFieldType Field::getUnitFamilyFieldType(const char* name) {
+    CCLOG("name : %s", name);
+    const std::string familyString = name;
+    if (familyString.compare("バビロン") == 0) {
+        return UFFT_Babylon;
+    } else if (familyString.compare("ハナアルキ") == 0) {
+        return UFFT_Hanaaruki;
+    } else if (familyString.compare("マリリカ") == 0) {
+        return UFFT_Maririka;
+    } else if (familyString.compare("パピヨン") == 0) {
+        return UFFT_Papillon;
+    } else {
+        return UFFT_TypeNum;
     }
 }

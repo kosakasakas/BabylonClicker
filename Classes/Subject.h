@@ -12,13 +12,16 @@
 #include <iostream>
 #include "Observer.h"
 
-class Subject {
+class Subject : virtual public BaseObject {
 public:
-    Subject(){};
-    virtual ~Subject(){};
-    virtual void registerObserver(Observer* o) = 0;
-    virtual void removeObserver(Observer* o) = 0;
-    virtual void notifyObservers() const = 0;
+    Subject();
+    virtual ~Subject();
+    virtual void registerObserver(Observer* o);
+    virtual void removeObserver(Observer* o);
+    virtual void notifyObservers() const;
+    virtual bool hasObserver(Observer* o);
+protected:
+    Array* observers;
 };
 
 #endif /* defined(__BabylonClicker__Subject__) */

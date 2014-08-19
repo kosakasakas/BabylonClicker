@@ -14,13 +14,10 @@ const char* BossData::HP_KEY = "hp";
 BossData::BossData(Dictionary* data)
 :UnitData(data)
 {
-    observers = Array::create();
-    observers->retain();
 }
 
 BossData::~BossData()
 {
-    observers->release();
 }
 
 float BossData::getHP() const{
@@ -36,22 +33,4 @@ void BossData::reduceHP(float damage) {
 void BossData::dump() const{
     UnitData::dump();
     CCLOG("hp: %f", getHP());
-}
-
-void BossData::registerObserver(Observer* o) {
-    observers->addObject(o);
-}
-
-void BossData::removeObserver(Observer* o) {
-    observers->removeObject(o);
-}
-
-void BossData::notifyObservers() const{
-    CCLOG("notify BossData observers!!");
-    Object* it;
-    CCARRAY_FOREACH(observers, it)
-    {
-        Observer* o = dynamic_cast<Observer*>(it);
-        o->update(this);
-    }
 }

@@ -10,15 +10,15 @@
 #define __BabylonClicker__ObjectData__
 
 #include <iostream>
-#include "BaseObject.h"
 #include "cocos2d.h"
+#include "Observer.h"
 
 USING_NS_CC;
 
-class ObjectData : public BaseObject {
+class ObjectData : public Observer {
 public:
     ObjectData(Dictionary* data);
-    ~ObjectData();
+    virtual ~ObjectData();
     CC_SYNTHESIZE_READONLY(Dictionary*, objData, ObjData);
     int getCost() const;
     int getLevel() const;
@@ -34,6 +34,7 @@ public:
     void setIntValue(int val, const char* key);
     void setFloatValue(float val, const char* key);
     void setCharValue(const char* val, const char* key);
+    virtual void updateStatus(const BaseObject* data);
     
 protected:
     static const char* COST_KEY;
