@@ -13,12 +13,12 @@
 	</array>
 	<key>magic</key>
 	<array>
-		<string>dark</string>
-		<string>water</string>
-		<string>fire</string>
-		<string>wood</string>
-		<string>shine</string>
-		<string>dark</string>
+		<string>闇</string>
+		<string>水</string>
+		<string>火</string>
+		<string>木</string>
+		<string>光</string>
+		<string>闇</string>
 	</array>
 	<key>family</key>
 	<array>

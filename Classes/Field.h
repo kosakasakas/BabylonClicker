@@ -49,11 +49,12 @@ public:
     CC_SYNTHESIZE_READONLY(Array*, userMagicField, UserMagicField);
     virtual void dump() const;
     void registUnitFamiryFieldObserver(UnitData* uData);
-    void registUnitMagicFieldObserver(Observer* o);
-    void registUnitFieldObserver(Observer* o);
-    void registUserField(Observer* o);
-    void registUserMagicField(Observer* o);
+    void registUnitMagicFieldObserver(UnitData* uData);
+    void registUnitFieldObserver(UnitData* uData);
+    void registUserField(UnitData* uData);
+    void registUserMagicField(UnitData* uData);
 private:
     UnitFamilyFieldType getUnitFamilyFieldType(const char* name);
+    MagicFieldType getMagicFieldType(const char* name);
 };
 #endif /* defined(__BabylonClicker__Field__) */

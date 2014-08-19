@@ -85,7 +85,8 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
             _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
             
             // family level up
-            FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitFamilyField()->getObjectAtIndex(Field::UFFT_Babylon));
+            //FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitFamilyField()->getObjectAtIndex(Field::UFFT_Maririka));
+            FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitMagicField()->getObjectAtIndex(Field::MFT_Shine));
             fo->incrementLevel();
         }
     }

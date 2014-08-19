@@ -103,60 +103,34 @@ void Field::registUnitFamiryFieldObserver(UnitData* uData) {
     }
 }
 
-void Field::registUnitMagicFieldObserver(Observer* o) {
-    Object* it;
-    CCARRAY_FOREACH(unitMagicField, it)
-    {
-        FieldObject* fo = dynamic_cast<FieldObject*>(it);
-        if (fo->hasObserver(o)) {
-            CCLOG("Observer is already registered.");
-        } else {
-            fo->registerObserver(o);
-        }
+void Field::registUnitMagicFieldObserver(UnitData* uData) {
+    MagicFieldType mft = getMagicFieldType(uData->getMagic());
+    FieldObject* fo = dynamic_cast<FieldObject*>(unitMagicField->getObjectAtIndex(mft));
+    if (fo->hasObserver(uData)) {
+        CCLOG("Observer is already registered.");
+    } else {
+        fo->registerObserver(uData);
     }
 }
 
-void Field::registUnitFieldObserver(Observer* o) {
-    Object* it;
-    CCARRAY_FOREACH(unitField, it)
-    {
-        FieldObject* fo = dynamic_cast<FieldObject*>(it);
-        if (fo->hasObserver(o)) {
-            CCLOG("Observer is already registered.");
-        } else {
-            fo->registerObserver(o);
-        }
+void Field::registUnitFieldObserver(UnitData* uData) {
+    int objectID = uData->getObjectID();
+    UnitField* uf = dynamic_cast<UnitField*>(unitField->getObjectAtIndex(objectID));
+    if (uf->hasObserver(uData)) {
+        // UnitData is shared. so we regist uData only once. 
+        CCLOG("Observer is already registered.");
+    } else {
+        uf->registerObserver(uData);
     }
 }
 
-void Field::registUserField(Observer* o) {
-    Object* it;
-    CCARRAY_FOREACH(userField, it)
-    {
-        FieldObject* fo = dynamic_cast<FieldObject*>(it);
-        if (fo->hasObserver(o)) {
-            CCLOG("Observer is already registered.");
-        } else {
-            fo->registerObserver(o);
-        }
-    }
+void Field::registUserField(UnitData* uData) {
 }
 
-void Field::registUserMagicField(Observer* o) {
-    Object* it;
-    CCARRAY_FOREACH(userMagicField, it)
-    {
-        FieldObject* fo = dynamic_cast<FieldObject*>(it);
-        if (fo->hasObserver(o)) {
-            CCLOG("Observer is already registered.");
-        } else {
-            fo->registerObserver(o);
-        }
-    }
+void Field::registUserMagicField(UnitData* uData) {
 }
 
 Field::UnitFamilyFieldType Field::getUnitFamilyFieldType(const char* name) {
-    CCLOG("name : %s", name);
     const std::string familyString = name;
     if (familyString.compare("バビロン") == 0) {
         return UFFT_Babylon;
@@ -168,5 +142,22 @@ Field::UnitFamilyFieldType Field::getUnitFamilyFieldType(const char* name) {
         return UFFT_Papillon;
     } else {
         return UFFT_TypeNum;
+    }
+}
+
+Field::MagicFieldType Field::getMagicFieldType(const char* magic) {
+    const std::string magicString = magic;
+    if (magicString.compare("闇") == 0) {
+        return MFT_Dark;
+    } else if (magicString.compare("水") == 0) {
+        return MFT_Water;
+    } else if (magicString.compare("火") == 0) {
+        return MFT_Fire;
+    } else if (magicString.compare("木") == 0) {
+        return MFT_Wood;
+    } else if (magicString.compare("光") == 0) {
+        return MFT_Shine;
+    } else {
+        return MFT_TypeNum;
     }
 }
