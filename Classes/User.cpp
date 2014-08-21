@@ -9,7 +9,7 @@
 #include "User.h"
 
 User::User()
-: soul(0)
+: soul(10000.f)
 {
 }
 
@@ -19,14 +19,14 @@ User::~User()
 
 void User::dump() const{
     CCLOG("======User Class======");
-    CCLOG("soul : %d", soul);
+    CCLOG("soul : %f", soul);
 }
 
-void User::addSoul(int val) {
+void User::addSoul(float val) {
     soul += val;
 }
 
-void User::reduceSoul(int val) {
+void User::reduceSoul(float val) {
     if (soul >= val) {
         soul -= val;
     } else {

@@ -17,9 +17,9 @@ class User : virtual public BaseObject {
 public:
     User();
     virtual ~User();
-    CC_SYNTHESIZE(int, soul, Soul);
+    CC_SYNTHESIZE(float, soul, Soul);
     virtual void dump() const;
-    void addSoul(int soul);
-    void reduceSoul(int soul);
+    void addSoul(float soul);
+    void reduceSoul(float soul);
 };
 #endif /* defined(__BabylonClicker__User__) */

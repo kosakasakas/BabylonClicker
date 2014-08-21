@@ -19,12 +19,14 @@ public:
     Unit(UnitData* data);
     virtual ~Unit();
     virtual void summon();
-    virtual bool canSummon() const;
     void attack();
     void onAction();
     CC_SYNTHESIZE(Node*, unitNode, UnitNode);
     bool isHoldingNode() const;
     virtual void dump() const;
+    bool canSummon() const;
+protected:
+    bool canSummonAt(int slotID) const;
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

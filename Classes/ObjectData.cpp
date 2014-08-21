@@ -17,10 +17,10 @@ const char* ObjectData::DESCRIPTION_KEY = "description";
 const char* ObjectData::COST_GROWTH_KEY = "costGrowth";
 
 ObjectData::ObjectData(Dictionary* data)
-: cost(0)
-, level(0)
+: level(0)
 {
     objData = data;
+    cost = getDefaultCost();
 }
 
 ObjectData::~ObjectData()

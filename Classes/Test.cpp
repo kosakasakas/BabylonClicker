@@ -49,7 +49,7 @@ void Test::run() {
     UnitCage* cage = BattleController::getInstance()->getActiveUnitCage();
     UnitFactory* ufact = new UnitFactory();
     Unit* unit1 = (Unit*)ufact->create(0);
-    Unit* unit2 = (Unit*)ufact->create(1);
+    Unit* unit2 = (Unit*)ufact->create(0);
     Unit* unit3 = (Unit*)ufact->create(4);
     Unit* unit4 = (Unit*)ufact->create(5);
     cage->addUnit(unit1);
@@ -73,4 +73,12 @@ void Test::run() {
     CCLOG("******Field class******");
     Field* field = BattleController::getInstance()->getField();
     field->dump();
+    
+    CCLOG("******Summon******");
+    Array* ar =BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
+    Object* it;
+    CCARRAY_FOREACH(ar, it) {
+        Unit* unit = dynamic_cast<Unit*>(it);
+        CCLOG("%s can summon?: %d",unit->getObjectData()->getName(), unit->canSummon());
+    }
 }

@@ -14,6 +14,9 @@ const char* UnitData::INTERVAL_KEY = "interval";
 const char* UnitData::MAGIC_KEY = "magic";
 const char* UnitData::FAMILY_KEY = "family";
 const char* UnitData::ATTACK_GROWTH_KEY = "attackGrouth";
+const char* UnitData::SACRIFICE_KEY[] = {"sacrifice1", "sacrifice2", "sacrifice3"};
+const char* UnitData::SACRIFICE_NUM_KEY[] = {"sacrificeNum1", "sacrificeNum2", "sacrificeNum3"};
+int UnitData::SACRIFICE_SLOT_NUM = 3;
 
 UnitData::UnitData(Dictionary* data)
 : ObjectData(data)
@@ -40,6 +43,14 @@ const char* UnitData::getFamily() const {
 
 const char* UnitData::getMagic() const {
     return getCharValue(MAGIC_KEY);
+}
+
+int UnitData::getSacrifice(int slotID) const {
+    return (0<=slotID && slotID<SACRIFICE_SLOT_NUM) ? getIntValue(SACRIFICE_KEY[slotID]) : -1;
+}
+
+int UnitData::getSacrificeNum(int slotID) const {
+    return (0<=slotID && slotID<SACRIFICE_SLOT_NUM) ? getIntValue(SACRIFICE_NUM_KEY[slotID]) : -1;
 }
 
 void UnitData::updateStatus(const BaseObject* bo) {
@@ -86,4 +97,8 @@ void UnitData::dump() const{
     CCLOG("interval: %f", getInterval());
     CCLOG("family: %s", getFamily());
     CCLOG("magic: %s", getMagic());
+    CCLOG("unitNum: %d", getUnitNum());
+    for(int i=0; i<SACRIFICE_SLOT_NUM; ++i){
+        CCLOG("sacrifice1 ID: %d, num: %d", getSacrifice(i), getSacrificeNum(i));
+    }
 }
