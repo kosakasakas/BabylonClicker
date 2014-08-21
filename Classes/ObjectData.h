@@ -20,14 +20,15 @@ public:
     ObjectData(Dictionary* data);
     virtual ~ObjectData();
     CC_SYNTHESIZE_READONLY(Dictionary*, objData, ObjData);
-    int getCost() const;
-    int getLevel() const;
+    CC_SYNTHESIZE_READONLY(int, cost, Cost);
+    CC_SYNTHESIZE_READONLY(int, level, Level);
     int getObjectID() const;
     const char* getName() const;
     const char* getDescription() const;
     virtual void dump() const;
-    void setCost(int value);
-    void setLevel(int value);
+    void incrementLevel();
+    void reduceLevel(int value);
+    int getDefaultCost() const;
     int getIntValue(const char* key) const;
     const char* getCharValue(const char* key) const;
     float getFloatValue(const char* key) const;
@@ -37,11 +38,12 @@ public:
     virtual void updateStatus(const BaseObject* data);
     
 protected:
+    void updateCost();
     static const char* COST_KEY;
-    static const char* LEVEL_KEY;
     static const char* OBJECTID_KEY;
     static const char* NAME_KEY;
     static const char* DESCRIPTION_KEY;
+    static const char* COST_GROWTH_KEY;
 };
 
 #endif /* defined(__BabylonClicker__ObjectData__) */

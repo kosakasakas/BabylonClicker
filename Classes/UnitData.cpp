@@ -7,15 +7,17 @@
 //
 
 #include "UnitData.h"
+#include "BattleController.h"
 
 const char* UnitData::ATTACK_KEY = "attack";
 const char* UnitData::INTERVAL_KEY = "interval";
 const char* UnitData::MAGIC_KEY = "magic";
 const char* UnitData::FAMILY_KEY = "family";
-const char* UnitData::ATTACK_GROUTH_KEY = "attackGrouth";
+const char* UnitData::ATTACK_GROWTH_KEY = "attackGrouth";
 
 UnitData::UnitData(Dictionary* data)
 : ObjectData(data)
+, unitNum(0)
 {
     attack = getDefaultAttack();
 }
@@ -41,18 +43,41 @@ const char* UnitData::getMagic() const {
 }
 
 void UnitData::updateStatus(const BaseObject* bo) {
-    const FieldObject* fo = dynamic_cast<const FieldObject*>(bo);
-    updateAttack(fo);
+    updateAttack();
 }
 
-void UnitData::updateAttack(const FieldObject* fo) {
+void UnitData::updateAttack() {
+    attack = getDefaultAttack();
+    addMagicOffsetToAttack();
+    addFamilyOffsetToAttack();
+}
+
+void UnitData::addMagicOffsetToAttack() {
+    int magicID = Field::getMagicFieldType(getMagic());
+    FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitMagicField()->getObjectAtIndex(magicID));
     int level = fo->getLevel();
-    float defAttack = getDefaultAttack();
-    float aGrouth = getFloatValue(ATTACK_GROUTH_KEY);
+    float aGrouth = getFloatValue(ATTACK_GROWTH_KEY);
     for(int i = 0; i < level; i++) {
-        defAttack *= aGrouth;
+        attack *= aGrouth;
     }
-    attack = defAttack;
+}
+
+void UnitData::addFamilyOffsetToAttack() {
+    int familyID = Field::getFamilyFieldType(getFamily());
+    FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitMagicField()->getObjectAtIndex(familyID));
+    int level = fo->getLevel();
+    float aGrouth = getFloatValue(ATTACK_GROWTH_KEY);
+    for(int i = 0; i < level; i++) {
+        attack *= aGrouth;
+    }
+}
+
+void UnitData::incrementUnitNum() {
+    ++unitNum;
+}
+
+void UnitData::reduceUnitNum(int num) {
+    unitNum -= num;
 }
 
 void UnitData::dump() const{

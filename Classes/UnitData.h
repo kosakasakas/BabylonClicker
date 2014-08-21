@@ -19,18 +19,23 @@ public:
     virtual ~UnitData();
     float getDefaultAttack() const;
     CC_SYNTHESIZE_READONLY(float, attack, Attack);
+    CC_SYNTHESIZE_READONLY(int, unitNum, unitNum);
     float getInterval() const;
     const char* getFamily() const;
     const char* getMagic() const;
-    void updateAttack(const FieldObject* fo);
     virtual void dump() const;
     virtual void updateStatus(const BaseObject* bo);
+    void incrementUnitNum();
+    void reduceUnitNum(int num);
 protected:
+    void addFamilyOffsetToAttack();
+    void addMagicOffsetToAttack();
+    void updateAttack();
     static const char* ATTACK_KEY;
     static const char* INTERVAL_KEY;
     static const char* MAGIC_KEY;
     static const char* FAMILY_KEY;
-    static const char* ATTACK_GROUTH_KEY;
+    static const char* ATTACK_GROWTH_KEY;
 };
 
 #endif /* defined(__BabylonClicker__UnitData__) */

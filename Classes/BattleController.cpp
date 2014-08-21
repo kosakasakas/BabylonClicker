@@ -46,19 +46,3 @@ void BattleController::onTargetBossDestroyed() {
     targetBoss = (Boss*)bFactory->create(1); // todo set index from field object.
     CCLOG("new boss is created..");
 }
-
-
-UnitData* BattleController::getSharedUnitData(int objectID) const {
-    UnitField* uf = dynamic_cast<UnitField*>(field->getUnitField()->getObjectAtIndex(objectID));
-    return uf->getSharedUnitData();
-}
-
-void BattleController::setSharedUnitData(UnitData* unitData) {
-    UnitField* uf = dynamic_cast<UnitField*>(field->getUnitField()->getObjectAtIndex(unitData->getObjectID()));
-    uf->setSharedUnitData(unitData);
-}
-
-bool BattleController::isHavingSharedUnitData(int objectID) const {
-    UnitField* uf = dynamic_cast<UnitField*>(field->getUnitField()->getObjectAtIndex(objectID));
-    return (uf->isHoldingSharedUnitData()) ? true : false;
-}

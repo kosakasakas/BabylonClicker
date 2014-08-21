@@ -27,9 +27,6 @@ public:
     CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
     CC_SYNTHESIZE_READONLY(Field*, field, Field);
     void onTargetBossDestroyed();
-    UnitData* getSharedUnitData(int objectID) const;
-    void setSharedUnitData(UnitData* unitData);
-    bool isHavingSharedUnitData(int objectID) const;
 };
 
 #endif /* defined(__BabylonClicker__BattleController__) */

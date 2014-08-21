@@ -8,14 +8,17 @@
 
 #include "ObjectData.h"
 #include "FieldObject.h"
+#include "BattleController.h"
 
 const char* ObjectData::COST_KEY = "cost";
-const char* ObjectData::LEVEL_KEY = "level";
 const char* ObjectData::OBJECTID_KEY = "objectID";
 const char* ObjectData::NAME_KEY = "name";
 const char* ObjectData::DESCRIPTION_KEY = "description";
+const char* ObjectData::COST_GROWTH_KEY = "costGrowth";
 
 ObjectData::ObjectData(Dictionary* data)
+: cost(0)
+, level(0)
 {
     objData = data;
 }
@@ -66,43 +69,50 @@ void ObjectData::setFloatValue(float val, const char* key) {
 void ObjectData::setCharValue(const char* val, const char* key) {
 }
 
-int ObjectData::getCost() const{
+int ObjectData::getDefaultCost() const {
     return getIntValue(COST_KEY);
 }
 
-int ObjectData::getObjectID() const{
+int ObjectData::getObjectID() const {
     return getIntValue(OBJECTID_KEY);
 }
 
-int ObjectData::getLevel() const{
-    return getIntValue(LEVEL_KEY);
-}
-
-const char* ObjectData::getName() const{
+const char* ObjectData::getName() const {
     return getCharValue(NAME_KEY);
 }
 
-const char* ObjectData::getDescription() const{
+const char* ObjectData::getDescription() const {
     return getCharValue(DESCRIPTION_KEY);
 }
 
-void ObjectData::setCost(int value) {
-    setIntValue(value, COST_KEY);
-}
-
-void ObjectData::setLevel(int value) {
-    setIntValue(value, LEVEL_KEY);
-}
-
 void ObjectData::updateStatus(const BaseObject* data){
-    const FieldObject* fo = dynamic_cast<const FieldObject*>(data);
-    CCLOG("level: %d", fo->getLevel());
+    updateCost();
 }
+
+void ObjectData::incrementLevel() {
+    ++level;
+    updateCost();
+}
+
+void ObjectData::reduceLevel(int value) {
+    level -= value;
+    level = (level<0) ? 0 : level;
+    updateCost();
+}
+
+void ObjectData::updateCost() {
+    float defCost = getDefaultCost();
+    float cGrouth = getFloatValue(COST_GROWTH_KEY);
+    for(int i = 0; i < level; i++) {
+        defCost *= cGrouth;
+    }
+    cost = defCost;
+}
+
 
 void ObjectData::dump() const{
     CCLOG("======ObjectData Class======");
     CCLOG("cost: %d", getCost());
-    CCLOG("level: %d", getLevel());
     CCLOG("objectID: %d", getObjectID());
     CCLOG("name: %s", getName());
     CCLOG("description: %s", getDescription());

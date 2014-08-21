@@ -12,12 +12,7 @@
 
 Field::Field()
 {
-    UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
-    int unitNum = udFactory->getObjectNum();
-    unitField = Array::createWithCapacity(unitNum);
-    unitField->retain();
-    
-    unitFamilyField = Array::createWithCapacity(UFFT_TypeNum);
+    unitFamilyField = Array::createWithCapacity(FFT_TypeNum);
     unitFamilyField->retain();
     
     unitMagicField = Array::createWithCapacity(MFT_TypeNum);
@@ -29,15 +24,11 @@ Field::Field()
     userMagicField = Array::createWithCapacity(MFT_TypeNum);
     userMagicField->retain();
     
-    for (int i = 0; i < unitNum; ++i) {
-        UnitField* fo = new UnitField();
-        unitField->addObject(fo);
-    }
     for (int i = 0; i < UFT_TypeNum; ++i) {
         FieldObject* fo = new FieldObject();
         userField->addObject(fo);
     }
-    for (int i = 0; i < UFFT_TypeNum; ++i) {
+    for (int i = 0; i < FFT_TypeNum; ++i) {
         FieldObject* fo = new FieldObject();
         unitFamilyField->addObject(fo);
     }
@@ -47,11 +38,22 @@ Field::Field()
         FieldObject* fo2 = new FieldObject();
         userMagicField->addObject(fo2);
     }
+    
+    UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
+    int unitNum = udFactory->getObjectNum();
+    sharedUnitDataArray = Array::createWithCapacity(unitNum);
+    sharedUnitDataArray->retain();
+    for(int i = 0; i < unitNum; i++) {
+        UnitData* uData = (UnitData*)udFactory->create(i);
+        sharedUnitDataArray->addObject(uData);
+        registUnitFamiryFieldObserver(uData);
+        registUnitMagicFieldObserver(uData);
+    }
 }
 
 Field::~Field()
 {
-    unitField->release();
+    sharedUnitDataArray->release();
     unitFamilyField->release();
     unitMagicField->release();
     userField->release();
@@ -61,14 +63,14 @@ Field::~Field()
 void Field::dump() const{
     CCLOG("======Field Class======");
     Object* it;
+    CCLOG("~~~sharedUnitDataArray~~~");
+    CCARRAY_FOREACH(sharedUnitDataArray, it)
+    {
+        UnitData* ud = dynamic_cast<UnitData*>(it);
+        ud->dump();
+    }
     CCLOG("~~~unitFamilyField~~~");
     CCARRAY_FOREACH(unitFamilyField, it)
-    {
-        FieldObject* fo = dynamic_cast<FieldObject*>(it);
-        fo->dump();
-    }
-    CCLOG("~~~unitField~~~");
-    CCARRAY_FOREACH(unitField, it)
     {
         FieldObject* fo = dynamic_cast<FieldObject*>(it);
         fo->dump();
@@ -94,8 +96,8 @@ void Field::dump() const{
 }
 
 void Field::registUnitFamiryFieldObserver(UnitData* uData) {
-    UnitFamilyFieldType ufft = getUnitFamilyFieldType(uData->getFamily());
-    FieldObject* fo = dynamic_cast<FieldObject*>(unitFamilyField->getObjectAtIndex(ufft));
+    FamilyFieldType fft = getFamilyFieldType(uData->getFamily());
+    FieldObject* fo = dynamic_cast<FieldObject*>(unitFamilyField->getObjectAtIndex(fft));
     if (fo->hasObserver(uData)) {
         CCLOG("Observer is already registered.");
     } else {
@@ -113,35 +115,37 @@ void Field::registUnitMagicFieldObserver(UnitData* uData) {
     }
 }
 
-void Field::registUnitFieldObserver(UnitData* uData) {
-    int objectID = uData->getObjectID();
-    UnitField* uf = dynamic_cast<UnitField*>(unitField->getObjectAtIndex(objectID));
-    if (uf->hasObserver(uData)) {
-        // UnitData is shared. so we regist uData only once. 
-        CCLOG("Observer is already registered.");
-    } else {
-        uf->registerObserver(uData);
-    }
-}
-
 void Field::registUserField(UnitData* uData) {
 }
 
 void Field::registUserMagicField(UnitData* uData) {
 }
 
-Field::UnitFamilyFieldType Field::getUnitFamilyFieldType(const char* name) {
+bool Field::isHavingSharedUnitData(int objectID) {
+    UnitData* ud = getSharedUnitData(objectID);
+    return (ud != NULL) ? true : false;
+}
+
+void Field::setSharedUnitData(UnitData* uData) {
+    sharedUnitDataArray->setObject(uData, uData->getObjectID());
+}
+
+UnitData* Field::getSharedUnitData(int objectID) {
+    return dynamic_cast<UnitData*>(sharedUnitDataArray->getObjectAtIndex(objectID));
+}
+
+Field::FamilyFieldType Field::getFamilyFieldType(const char* name) {
     const std::string familyString = name;
     if (familyString.compare("バビロン") == 0) {
-        return UFFT_Babylon;
+        return FFT_Babylon;
     } else if (familyString.compare("ハナアルキ") == 0) {
-        return UFFT_Hanaaruki;
+        return FFT_Hanaaruki;
     } else if (familyString.compare("マリリカ") == 0) {
-        return UFFT_Maririka;
+        return FFT_Maririka;
     } else if (familyString.compare("パピヨン") == 0) {
-        return UFFT_Papillon;
+        return FFT_Papillon;
     } else {
-        return UFFT_TypeNum;
+        return FFT_TypeNum;
     }
 }
 

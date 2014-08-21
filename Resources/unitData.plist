@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>costGrowth</key>
+	<array>
+		<real>1.1</real>
+		<real>1.1</real>
+		<real>1.1</real>
+		<real>1.1</real>
+		<string>1.1</string>
+		<real>1.1</real>
+	</array>
 	<key>attackGrouth</key>
 	<array>
 		<real>1.05</real>

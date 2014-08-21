@@ -24,19 +24,20 @@ UnitFactory::~UnitFactory()
 
 GameObject* UnitFactory::createObject(int objectID) {
     UnitData* uData;
-    if(BattleController::getInstance()->isHavingSharedUnitData(objectID)) {
-        uData = BattleController::getInstance()->getSharedUnitData(objectID);
+    if (BattleController::getInstance()->getField() != NULL) {
+        uData = BattleController::getInstance()->getField()->getSharedUnitData(objectID);
         uData->retain();
+        Unit* unit = new Unit(uData);
+        return unit;
     } else {
         UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
         uData = (UnitData*)udFactory->create(objectID);
         BattleController* bc = BattleController::getInstance();
-        bc->setSharedUnitData(uData);
+        bc->getField()->setSharedUnitData(uData); // これたぶん落ちるから、ここを通るようなら再考する。
         Field* field = bc->getField();
-        uData->dump();
         field->registUnitFamiryFieldObserver(uData);
         field->registUnitMagicFieldObserver(uData);
+        CCLOG("create and set unitData.");
+        return NULL;
     }
-    Unit* unit = new Unit(uData);
-    return unit;
 }

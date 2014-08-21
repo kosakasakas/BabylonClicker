@@ -36,13 +36,12 @@ public:
         MFT_TypeNum
     } MagicFieldType;
     typedef enum {
-        UFFT_Babylon,
-        UFFT_Hanaaruki,
-        UFFT_Maririka,
-        UFFT_Papillon,
-        UFFT_TypeNum
-    } UnitFamilyFieldType;
-    CC_SYNTHESIZE_READONLY(Array*, unitField, UnitField);
+        FFT_Babylon,
+        FFT_Hanaaruki,
+        FFT_Maririka,
+        FFT_Papillon,
+        FFT_TypeNum
+    } FamilyFieldType;
     CC_SYNTHESIZE_READONLY(Array*, unitFamilyField, UnitFamilyField);
     CC_SYNTHESIZE_READONLY(Array*, unitMagicField, UnitMagicField);
     CC_SYNTHESIZE_READONLY(Array*, userField, UserField);
@@ -50,11 +49,14 @@ public:
     virtual void dump() const;
     void registUnitFamiryFieldObserver(UnitData* uData);
     void registUnitMagicFieldObserver(UnitData* uData);
-    void registUnitFieldObserver(UnitData* uData);
     void registUserField(UnitData* uData);
     void registUserMagicField(UnitData* uData);
+    bool isHavingSharedUnitData(int objectID);
+    void setSharedUnitData(UnitData* uData);
+    UnitData* getSharedUnitData(int objectID);
+    static FamilyFieldType getFamilyFieldType(const char* name);
+    static MagicFieldType getMagicFieldType(const char* name);
 private:
-    UnitFamilyFieldType getUnitFamilyFieldType(const char* name);
-    MagicFieldType getMagicFieldType(const char* name);
+    Array* sharedUnitDataArray;
 };
 #endif /* defined(__BabylonClicker__Field__) */
