@@ -59,6 +59,7 @@ public:
     UnitData* getSharedUnitData(int objectID);
     Array* getUnitRefArray(int objectID);
     int getBossLevel(int objectID) const;
+    int getTotalBossLevel();
     void setBossLevel(int objectID, int level);
     static FamilyFieldType getFamilyFieldType(const char* name);
     static MagicFieldType getMagicFieldType(const char* name);

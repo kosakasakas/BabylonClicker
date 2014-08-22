@@ -168,6 +168,14 @@ void Field::setBossLevel(int objectID, int level) {
     bossLevelArray[objectID] = level;
 }
 
+int Field::getTotalBossLevel() {
+    int total = 0;
+    for (int i=0; i<bossNum; ++i) {
+        total+=bossLevelArray[i];
+    }
+    return total;
+}
+
 Field::FamilyFieldType Field::getFamilyFieldType(const char* name) {
     const std::string familyString = name;
     if (familyString.compare("バビロン") == 0) {
