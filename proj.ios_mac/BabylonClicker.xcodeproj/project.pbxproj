@@ -535,6 +535,137 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		14A6B94E19A6F8A800FBD3C9 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */,
+				14DADDDA193F27AB0026DEE0 /* GLES-Render.h */,
+				14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */,
+				145D32071907B8130067B357 /* OpeningLayer.cpp */,
+				145D32081907B8130067B357 /* OpeningLayer.h */,
+				145D320C1907B8130067B357 /* MainScene.cpp */,
+				145D320D1907B8130067B357 /* MainScene.h */,
+				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		14A6B94F19A6F8DB00FBD3C9 /* GameObject */ = {
+			isa = PBXGroup;
+			children = (
+				1483411D199CB81E00717A59 /* GameObjectFactory.cpp */,
+				1483411E199CB81E00717A59 /* GameObjectFactory.h */,
+				1483411A199CB31F00717A59 /* GameObject.cpp */,
+				1483411B199CB31F00717A59 /* GameObject.h */,
+				14834120199CBBF400717A59 /* UnitFactory.cpp */,
+				14834121199CBBF400717A59 /* UnitFactory.h */,
+				14834123199CBCCF00717A59 /* Unit.cpp */,
+				14834124199CBCCF00717A59 /* Unit.h */,
+				1483413E199CCF4C00717A59 /* BossFactory.cpp */,
+				1483413F199CCF4C00717A59 /* BossFactory.h */,
+				14834141199CD05700717A59 /* Boss.cpp */,
+				14834142199CD05700717A59 /* Boss.h */,
+				14834126199CBE6D00717A59 /* ItemFactory.cpp */,
+				14834127199CBE6D00717A59 /* ItemFactory.h */,
+				14834129199CBF3000717A59 /* Item.cpp */,
+				1483412A199CBF3000717A59 /* Item.h */,
+				1483412C199CC05300717A59 /* MagicFactory.cpp */,
+				1483412D199CC05300717A59 /* MagicFactory.h */,
+				1483412F199CC12800717A59 /* Magic.cpp */,
+				14834130199CC12800717A59 /* Magic.h */,
+			);
+			name = GameObject;
+			sourceTree = "<group>";
+		};
+		14A6B95019A6F90700FBD3C9 /* ObjectData */ = {
+			isa = PBXGroup;
+			children = (
+				14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */,
+				14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */,
+				145F0D8A199DCF930063F8FB /* ObjectData.cpp */,
+				145F0D8B199DCF930063F8FB /* ObjectData.h */,
+				145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */,
+				145F0D97199DDEA00063F8FB /* UnitDataFactory.h */,
+				145F0D93199DDD830063F8FB /* UnitData.cpp */,
+				145F0D94199DDD830063F8FB /* UnitData.h */,
+				143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */,
+				143C5C3D199E25A10041FFEB /* BossDataFactory.h */,
+				143C5C45199E26650041FFEB /* BossData.cpp */,
+				143C5C46199E26650041FFEB /* BossData.h */,
+				143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */,
+				143C5C49199E2AED0041FFEB /* ItemDataFactory.h */,
+				143C5C4B199E2BEF0041FFEB /* ItemData.cpp */,
+				143C5C4C199E2BEF0041FFEB /* ItemData.h */,
+				143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */,
+				143C5C52199E31E70041FFEB /* MagicDataFactory.h */,
+				143C5C4E199E2C6F0041FFEB /* MagicData.cpp */,
+				143C5C4F199E2C6F0041FFEB /* MagicData.h */,
+			);
+			name = ObjectData;
+			sourceTree = "<group>";
+		};
+		14A6B95119A6F92800FBD3C9 /* Contoroller */ = {
+			isa = PBXGroup;
+			children = (
+				14991098197FDFDE004672FA /* GameController.h */,
+				14991099197FDFDE004672FA /* GameController.cpp */,
+				14834144199CD22900717A59 /* BattleController.cpp */,
+				14834145199CD22900717A59 /* BattleController.h */,
+				F8E592DD199E657300306809 /* UnitCage.cpp */,
+				F8E592DE199E657300306809 /* UnitCage.h */,
+				1483414A199CDF3100717A59 /* User.cpp */,
+				1483414B199CDF3100717A59 /* User.h */,
+			);
+			name = Contoroller;
+			sourceTree = "<group>";
+		};
+		14A6B95219A6F98800FBD3C9 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				F8E592E4199F127800306809 /* Subject.h */,
+				14ED3CD119A22360002D5CF0 /* Subject.cpp */,
+				F8E592ED199F143C00306809 /* Observer.h */,
+				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
+				F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */,
+				F8E592F2199F20DE00306809 /* BossDataDisplay.h */,
+				F8E592D5199E642000306809 /* Iterator.h */,
+				1483414D199CE46400717A59 /* BaseObject.cpp */,
+				1483414E199CE46400717A59 /* BaseObject.h */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		14A6B95319A6FA4000FBD3C9 /* Field */ = {
+			isa = PBXGroup;
+			children = (
+				14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */,
+				14ED3CBF19A1DB37002D5CF0 /* FieldObject.h */,
+				14834147199CD6D200717A59 /* Field.cpp */,
+				14834148199CD6D200717A59 /* Field.h */,
+				14ED3CC819A1F230002D5CF0 /* UnitField.cpp */,
+				14ED3CC919A1F230002D5CF0 /* UnitField.h */,
+			);
+			name = Field;
+			sourceTree = "<group>";
+		};
+		14A6B95419A6FA7E00FBD3C9 /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				F8E592FE19A069ED00306809 /* UnitNode.h */,
+				F8E592FD19A069ED00306809 /* UnitNode.cpp */,
+			);
+			name = Node;
+			sourceTree = "<group>";
+		};
+		14A6B95519A6FA9100FBD3C9 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F8E592F4199F262200306809 /* GameConfig.cpp */,
+				F8E592F5199F262200306809 /* GameConfig.h */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		14AC774C196E4C2B005047F1 /* NendAd */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,87 +683,20 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				14991098197FDFDE004672FA /* GameController.h */,
-				14991099197FDFDE004672FA /* GameController.cpp */,
-				14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */,
-				14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */,
 				144FAD3F196E5BC600F787E5 /* NendModule.h */,
 				144FAD38196E5BA600F787E5 /* NendIconModule.h */,
-				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
-				14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */,
-				14DADDDA193F27AB0026DEE0 /* GLES-Render.h */,
-				14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */,
-				145D32071907B8130067B357 /* OpeningLayer.cpp */,
-				145D32081907B8130067B357 /* OpeningLayer.h */,
-				145D320C1907B8130067B357 /* MainScene.cpp */,
-				145D320D1907B8130067B357 /* MainScene.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
-				1483411A199CB31F00717A59 /* GameObject.cpp */,
-				1483411B199CB31F00717A59 /* GameObject.h */,
-				1483411D199CB81E00717A59 /* GameObjectFactory.cpp */,
-				1483411E199CB81E00717A59 /* GameObjectFactory.h */,
-				14834120199CBBF400717A59 /* UnitFactory.cpp */,
-				14834121199CBBF400717A59 /* UnitFactory.h */,
-				14834123199CBCCF00717A59 /* Unit.cpp */,
-				14834124199CBCCF00717A59 /* Unit.h */,
-				14834126199CBE6D00717A59 /* ItemFactory.cpp */,
-				14834127199CBE6D00717A59 /* ItemFactory.h */,
-				14834129199CBF3000717A59 /* Item.cpp */,
-				1483412A199CBF3000717A59 /* Item.h */,
-				1483412C199CC05300717A59 /* MagicFactory.cpp */,
-				1483412D199CC05300717A59 /* MagicFactory.h */,
-				1483412F199CC12800717A59 /* Magic.cpp */,
-				14834130199CC12800717A59 /* Magic.h */,
 				14834132199CC58600717A59 /* Test.cpp */,
 				14834133199CC58600717A59 /* Test.h */,
-				1483413E199CCF4C00717A59 /* BossFactory.cpp */,
-				1483413F199CCF4C00717A59 /* BossFactory.h */,
-				14834141199CD05700717A59 /* Boss.cpp */,
-				14834142199CD05700717A59 /* Boss.h */,
-				14834144199CD22900717A59 /* BattleController.cpp */,
-				14834145199CD22900717A59 /* BattleController.h */,
-				14834147199CD6D200717A59 /* Field.cpp */,
-				14834148199CD6D200717A59 /* Field.h */,
-				1483414A199CDF3100717A59 /* User.cpp */,
-				1483414B199CDF3100717A59 /* User.h */,
-				1483414D199CE46400717A59 /* BaseObject.cpp */,
-				1483414E199CE46400717A59 /* BaseObject.h */,
-				145F0D8A199DCF930063F8FB /* ObjectData.cpp */,
-				145F0D8B199DCF930063F8FB /* ObjectData.h */,
-				145F0D93199DDD830063F8FB /* UnitData.cpp */,
-				145F0D94199DDD830063F8FB /* UnitData.h */,
-				145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */,
-				145F0D97199DDEA00063F8FB /* UnitDataFactory.h */,
-				143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */,
-				143C5C3D199E25A10041FFEB /* BossDataFactory.h */,
-				143C5C45199E26650041FFEB /* BossData.cpp */,
-				143C5C46199E26650041FFEB /* BossData.h */,
-				143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */,
-				143C5C49199E2AED0041FFEB /* ItemDataFactory.h */,
-				143C5C4B199E2BEF0041FFEB /* ItemData.cpp */,
-				143C5C4C199E2BEF0041FFEB /* ItemData.h */,
-				143C5C4E199E2C6F0041FFEB /* MagicData.cpp */,
-				143C5C4F199E2C6F0041FFEB /* MagicData.h */,
-				143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */,
-				143C5C52199E31E70041FFEB /* MagicDataFactory.h */,
-				F8E592D5199E642000306809 /* Iterator.h */,
-				F8E592DD199E657300306809 /* UnitCage.cpp */,
-				F8E592DE199E657300306809 /* UnitCage.h */,
-				14ED3CD119A22360002D5CF0 /* Subject.cpp */,
-				F8E592E4199F127800306809 /* Subject.h */,
-				F8E592ED199F143C00306809 /* Observer.h */,
-				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
-				F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */,
-				F8E592F2199F20DE00306809 /* BossDataDisplay.h */,
-				F8E592F4199F262200306809 /* GameConfig.cpp */,
-				F8E592F5199F262200306809 /* GameConfig.h */,
-				F8E592FD19A069ED00306809 /* UnitNode.cpp */,
-				F8E592FE19A069ED00306809 /* UnitNode.h */,
-				14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */,
-				14ED3CBF19A1DB37002D5CF0 /* FieldObject.h */,
-				14ED3CC819A1F230002D5CF0 /* UnitField.cpp */,
-				14ED3CC919A1F230002D5CF0 /* UnitField.h */,
+				14A6B94E19A6F8A800FBD3C9 /* Scene */,
+				14A6B95119A6F92800FBD3C9 /* Contoroller */,
+				14A6B94F19A6F8DB00FBD3C9 /* GameObject */,
+				14A6B95019A6F90700FBD3C9 /* ObjectData */,
+				14A6B95219A6F98800FBD3C9 /* Interface */,
+				14A6B95319A6FA4000FBD3C9 /* Field */,
+				14A6B95519A6FA9100FBD3C9 /* Config */,
+				14A6B95419A6FA7E00FBD3C9 /* Node */,
 			);
 			name = Classes;
 			path = ../classes;
