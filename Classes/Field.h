@@ -48,6 +48,7 @@ public:
     CC_SYNTHESIZE_READONLY(Array*, userField, UserField);
     CC_SYNTHESIZE_READONLY(Array*, userMagicField, UserMagicField);
     CC_SYNTHESIZE_READONLY(User*, user, User);
+    CC_SYNTHESIZE_READONLY(int, bossNum, BossNum);
     virtual void dump() const;
     void registUnitFamiryFieldObserver(UnitData* uData);
     void registUnitMagicFieldObserver(UnitData* uData);
@@ -57,10 +58,13 @@ public:
     void setSharedUnitData(UnitData* uData);
     UnitData* getSharedUnitData(int objectID);
     Array* getUnitRefArray(int objectID);
+    int getBossLevel(int objectID) const;
+    void setBossLevel(int objectID, int level);
     static FamilyFieldType getFamilyFieldType(const char* name);
     static MagicFieldType getMagicFieldType(const char* name);
 private:
     Array* sharedUnitDataArray;
     Array** unitRef;
+    int* bossLevelArray;
 };
 #endif /* defined(__BabylonClicker__Field__) */

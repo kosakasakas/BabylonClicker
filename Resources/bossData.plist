@@ -2,23 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>lotWeight</key>
+	<array>
+		<integer>25</integer>
+		<integer>25</integer>
+		<integer>20</integer>
+		<integer>20</integer>
+		<integer>8</integer>
+		<integer>2</integer>
+	</array>
+	<key>hpGrowth</key>
+	<array>
+		<real>1.1</real>
+		<real>1.1</real>
+		<real>1.1</real>
+		<real>1.1</real>
+		<real>1.1</real>
+		<real>1.1</real>
+	</array>
 	<key>hp</key>
 	<array>
-		<integer>1000</integer>
+		<real>1000</real>
 		<integer>1500</integer>
-		<real>7000</real>
-		<real>15000</real>
-		<real>40000</real>
-		<real>600000</real>
+		<integer>2000</integer>
+		<integer>2500</integer>
+		<integer>3000</integer>
+		<integer>5000</integer>
 	</array>
 	<key>objectID</key>
 	<array>
-		<real>1000</real>
-		<integer>1001</integer>
-		<integer>1002</integer>
-		<integer>1003</integer>
-		<integer>1004</integer>
-		<integer>1005</integer>
+		<integer>0</integer>
+		<integer>1</integer>
+		<integer>2</integer>
+		<integer>3</integer>
+		<integer>4</integer>
+		<integer>5</integer>
 	</array>
 	<key>description</key>
 	<array>

@@ -10,27 +10,50 @@
 #include "BossData.h"
 
 const char* BossData::HP_KEY = "hp";
+const char* BossData::HP_GROWTH_KEY = "hpGrowth";
+const char* BossData::LOT_WEIGHT_KEY = "lotWeight";
 
 BossData::BossData(Dictionary* data)
 :UnitData(data)
 {
+    updateHP();
 }
 
 BossData::~BossData()
 {
 }
 
-float BossData::getHP() const{
+void BossData::updateHP() {
+    hp = getDefaultHP();
+    float growth = getHpGrowth();
+    for(int i = 0; i < level; i++) {
+        hp *= growth;
+    }
+}
+
+float BossData::getDefaultHP() const{
     return getFloatValue(HP_KEY);
 }
 
+float BossData::getHpGrowth() const{
+    return getFloatValue(HP_GROWTH_KEY);
+}
+
+float BossData::getLotWeight() const {
+    return getFloatValue(LOT_WEIGHT_KEY);
+}
+
 void BossData::reduceHP(float damage) {
-    float hp = getHP();
-    setFloatValue(hp - damage, HP_KEY);
+    hp -= damage;
     notifyObservers();
+}
+
+void BossData::update() {
+    ObjectData::update();
+    updateHP();
 }
 
 void BossData::dump() const{
     UnitData::dump();
-    CCLOG("hp: %f", getHP());
+    CCLOG("hp: %f", hp);
 }

@@ -36,9 +36,12 @@ public:
     void setFloatValue(float val, const char* key);
     void setCharValue(const char* val, const char* key);
     virtual void updateStatus(const BaseObject* data);
+    void setLevel(int inputLevel);
+   
     
 protected:
     void updateCost();
+    virtual void update();
     static const char* COST_KEY;
     static const char* OBJECTID_KEY;
     static const char* NAME_KEY;

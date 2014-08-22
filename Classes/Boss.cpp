@@ -10,11 +10,12 @@
 #include "BattleController.h"
 #include "BossDataDisplay.h"
 
-Boss::Boss(BossData* data)
+Boss::Boss(BossData* data, int level)
 : Unit(data)
 {
     BossDataDisplay* bdDisplay = new BossDataDisplay();
     data->registerObserver(bdDisplay);
+    ((BossData*)objectData)->setLevel(level);
 }
 
 Boss::~Boss()
@@ -32,5 +33,8 @@ void Boss::damage(float val) {
 
 void Boss::onDestroyed() {
     CCLOG("Boss is destroyed..");
-    BattleController::getInstance()->onTargetBossDestroyed();
+    BattleController* bc = BattleController::getInstance();
+    int currentLevel = objectData->getLevel();
+    bc->getField()->setBossLevel(objectData->getObjectID(), ++currentLevel);
+    bc->onTargetBossDestroyed();
 }

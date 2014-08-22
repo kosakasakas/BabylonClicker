@@ -7,7 +7,7 @@
 //
 
 #include "BattleController.h"
-#include "BossFactory.h"
+#include "RandomBossFactory.h"
 #include "GameController.h"
 #include "UnitField.h"
 
@@ -18,7 +18,7 @@ BattleController* BattleController::_singleton = NULL;
 BattleController::BattleController()
 {
     BossFactory* bFactory = new BossFactory();
-    targetBoss = (Boss*)bFactory->create(0); // todo set index from field object.
+    targetBoss = (Boss*)bFactory->create(0); // todo load from saved data.
     activeUnitCage = new UnitCage(GameController::getInstance()->getConfig()->getMaxUnitNum());
     field = new Field();
 }
@@ -42,7 +42,8 @@ BattleController* BattleController::getInstance()
 void BattleController::onTargetBossDestroyed() {
     targetBoss->release();
     targetBoss = NULL;
-    BossFactory* bFactory = new BossFactory();
-    targetBoss = (Boss*)bFactory->create(1); // todo set index from field object.
+    RandomBossFactory* rbFactory = new RandomBossFactory();
+    targetBoss = (Boss*)rbFactory->create();
     CCLOG("new boss is created..");
+    targetBoss->dump();
 }

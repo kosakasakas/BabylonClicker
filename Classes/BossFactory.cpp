@@ -10,6 +10,7 @@
 #include "Boss.h"
 #include "BossData.h"
 #include "BossDataFactory.h"
+#include "BattleController.h"
 
 BossFactory::BossFactory()
 {
@@ -20,8 +21,12 @@ BossFactory::~BossFactory()
 }
 
 GameObject* BossFactory::createObject(int objectID) {
+    return create(objectID, 0);
+}
+
+GameObject* BossFactory::create(int objectID, int level) {
     BossDataFactory* bdFactory = new BossDataFactory("bossData.plist");
     BossData* bData = (BossData*)bdFactory->create(objectID);
-    Boss* boss = new Boss(bData);
+    Boss* boss = new Boss(bData, level);
     return boss;
 }

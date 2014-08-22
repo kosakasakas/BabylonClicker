@@ -10,6 +10,7 @@
 #include "UnitDataFactory.h"
 #include "UnitField.h"
 #include "UserDataDisplay.h"
+#include "BossDataFactory.h"
 
 Field::Field()
 {
@@ -59,6 +60,13 @@ Field::Field()
     user = new User();
     UserDataDisplay* udDisplay = new UserDataDisplay();
     user->registerObserver(udDisplay);
+    
+    BossDataFactory* bdFactory = new BossDataFactory("bossData.plist");
+    bossNum = bdFactory->getObjectNum();
+    bossLevelArray = new int[bossNum];
+    for(int i=0; i<bossNum; ++i) {
+        bossLevelArray[i] = 0;
+    }
 }
 
 Field::~Field()
@@ -70,6 +78,7 @@ Field::~Field()
     userMagicField->release();
     delete[] unitRef;
     user->release();
+    delete[] bossLevelArray;
 }
 
 void Field::dump() const{
@@ -149,6 +158,14 @@ UnitData* Field::getSharedUnitData(int objectID) {
 Array* Field::getUnitRefArray(int objectID) {
     Array* sfArray = unitRef[objectID];
     return sfArray;
+}
+
+int Field::getBossLevel(int objectID) const {
+    return (0<=objectID && objectID<bossNum) ? bossLevelArray[objectID] : 0;
+}
+
+void Field::setBossLevel(int objectID, int level) {
+    bossLevelArray[objectID] = level;
 }
 
 Field::FamilyFieldType Field::getFamilyFieldType(const char* name) {

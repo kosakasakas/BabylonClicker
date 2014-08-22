@@ -86,18 +86,23 @@ const char* ObjectData::getDescription() const {
 }
 
 void ObjectData::updateStatus(const BaseObject* data){
-    updateCost();
+    update();
 }
 
 void ObjectData::incrementLevel() {
     ++level;
-    updateCost();
+    update();
+}
+
+void ObjectData::setLevel(int inputLevel) {
+    level = inputLevel;
+    update();
 }
 
 void ObjectData::reduceLevel(int value) {
     level -= value;
     level = (level<0) ? 0 : level;
-    updateCost();
+    update();
 }
 
 void ObjectData::updateCost() {
@@ -109,9 +114,13 @@ void ObjectData::updateCost() {
     cost = defCost;
 }
 
+void ObjectData::update() {
+    updateCost();
+}
 
 void ObjectData::dump() const{
     CCLOG("======ObjectData Class======");
+    CCLOG("level: %d", getLevel());
     CCLOG("cost: %f", getCost());
     CCLOG("objectID: %d", getObjectID());
     CCLOG("name: %s", getName());

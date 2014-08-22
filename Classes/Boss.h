@@ -15,7 +15,7 @@
 
 class Boss : public Unit {
 public:
-    Boss(BossData* data);
+    Boss(BossData* data, int level);
     virtual ~Boss();
     void damage(float val);
 private:
