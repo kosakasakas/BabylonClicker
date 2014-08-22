@@ -14,7 +14,6 @@
 #include "Boss.h"
 #include "UnitCage.h"
 #include "Field.h"
-#include "User.h"
 
 class BattleController
 {
@@ -27,7 +26,6 @@ public:
     CC_SYNTHESIZE(Boss*, targetBoss, TargetBoss);
     CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
     CC_SYNTHESIZE_READONLY(Field*, field, Field);
-    CC_SYNTHESIZE_READONLY(User*, user, User);
     void onTargetBossDestroyed();
 };
 

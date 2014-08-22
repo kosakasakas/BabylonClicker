@@ -14,6 +14,7 @@
 #include "BaseObject.h"
 #include "FieldObject.h"
 #include "UnitData.h"
+#include "User.h"
 
 class Field : virtual public BaseObject {
 public:
@@ -46,6 +47,7 @@ public:
     CC_SYNTHESIZE_READONLY(Array*, unitMagicField, UnitMagicField);
     CC_SYNTHESIZE_READONLY(Array*, userField, UserField);
     CC_SYNTHESIZE_READONLY(Array*, userMagicField, UserMagicField);
+    CC_SYNTHESIZE_READONLY(User*, user, User);
     virtual void dump() const;
     void registUnitFamiryFieldObserver(UnitData* uData);
     void registUnitMagicFieldObserver(UnitData* uData);

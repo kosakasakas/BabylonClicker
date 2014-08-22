@@ -35,7 +35,7 @@ Test::~Test()
 void Test::run() {
     
     CCLOG("******Settings******");
-    User* user = BattleController::getInstance()->getUser();
+    User* user = BattleController::getInstance()->getField()->getUser();
     
     CCLOG("******UnitDataFactory class******");
     GameConfig* config = GameController::getInstance()->getConfig();
@@ -52,7 +52,9 @@ void Test::run() {
     Unit* unit5 = (Unit*)ufact->create(0);
     Unit* unit3 = (Unit*)ufact->create(4);
     Unit* unit4 = (Unit*)ufact->create(5);
+    unit2->dump();
     unit1->summon();
+    unit2->dump();
     unit2->summon();
     unit3->summon();
     unit4->summon();

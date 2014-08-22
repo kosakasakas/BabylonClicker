@@ -31,12 +31,14 @@ void Unit::summon() {
         CCLOG("%s can not summon!!", getObjectData()->getName());
         return;
     }
+    
     for(int i=0; i<UnitData::SACRIFICE_SLOT_NUM; ++i) {
         sacrificeAt(i);
     }
     uc->addUnit(this);
     purchase();
     CCLOG("%s is summoned.", getObjectData()->getName());
+    objectData->incrementLevel();
 }
 
 bool Unit::canSummon() const {

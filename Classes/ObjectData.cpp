@@ -69,8 +69,8 @@ void ObjectData::setFloatValue(float val, const char* key) {
 void ObjectData::setCharValue(const char* val, const char* key) {
 }
 
-int ObjectData::getDefaultCost() const {
-    return getIntValue(COST_KEY);
+float ObjectData::getDefaultCost() const {
+    return getFloatValue(COST_KEY);
 }
 
 int ObjectData::getObjectID() const {
@@ -112,7 +112,7 @@ void ObjectData::updateCost() {
 
 void ObjectData::dump() const{
     CCLOG("======ObjectData Class======");
-    CCLOG("cost: %d", getCost());
+    CCLOG("cost: %f", getCost());
     CCLOG("objectID: %d", getObjectID());
     CCLOG("name: %s", getName());
     CCLOG("description: %s", getDescription());

@@ -21,7 +21,7 @@ GameObject::~GameObject()
 }
 
 bool GameObject::canPurchase() const{
-    int soul = BattleController::getInstance()->getUser()->getSoul();
+    int soul = BattleController::getInstance()->getField()->getUser()->getSoul();
     return (objectData->getCost() <= soul) ? true : false;
 }
 
@@ -35,7 +35,7 @@ bool GameObject::canSummon() const{
 
 void GameObject::purchase() const{
     if (canSacrifice()) {
-        BattleController::getInstance()->getUser()->reduceSoul(objectData->getCost());
+        BattleController::getInstance()->getField()->getUser()->reduceSoul(objectData->getCost());
     } else {
         CCLOG("con not pay summon cost!");
     }

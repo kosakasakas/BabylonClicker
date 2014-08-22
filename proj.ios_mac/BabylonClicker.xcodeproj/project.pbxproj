@@ -616,8 +616,6 @@
 				14834145199CD22900717A59 /* BattleController.h */,
 				F8E592DD199E657300306809 /* UnitCage.cpp */,
 				F8E592DE199E657300306809 /* UnitCage.h */,
-				1483414A199CDF3100717A59 /* User.cpp */,
-				1483414B199CDF3100717A59 /* User.h */,
 			);
 			name = Contoroller;
 			sourceTree = "<group>";
@@ -644,6 +642,8 @@
 				14834148199CD6D200717A59 /* Field.h */,
 				14ED3CC819A1F230002D5CF0 /* UnitField.cpp */,
 				14ED3CC919A1F230002D5CF0 /* UnitField.h */,
+				1483414A199CDF3100717A59 /* User.cpp */,
+				1483414B199CDF3100717A59 /* User.h */,
 			);
 			name = Field;
 			sourceTree = "<group>";

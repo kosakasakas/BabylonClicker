@@ -20,7 +20,7 @@ public:
     ObjectData(Dictionary* data);
     virtual ~ObjectData();
     CC_SYNTHESIZE_READONLY(Dictionary*, objData, ObjData);
-    CC_SYNTHESIZE_READONLY(int, cost, Cost);
+    CC_SYNTHESIZE_READONLY(float, cost, Cost);
     CC_SYNTHESIZE_READONLY(int, level, Level);
     int getObjectID() const;
     const char* getName() const;
@@ -28,7 +28,7 @@ public:
     virtual void dump() const;
     void incrementLevel();
     void reduceLevel(int value);
-    int getDefaultCost() const;
+    float getDefaultCost() const;
     int getIntValue(const char* key) const;
     const char* getCharValue(const char* key) const;
     float getFloatValue(const char* key) const;

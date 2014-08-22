@@ -9,6 +9,7 @@
 #include "Field.h"
 #include "UnitDataFactory.h"
 #include "UnitField.h"
+#include "UserDataDisplay.h"
 
 Field::Field()
 {
@@ -55,6 +56,9 @@ Field::Field()
         registUnitMagicFieldObserver(uData);
     }
     
+    user = new User();
+    UserDataDisplay* udDisplay = new UserDataDisplay();
+    user->registerObserver(udDisplay);
 }
 
 Field::~Field()
@@ -65,6 +69,7 @@ Field::~Field()
     userField->release();
     userMagicField->release();
     delete[] unitRef;
+    user->release();
 }
 
 void Field::dump() const{

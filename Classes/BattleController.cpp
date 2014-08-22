@@ -10,7 +10,6 @@
 #include "BossFactory.h"
 #include "GameController.h"
 #include "UnitField.h"
-#include "UserDataDisplay.h"
 
 USING_NS_CC;
 
@@ -22,9 +21,6 @@ BattleController::BattleController()
     targetBoss = (Boss*)bFactory->create(0); // todo set index from field object.
     activeUnitCage = new UnitCage(GameController::getInstance()->getConfig()->getMaxUnitNum());
     field = new Field();
-    user = new User();
-    UserDataDisplay* udDisplay = new UserDataDisplay();
-    user->registerObserver(udDisplay);
 }
 
 BattleController::~BattleController()
@@ -32,7 +28,6 @@ BattleController::~BattleController()
     field->release();
     targetBoss->release();
     activeUnitCage->release();
-    user->release();
 }
 
 BattleController* BattleController::getInstance()
