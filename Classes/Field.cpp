@@ -203,7 +203,27 @@ Field::MagicFieldType Field::getMagicFieldType(const char* magic) {
         return MFT_Wood;
     } else if (magicString.compare("光") == 0) {
         return MFT_Shine;
+    } else if (magicString.compare("魔") == 0) {
+        return MFT_Wizard;
     } else {
         return MFT_TypeNum;
+    }
+}
+
+bool Field::isEdge(Field::MagicFieldType unitMagic, Field::MagicFieldType enemyMagic) {
+    if (unitMagic == MFT_Fire) {
+        return (enemyMagic==MFT_Wood) ? true : false;
+    } else if(unitMagic == MFT_Water) {
+        return (enemyMagic==MFT_Fire) ? true : false;
+    } else if(unitMagic == MFT_Wood) {
+        return (enemyMagic==MFT_Water) ? true : false;
+    } else if(unitMagic == MFT_Dark) {
+        return false;
+    } else if(unitMagic == MFT_Shine) {
+        return false;
+    } else if(unitMagic == MFT_Wizard) {
+        return (enemyMagic==MFT_Fire || enemyMagic==MFT_Water || enemyMagic==MFT_Wood) ? true : false;
+    } else {
+        return false;
     }
 }

@@ -36,6 +36,10 @@ const char* GameConfig::getNendApiKey() const{
     return data->getCharValue("nendApiKey");
 }
 
+float GameConfig::getMagicOffsetRate() const {
+    return data->getFloatValue("magicOffsetRate");
+}
+
 void GameConfig::dump() const{
     CCLOG("======GameConfig Class======");
     CCLOG("interval: %d", getAttackInterval());

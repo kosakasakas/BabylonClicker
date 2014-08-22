@@ -8,6 +8,7 @@
 
 #include "Unit.h"
 #include "BattleController.h"
+#include "GameController.h"
 #include "UnitNode.h"
 
 Unit::Unit(UnitData* data)
@@ -96,6 +97,10 @@ void Unit::attack() {
     CCLOG("Attacker name: %s", uData->getName());
     CCLOG("Attacker power: %f", uData->getAttack());
     float attack = uData->getAttack();
+    if(isEdge()) {
+        float magicOffset = GameController::getInstance()->getConfig()->getMagicOffsetRate();
+        attack *= magicOffset;
+    }
     BattleController::getInstance()->getTargetBoss()->damage(attack);
 }
 
@@ -106,6 +111,15 @@ void Unit::onAction() {
 
 bool Unit::isHoldingNode() const{
     return (unitNode != NULL) ? true : false;
+}
+
+bool Unit::isEdge() {
+    Boss* boss = BattleController::getInstance()->getTargetBoss();
+    BossData* bData = (BossData*)boss->getObjectData();
+    UnitData* uData = (UnitData*)objectData;
+    Field::MagicFieldType bMagic = Field::getMagicFieldType(bData->getMagic());
+    Field::MagicFieldType uMagic = Field::getMagicFieldType(uData->getMagic());
+    return Field::isEdge(uMagic, bMagic);
 }
 
 void Unit::dump() const{

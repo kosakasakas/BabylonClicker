@@ -28,6 +28,8 @@ public:
 protected:
     bool canSacrificeAt(int slotID) const;
     void sacrificeAt(int slotID);
+    void updateAttack();
+    bool isEdge();
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

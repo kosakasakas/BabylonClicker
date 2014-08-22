@@ -34,6 +34,7 @@ public:
         MFT_Wood,
         MFT_Shine,
         MFT_Dark,
+        MFT_Wizard,
         MFT_TypeNum
     } MagicFieldType;
     typedef enum {
@@ -63,6 +64,7 @@ public:
     void setBossLevel(int objectID, int level);
     static FamilyFieldType getFamilyFieldType(const char* name);
     static MagicFieldType getMagicFieldType(const char* name);
+    static bool isEdge(MagicFieldType unitMagic, MagicFieldType enemyMagic);
 private:
     Array* sharedUnitDataArray;
     Array** unitRef;

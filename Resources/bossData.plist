@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>magic</key>
+	<array>
+		<string>光</string>
+		<string>光</string>
+		<string>光</string>
+		<string>光</string>
+		<string>水</string>
+		<string>光</string>
+	</array>
 	<key>lotWeight</key>
 	<array>
 		<integer>25</integer>

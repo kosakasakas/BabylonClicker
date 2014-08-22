@@ -21,6 +21,7 @@ public:
     int getMaxUnitNum() const;
     const char* getNendSpotID() const;
     const char* getNendApiKey() const;
+    float getMagicOffsetRate() const;
     virtual void dump() const;
 private:
     ObjectData* data;
