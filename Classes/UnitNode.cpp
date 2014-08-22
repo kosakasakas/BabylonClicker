@@ -11,13 +11,10 @@
 UnitNode::UnitNode(Unit* u)
 : unitRef(u)
 {
-    //UnitData* uData = (UnitData*)u->getObjectData();
-    //this->schedule(schedule_selector(UnitNode::onScheduleUpdate), uData->getInterval());
 }
 
 UnitNode::~UnitNode()
 {
-    //this->unscheduleAllSelectors();
 }
 
 void UnitNode::onScheduleUpdate(float delta) {

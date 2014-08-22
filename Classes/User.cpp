@@ -24,11 +24,13 @@ void User::dump() const{
 
 void User::addSoul(float val) {
     soul += val;
+    notifyObservers();
 }
 
 void User::reduceSoul(float val) {
     if (soul >= val) {
         soul -= val;
+        notifyObservers();
     } else {
         CCLOG("can not reduce soul any more!");
     }

@@ -16,6 +16,7 @@ Subject::Subject()
 
 Subject::~Subject()
 {
+    observers->removeAllObjects();
     observers->release();
 }
 

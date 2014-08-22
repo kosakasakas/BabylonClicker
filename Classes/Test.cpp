@@ -53,9 +53,7 @@ void Test::run() {
     Unit* unit3 = (Unit*)ufact->create(4);
     Unit* unit4 = (Unit*)ufact->create(5);
     unit1->summon();
-    user->dump();
     unit2->summon();
-    user->dump();
     unit3->summon();
     unit4->summon();
     unit5->summon();

@@ -11,9 +11,9 @@
 
 #include <iostream>
 #include "cocos2d.h"
-#include "BaseObject.h"
+#include "Subject.h"
 
-class User : virtual public BaseObject {
+class User : public Subject {
 public:
     User();
     virtual ~User();

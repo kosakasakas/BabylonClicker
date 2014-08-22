@@ -47,6 +47,7 @@
 		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
 		14998D761945B9C70062FF0A /* LiquidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D741945B9C70062FF0A /* LiquidScene.ccbi */; };
+		14A6B95919A700EA00FBD3C9 /* UserDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14A6B95719A700EA00FBD3C9 /* UserDataDisplay.cpp */; };
 		14AC7753196E4C2B005047F1 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC774D196E4C2B005047F1 /* libNendAd.a */; };
 		14AC7754196E4C2C005047F1 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AC7752196E4C2B005047F1 /* NADView_readme.txt */; };
 		14AC775C196E4C65005047F1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775B196E4C65005047F1 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -371,6 +372,8 @@
 		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
 		14998D731945B9C70062FF0A /* RigidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = RigidScene.ccbi; sourceTree = "<group>"; };
 		14998D741945B9C70062FF0A /* LiquidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = LiquidScene.ccbi; sourceTree = "<group>"; };
+		14A6B95719A700EA00FBD3C9 /* UserDataDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserDataDisplay.cpp; path = ../Classes/UserDataDisplay.cpp; sourceTree = "<group>"; };
+		14A6B95819A700EA00FBD3C9 /* UserDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataDisplay.h; path = ../Classes/UserDataDisplay.h; sourceTree = "<group>"; };
 		14AC774D196E4C2B005047F1 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
 		14AC774E196E4C2B005047F1 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
 		14AC774F196E4C2B005047F1 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
@@ -625,9 +628,6 @@
 				F8E592E4199F127800306809 /* Subject.h */,
 				14ED3CD119A22360002D5CF0 /* Subject.cpp */,
 				F8E592ED199F143C00306809 /* Observer.h */,
-				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
-				F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */,
-				F8E592F2199F20DE00306809 /* BossDataDisplay.h */,
 				F8E592D5199E642000306809 /* Iterator.h */,
 				1483414D199CE46400717A59 /* BaseObject.cpp */,
 				1483414E199CE46400717A59 /* BaseObject.h */,
@@ -666,6 +666,18 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		14A6B95619A6FFE800FBD3C9 /* DisplayObject */ = {
+			isa = PBXGroup;
+			children = (
+				F8E592EF199F1D2D00306809 /* ObjectDataDisplay.h */,
+				F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */,
+				F8E592F2199F20DE00306809 /* BossDataDisplay.h */,
+				14A6B95719A700EA00FBD3C9 /* UserDataDisplay.cpp */,
+				14A6B95819A700EA00FBD3C9 /* UserDataDisplay.h */,
+			);
+			name = DisplayObject;
+			sourceTree = "<group>";
+		};
 		14AC774C196E4C2B005047F1 /* NendAd */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,10 +705,11 @@
 				14A6B95119A6F92800FBD3C9 /* Contoroller */,
 				14A6B94F19A6F8DB00FBD3C9 /* GameObject */,
 				14A6B95019A6F90700FBD3C9 /* ObjectData */,
-				14A6B95219A6F98800FBD3C9 /* Interface */,
 				14A6B95319A6FA4000FBD3C9 /* Field */,
 				14A6B95519A6FA9100FBD3C9 /* Config */,
+				14A6B95619A6FFE800FBD3C9 /* DisplayObject */,
 				14A6B95419A6FA7E00FBD3C9 /* Node */,
+				14A6B95219A6F98800FBD3C9 /* Interface */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1131,6 +1144,7 @@
 				143C5C50199E2C6F0041FFEB /* MagicData.cpp in Sources */,
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
+				14A6B95919A700EA00FBD3C9 /* UserDataDisplay.cpp in Sources */,
 				F8E592FF19A069ED00306809 /* UnitNode.cpp in Sources */,
 				14834146199CD22900717A59 /* BattleController.cpp in Sources */,
 				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
