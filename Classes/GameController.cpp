@@ -15,13 +15,11 @@ GameController* GameController::_singleton = NULL;
 GameController::GameController()
 {
     config = new GameConfig();
-    user = new User();
 }
 
 GameController::~GameController()
 {
     config->release();
-    user->release();
 }
 
 GameController* GameController::getInstance()

@@ -28,6 +28,8 @@ void UnitCage::addUnit(Unit *unit) {
         unitArray->addObject(unit);
         UnitData* ud = (UnitData*)unit->getObjectData();
         ud->incrementUnitNum();
+        Array* unitRef = BattleController::getInstance()->getField()->getUnitRefArray(unit->getObjectData()->getObjectID());
+        unitRef->addObject(unit);
     } else {
         CCLOG("active unit num is already over..");
     }
@@ -38,6 +40,8 @@ void UnitCage::removeUnit(Unit* unit) {
     const char* name = unit->getObjectData()->getName();
     UnitData* ud = (UnitData*)unit->getObjectData();
     ud->reduceUnitNum(1);
+    Array* unitRef = BattleController::getInstance()->getField()->getUnitRefArray(unit->getObjectData()->getObjectID());
+    unitRef->removeObject(unit);
     unit->release();
     CCLOG("remove unit: %s", name);
 }

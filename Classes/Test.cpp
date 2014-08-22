@@ -35,14 +35,13 @@ Test::~Test()
 void Test::run() {
     
     CCLOG("******Settings******");
+    User* user = BattleController::getInstance()->getUser();
     
     CCLOG("******UnitDataFactory class******");
     GameConfig* config = GameController::getInstance()->getConfig();
     config->dump();
     
     CCLOG("******User class******");
-    User* user = (User*)GameController::getInstance()->getUser();
-    user->setSoul(100);
     user->dump();
     
     CCLOG("******Unit class******");
@@ -50,12 +49,16 @@ void Test::run() {
     UnitFactory* ufact = new UnitFactory();
     Unit* unit1 = (Unit*)ufact->create(0);
     Unit* unit2 = (Unit*)ufact->create(0);
+    Unit* unit5 = (Unit*)ufact->create(0);
     Unit* unit3 = (Unit*)ufact->create(4);
     Unit* unit4 = (Unit*)ufact->create(5);
-    cage->addUnit(unit1);
-    cage->addUnit(unit2);
-    cage->addUnit(unit3);
-    cage->addUnit(unit4);
+    unit1->summon();
+    user->dump();
+    unit2->summon();
+    user->dump();
+    unit3->summon();
+    unit4->summon();
+    unit5->summon();
     cage->dump();
     
     CCLOG("******Item class******");

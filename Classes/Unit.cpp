@@ -26,20 +26,29 @@ Unit::~Unit()
 }
 
 void Unit::summon() {
-    // 召喚された事を通知。ユニットカウントを上げる。
-    CCLOG("Unit summon called");
+    UnitCage* uc = BattleController::getInstance()->getActiveUnitCage();
+    if (!canPurchase() || !canSacrifice() || !uc->canAddUnit()) {
+        CCLOG("%s can not summon!!", getObjectData()->getName());
+        return;
+    }
+    for(int i=0; i<UnitData::SACRIFICE_SLOT_NUM; ++i) {
+        sacrificeAt(i);
+    }
+    uc->addUnit(this);
+    purchase();
+    CCLOG("%s is summoned.", getObjectData()->getName());
 }
 
 bool Unit::canSummon() const {
     for(int i=0; i<UnitData::SACRIFICE_SLOT_NUM; ++i) {
-        if (!canSummonAt(i)) {
+        if (!canSacrificeAt(i)) {
             return false;
         }
     }
     return true;
 }
 
-bool Unit::canSummonAt(int slotID) const{
+bool Unit::canSacrificeAt(int slotID) const{
     if (0>slotID || slotID>UnitData::SACRIFICE_SLOT_NUM) {
         return false;
     }
@@ -57,6 +66,27 @@ bool Unit::canSummonAt(int slotID) const{
         }
     }
     return false;
+}
+
+void Unit::sacrificeAt(int slotID) {
+    if (0>slotID || slotID>UnitData::SACRIFICE_SLOT_NUM || !canSacrificeAt(slotID)) {
+        CCLOG("cannot cacrifice at slotID: %d", slotID);
+        return;
+    }
+    UnitData* ud = (UnitData*)objectData;
+    int sf = ud->getSacrifice(slotID);
+    if (sf == -1) {
+        return;
+    }
+    else if (sf >= 0) {
+        int sfn = ud->getSacrificeNum(slotID);
+        Array* unitRef = BattleController::getInstance()->getField()->getUnitRefArray(sf);
+        UnitCage* uc = BattleController::getInstance()->getActiveUnitCage();
+        for (int i=0; i<sfn; ++i) {
+            Unit* sacrificeUnit = dynamic_cast<Unit*>(unitRef->getObjectAtIndex(0));
+            uc->removeUnit(sacrificeUnit);
+        }
+    }
 }
 
 void Unit::attack() {

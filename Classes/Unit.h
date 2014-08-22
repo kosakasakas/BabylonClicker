@@ -26,7 +26,8 @@ public:
     virtual void dump() const;
     bool canSummon() const;
 protected:
-    bool canSummonAt(int slotID) const;
+    bool canSacrificeAt(int slotID) const;
+    void sacrificeAt(int slotID);
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

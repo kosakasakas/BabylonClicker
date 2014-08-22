@@ -21,6 +21,7 @@ BattleController::BattleController()
     targetBoss = (Boss*)bFactory->create(0); // todo set index from field object.
     activeUnitCage = new UnitCage(GameController::getInstance()->getConfig()->getMaxUnitNum());
     field = new Field();
+    user = new User();
 }
 
 BattleController::~BattleController()
@@ -28,6 +29,7 @@ BattleController::~BattleController()
     field->release();
     targetBoss->release();
     activeUnitCage->release();
+    user->release();
 }
 
 BattleController* BattleController::getInstance()

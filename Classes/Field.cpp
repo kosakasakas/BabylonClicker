@@ -41,14 +41,20 @@ Field::Field()
     
     UnitDataFactory* udFactory = new UnitDataFactory("unitData.plist");
     int unitNum = udFactory->getObjectNum();
+    unitRef = new Array*[unitNum];
     sharedUnitDataArray = Array::createWithCapacity(unitNum);
     sharedUnitDataArray->retain();
     for(int i = 0; i < unitNum; i++) {
+        // init unitRef
+        unitRef[i] = Array::create();
+        unitRef[i]->retain();
+        // regist sharedUnitData
         UnitData* uData = (UnitData*)udFactory->create(i);
         sharedUnitDataArray->addObject(uData);
         registUnitFamiryFieldObserver(uData);
         registUnitMagicFieldObserver(uData);
     }
+    
 }
 
 Field::~Field()
@@ -58,6 +64,7 @@ Field::~Field()
     unitMagicField->release();
     userField->release();
     userMagicField->release();
+    delete[] unitRef;
 }
 
 void Field::dump() const{
@@ -132,6 +139,11 @@ void Field::setSharedUnitData(UnitData* uData) {
 
 UnitData* Field::getSharedUnitData(int objectID) {
     return dynamic_cast<UnitData*>(sharedUnitDataArray->getObjectAtIndex(objectID));
+}
+
+Array* Field::getUnitRefArray(int objectID) {
+    Array* sfArray = unitRef[objectID];
+    return sfArray;
 }
 
 Field::FamilyFieldType Field::getFamilyFieldType(const char* name) {

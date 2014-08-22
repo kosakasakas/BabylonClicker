@@ -54,9 +54,11 @@ public:
     bool isHavingSharedUnitData(int objectID);
     void setSharedUnitData(UnitData* uData);
     UnitData* getSharedUnitData(int objectID);
+    Array* getUnitRefArray(int objectID);
     static FamilyFieldType getFamilyFieldType(const char* name);
     static MagicFieldType getMagicFieldType(const char* name);
 private:
     Array* sharedUnitDataArray;
+    Array** unitRef;
 };
 #endif /* defined(__BabylonClicker__Field__) */

@@ -7,7 +7,7 @@
 //
 
 #include "GameObject.h"
-#include "GameController.h"
+#include "BattleController.h"
 
 GameObject::GameObject(ObjectData* data)
 {
@@ -16,11 +16,12 @@ GameObject::GameObject(ObjectData* data)
 
 GameObject::~GameObject()
 {
+    CCLOG("%s 's object destructor is called.", objectData->getName());
     objectData->release();
 }
 
 bool GameObject::canPurchase() const{
-    int soul = GameController::getInstance()->getUser()->getSoul();
+    int soul = BattleController::getInstance()->getUser()->getSoul();
     return (objectData->getCost() <= soul) ? true : false;
 }
 
@@ -34,7 +35,7 @@ bool GameObject::canSummon() const{
 
 void GameObject::purchase() const{
     if (canSacrifice()) {
-        GameController::getInstance()->getUser()->reduceSoul(objectData->getCost());
+        BattleController::getInstance()->getUser()->reduceSoul(objectData->getCost());
     } else {
         CCLOG("con not pay summon cost!");
     }

@@ -23,7 +23,6 @@ private:
 public:
     static GameController* getInstance();
     CC_SYNTHESIZE_READONLY(GameConfig*, config, Config);
-    CC_SYNTHESIZE_READONLY(User*, user, User);
 };
 
 #endif /* defined(__UnicornEngine__GameController__) */
