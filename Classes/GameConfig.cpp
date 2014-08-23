@@ -20,8 +20,8 @@ GameConfig::~GameConfig()
     data->release();
 }
 
-int GameConfig::getAttackInterval() const{
-    return data->getIntValue("interval");
+float GameConfig::getAttackInterval() const{
+    return data->getFloatValue("interval");
 }
 
 int GameConfig::getMaxUnitNum() const{
@@ -40,9 +40,14 @@ float GameConfig::getMagicOffsetRate() const {
     return data->getFloatValue("magicOffsetRate");
 }
 
+float GameConfig::getCriticalInterval() const {
+    return data->getFloatValue("criticalInterval");
+}
+
 void GameConfig::dump() const{
     CCLOG("======GameConfig Class======");
-    CCLOG("interval: %d", getAttackInterval());
+    CCLOG("interval: %f", getAttackInterval());
+    CCLOG("criticalInterval: %f", getCriticalInterval());
     CCLOG("maxUnitNum: %d", getMaxUnitNum());
     CCLOG("nendSpotID: %s", getNendSpotID());
     CCLOG("nendApiKey: %s", getNendApiKey());

@@ -21,6 +21,8 @@ BattleController::BattleController()
     targetBoss = (Boss*)bFactory->create(0); // todo load from saved data.
     activeUnitCage = new UnitCage(GameController::getInstance()->getConfig()->getMaxUnitNum());
     field = new Field();
+    critical = new CriticalNode();
+    critical->schedule(schedule_selector(CriticalNode::onScheduleUpdate), GameController::getInstance()->getConfig()->getCriticalInterval());
 }
 
 BattleController::~BattleController()
@@ -28,6 +30,8 @@ BattleController::~BattleController()
     field->release();
     targetBoss->release();
     activeUnitCage->release();
+    critical->unscheduleAllSelectors();
+    critical->release();
 }
 
 BattleController* BattleController::getInstance()

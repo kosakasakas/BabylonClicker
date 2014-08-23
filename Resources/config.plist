@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>criticalInterval</key>
+	<array>
+		<integer>1</integer>
+	</array>
 	<key>magicOffsetRate</key>
 	<array>
 		<real>2.5</real>
@@ -20,7 +24,7 @@
 	</array>
 	<key>interval</key>
 	<array>
-		<integer>10</integer>
+		<real>0.1</real>
 	</array>
 </dict>
 </plist>

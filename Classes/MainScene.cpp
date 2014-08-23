@@ -24,6 +24,9 @@ MainScene::MainScene()
         Unit* u = dynamic_cast<Unit*>(it);
         this->addChild(u->getUnitNode());
     }
+    
+    // critical node
+    this->addChild(BattleController::getInstance()->getCritical());
 }
 
 MainScene::~MainScene()

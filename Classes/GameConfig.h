@@ -17,11 +17,12 @@ class GameConfig : virtual public BaseObject {
 public:
     GameConfig();
     virtual ~GameConfig();
-    int getAttackInterval() const;
+    float getAttackInterval() const;
     int getMaxUnitNum() const;
     const char* getNendSpotID() const;
     const char* getNendApiKey() const;
     float getMagicOffsetRate() const;
+    float getCriticalInterval() const;
     virtual void dump() const;
 private:
     ObjectData* data;

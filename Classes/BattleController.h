@@ -14,6 +14,7 @@
 #include "Boss.h"
 #include "UnitCage.h"
 #include "Field.h"
+#include "CriticalNode.h"
 
 class BattleController
 {
@@ -26,6 +27,7 @@ public:
     CC_SYNTHESIZE(Boss*, targetBoss, TargetBoss);
     CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
     CC_SYNTHESIZE_READONLY(Field*, field, Field);
+    CC_SYNTHESIZE_READONLY(CriticalNode*, critical, Critical);
     void onTargetBossDestroyed();
 };
 
