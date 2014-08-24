@@ -16,7 +16,7 @@
 
 USING_NS_CC;
 
-class UnitCage : virtual public BaseObject {
+class UnitCage : public virtual BaseObject {
 public:
     UnitCage(int unitNum);
     virtual ~UnitCage();

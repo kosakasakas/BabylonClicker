@@ -15,7 +15,7 @@
 class FieldObject : public Subject {
 public:
     FieldObject();
-    ~FieldObject();
+    virtual ~FieldObject();
     virtual void dump() const;
     CC_SYNTHESIZE(int, level, Level);
     void incrementLevel();

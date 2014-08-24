@@ -13,7 +13,7 @@
 #include "ObjectData.h"
 #include "BaseObject.h"
 
-class GameConfig : virtual public BaseObject {
+class GameConfig : public virtual BaseObject {
 public:
     GameConfig();
     virtual ~GameConfig();

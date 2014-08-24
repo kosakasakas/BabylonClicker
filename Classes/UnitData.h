@@ -26,6 +26,7 @@ public:
     const char* getMagic() const;
     int getSacrifice(int slotID) const;
     int getSacrificeNum(int slotID) const;
+    float getCriticalLength() const;
     virtual void dump() const;
     virtual void updateStatus(const BaseObject* bo);
     void incrementUnitNum();

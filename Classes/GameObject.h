@@ -10,13 +10,12 @@
 #define __BabylonClicker__GameObject__
 
 #include <iostream>
-#include "cocos2d.h"
 #include "BaseObject.h"
 #include "ObjectData.h"
 
 USING_NS_CC;
 
-class GameObject : public BaseObject
+class GameObject : public virtual BaseObject
 {
 public:
     GameObject(ObjectData* data);

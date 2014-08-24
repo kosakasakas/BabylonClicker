@@ -12,7 +12,7 @@
 #include <iostream>
 #include "BaseObject.h"
 
-class Observer : virtual public BaseObject {
+class Observer : public virtual BaseObject {
 public:
     Observer(){};
     virtual ~Observer(){};

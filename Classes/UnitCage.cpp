@@ -10,6 +10,7 @@
 #include "UnitNode.h"
 #include "BattleController.h"
 #include "UnitField.h"
+#include "UnitNodeCriticalDecorator.h"
 
 UnitCage::UnitCage(int unitNum)
 : maxUnitNum(unitNum)
@@ -30,6 +31,10 @@ void UnitCage::addUnit(Unit *unit) {
         ud->incrementUnitNum();
         Array* unitRef = BattleController::getInstance()->getField()->getUnitRefArray(unit->getObjectData()->getObjectID());
         unitRef->addObject(unit);
+        
+        // regist critical node
+        UnitNodeCriticalDecorator* uNode = (UnitNodeCriticalDecorator*)unit->getUnitNode();
+        BattleController::getInstance()->getCritical()->registerObserver(uNode);
     } else {
         CCLOG("active unit num is already over..");
     }
@@ -42,6 +47,10 @@ void UnitCage::removeUnit(Unit* unit) {
     ud->reduceUnitNum(1);
     Array* unitRef = BattleController::getInstance()->getField()->getUnitRefArray(unit->getObjectData()->getObjectID());
     unitRef->removeObject(unit);
+    
+    // remove critical node
+    UnitNodeCriticalDecorator* uNode = (UnitNodeCriticalDecorator*)unit->getUnitNode();
+    BattleController::getInstance()->getCritical()->removeObserver(uNode);
     unit->release();
     CCLOG("remove unit: %s", name);
 }

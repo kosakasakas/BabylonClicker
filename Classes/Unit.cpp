@@ -10,19 +10,17 @@
 #include "BattleController.h"
 #include "GameController.h"
 #include "UnitNode.h"
+#include "UnitNodeCriticalDecorator.h"
 
 Unit::Unit(UnitData* data)
 : GameObject(data)
 {
-    // set attack interval.
-    unitNode = new UnitNode(this);
-    UnitData* uData = (UnitData*)getObjectData();
-    unitNode->schedule(schedule_selector(UnitNode::onScheduleUpdate), uData->getInterval());
+    // Notice: スケジューラ登録はUnitNodeCriticalDecoratorでやります
+    unitNode = new UnitNodeCriticalDecorator(new UnitNode(this));
 }
 
 Unit::~Unit()
 {
-    unitNode->unscheduleAllSelectors();
     unitNode->release();
 }
 

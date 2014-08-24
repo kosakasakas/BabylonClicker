@@ -14,7 +14,7 @@
 #include "BossFactory.h"
 #include "Boss.h"
 
-class RandomBossFactory : public BaseObject {
+class RandomBossFactory : public virtual BaseObject {
 public:
     RandomBossFactory();
     virtual ~RandomBossFactory();

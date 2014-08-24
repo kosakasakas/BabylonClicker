@@ -12,6 +12,7 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "Unit.h"
+#include "BaseObject.h"
 
 USING_NS_CC;
 
@@ -20,8 +21,7 @@ public:
     UnitNode(Unit* u);
     virtual ~UnitNode();
     virtual void onScheduleUpdate(float delta);
-protected:
-    Unit* unitRef;
+    CC_SYNTHESIZE_READONLY(Unit*, unitRef, UnitRef);
 };
 
 #endif /* defined(__BabylonClicker__UnitNode__) */

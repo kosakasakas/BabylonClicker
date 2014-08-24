@@ -49,7 +49,7 @@
 		14998D761945B9C70062FF0A /* LiquidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D741945B9C70062FF0A /* LiquidScene.ccbi */; };
 		14A6B95919A700EA00FBD3C9 /* UserDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14A6B95719A700EA00FBD3C9 /* UserDataDisplay.cpp */; };
 		14A6B95C19A720CD00FBD3C9 /* RandomBossFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14A6B95A19A720CD00FBD3C9 /* RandomBossFactory.cpp */; };
-		14A6B96019A74E7500FBD3C9 /* CriticalNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14A6B95E19A74E7500FBD3C9 /* CriticalNode.cpp */; };
+		14A6B96019A74E7500FBD3C9 /* CriticalSubjectNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14A6B95E19A74E7500FBD3C9 /* CriticalSubjectNode.cpp */; };
 		14AC7753196E4C2B005047F1 /* libNendAd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC774D196E4C2B005047F1 /* libNendAd.a */; };
 		14AC7754196E4C2C005047F1 /* NADView_readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 14AC7752196E4C2B005047F1 /* NADView_readme.txt */; };
 		14AC775C196E4C65005047F1 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775B196E4C65005047F1 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -129,6 +129,7 @@
 		F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D8E19711AFA0011EE0C /* AudioManager.cpp */; };
 		F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9019711AFA0011EE0C /* UserData.cpp */; };
 		F8F56D9619711AFA0011EE0C /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9219711AFA0011EE0C /* Utility.cpp */; };
+		F8F87EBD19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F87EBB19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,8 +379,8 @@
 		14A6B95819A700EA00FBD3C9 /* UserDataDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataDisplay.h; path = ../Classes/UserDataDisplay.h; sourceTree = "<group>"; };
 		14A6B95A19A720CD00FBD3C9 /* RandomBossFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RandomBossFactory.cpp; path = ../Classes/RandomBossFactory.cpp; sourceTree = "<group>"; };
 		14A6B95B19A720CD00FBD3C9 /* RandomBossFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomBossFactory.h; path = ../Classes/RandomBossFactory.h; sourceTree = "<group>"; };
-		14A6B95E19A74E7500FBD3C9 /* CriticalNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CriticalNode.cpp; path = ../Classes/CriticalNode.cpp; sourceTree = "<group>"; };
-		14A6B95F19A74E7500FBD3C9 /* CriticalNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CriticalNode.h; path = ../Classes/CriticalNode.h; sourceTree = "<group>"; };
+		14A6B95E19A74E7500FBD3C9 /* CriticalSubjectNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CriticalSubjectNode.cpp; path = ../Classes/CriticalSubjectNode.cpp; sourceTree = "<group>"; };
+		14A6B95F19A74E7500FBD3C9 /* CriticalSubjectNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CriticalSubjectNode.h; path = ../Classes/CriticalSubjectNode.h; sourceTree = "<group>"; };
 		14AC774D196E4C2B005047F1 /* libNendAd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNendAd.a; sourceTree = "<group>"; };
 		14AC774E196E4C2B005047F1 /* NADIconArrayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconArrayView.h; sourceTree = "<group>"; };
 		14AC774F196E4C2B005047F1 /* NADIconLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NADIconLoader.h; sourceTree = "<group>"; };
@@ -472,6 +473,8 @@
 		F8F56D9119711AFA0011EE0C /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		F8F56D9219711AFA0011EE0C /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
 		F8F56D9319711AFA0011EE0C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		F8F87EBB19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitNodeCriticalDecorator.cpp; path = ../Classes/UnitNodeCriticalDecorator.cpp; sourceTree = "<group>"; };
+		F8F87EBC19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitNodeCriticalDecorator.h; path = ../Classes/UnitNodeCriticalDecorator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,6 +640,8 @@
 				F8E592D5199E642000306809 /* Iterator.h */,
 				1483414D199CE46400717A59 /* BaseObject.cpp */,
 				1483414E199CE46400717A59 /* BaseObject.h */,
+				F8F87EBB19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp */,
+				F8F87EBC19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.h */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -661,8 +666,8 @@
 			children = (
 				F8E592FE19A069ED00306809 /* UnitNode.h */,
 				F8E592FD19A069ED00306809 /* UnitNode.cpp */,
-				14A6B95E19A74E7500FBD3C9 /* CriticalNode.cpp */,
-				14A6B95F19A74E7500FBD3C9 /* CriticalNode.h */,
+				14A6B95E19A74E7500FBD3C9 /* CriticalSubjectNode.cpp */,
+				14A6B95F19A74E7500FBD3C9 /* CriticalSubjectNode.h */,
 			);
 			name = Node;
 			sourceTree = "<group>";
@@ -1133,7 +1138,7 @@
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				14A6B95C19A720CD00FBD3C9 /* RandomBossFactory.cpp in Sources */,
 				145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */,
-				14A6B96019A74E7500FBD3C9 /* CriticalNode.cpp in Sources */,
+				14A6B96019A74E7500FBD3C9 /* CriticalSubjectNode.cpp in Sources */,
 				F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */,
 				14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */,
 				143C5C47199E26650041FFEB /* BossData.cpp in Sources */,
@@ -1171,6 +1176,7 @@
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
+				F8F87EBD19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp in Sources */,
 				F8E592F6199F262200306809 /* GameConfig.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

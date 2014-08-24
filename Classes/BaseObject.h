@@ -14,10 +14,10 @@
 
 USING_NS_CC;
 
-class BaseObject : public Object {
+class BaseObject : public virtual Object {
 public:
     BaseObject();
-    ~BaseObject();
+    virtual ~BaseObject();
     virtual void dump() const;
 };
 

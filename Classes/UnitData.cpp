@@ -45,6 +45,10 @@ const char* UnitData::getMagic() const {
     return getCharValue(MAGIC_KEY);
 }
 
+float UnitData::getCriticalLength() const {
+    return getFloatValue("criticalLength");
+}
+
 int UnitData::getSacrifice(int slotID) const {
     return (0<=slotID && slotID<SACRIFICE_SLOT_NUM) ? getIntValue(SACRIFICE_KEY[slotID]) : -1;
 }

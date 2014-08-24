@@ -16,7 +16,7 @@
 
 USING_NS_CC;
 
-class ObjectDataFactory : public BaseObject {
+class ObjectDataFactory : public virtual BaseObject {
 public:
     ObjectDataFactory(const char* filePath);
     virtual ~ObjectDataFactory();

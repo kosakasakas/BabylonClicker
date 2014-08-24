@@ -12,7 +12,7 @@
 #include <iostream>
 #include "ObjectData.h"
 
-class ItemData : virtual public ObjectData {
+class ItemData : public ObjectData {
 public:
     ItemData(Dictionary* data);
     virtual ~ItemData();

@@ -4,7 +4,7 @@
 <dict>
 	<key>criticalInterval</key>
 	<array>
-		<integer>1</integer>
+		<integer>20</integer>
 	</array>
 	<key>magicOffsetRate</key>
 	<array>

@@ -16,7 +16,7 @@
 #include "UnitData.h"
 #include "User.h"
 
-class Field : virtual public BaseObject {
+class Field : public virtual BaseObject {
 public:
     Field();
     virtual ~Field();

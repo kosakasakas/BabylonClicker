@@ -14,20 +14,20 @@
 #include "Boss.h"
 #include "UnitCage.h"
 #include "Field.h"
-#include "CriticalNode.h"
+#include "CriticalSubjectNode.h"
 
 class BattleController
 {
 private:
     BattleController();
-    ~BattleController();
+    virtual ~BattleController();
     static BattleController* _singleton;
 public:
     static BattleController* getInstance();
     CC_SYNTHESIZE(Boss*, targetBoss, TargetBoss);
     CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
     CC_SYNTHESIZE_READONLY(Field*, field, Field);
-    CC_SYNTHESIZE_READONLY(CriticalNode*, critical, Critical);
+    CC_SYNTHESIZE_READONLY(CriticalSubjectNode*, critical, Critical);
     void onTargetBossDestroyed();
 };
 
