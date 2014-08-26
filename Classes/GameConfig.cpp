@@ -13,6 +13,7 @@ GameConfig::GameConfig()
 {
     ObjectDataFactory* odFactory = new ObjectDataFactory("config.plist");
     data = odFactory->create(0);
+    CC_SAFE_RELEASE(odFactory);
 }
 
 GameConfig::~GameConfig()

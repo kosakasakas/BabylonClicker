@@ -23,6 +23,7 @@ BattleController::BattleController()
     field = new Field();
     critical = new CriticalSubjectNode();
     critical->schedule(schedule_selector(CriticalSubjectNode::onUpdateCriticalLot), GameController::getInstance()->getConfig()->getCriticalInterval());
+    CC_SAFE_RELEASE(bFactory);
 }
 
 BattleController::~BattleController()

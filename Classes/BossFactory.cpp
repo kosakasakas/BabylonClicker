@@ -27,6 +27,7 @@ GameObject* BossFactory::createObject(int objectID) {
 GameObject* BossFactory::create(int objectID, int level) {
     BossDataFactory* bdFactory = new BossDataFactory("bossData.plist");
     BossData* bData = (BossData*)bdFactory->create(objectID);
+    CC_SAFE_RELEASE(bdFactory);
     Boss* boss = new Boss(bData, level);
     return boss;
 }

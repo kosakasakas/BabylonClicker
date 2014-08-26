@@ -56,6 +56,7 @@ Field::Field()
         registUnitFamiryFieldObserver(uData);
         registUnitMagicFieldObserver(uData);
     }
+    CC_SAFE_RELEASE(udFactory);
     
     user = new User();
     UserDataDisplay* udDisplay = new UserDataDisplay();
@@ -67,6 +68,7 @@ Field::Field()
     for(int i=0; i<bossNum; ++i) {
         bossLevelArray[i] = 0;
     }
+    CC_SAFE_RELEASE(bdFactory);
 }
 
 Field::~Field()
