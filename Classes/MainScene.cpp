@@ -27,6 +27,7 @@ MainScene::MainScene()
     
     // critical node
     this->addChild(BattleController::getInstance()->getCritical());
+    
 }
 
 MainScene::~MainScene()
@@ -67,6 +68,14 @@ bool MainScene::init() {
     return true;
 }
 
+void MainScene::setting() {
+    //
+    auto node = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView);
+    auto node2 = node->getChildByTag(NODE_TAG_ScrolleLayer);
+    int a = 0;
+    int b = a;
+}
+
 void MainScene::initTouchEventListener() {
     auto listener = EventListenerTouch::create(Touch::DispatchMode::ONE_BY_ONE);
     listener->setSwallowTouches(true);
@@ -82,7 +91,7 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
         return true;
     }
     
-    auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
+    auto battleStage = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_BattleStageNode);
     if (battleStage->getBoundingBox().containsPoint(touch->getLocation())) {
         if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
             _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
@@ -123,7 +132,7 @@ void MainScene::initDraw() {
 void MainScene::addBossNode() {
     if (_bossSprite == NULL) {
         _bossSprite = Sprite::create("star.png");
-        auto battleStage = this->getChildByTag(NodeTag_UINode)->getChildByTag(NodeTag_BattleStage);
+        auto battleStage = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_BattleStageNode);
         Size size = battleStage->getContentSize();
         _bossSprite->setPosition(Point(size.width/2.0, size.height/2.0));
         battleStage->addChild(_bossSprite);

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */; };
+		1418415319AB5E5700338672 /* Scroll.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 1418415219AB5E5600338672 /* Scroll.ccbi */; };
 		143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */; };
 		143C5C47199E26650041FFEB /* BossData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C45199E26650041FFEB /* BossData.cpp */; };
 		143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */; };
@@ -306,6 +307,7 @@
 /* Begin PBXFileReference section */
 		14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjectDataFactory.cpp; path = ../Classes/ObjectDataFactory.cpp; sourceTree = "<group>"; };
 		14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDataFactory.h; path = ../Classes/ObjectDataFactory.h; sourceTree = "<group>"; };
+		1418415219AB5E5600338672 /* Scroll.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Scroll.ccbi; sourceTree = "<group>"; };
 		143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDataFactory.cpp; path = ../Classes/BossDataFactory.cpp; sourceTree = "<group>"; };
 		143C5C3D199E25A10041FFEB /* BossDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossDataFactory.h; path = ../Classes/BossDataFactory.h; sourceTree = "<group>"; };
 		143C5C45199E26650041FFEB /* BossData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossData.cpp; path = ../Classes/BossData.cpp; sourceTree = "<group>"; };
@@ -848,6 +850,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1418415219AB5E5600338672 /* Scroll.ccbi */,
 				143C5C54199E484F0041FFEB /* bossData.plist */,
 				14834150199CEE7800717A59 /* config.plist */,
 				14991090197FD474004672FA /* unitData.plist */,
@@ -1082,6 +1085,7 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				F8F56D7B197104250011EE0C /* resources-large in Resources */,
 				14991091197FD474004672FA /* unitData.plist in Resources */,
+				1418415319AB5E5700338672 /* Scroll.ccbi in Resources */,
 				145D32321907B8270067B357 /* SelectZoneScene.ccbi in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,

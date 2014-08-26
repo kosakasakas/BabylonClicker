@@ -21,9 +21,18 @@ class MainScene : public Layer
 {
 private:
     enum {
-        NodeTag_UINode = 1,
-        NodeTag_BattleStage = 100
-    } NodeTag;
+        NODE_TAG_UINode = 100,
+        NODE_TAG_StaticNode = 200,
+        NODE_TAG_BattleStageNode = 10,
+        NODE_TAG_SummonButton = 15,
+        NODE_TAG_MagicButton = 16,
+        NODE_TAG_ItemButton = 17,
+        NODE_TAG_VSModeButton = 18,
+        NODE_TAG_NameLabel = 11,
+        NODE_TAG_HPLabel = 13,
+        NODE_TAG_ScrolleView = 14,
+        NODE_TAG_ScrolleLayer = 20
+    } NODE_TAG;
     
     bool _doneInitDraw = false;
     Sprite* _bossSprite;
@@ -54,7 +63,8 @@ public:
     virtual ~MainScene();
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
-
+    
+    void setting();
 };
 
 class MainSceneLoader : public cocos2d::extension::LayerLoader
