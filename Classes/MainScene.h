@@ -55,6 +55,8 @@ private:
     void addBossNode();
     void addUnitNode();
     
+    void buttonCallback(Object* sender);
+    
 public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);

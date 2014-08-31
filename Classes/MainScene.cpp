@@ -70,10 +70,19 @@ bool MainScene::init() {
 
 void MainScene::setting() {
     //
+    Size size = Director::getInstance()->getWinSize();
     auto node = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView);
-    auto node2 = node->getChildByTag(NODE_TAG_ScrolleLayer);
-    int a = 0;
-    int b = a;
+    //Sprite* normalSprite = Sprite::create("button.png");
+    //Sprite* selectedSprite = Sprite::create("button.png");
+    //MenuItemSprite* btnItem = MenuItemSprite::create(normalSprite, selectedSprite, this, menu_selector(MainScene::buttonCallback));
+    MenuItem* btnItem = MenuItemImage::create("button.png","button.png",this,menu_selector(MainScene::buttonCallback));
+    Menu* btn = Menu::create(btnItem, NULL);
+    btn->setPosition(Point(0.5*size.width, 0.5*size.height));
+    node->addChild(btn);
+}
+
+void MainScene::buttonCallback(Object* sender) {
+    CCLOG("call setting button");
 }
 
 void MainScene::initTouchEventListener() {
