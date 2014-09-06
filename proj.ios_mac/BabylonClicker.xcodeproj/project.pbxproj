@@ -117,6 +117,7 @@
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
+		F80C8FE619BB07090076909B /* UnicornMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */; };
 		F8E592DF199E657300306809 /* UnitCage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592DD199E657300306809 /* UnitCage.cpp */; };
 		F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */; };
 		F8E592F6199F262200306809 /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F4199F262200306809 /* GameConfig.cpp */; };
@@ -449,6 +450,8 @@
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornMenuSprite.cpp; sourceTree = "<group>"; };
+		F80C8FE519BB07090076909B /* UnicornMenuSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornMenuSprite.h; sourceTree = "<group>"; };
 		F8E592D5199E642000306809 /* Iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Iterator.h; path = ../Classes/Iterator.h; sourceTree = "<group>"; };
 		F8E592DD199E657300306809 /* UnitCage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitCage.cpp; path = ../Classes/UnitCage.cpp; sourceTree = "<group>"; };
 		F8E592DE199E657300306809 /* UnitCage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitCage.h; path = ../Classes/UnitCage.h; sourceTree = "<group>"; };
@@ -886,6 +889,8 @@
 				F8F56D8C1971183B0011EE0C /* AppManager.h */,
 				147947BE1998990D00649875 /* UCAnimation.cpp */,
 				147947BF1998990D00649875 /* UCAnimation.h */,
+				F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */,
+				F80C8FE519BB07090076909B /* UnicornMenuSprite.h */,
 			);
 			name = UnicornEngine;
 			path = ../UnicornEngine;
@@ -1145,6 +1150,7 @@
 				14A6B96019A74E7500FBD3C9 /* CriticalSubjectNode.cpp in Sources */,
 				F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */,
 				14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */,
+				F80C8FE619BB07090076909B /* UnicornMenuSprite.cpp in Sources */,
 				143C5C47199E26650041FFEB /* BossData.cpp in Sources */,
 				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
 				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,

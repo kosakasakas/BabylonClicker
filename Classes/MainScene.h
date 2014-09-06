@@ -31,6 +31,7 @@ private:
         NODE_TAG_NameLabel = 11,
         NODE_TAG_HPLabel = 13,
         NODE_TAG_ScrolleView = 14,
+        NODE_TAG_SelectButton = 21,
         NODE_TAG_ScrolleLayer = 20
     } NODE_TAG;
     

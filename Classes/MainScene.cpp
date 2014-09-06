@@ -69,16 +69,46 @@ bool MainScene::init() {
 }
 
 void MainScene::setting() {
-    //
-    Size size = Director::getInstance()->getWinSize();
-    auto node = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView);
-    //Sprite* normalSprite = Sprite::create("button.png");
-    //Sprite* selectedSprite = Sprite::create("button.png");
-    //MenuItemSprite* btnItem = MenuItemSprite::create(normalSprite, selectedSprite, this, menu_selector(MainScene::buttonCallback));
-    MenuItem* btnItem = MenuItemImage::create("button.png","button.png",this,menu_selector(MainScene::buttonCallback));
-    Menu* btn = Menu::create(btnItem, NULL);
-    btn->setPosition(Point(0.5*size.width, 0.5*size.height));
-    node->addChild(btn);
+    ScrollView *scrollViewNode = (ScrollView*)(this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView));
+    auto battleStageNode = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_BattleStageNode);
+    //auto selectButtonNode = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_SelectButton);
+    //selectButtonNode->removeFromParent();
+    //selectButtonNode->setVisible(true);
+    Size battleViewSize = battleStageNode->getContentSize();
+    //Size scrollSize = node->getContentSize();
+    
+    int buttonNum = 10;
+    float topPosOffset = 80;
+    float bottomPosOffset = 10;
+    float buttonPosOffset = 20;
+    Size buttonSize = Size(160, 40);
+    float scrollHeight = topPosOffset + buttonNum*(buttonSize.height+buttonPosOffset) + bottomPosOffset;
+    Size scrollSize = Size(battleViewSize.height, scrollHeight);
+    scrollViewNode->setContentSize(scrollSize);
+    
+    scrollViewNode->setContentOffset(Point(0, battleViewSize.height - scrollSize.height));
+    
+    for (int i = 0; i < buttonNum; ++i) {
+    /*Sprite* normalSprite = Sprite::create("button.png");
+    normalSprite->setScaleY(1.f);
+    normalSprite->setScaleX(2.f);*/
+    
+        Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
+    
+        buttonSprite->setContentSize(buttonSize);
+    /*
+    Sprite* test = (Sprite*)selectButtonNode;
+    selectButtonNode->setPosition(Point(0.5*winSize.width, 0.5*winSize.height));
+    */
+    
+        MenuItemSprite* btnItem = MenuItemSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
+    //MenuItem* btnItem = MenuItemImage::create("button.png","button.png",this,menu_selector(MainScene::buttonCallback));
+        Menu* btn = Menu::create(btnItem, NULL);
+        btn->setPosition(Point(0.5 * battleViewSize.width, scrollSize.height - 0.5*buttonSize.height - topPosOffset - i*(buttonSize.height + buttonPosOffset)));
+        scrollViewNode->addChild(btn);
+    }
+    
+    //node->addChild(selectButtonNode);
 }
 
 void MainScene::buttonCallback(Object* sender) {
