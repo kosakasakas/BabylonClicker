@@ -118,6 +118,9 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		F80C8FE619BB07090076909B /* UnicornMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */; };
+		F80C8FEF19BB1A530076909B /* UnicornScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FED19BB1A530076909B /* UnicornScrollView.cpp */; };
+		F80C8FF219BB53100076909B /* custommenusprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FF019BB53100076909B /* custommenusprite.cpp */; };
+		F80C8FFB19BC24720076909B /* UnicornScrollableMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */; };
 		F8E592DF199E657300306809 /* UnitCage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592DD199E657300306809 /* UnitCage.cpp */; };
 		F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */; };
 		F8E592F6199F262200306809 /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F4199F262200306809 /* GameConfig.cpp */; };
@@ -452,6 +455,12 @@
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornMenuSprite.cpp; sourceTree = "<group>"; };
 		F80C8FE519BB07090076909B /* UnicornMenuSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornMenuSprite.h; sourceTree = "<group>"; };
+		F80C8FED19BB1A530076909B /* UnicornScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornScrollView.cpp; sourceTree = "<group>"; };
+		F80C8FEE19BB1A530076909B /* UnicornScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornScrollView.h; sourceTree = "<group>"; };
+		F80C8FF019BB53100076909B /* custommenusprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = custommenusprite.cpp; sourceTree = "<group>"; };
+		F80C8FF119BB53100076909B /* custommenusprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = custommenusprite.h; sourceTree = "<group>"; };
+		F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornScrollableMenu.cpp; sourceTree = "<group>"; };
+		F80C8FFA19BC24720076909B /* UnicornScrollableMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornScrollableMenu.h; sourceTree = "<group>"; };
 		F8E592D5199E642000306809 /* Iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Iterator.h; path = ../Classes/Iterator.h; sourceTree = "<group>"; };
 		F8E592DD199E657300306809 /* UnitCage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitCage.cpp; path = ../Classes/UnitCage.cpp; sourceTree = "<group>"; };
 		F8E592DE199E657300306809 /* UnitCage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitCage.h; path = ../Classes/UnitCage.h; sourceTree = "<group>"; };
@@ -891,6 +900,12 @@
 				147947BF1998990D00649875 /* UCAnimation.h */,
 				F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */,
 				F80C8FE519BB07090076909B /* UnicornMenuSprite.h */,
+				F80C8FED19BB1A530076909B /* UnicornScrollView.cpp */,
+				F80C8FEE19BB1A530076909B /* UnicornScrollView.h */,
+				F80C8FF019BB53100076909B /* custommenusprite.cpp */,
+				F80C8FF119BB53100076909B /* custommenusprite.h */,
+				F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */,
+				F80C8FFA19BC24720076909B /* UnicornScrollableMenu.h */,
 			);
 			name = UnicornEngine;
 			path = ../UnicornEngine;
@@ -1163,6 +1178,7 @@
 				143C5C53199E31E70041FFEB /* MagicDataFactory.cpp in Sources */,
 				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				F80C8FEF19BB1A530076909B /* UnicornScrollView.cpp in Sources */,
 				14ED3CCA19A1F230002D5CF0 /* UnitField.cpp in Sources */,
 				14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */,
 				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
@@ -1179,8 +1195,10 @@
 				1483414C199CDF3100717A59 /* User.cpp in Sources */,
 				F8E592DF199E657300306809 /* UnitCage.cpp in Sources */,
 				143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */,
+				F80C8FF219BB53100076909B /* custommenusprite.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
 				145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */,
+				F80C8FFB19BC24720076909B /* UnicornScrollableMenu.cpp in Sources */,
 				143C5C4D199E2BEF0041FFEB /* ItemData.cpp in Sources */,
 				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,

@@ -9,11 +9,9 @@
 #define __BabylonClicker__UnicornMenuSprite__
 
 #include <iostream>
-#include "cocos2d.h"
+#include "custommenusprite.h"
 
-USING_NS_CC;
-
-class UnicornMenuSprite : public MenuItemSprite
+class UnicornMenuSprite : public CustomMenuSprite
 {
 public:
     UnicornMenuSprite();
@@ -22,24 +20,6 @@ public:
     static UnicornMenuSprite * create(Node* normalSprite, Node* selectedSprite, Node* disabledSprite = NULL);
     static UnicornMenuSprite * create(Node* normalSprite, Node* selectedSprite, Object* target, SEL_MenuHandler selector);
     static UnicornMenuSprite * create(Node* normalSprite, Node* selectedSprite, Node* disabledSprite, Object* target, SEL_MenuHandler selector);
-    
-    /// Play a sound effect when the item is activated
-    void setSoundEffect(const char *filename) { mSoundEffect = filename; }
-    
-    /// Override CCNode methods
-    virtual void onEnter();
-    virtual void onExit();
-    
-    /// Override CCMenuItem methods
-    virtual void selected();    /// Get focus
-    virtual void unselected();  /// Lost focus
-    virtual void activate();
-    
-    virtual void postponedActivate(float dt);
-    
-protected:
-    float mOldScaleX, mOldScaleY;
-    std::string mSoundEffect;
 };
 
 #endif /* defined(__BabylonClicker__UnicornMenuSprite__) */

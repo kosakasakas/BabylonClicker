@@ -7,14 +7,24 @@
 
 #include "UnicornMenuSprite.h"
 
-void UnicornMenuSprite::selected()
+UnicornMenuSprite::UnicornMenuSprite()
+: CustomMenuSprite()
+{}
+
+UnicornMenuSprite * UnicornMenuSprite::create(Node* normalSprite, Node* selectedSprite, Node* disabledSprite)
 {
-    CCMenuItemSprite::selected();
-    //runAction(EaseElasticOut::create(ScaleTo::create(SCALE_ACTION_DURATION, mOldScaleX * SCALE_EFFECT_FACTOR, mOldScaleY* SCALE_EFFECT_FACTOR)));
+    return UnicornMenuSprite::create(normalSprite, selectedSprite, disabledSprite, NULL, NULL);
 }
 
-void UnicornMenuSprite::unselected()
+UnicornMenuSprite * UnicornMenuSprite::create(Node* normalSprite, Node* selectedSprite, Object* target, SEL_MenuHandler selector)
 {
-    CCMenuItemSprite::unselected();
-    //runAction(EaseElasticOut::create(ScaleTo::create(SCALE_ACTION_DURATION, mOldScaleX, mOldScaleY)));
+    return UnicornMenuSprite::create(normalSprite, selectedSprite, NULL, target, selector);
+}
+
+UnicornMenuSprite * UnicornMenuSprite::create(Node *normalSprite, Node *selectedSprite, Node *disabledSprite, Object *target, SEL_MenuHandler selector)
+{
+    UnicornMenuSprite *pRet = new UnicornMenuSprite();
+    pRet->initWithNormalSprite(normalSprite, selectedSprite, disabledSprite, target, selector);
+    pRet->autorelease();
+    return pRet;
 }

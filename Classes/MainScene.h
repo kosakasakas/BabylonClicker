@@ -43,6 +43,9 @@ private:
     void initTouchEventListener();
     
     void tappedPreviousButton(Object* pSender, Control::EventType pControlEventType);
+    void tappedSummonButton(Object* pSender, Control::EventType pControlEventType);
+    void tappedMagicButton(Object* pSender, Control::EventType pControlEventType);
+    void tappedItemButton(Object* pSender, Control::EventType pControlEventType);
     
     virtual bool init();
     virtual void onExit();
@@ -67,7 +70,7 @@ public:
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
     
-    void setting();
+    void showSelectDialog();
 };
 
 class MainSceneLoader : public cocos2d::extension::LayerLoader

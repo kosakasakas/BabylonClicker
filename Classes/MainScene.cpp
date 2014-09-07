@@ -13,6 +13,8 @@
 #include "GameController.h"
 #include "BattleController.h"
 #include "UnitField.h"
+#include "UnicornScrollView.h"
+#include "UnicornMenuSprite.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
@@ -44,7 +46,9 @@ SEL_MenuHandler MainScene::onResolveCCBCCMenuItemSelector(cocos2d::Object *pTarg
 Control::Handler MainScene::onResolveCCBCCControlSelector(cocos2d::Object *pTarget, const char *pSelectorName)
 {
     CCLOG("name_control = %s", pSelectorName);
-    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "tappedPreviousButton", MainScene::tappedPreviousButton);
+    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "tappedSummonButton", MainScene::tappedSummonButton);
+    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "tappedItemButton", MainScene::tappedItemButton);
+    CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "tappedMagicButton", MainScene::tappedMagicButton);
     return NULL;
 }
 
@@ -68,47 +72,66 @@ bool MainScene::init() {
     return true;
 }
 
-void MainScene::setting() {
-    ScrollView *scrollViewNode = (ScrollView*)(this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView));
+void MainScene::showSelectDialog() {
+    //UnicornScrollView *scrollViewNode = (UnicornScrollView*)(this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView));
+    
     auto battleStageNode = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_BattleStageNode);
-    //auto selectButtonNode = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_SelectButton);
-    //selectButtonNode->removeFromParent();
-    //selectButtonNode->setVisible(true);
     Size battleViewSize = battleStageNode->getContentSize();
-    //Size scrollSize = node->getContentSize();
+    Size winSize = Director::getInstance()->getWinSize();
     
     int buttonNum = 10;
     float topPosOffset = 80;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
     Size buttonSize = Size(160, 40);
-    float scrollHeight = topPosOffset + buttonNum*(buttonSize.height+buttonPosOffset) + bottomPosOffset;
-    Size scrollSize = Size(battleViewSize.height, scrollHeight);
-    scrollViewNode->setContentSize(scrollSize);
+    //float scrollHeight = topPosOffset + buttonNum*(buttonSize.height+buttonPosOffset) + bottomPosOffset;
+    float scrollHeight =  buttonNum*(buttonSize.height);
+    Size scrollSize = Size(battleViewSize.width, scrollHeight);
+    Node* container = Node::create();
+    Point absPoint = battleStageNode->convertToWorldSpace(battleStageNode->getPosition());
+    Point battlePoint = battleStageNode->getPosition();
+    //absPoint = Point(absPoint.x, absPoint.y + battleViewSize.height);
+    container->setContentSize(scrollSize);
+    Point containerPoint = Point(battlePoint.x, battlePoint.y+battleViewSize.height - scrollHeight);
+    //container->setPosition(containerPoint);
+    container->setAnchorPoint(Point(0,0));
     
-    scrollViewNode->setContentOffset(Point(0, battleViewSize.height - scrollSize.height));
-    
-    for (int i = 0; i < buttonNum; ++i) {
-    /*Sprite* normalSprite = Sprite::create("button.png");
-    normalSprite->setScaleY(1.f);
-    normalSprite->setScaleX(2.f);*/
-    
-        Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
-    
-        buttonSprite->setContentSize(buttonSize);
     /*
-    Sprite* test = (Sprite*)selectButtonNode;
-    selectButtonNode->setPosition(Point(0.5*winSize.width, 0.5*winSize.height));
-    */
+    LayerColor* layer = LayerColor::create(Color4B(51, 75, 112, 255), scrollSize.width, scrollSize.height);
+    //layer->setAnchorPoint(Point(0.0,1.0));
+    layer->setPosition(containerPoint);
+    this->getChildByTag(NODE_TAG_UINode)->addChild(layer);
+     */
     
-        MenuItemSprite* btnItem = MenuItemSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
-    //MenuItem* btnItem = MenuItemImage::create("button.png","button.png",this,menu_selector(MainScene::buttonCallback));
-        Menu* btn = Menu::create(btnItem, NULL);
-        btn->setPosition(Point(0.5 * battleViewSize.width, scrollSize.height - 0.5*buttonSize.height - topPosOffset - i*(buttonSize.height + buttonPosOffset)));
-        scrollViewNode->addChild(btn);
+    Array* menuItemArray = Array::create();
+    for (int i = 0; i < buttonNum; ++i) {
+        Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
+        buttonSprite->setContentSize(buttonSize);
+    
+        //MenuItemSprite* btnItem = MenuItemSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
+        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
+        //btnItem->setPosition(Point(0, 0.5*scrollSize.height - 0.5*buttonSize.height - topPosOffset - i*(buttonSize.height + buttonPosOffset)));
+        //btnItem->setAnchorPoint(Point(0.0,1.0));
+        btnItem->setPosition(Point(0.5*battleViewSize.width, -i*buttonSize.height));
+        menuItemArray->addObject(btnItem);
     }
+    Menu* btnMenu = Menu::createWithArray(menuItemArray);
+    //btnMenu->setAnchorPoint(Point(0.0, 1.0));
+    btnMenu->setPosition(containerPoint);
+    container->addChild(btnMenu);
     
-    //node->addChild(selectButtonNode);
+    UnicornScrollView *scrollViewNode = UnicornScrollView::create(btnMenu);
+    scrollViewNode->setTag(NODE_TAG_ScrolleView);
+    //scrollViewNode->setPosition(battleStageNode->getPosition());
+    scrollViewNode->setClippingToBounds(false);
+    scrollViewNode->setContentSize(scrollSize);
+    scrollViewNode->setContainer(container);
+    scrollViewNode->setViewSize(battleViewSize);
+    //scrollViewNode->setPosition(Point(0,0));
+    //scrollViewNode->setContentOffset(absPoint);
+    scrollViewNode->setDirection(ScrollView::Direction::VERTICAL);
+    
+    this->getChildByTag(NODE_TAG_UINode)->addChild(scrollViewNode);
 }
 
 void MainScene::buttonCallback(Object* sender) {
@@ -199,6 +222,22 @@ void MainScene::tappedPreviousButton(Object* pSender, Control::EventType pContro
     }
     ccbReader->release();
     Director::getInstance()->replaceScene(scene);
+}
+
+void MainScene::tappedSummonButton(Object* pSender, Control::EventType pControlEventType)
+{
+    CCLOG("tappedSummonButton eventType = %d", pControlEventType);
+    showSelectDialog();
+}
+
+void MainScene::tappedMagicButton(Object* pSender, Control::EventType pControlEventType)
+{
+    CCLOG("tappedMagicButton eventType = %d", pControlEventType);
+}
+
+void MainScene::tappedItemButton(Object* pSender, Control::EventType pControlEventType)
+{
+    CCLOG("tappedItemButton eventType = %d", pControlEventType);
 }
 
 void MainScene::onExit() {

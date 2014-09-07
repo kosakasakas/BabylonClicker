@@ -81,7 +81,6 @@ void OpeningLayer::startMainScene() {
     nodeLoaderLibrary->registerNodeLoader("MainScene", MainSceneLoader::loader());
     CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
     MainScene* node = (MainScene*)ccbReader->readNodeGraphFromFile("MainScene.ccbi");
-    node->setting();
     Scene* scene = Scene::create();
     if (node != NULL)
     {
