@@ -15,6 +15,7 @@
 #include "UnitField.h"
 #include "UnicornScrollView.h"
 #include "UnicornMenuSprite.h"
+#include "UnicornScrollableMenu.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
@@ -73,65 +74,45 @@ bool MainScene::init() {
 }
 
 void MainScene::showSelectDialog() {
-    //UnicornScrollView *scrollViewNode = (UnicornScrollView*)(this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_ScrolleView));
-    
     auto battleStageNode = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_BattleStageNode);
+    
     Size battleViewSize = battleStageNode->getContentSize();
     Size winSize = Director::getInstance()->getWinSize();
     
-    int buttonNum = 10;
+    int buttonNum = 20;
     float topPosOffset = 80;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
-    Size buttonSize = Size(160, 40);
-    //float scrollHeight = topPosOffset + buttonNum*(buttonSize.height+buttonPosOffset) + bottomPosOffset;
-    float scrollHeight =  buttonNum*(buttonSize.height);
+   
+    Size buttonSize = Size(180, 40);
+    float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
     Size scrollSize = Size(battleViewSize.width, scrollHeight);
     Node* container = Node::create();
-    Point absPoint = battleStageNode->convertToWorldSpace(battleStageNode->getPosition());
     Point battlePoint = battleStageNode->getPosition();
-    //absPoint = Point(absPoint.x, absPoint.y + battleViewSize.height);
     container->setContentSize(scrollSize);
-    Point containerPoint = Point(battlePoint.x, battlePoint.y+battleViewSize.height - scrollHeight);
-    //container->setPosition(containerPoint);
-    container->setAnchorPoint(Point(0,0));
-    
-    /*
-    LayerColor* layer = LayerColor::create(Color4B(51, 75, 112, 255), scrollSize.width, scrollSize.height);
-    //layer->setAnchorPoint(Point(0.0,1.0));
-    layer->setPosition(containerPoint);
-    this->getChildByTag(NODE_TAG_UINode)->addChild(layer);
-     */
     
     Array* menuItemArray = Array::create();
     for (int i = 0; i < buttonNum; ++i) {
         Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
         buttonSprite->setContentSize(buttonSize);
-    
-        //MenuItemSprite* btnItem = MenuItemSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
         UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
-        //btnItem->setPosition(Point(0, 0.5*scrollSize.height - 0.5*buttonSize.height - topPosOffset - i*(buttonSize.height + buttonPosOffset)));
-        //btnItem->setAnchorPoint(Point(0.0,1.0));
-        btnItem->setPosition(Point(0.5*battleViewSize.width, -i*buttonSize.height));
         menuItemArray->addObject(btnItem);
     }
-    Menu* btnMenu = Menu::createWithArray(menuItemArray);
-    //btnMenu->setAnchorPoint(Point(0.0, 1.0));
-    btnMenu->setPosition(containerPoint);
+    UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
+    btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);
+    btnMenu->setPosition(Point(0.5*scrollSize.width, 0.5*scrollSize.height));
     container->addChild(btnMenu);
     
     UnicornScrollView *scrollViewNode = UnicornScrollView::create(btnMenu);
+    scrollViewNode->setAnchorPoint(Point(0.5,0.5));
     scrollViewNode->setTag(NODE_TAG_ScrolleView);
-    //scrollViewNode->setPosition(battleStageNode->getPosition());
-    scrollViewNode->setClippingToBounds(false);
-    scrollViewNode->setContentSize(scrollSize);
+    scrollViewNode->setClippingToBounds(true);
     scrollViewNode->setContainer(container);
     scrollViewNode->setViewSize(battleViewSize);
-    //scrollViewNode->setPosition(Point(0,0));
-    //scrollViewNode->setContentOffset(absPoint);
+    scrollViewNode->setContentOffset(Point(0,-(scrollHeight-2*battleViewSize.height) - battleViewSize.height));
     scrollViewNode->setDirection(ScrollView::Direction::VERTICAL);
-    
-    this->getChildByTag(NODE_TAG_UINode)->addChild(scrollViewNode);
+    scrollViewNode->setPosition(battlePoint);
+    this->addChild(scrollViewNode);
 }
 
 void MainScene::buttonCallback(Object* sender) {

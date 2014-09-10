@@ -15,6 +15,9 @@ USING_NS_CC;
 
 class UnicornScrollableMenu : public Menu {
 public:
+    UnicornScrollableMenu();
+    ~UnicornScrollableMenu();
+    static UnicornScrollableMenu* createWithArray(Array* pArrayOfItems);
     CREATE_FUNC(UnicornScrollableMenu);
     
     virtual bool onTouchBegan(Touch *touch, Event *event);

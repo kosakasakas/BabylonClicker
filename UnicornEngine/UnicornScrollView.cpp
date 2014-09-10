@@ -15,7 +15,7 @@ UnicornScrollView::UnicornScrollView(Menu* menu)
 : ScrollView::ScrollView()
 , menu(NULL)
 {
-    //setMenu(menu);
+    setMenu(menu);
 }
 
 UnicornScrollView* UnicornScrollView::create(Menu* menu) {
