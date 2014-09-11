@@ -110,7 +110,7 @@ void MainScene::showSelectDialog() {
     scrollViewNode->setContainer(container);
     scrollViewNode->setViewSize(battleViewSize);
     scrollViewNode->setContentOffset(Point(0,-(scrollHeight-2*battleViewSize.height) - battleViewSize.height));
-    scrollViewNode->setDirection(ScrollView::Direction::VERTICAL);
+    scrollViewNode->setDirection(CustomScrollView::Direction::VERTICAL);
     scrollViewNode->setPosition(battlePoint);
     this->addChild(scrollViewNode);
 }

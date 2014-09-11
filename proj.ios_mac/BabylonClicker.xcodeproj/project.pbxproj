@@ -58,6 +58,9 @@
 		14AC7760196E4C7D005047F1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775F196E4C7D005047F1 /* ImageIO.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		14AC7777196E5897005047F1 /* NendModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AC7775196E5897005047F1 /* NendModule.mm */; };
 		14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AC7776196E5897005047F1 /* NendIconModule.mm */; };
+		14BF991819C087AF00949007 /* XTLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF991719C087AF00949007 /* XTLayer.cpp */; };
+		14BF991B19C0882300949007 /* UnicornGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF991919C0882300949007 /* UnicornGestureLayer.cpp */; };
+		14BF995D19C1C80100949007 /* CustomScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF995C19C1C80100949007 /* CustomScrollView.cpp */; };
 		14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */; };
 		14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */; };
 		14ED3CC019A1DB37002D5CF0 /* FieldObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */; };
@@ -398,6 +401,12 @@
 		14AC775F196E4C7D005047F1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		14AC7775196E5897005047F1 /* NendModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NendModule.mm; path = ios/NendModule.mm; sourceTree = SOURCE_ROOT; };
 		14AC7776196E5897005047F1 /* NendIconModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NendIconModule.mm; path = ios/NendIconModule.mm; sourceTree = SOURCE_ROOT; };
+		14BF991619C087AF00949007 /* XTLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLayer.h; sourceTree = "<group>"; };
+		14BF991719C087AF00949007 /* XTLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTLayer.cpp; sourceTree = "<group>"; };
+		14BF991919C0882300949007 /* UnicornGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornGestureLayer.cpp; sourceTree = "<group>"; };
+		14BF991A19C0882300949007 /* UnicornGestureLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornGestureLayer.h; sourceTree = "<group>"; };
+		14BF995B19C1C80100949007 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
+		14BF995C19C1C80100949007 /* CustomScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomScrollView.cpp; sourceTree = "<group>"; };
 		14DADDDA193F27AB0026DEE0 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "../Classes/GLES-Render.h"; sourceTree = "<group>"; };
 		14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "../Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
 		14DADDE6193F2B120026DEE0 /* LiquidScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiquidScene.h; path = ../Classes/LiquidScene.h; sourceTree = "<group>"; };
@@ -887,6 +896,10 @@
 		F8F56D891971180A0011EE0C /* UnicornEngine */ = {
 			isa = PBXGroup;
 			children = (
+				14BF995B19C1C80100949007 /* CustomScrollView.h */,
+				14BF995C19C1C80100949007 /* CustomScrollView.cpp */,
+				14BF991619C087AF00949007 /* XTLayer.h */,
+				14BF991719C087AF00949007 /* XTLayer.cpp */,
 				F8F56D8E19711AFA0011EE0C /* AudioManager.cpp */,
 				F8F56D8F19711AFA0011EE0C /* AudioManager.h */,
 				F8F56D9019711AFA0011EE0C /* UserData.cpp */,
@@ -906,6 +919,8 @@
 				F80C8FF119BB53100076909B /* custommenusprite.h */,
 				F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */,
 				F80C8FFA19BC24720076909B /* UnicornScrollableMenu.h */,
+				14BF991919C0882300949007 /* UnicornGestureLayer.cpp */,
+				14BF991A19C0882300949007 /* UnicornGestureLayer.h */,
 			);
 			name = UnicornEngine;
 			path = ../UnicornEngine;
@@ -1151,12 +1166,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				14834143199CD05700717A59 /* Boss.cpp in Sources */,
+				14BF991819C087AF00949007 /* XTLayer.cpp in Sources */,
 				14ED3CC019A1DB37002D5CF0 /* FieldObject.cpp in Sources */,
 				F8F56D9619711AFA0011EE0C /* Utility.cpp in Sources */,
 				1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */,
 				14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */,
 				1483411C199CB31F00717A59 /* GameObject.cpp in Sources */,
 				14834134199CC58600717A59 /* Test.cpp in Sources */,
+				14BF995D19C1C80100949007 /* CustomScrollView.cpp in Sources */,
 				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
 				143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
@@ -1201,6 +1218,7 @@
 				F80C8FFB19BC24720076909B /* UnicornScrollableMenu.cpp in Sources */,
 				143C5C4D199E2BEF0041FFEB /* ItemData.cpp in Sources */,
 				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
+				14BF991B19C0882300949007 /* UnicornGestureLayer.cpp in Sources */,
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,

@@ -11,11 +11,12 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "CustomScrollView.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-class UnicornScrollView : public ScrollView {
+class UnicornScrollView : public CustomScrollView {
 public:
     UnicornScrollView(Menu* menu);
     virtual ~UnicornScrollView(){};
@@ -25,6 +26,7 @@ public:
     virtual void onTouchCancelled(Touch* touch, Event* event);
     virtual void onTouchEnded(Touch* touch, Event* event);
     virtual void onTouchMoved(Touch* touch, Event* event);
+    virtual void xtSwipeGesture(XTTouchDirection direction, float distance, float speed);
     enum {
         kUnicornScrollViewPriority = -129
     };

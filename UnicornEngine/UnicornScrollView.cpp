@@ -12,8 +12,9 @@
 const float UnicornScrollView::MIN_DISTANCE = 10;
 
 UnicornScrollView::UnicornScrollView(Menu* menu)
-: ScrollView::ScrollView()
+: CustomScrollView::CustomScrollView()
 , menu(NULL)
+, waitingTouchEnd(false)
 {
     setMenu(menu);
 }
@@ -48,7 +49,7 @@ UnicornScrollView* UnicornScrollView::create(Size size, Node* container, Menu* m
 
 
 bool UnicornScrollView::init() {
-    if ( !ScrollView::init() ) {
+    if ( !CustomScrollView::init() ) {
         return false;
     }
     return true;
@@ -58,17 +59,19 @@ bool UnicornScrollView::onTouchBegan(Touch* touch, Event* event) {
     CCLOG("UnicornScrollView onTouchBegan called.");
     pressPoint = touch->getLocationInView();
     if (menu && !waitingTouchEnd) {
+        CCLOG("onTouchBegin-onTouchbegin");
         waitingTouchEnd = menu->onTouchBegan(touch, event);
     }
-    return ScrollView::onTouchBegan(touch, event);
+    return CustomScrollView::xtTouchBegan(touch, event);
 }
 
 void UnicornScrollView::onTouchCancelled(Touch* touch, Event* event) {
     if (menu && waitingTouchEnd) {
+        CCLOG("onTouchCancelled-onTouchCancelled");
         menu->onTouchCancelled(touch, event);
         waitingTouchEnd = false;
     }
-    ScrollView::onTouchCancelled(touch, event);
+    CustomScrollView::onTouchCancelled(touch, event);
 }
 
 void UnicornScrollView::onTouchEnded(Touch* touch, Event* event) {
@@ -76,13 +79,15 @@ void UnicornScrollView::onTouchEnded(Touch* touch, Event* event) {
         Point endPoint = touch->getLocationInView();
         float distance = endPoint.getDistance(pressPoint);
         if (distance < MIN_DISTANCE) {
+            CCLOG("onTouchEnded-onTouchEnded");
             menu->onTouchEnded(touch, event);
         } else {
+            CCLOG("onTouchEnded-onTouchCancelled");
             menu->onTouchCancelled(touch, event);
         }
-        waitingTouchEnd = true;
+        waitingTouchEnd = false;
     }
-    ScrollView::onTouchEnded(touch, event);
+    CustomScrollView::xtTouchEnded(touch, event);
 }
 
 void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
@@ -90,13 +95,19 @@ void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
         Point endPoint = touch->getLocationInView();
         float distance = endPoint.getDistance(pressPoint);
         if (distance < MIN_DISTANCE) {
+            CCLOG("onTouchMoved-onTouchMoved");
             menu->onTouchMoved(touch, event);
         } else {
+            CCLOG("onTouchMoved-onTouchCancelled");
             menu->onTouchCancelled(touch, event);
             waitingTouchEnd = false;
         }
     }
-    ScrollView::onTouchMoved(touch, event);
+    CustomScrollView::xtTouchMoved(touch, event);
+}
+
+void UnicornScrollView::xtSwipeGesture(XTTouchDirection direction, float distance, float speed) {
+    float dis = distance;
 }
 
 void UnicornScrollView::addTouchListener() {
