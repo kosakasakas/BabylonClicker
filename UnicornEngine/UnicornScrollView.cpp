@@ -62,7 +62,7 @@ bool UnicornScrollView::onTouchBegan(Touch* touch, Event* event) {
         CCLOG("onTouchBegin-onTouchbegin");
         waitingTouchEnd = menu->onTouchBegan(touch, event);
     }
-    return CustomScrollView::xtTouchBegan(touch, event);
+    return CustomScrollView::onTouchBegan(touch, event);
 }
 
 void UnicornScrollView::onTouchCancelled(Touch* touch, Event* event) {

@@ -82,14 +82,14 @@ public:
     
     
     // Override of touches
-    virtual void onTouchBegan(cocos2d::Set* _touches, cocos2d::Event* event);
-    virtual void onTouchMoved(cocos2d::Set* _touches, cocos2d::Event* event);
-    virtual void onTouchEnded(cocos2d::Set* _touches, cocos2d::Event* event);
+    virtual bool onTouchBegan(cocos2d::Touch* _touches, cocos2d::Event* event);
+    virtual void onTouchMoved(cocos2d::Touch* _touches, cocos2d::Event* event);
+    virtual void onTouchEnded(cocos2d::Touch* _touches, cocos2d::Event* event);
     
     // Callbacks
-    virtual void xtTouchBegan(cocos2d::Set* _touches, cocos2d::Event* event){}
-    virtual void xtTouchMoved(cocos2d::Set* _touches, cocos2d::Event* event){}
-    virtual void xtTouchEnded(cocos2d::Set* _touches, cocos2d::Event* event){}
+    virtual void xtTouchBegan(cocos2d::Touch* _touches, cocos2d::Event* event){}
+    virtual void xtTouchMoved(cocos2d::Touch* _touches, cocos2d::Event* event){}
+    virtual void xtTouchEnded(cocos2d::Touch* _touches, cocos2d::Event* event){}
 
     // Easy touch callbacks
     virtual void xtTouchBegan(Point position){}

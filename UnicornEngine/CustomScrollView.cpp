@@ -763,7 +763,7 @@ void CustomScrollView::onTouchCancelled(Touch* touch, Event* event)
         _dragging = false;    
         _touchMoved = false;
     }
-    XTLayer::onTouchesCancelled(touch, event);
+    XTLayer::onTouchCancelled(touch, event);
 }
 
 Rect CustomScrollView::getViewRect()

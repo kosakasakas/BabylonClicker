@@ -33,13 +33,14 @@ long XTLayer::millisecondNow()
 }
 
 // Override of touches
-void XTLayer::onTouchBegan(cocos2d::Set* _touches, cocos2d::Event* event)
+bool XTLayer::onTouchBegan(cocos2d::Touch* _touches, cocos2d::Event* event)
 {
     this->_touchHasMoved = false;
     this->_xtTouchStart = this->millisecondNow();
-    Array *allTouches = xtAllTouchextromSet(_touches);
+    //Array *allTouches = xtAllTouchextromSet(_touches);
     
-    Touch* fingerOne = (Touch *)allTouches->getObjectAtIndex(0);
+    //Touch* fingerOne = (Touch *)allTouches->getObjectAtIndex(0);
+    Touch* fingerOne = _touches;
     Point  pointOne = Director::getInstance()->convertToUI(fingerOne->getLocationInView());
     
     Point location = this->convertToNodeSpace(pointOne);
@@ -49,15 +50,17 @@ void XTLayer::onTouchBegan(cocos2d::Set* _touches, cocos2d::Event* event)
     // Passthrough
     this->xtTouchBegan(location);
     this->xtTouchBegan(_touches, event);
-
+    
+    return true;
 }
 
-void XTLayer::onTouchMoved(cocos2d::Set* _touches, cocos2d::Event* event)
+void XTLayer::onTouchMoved(cocos2d::Touch* _touches, cocos2d::Event* event)
 {
     this->_touchHasMoved = true;
-    Array *allTouches = xtAllTouchextromSet(_touches);
+    //Array *allTouches = xtAllTouchextromSet(_touches);
     
-    Touch* fingerOne = (Touch *)allTouches->getObjectAtIndex(0);
+    //Touch* fingerOne = (Touch *)allTouches->getObjectAtIndex(0);
+    Touch* fingerOne = _touches;
     Point pointOne = Director::getInstance()->convertToUI(fingerOne->getLocationInView());
     
     Point location = this->convertToNodeSpace(pointOne);
@@ -70,14 +73,15 @@ void XTLayer::onTouchMoved(cocos2d::Set* _touches, cocos2d::Event* event)
 
 }
 
-void XTLayer::onTouchEnded(cocos2d::Set* _touches, cocos2d::Event* event)
+void XTLayer::onTouchEnded(cocos2d::Touch* _touches, cocos2d::Event* event)
 {
     long endTime = this->millisecondNow();
     long deltaTime = endTime - this->_xtTouchStart;
     CCLOG("Deltatime %ld",deltaTime);
-    Array *allTouches = xtAllTouchextromSet(_touches);
+    //Array *allTouches = xtAllTouchextromSet(_touches);
     
-    Touch* fingerOne = (Touch *)allTouches->getObjectAtIndex(0);
+    //Touch* fingerOne = (Touch *)allTouches->getObjectAtIndex(0);
+    Touch* fingerOne = _touches;
     Point pointOne = Director::getInstance()->convertToUI(fingerOne->getLocationInView());
     
     Point location = this->convertToNodeSpace(pointOne);
