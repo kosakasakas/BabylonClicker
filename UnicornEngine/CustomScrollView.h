@@ -66,7 +66,7 @@ public:
  */
 
 // clustom
-class CustomScrollView : public XTLayer
+class CustomScrollView : public Layer
 {
 public:
     enum class Direction

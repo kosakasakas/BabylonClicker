@@ -96,7 +96,7 @@ CustomScrollView* CustomScrollView::create()
 
 bool CustomScrollView::initWithViewSize(Size size, Node *container/* = NULL*/)
 {
-    if (XTLayer::init())
+    if (Layer::init())
     {
         _container = container;
         
@@ -637,7 +637,7 @@ bool CustomScrollView::onTouchBegan(Touch* touch, Event* event)
         
         _dragging  = false;
     } 
-    return XTLayer::onTouchBegan(touch, event);
+    return true;
 }
 
 void CustomScrollView::onTouchMoved(Touch* touch, Event* event)
@@ -719,7 +719,7 @@ void CustomScrollView::onTouchMoved(Touch* touch, Event* event)
             this->setZoomScale(this->getZoomScale()*len/_touchLength);
         }
     }
-    XTLayer::onTouchMoved(touch, event);
+    //XTLayer::onTouchMoved(touch, event);
 }
 
 void CustomScrollView::onTouchEnded(Touch* touch, Event* event)
@@ -745,7 +745,7 @@ void CustomScrollView::onTouchEnded(Touch* touch, Event* event)
         _dragging = false;    
         _touchMoved = false;
     }
-    XTLayer::onTouchEnded(touch, event);
+    //XTLayer::onTouchEnded(touch, event);
 }
 
 void CustomScrollView::onTouchCancelled(Touch* touch, Event* event)
@@ -763,7 +763,7 @@ void CustomScrollView::onTouchCancelled(Touch* touch, Event* event)
         _dragging = false;    
         _touchMoved = false;
     }
-    XTLayer::onTouchCancelled(touch, event);
+    //XTLayer::onTouchCancelled(touch, event);
 }
 
 Rect CustomScrollView::getViewRect()

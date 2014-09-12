@@ -87,7 +87,7 @@ void UnicornScrollView::onTouchEnded(Touch* touch, Event* event) {
         }
         waitingTouchEnd = false;
     }
-    CustomScrollView::xtTouchEnded(touch, event);
+    CustomScrollView::onTouchEnded(touch, event);
 }
 
 void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
@@ -103,12 +103,12 @@ void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
             waitingTouchEnd = false;
         }
     }
-    CustomScrollView::xtTouchMoved(touch, event);
+    CustomScrollView::onTouchMoved(touch, event);
 }
-
+/*
 void UnicornScrollView::xtSwipeGesture(XTTouchDirection direction, float distance, float speed) {
     float dis = distance;
-}
+}*/
 
 void UnicornScrollView::addTouchListener() {
     if (_touchListener != nullptr) {

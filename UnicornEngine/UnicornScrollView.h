@@ -26,7 +26,7 @@ public:
     virtual void onTouchCancelled(Touch* touch, Event* event);
     virtual void onTouchEnded(Touch* touch, Event* event);
     virtual void onTouchMoved(Touch* touch, Event* event);
-    virtual void xtSwipeGesture(XTTouchDirection direction, float distance, float speed);
+    //virtual void xtSwipeGesture(XTTouchDirection direction, float distance, float speed);
     enum {
         kUnicornScrollViewPriority = -129
     };
