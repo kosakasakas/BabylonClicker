@@ -35,7 +35,16 @@ private:
         NODE_TAG_ScrolleLayer = 20
     } NODE_TAG;
     
+    enum {
+        DIALOG_TAG_Summon,
+        DIALOG_TAG_Item,
+        DIALOG_TAG_Magic,
+        DIALOG_TAG_Battle,
+        DIALOG_TAG_None
+    } DIALOG_TAG;
+    
     bool _doneInitDraw = false;
+    int _currentDialog;
     Sprite* _bossSprite;
     
     void update(float delta);
@@ -58,8 +67,8 @@ private:
     void initDraw();
     void addBossNode();
     void addUnitNode();
-    
     void buttonCallback(Object* sender);
+    bool isShowingDialog();
     
 public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
@@ -70,7 +79,8 @@ public:
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
     
-    void showSelectDialog();
+    void showDialog(int dialogID);
+    void hideDialog();
 };
 
 class MainSceneLoader : public cocos2d::extension::LayerLoader

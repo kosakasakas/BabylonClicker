@@ -19,6 +19,7 @@
 
 MainScene::MainScene()
 : _bossSprite(NULL)
+, _currentDialog(DIALOG_TAG_None)
 {
     Array* unitArray = BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
     Object* it;
@@ -73,7 +74,7 @@ bool MainScene::init() {
     return true;
 }
 
-void MainScene::showSelectDialog() {
+void MainScene::showDialog(int dialogID) {
     auto battleStageNode = this->getChildByTag(NODE_TAG_UINode)->getChildByTag(NODE_TAG_BattleStageNode);
     
     Size battleViewSize = battleStageNode->getContentSize();
@@ -112,7 +113,22 @@ void MainScene::showSelectDialog() {
     scrollViewNode->setContentOffset(Point(0,-(scrollHeight-2*battleViewSize.height) - battleViewSize.height));
     scrollViewNode->setDirection(CustomScrollView::Direction::VERTICAL);
     scrollViewNode->setPosition(battlePoint);
-    this->addChild(scrollViewNode);
+    scrollViewNode->setTag(NODE_TAG_ScrolleView);
+    if (!isShowingDialog()) {
+        this->getChildByTag(NODE_TAG_UINode)->addChild(scrollViewNode);
+    }
+    _currentDialog = dialogID;
+}
+
+void MainScene::hideDialog() {
+    auto uiNode = this->getChildByTag(NODE_TAG_UINode);
+    if (uiNode == NULL) {
+        return;
+    }
+    auto scrollNode = uiNode->getChildByTag(NODE_TAG_ScrolleView);
+    if (scrollNode != NULL) {
+        uiNode->removeChild(scrollNode);
+    }
 }
 
 void MainScene::buttonCallback(Object* sender) {
@@ -205,10 +221,22 @@ void MainScene::tappedPreviousButton(Object* pSender, Control::EventType pContro
     Director::getInstance()->replaceScene(scene);
 }
 
+bool MainScene::isShowingDialog() {
+    if (_currentDialog != DIALOG_TAG_None) {
+        return true;
+    }
+    return false;
+}
+
 void MainScene::tappedSummonButton(Object* pSender, Control::EventType pControlEventType)
 {
     CCLOG("tappedSummonButton eventType = %d", pControlEventType);
-    showSelectDialog();
+    if (_currentDialog == DIALOG_TAG_Summon) {
+        hideDialog();
+        _currentDialog = DIALOG_TAG_None;
+    } else {
+        showDialog(DIALOG_TAG_Summon);
+    }
 }
 
 void MainScene::tappedMagicButton(Object* pSender, Control::EventType pControlEventType)
