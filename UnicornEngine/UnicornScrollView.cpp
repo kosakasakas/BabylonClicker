@@ -105,10 +105,6 @@ void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
     }
     CustomScrollView::onTouchMoved(touch, event);
 }
-/*
-void UnicornScrollView::xtSwipeGesture(XTTouchDirection direction, float distance, float speed) {
-    float dis = distance;
-}*/
 
 void UnicornScrollView::addTouchListener() {
     if (_touchListener != nullptr) {

@@ -66,7 +66,7 @@ public:
  */
 
 // clustom
-class CustomScrollView : public Layer
+class CustomScrollView : public XTLayer
 {
 public:
     enum class Direction
@@ -217,6 +217,8 @@ public:
     virtual void onTouchMoved(Touch *touch, Event *event);
     virtual void onTouchEnded(Touch *touch, Event *event);
     virtual void onTouchCancelled(Touch *touch, Event *event);
+    
+    virtual void xtSwipeGesture(XTTouchDirection direction, float distance, float speed);
     
     // Overrides
 //    virtual bool ccTouchBegan(Touch *pTouch, Event *pEvent) override;

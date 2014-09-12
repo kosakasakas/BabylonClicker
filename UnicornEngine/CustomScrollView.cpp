@@ -604,6 +604,10 @@ bool CustomScrollView::onTouchBegan(Touch* touch, Event* event)
         return false;
     }
     
+    if (_container && _container->isRunning()) {
+        _container->stopAllActions();
+    }
+    
     Rect frame = getViewRect();
 
     //dispatcher does not know about clipping. reject touches outside visible bounds.
@@ -637,7 +641,7 @@ bool CustomScrollView::onTouchBegan(Touch* touch, Event* event)
         
         _dragging  = false;
     } 
-    return true;
+    return XTLayer::onTouchBegan(touch, event);
 }
 
 void CustomScrollView::onTouchMoved(Touch* touch, Event* event)
@@ -719,7 +723,7 @@ void CustomScrollView::onTouchMoved(Touch* touch, Event* event)
             this->setZoomScale(this->getZoomScale()*len/_touchLength);
         }
     }
-    //XTLayer::onTouchMoved(touch, event);
+    XTLayer::onTouchMoved(touch, event);
 }
 
 void CustomScrollView::onTouchEnded(Touch* touch, Event* event)
@@ -745,7 +749,7 @@ void CustomScrollView::onTouchEnded(Touch* touch, Event* event)
         _dragging = false;    
         _touchMoved = false;
     }
-    //XTLayer::onTouchEnded(touch, event);
+    XTLayer::onTouchEnded(touch, event);
 }
 
 void CustomScrollView::onTouchCancelled(Touch* touch, Event* event)
@@ -763,7 +767,41 @@ void CustomScrollView::onTouchCancelled(Touch* touch, Event* event)
         _dragging = false;    
         _touchMoved = false;
     }
-    //XTLayer::onTouchCancelled(touch, event);
+    XTLayer::onTouchCancelled(touch, event);
+}
+
+
+void CustomScrollView::xtSwipeGesture(XTTouchDirection direction, float distance, float speed) {
+    // 縦方向のスワイプにしか対応してません。
+    float offset = (speed > 2.0) ? 5.0
+                 : (speed > 1.0) ? 2.0
+                 : 1.0;
+    float duration = offset*distance / (speed * 1000);
+    float dy = offset*distance;
+    if (direction == XTTouchDirection::UP) {
+        dy *= -1.0;
+    } else if (direction == XTTouchDirection::DOWN) {
+        dy *= 1.0;
+    }
+    
+    Point pos = _container->getPosition();
+    
+    Point min = this->minContainerOffset();
+    Point max = this->maxContainerOffset();
+    Point oldPoint = Point(pos.x, pos.y + dy);
+    float newX     = oldPoint.x;
+    float newY     = oldPoint.y;
+    if (_direction == Direction::BOTH || _direction == Direction::HORIZONTAL)
+    {
+        newX     = MAX(newX, min.x);
+        newX     = MIN(newX, max.x);
+    }
+    if (_direction == Direction::BOTH || _direction == Direction::VERTICAL)
+    {
+        newY     = MIN(newY, max.y);
+        newY     = MAX(newY, min.y);
+    }
+    _container->runAction(EaseSineOut::create(MoveTo::create(duration, Point(newX, newY))));
 }
 
 Rect CustomScrollView::getViewRect()

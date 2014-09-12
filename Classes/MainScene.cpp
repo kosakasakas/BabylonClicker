@@ -84,7 +84,7 @@ void MainScene::showSelectDialog() {
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
    
-    Size buttonSize = Size(180, 40);
+    Size buttonSize = Size(180, 80);
     float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
     Size scrollSize = Size(battleViewSize.width, scrollHeight);
     Node* container = Node::create();
