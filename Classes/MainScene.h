@@ -21,18 +21,24 @@ class MainScene : public Layer
 {
 private:
     enum {
-        NODE_TAG_UINode = 100,
-        NODE_TAG_StaticNode = 200,
-        NODE_TAG_BattleStageNode = 10,
-        NODE_TAG_SummonButton = 15,
-        NODE_TAG_MagicButton = 16,
-        NODE_TAG_ItemButton = 17,
-        NODE_TAG_VSModeButton = 18,
-        NODE_TAG_NameLabel = 11,
-        NODE_TAG_HPLabel = 13,
-        NODE_TAG_ScrolleView = 14,
-        NODE_TAG_SelectButton = 21,
-        NODE_TAG_ScrolleLayer = 20
+        NODE_TAG_BackNode = 100,
+        NODE_TAG_BattleNode = 200,
+        NODE_TAG_UINode = 300,
+        NODE_TAG_TopNode = 400,
+        
+        NODE_TAG_SummonButton = 11,
+        NODE_TAG_MagicButton = 12,
+        NODE_TAG_ItemButton = 13,
+        NODE_TAG_VSModeButton = 14,
+        NODE_TAG_NameLabel = 15,
+        NODE_TAG_HPLabel = 16,
+        NODE_TAG_ScrolleView = 17,
+        NODE_TAG_SelectButton = 18,
+        NODE_TAG_ScrolleLayer = 19,
+        NODE_TAG_IbaraSprite = 20,
+        NODE_TAG_WingSprite = 21,
+        NODE_TAG_HashiraLeftSprite = 22,
+        NODE_TAG_HashiraRightSprite = 23
     } NODE_TAG;
     
     enum {
@@ -70,6 +76,12 @@ private:
     void buttonCallback(Object* sender);
     bool isShowingDialog();
     
+    void showDialog(int dialogID);
+    void hideDialog();
+    void initDialog();
+    void showBattleView();
+    void cleanNode(Node* targetNode);
+    
 public:
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
@@ -77,10 +89,10 @@ public:
     MainScene();
     virtual ~MainScene();
     
-    CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
+    static MainScene* create();
+    //CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
     
-    void showDialog(int dialogID);
-    void hideDialog();
+    void initFirst();
 };
 
 class MainSceneLoader : public cocos2d::extension::LayerLoader
