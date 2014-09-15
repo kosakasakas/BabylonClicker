@@ -88,7 +88,7 @@ void MainScene::initFirst() {
     }
     Menu* btnMenu = Menu::createWithArray(menuItemArray);
     btnMenu->alignItemsHorizontallyWithPadding(0.f);
-    btnMenu->setPosition(Point(0.5f*winSize.width, 120.f));
+    btnMenu->setPosition(Point(0.5f*winSize.width, 70.f));
     this->getChildByTag(NODE_TAG_TopNode)->addChild(btnMenu);
     
     showBattleView();
@@ -107,23 +107,29 @@ MainScene* MainScene::create() {
 
 void MainScene::initDialog() {
     auto uiNode = this->getChildByTag(NODE_TAG_UINode);
+    auto battleStageNode = this->getChildByTag(NODE_TAG_BattleNode);
     cleanNode(uiNode);
     
     Sprite* ibaraSprite = Sprite::create("hashira_left.png");
-    ibaraSprite->setPosition(Point(22.f, 293.f));
+    ibaraSprite->setPosition(Point(24.f, 250.f));
     ibaraSprite->setTag(NODE_TAG_HashiraLeftSprite);
     Sprite* wingSprite = Sprite::create("hashira_right.png");
-    wingSprite->setPosition(Point(298.f, 294.f));
+    wingSprite->setPosition(Point(298.f, 250.f));
     wingSprite->setTag(NODE_TAG_HashiraRightSprite);
     
     uiNode->addChild(ibaraSprite);
     uiNode->addChild(wingSprite);
     
-    auto battleStageNode = this->getChildByTag(NODE_TAG_BattleNode);
+    // test
+    Sprite* uiSprite = Sprite::create("icon_water.png");
+    uiNode->addChild(uiSprite);
+    Sprite* battleSprite = Sprite::create("icon_light.png");
+    battleStageNode->addChild(battleSprite);
+    
     Size battleViewSize = battleStageNode->getContentSize();
     Size winSize = Director::getInstance()->getWinSize();
     int buttonNum = 20;
-    float topPosOffset = 80;
+    float topPosOffset = 0;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
     Size buttonSize = Size(180, 80);
@@ -131,6 +137,7 @@ void MainScene::initDialog() {
     Size scrollSize = Size(battleViewSize.width, scrollHeight);
     Node* container = Node::create();
     Point battlePoint = battleStageNode->getPosition();
+    Point uiNodePoint = uiNode->getPosition();
     container->setContentSize(scrollSize);
     
     Array* menuItemArray = Array::create();
@@ -152,9 +159,8 @@ void MainScene::initDialog() {
     scrollViewNode->setViewSize(Size(battleViewSize.width, battleViewSize.height - topPosOffset));
     scrollViewNode->setContentOffset(Point(0,-(scrollHeight-2*battleViewSize.height) - battleViewSize.height - topPosOffset));
     scrollViewNode->setDirection(CustomScrollView::Direction::VERTICAL);
-    scrollViewNode->setPosition(Point(battlePoint.x - 0.5*battleViewSize.width, battlePoint.y - 0.5*battleViewSize.height));
+    scrollViewNode->setPosition(battlePoint - Point(0.5*battleViewSize.width, 0.5*battleViewSize.height) - (battlePoint - uiNodePoint) - (battlePoint - uiNodePoint));
     scrollViewNode->setTag(NODE_TAG_ScrolleView);
-    scrollViewNode->setAnchorPoint(Point(0.5,0.5));
     uiNode->addChild(scrollViewNode);
 }
 
@@ -170,10 +176,10 @@ void MainScene::showBattleView() {
     cleanNode(uiNode);
     
     Sprite* ibaraSprite = Sprite::create("ibara.png");
-    ibaraSprite->setPosition(Point(268.f, 305.f));
+    ibaraSprite->setPosition(Point(268.f, 262.f));
     ibaraSprite->setTag(NODE_TAG_IbaraSprite);
     Sprite* wingSprite = Sprite::create("wing.png");
-    wingSprite->setPosition(Point(14.f, 302.f));
+    wingSprite->setPosition(Point(14.f, 259.f));
     wingSprite->setTag(NODE_TAG_WingSprite);
     
     uiNode->addChild(ibaraSprite);
