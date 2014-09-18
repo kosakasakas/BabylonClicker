@@ -16,6 +16,7 @@
 #include "UnicornScrollView.h"
 #include "UnicornMenuSprite.h"
 #include "UnicornScrollableMenu.h"
+#include "ScrollComponentCreator.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
@@ -106,6 +107,12 @@ MainScene* MainScene::create() {
 }
 
 void MainScene::initDialog() {
+    FieldObject* summonField = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUserField()->getObjectAtIndex(Field::UFT_Summon));
+    summonField->incrementLevel();
+    summonField->incrementLevel();
+    
+    Array* components = ScrollComponentCreator::make();
+    
     auto uiNode = this->getChildByTag(NODE_TAG_UINode);
     auto battleStageNode = this->getChildByTag(NODE_TAG_BattleNode);
     cleanNode(uiNode);
@@ -120,19 +127,13 @@ void MainScene::initDialog() {
     uiNode->addChild(ibaraSprite);
     uiNode->addChild(wingSprite);
     
-    // test
-    Sprite* uiSprite = Sprite::create("icon_water.png");
-    uiNode->addChild(uiSprite);
-    Sprite* battleSprite = Sprite::create("icon_light.png");
-    battleStageNode->addChild(battleSprite);
-    
     Size battleViewSize = battleStageNode->getContentSize();
     Size winSize = Director::getInstance()->getWinSize();
-    int buttonNum = 20;
+    int buttonNum = components->count();
     float topPosOffset = 0;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
-    Size buttonSize = Size(180, 80);
+    Size buttonSize = *ScrollComponentCreator::getComponentSize();
     float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
     Size scrollSize = Size(battleViewSize.width, scrollHeight);
     Node* container = Node::create();
@@ -146,6 +147,7 @@ void MainScene::initDialog() {
         buttonSprite->setContentSize(buttonSize);
         UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
         menuItemArray->addObject(btnItem);
+        btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
     }
     UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
     btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);

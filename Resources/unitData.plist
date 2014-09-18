@@ -146,6 +146,15 @@
 		<integer>6</integer>
 		<integer>12</integer>
 	</array>
+	<key>grade</key>
+	<array>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
 	<key>name</key>
 	<array>
 		<string>バビロン素体</string>

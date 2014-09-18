@@ -77,6 +77,10 @@ int ObjectData::getObjectID() const {
     return getIntValue(OBJECTID_KEY);
 }
 
+const char* ObjectData::getGrade() const {
+    return getCharValue("grade");
+}
+
 const char* ObjectData::getName() const {
     return getCharValue(NAME_KEY);
 }

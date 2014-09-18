@@ -13,6 +13,7 @@
 #include "BaseObject.h"
 #include "cocos2d.h"
 #include "ObjectData.h"
+#include "UnicornPlistLoader.h"
 
 USING_NS_CC;
 
@@ -20,7 +21,7 @@ class ObjectDataFactory : public virtual BaseObject {
 public:
     ObjectDataFactory(const char* filePath);
     virtual ~ObjectDataFactory();
-    CC_SYNTHESIZE_READONLY(Dictionary*, dictionary, Ditctionary);
+    //CC_SYNTHESIZE_READONLY(Dictionary*, dictionary, Ditctionary);
     virtual void dump() const;
     void dumpPropertyValueAtIndex(int index) const;
     int getPropertyNum() const;
@@ -28,8 +29,10 @@ public:
     Array* getPropertyArray() const;
     Dictionary* getPropertyValueAtIndex(int index) const;
     ObjectData* create(int index);
+    Dictionary* getDictionary();
 protected:
     virtual ObjectData* createObjectData(int index);
+    UnicornPlistLoader* unicornPlistLoader;
 };
 
 #endif /* defined(__BabylonClicker__ObjectDataFactory__) */

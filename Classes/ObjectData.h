@@ -23,6 +23,7 @@ public:
     CC_SYNTHESIZE_READONLY(float, cost, Cost);
     CC_SYNTHESIZE_READONLY(int, level, Level);
     int getObjectID() const;
+    const char* getGrade() const;
     const char* getName() const;
     const char* getDescription() const;
     virtual void dump() const;

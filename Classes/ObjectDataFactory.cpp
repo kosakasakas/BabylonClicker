@@ -10,113 +10,38 @@
 
 ObjectDataFactory::ObjectDataFactory(const char* filePath)
 {
-    dictionary = Dictionary::createWithContentsOfFile(filePath);
+    unicornPlistLoader = new UnicornPlistLoader(filePath);
 }
 
 ObjectDataFactory::~ObjectDataFactory()
 {
-    dictionary->release();
+    delete unicornPlistLoader;
 }
 
 void ObjectDataFactory::dump() const {
-    CCLOG("======Game Data======");
-    if (dictionary != NULL) {
-        CCLOG("property num: %d", getPropertyNum());
-        CCLOG("object num: %d", getObjectNum());
-        Array* property = getPropertyArray();
-        if(property != NULL) {
-            Object* it;
-            Object* ij;
-            CCARRAY_FOREACH(property, it)
-            {
-                String* key = dynamic_cast<String*>(it);
-                CCLOG("===key: %s===", key->getCString());
-                Array* objects = (Array*)dictionary->objectForKey(key->getCString());
-                int count = 0;
-                if (objects != NULL) {
-                    CCARRAY_FOREACH(objects, ij)
-                    {
-                        String* object = dynamic_cast<String*>(ij);
-                        CCLOG("value %d: %s", count, object->getCString());
-                        ++count;
-                    }
-                }
-            }
-        }
-    }
-    CCLOG("dump ended.");
+    CCLOG("======ObjectDataFactory::dump()======");
+    unicornPlistLoader->dump();
 }
 
 void ObjectDataFactory::dumpPropertyValueAtIndex(int index) const {
-    CCLOG("======ObjectDataFactory======");
-    CCLOG("dumpPropertyValueAtIndex: %d", index);
-    if(0 > index || index > getObjectNum()) {
-        CCLOG("index over flow..");
-        return;
-    }
-    Dictionary* dict = getPropertyValueAtIndex(index);
-    Array* property = getPropertyArray();
-    if (dict != NULL && property != NULL) {
-        Object* it;
-        CCARRAY_FOREACH(property, it)
-        {
-            String* key = dynamic_cast<String*>(it);
-            CCLOG("key: %s, value: %s", key->getCString(), ((String*)dict->objectForKey(key->getCString()))->getCString());
-        }
-    }
-    CCLOG("dump ended.");
+    CCLOG("======ObjectDataFactory::dumpPropertyValueAtIndex======");
+    unicornPlistLoader->dumpPropertyValueAtIndex(index);
 }
 
 int ObjectDataFactory::getPropertyNum() const {
-    Array* array = getPropertyArray();
-    if (array != NULL) {
-        return array->count();
-    } else {
-        return 0;
-    }
+    return unicornPlistLoader->getPropertyNum();
 }
 
 int ObjectDataFactory::getObjectNum() const {
-    if (dictionary != NULL) {
-        Array* property = getPropertyArray();
-        if(property != NULL) {
-            String* key = (String*)property->getObjectAtIndex(0);
-            Array* object = (Array*)dictionary->objectForKey(key->getCString());
-            if (object != NULL) {
-                return object->count();
-            }
-        }
-    }
-    return 0;
+    return unicornPlistLoader->getObjectNum();
 }
 
 Array* ObjectDataFactory::getPropertyArray() const {
-    if (dictionary != NULL) {
-        return dictionary->allKeys();
-    } else {
-        return NULL;
-    }
+    return unicornPlistLoader->getPropertyArray();
 }
 
 Dictionary* ObjectDataFactory::getPropertyValueAtIndex(int index) const {
-    if(0 > index || index > getObjectNum()) {
-        return NULL;
-    }
-    Dictionary* result = NULL;
-    if (dictionary != NULL) {
-        Array* property = getPropertyArray();
-        if (property != NULL) {
-            Object* it;
-            result = new Dictionary();
-            CCARRAY_FOREACH(property, it)
-            {
-                String* key = dynamic_cast<String*>(it);
-                Array* objects = (Array*)dictionary->objectForKey(key->getCString());
-                result->setObject(objects->getObjectAtIndex(index), key->getCString());
-            }
-        }
-    }
-    return result;
+    return unicornPlistLoader->getPropertyValueAtIndex(index);
 }
 
 ObjectData* ObjectDataFactory::create(int index){
@@ -127,4 +52,8 @@ ObjectData* ObjectDataFactory::create(int index){
 ObjectData* ObjectDataFactory::createObjectData(int index){
     ObjectData* data = new ObjectData(getPropertyValueAtIndex(index));
     return data;
+}
+
+Dictionary* ObjectDataFactory::getDictionary() {
+    return unicornPlistLoader->getDictionary();
 }
