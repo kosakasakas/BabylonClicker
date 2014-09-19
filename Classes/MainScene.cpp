@@ -16,7 +16,7 @@
 #include "UnicornScrollView.h"
 #include "UnicornMenuSprite.h"
 #include "UnicornScrollableMenu.h"
-#include "ScrollComponentCreator.h"
+#include "ComponentCreator.h"
 
 MainScene::MainScene()
 : _bossSprite(NULL)
@@ -107,29 +107,23 @@ MainScene* MainScene::create() {
 }
 
 void MainScene::initDialog() {
-    Array* components = ScrollComponentCreator::make();
+    Array* components = ComponentCreator::createScrollComponent();
     
     auto uiNode = this->getChildByTag(NODE_TAG_UINode);
     auto battleStageNode = this->getChildByTag(NODE_TAG_BattleNode);
     cleanNode(uiNode);
     
-    Sprite* ibaraSprite = Sprite::create("hashira_left.png");
-    ibaraSprite->setPosition(Point(24.f, 250.f));
-    ibaraSprite->setTag(NODE_TAG_HashiraLeftSprite);
-    Sprite* wingSprite = Sprite::create("hashira_right.png");
-    wingSprite->setPosition(Point(298.f, 250.f));
-    wingSprite->setTag(NODE_TAG_HashiraRightSprite);
-    
-    uiNode->addChild(ibaraSprite);
-    uiNode->addChild(wingSprite);
+    uiNode->addChild(ComponentCreator::createIbaraSprite());
+    uiNode->addChild(ComponentCreator::createWingSprite());
     
     Size battleViewSize = battleStageNode->getContentSize();
+    
     Size winSize = Director::getInstance()->getWinSize();
     int buttonNum = components->count();
     float topPosOffset = 0;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
-    Size buttonSize = *ScrollComponentCreator::getComponentSize();
+    Size buttonSize = *ComponentCreator::getComponentSize();
     float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
     Size scrollSize = Size(battleViewSize.width, scrollHeight);
     Node* container = Node::create();

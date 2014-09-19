@@ -11,7 +11,7 @@
 		1418415319AB5E5700338672 /* Scroll.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 1418415219AB5E5600338672 /* Scroll.ccbi */; };
 		1434B81719C862D7008F6056 /* revelReleaseList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1434B81619C862D7008F6056 /* revelReleaseList.plist */; };
 		1434B82019C8689D008F6056 /* UnicornPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1434B81E19C8689D008F6056 /* UnicornPlistLoader.cpp */; };
-		1434B82319C87120008F6056 /* ScrollComponentCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1434B82119C87120008F6056 /* ScrollComponentCreator.cpp */; };
+		1434B82319C87120008F6056 /* ComponentCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1434B82119C87120008F6056 /* ComponentCreator.cpp */; };
 		143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */; };
 		143C5C47199E26650041FFEB /* BossData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C45199E26650041FFEB /* BossData.cpp */; };
 		143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C48199E2AED0041FFEB /* ItemDataFactory.cpp */; };
@@ -321,8 +321,8 @@
 		1434B81619C862D7008F6056 /* revelReleaseList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = revelReleaseList.plist; sourceTree = "<group>"; };
 		1434B81E19C8689D008F6056 /* UnicornPlistLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornPlistLoader.cpp; sourceTree = "<group>"; };
 		1434B81F19C8689D008F6056 /* UnicornPlistLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornPlistLoader.h; sourceTree = "<group>"; };
-		1434B82119C87120008F6056 /* ScrollComponentCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScrollComponentCreator.cpp; path = ../Classes/ScrollComponentCreator.cpp; sourceTree = "<group>"; };
-		1434B82219C87120008F6056 /* ScrollComponentCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScrollComponentCreator.h; path = ../Classes/ScrollComponentCreator.h; sourceTree = "<group>"; };
+		1434B82119C87120008F6056 /* ComponentCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ComponentCreator.cpp; path = ../Classes/ComponentCreator.cpp; sourceTree = "<group>"; };
+		1434B82219C87120008F6056 /* ComponentCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComponentCreator.h; path = ../Classes/ComponentCreator.h; sourceTree = "<group>"; };
 		143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDataFactory.cpp; path = ../Classes/BossDataFactory.cpp; sourceTree = "<group>"; };
 		143C5C3D199E25A10041FFEB /* BossDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BossDataFactory.h; path = ../Classes/BossDataFactory.h; sourceTree = "<group>"; };
 		143C5C45199E26650041FFEB /* BossData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossData.cpp; path = ../Classes/BossData.cpp; sourceTree = "<group>"; };
@@ -589,8 +589,8 @@
 				145D320C1907B8130067B357 /* MainScene.cpp */,
 				145D320D1907B8130067B357 /* MainScene.h */,
 				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
-				1434B82119C87120008F6056 /* ScrollComponentCreator.cpp */,
-				1434B82219C87120008F6056 /* ScrollComponentCreator.h */,
+				1434B82119C87120008F6056 /* ComponentCreator.cpp */,
+				1434B82219C87120008F6056 /* ComponentCreator.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -1203,7 +1203,7 @@
 				1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				1434B82319C87120008F6056 /* ScrollComponentCreator.cpp in Sources */,
+				1434B82319C87120008F6056 /* ComponentCreator.cpp in Sources */,
 				145F0D98199DDEA00063F8FB /* UnitDataFactory.cpp in Sources */,
 				14834125199CBCCF00717A59 /* Unit.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
