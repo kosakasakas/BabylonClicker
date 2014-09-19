@@ -9,7 +9,7 @@
 #include "FieldObject.h"
 
 FieldObject::FieldObject()
-: level(0)
+: level(3)
 {
 }
 

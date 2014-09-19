@@ -107,10 +107,6 @@ MainScene* MainScene::create() {
 }
 
 void MainScene::initDialog() {
-    FieldObject* summonField = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUserField()->getObjectAtIndex(Field::UFT_Summon));
-    summonField->incrementLevel();
-    summonField->incrementLevel();
-    
     Array* components = ScrollComponentCreator::make();
     
     auto uiNode = this->getChildByTag(NODE_TAG_UINode);
