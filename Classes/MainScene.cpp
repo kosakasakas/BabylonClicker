@@ -99,9 +99,11 @@ void MainScene::showDialog(int dialogID) {
         auto uiNode = _componentCreator->getUiNode();
         auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
         auto rightHashiraSprite = _componentCreator->getRightHashiraSprite();
+        auto cancelButtonMenu = _componentCreator->getDialogButton(menu_selector(MainScene::buttonCallback));
         uiNode->addChild(leftHashiraSprite);
         uiNode->addChild(rightHashiraSprite);
         uiNode->addChild(scrollViewNode);
+        uiNode->addChild(cancelButtonMenu);
     }
     _currentDialog = dialogID;
 }

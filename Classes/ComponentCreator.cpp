@@ -23,6 +23,8 @@ ComponentCreator::ComponentCreator(Layer* layer) {
     scrollButtonSize->setSize(180,80);
     mainButtonSize = new Size();
     mainButtonSize->setSize(80, 50);
+    whiteColor = Color3B(255,255,255);
+    defaultFont = "Arial Rounded MT Bold";
 }
 
 ComponentCreator::~ComponentCreator(){
@@ -51,7 +53,7 @@ Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
     
     Size winSize = Director::getInstance()->getWinSize();
     int buttonNum = components->count();
-    float topPosOffset = 0;
+    float topPosOffset = 90;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
     Size buttonSize = *scrollButtonSize;
@@ -94,6 +96,12 @@ Node* ComponentCreator::createMainButtonMenu(cocos2d::SEL_MenuHandler callback) 
         buttonSprite->setContentSize(*mainButtonSize);
         UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
         btnItem->setTag(NODE_TAG_SummonButton+i);
+        
+        LabelTTF* nameLabel = LabelTTF::create(createMainButtonString(i).c_str(), defaultFont.c_str(), 12);
+        nameLabel->setPosition(Point(40, 25));
+        nameLabel->setColor(whiteColor);
+        btnItem->addChild(nameLabel);
+        
         menuItemArray->addObject(btnItem);
     }
     Menu* btnMenu = Menu::createWithArray(menuItemArray);
@@ -136,6 +144,14 @@ Node* ComponentCreator::getRightHashiraSprite() {
     return wingSprite;
 }
 
+Node* ComponentCreator::getDialogButton(SEL_MenuHandler callback) {
+    Sprite* buttonSprite = Sprite::create("dialog_button.png");
+    UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+    Menu* btnMenu = Menu::createWithItem(btnItem);
+    btnMenu->setPosition(Point(298.f, 381.f));
+    return btnMenu;
+}
+
 Array* ComponentCreator::createScrollComponent()
 {
     Array* result = Array::create();
@@ -171,19 +187,18 @@ Node* ComponentCreator::createComponent(UnitData* ud) {
     Sprite* magic = createMagicIconSprite(ud->getMagic());
     magic->setPosition(Point(40.9, 52.8));
     
-    Color3B white = Color3B(255,255,255);
-    LabelTTF* nameLabel = LabelTTF::create(ud->getName(), "Arial Rounded MT Bold", 12);
+    LabelTTF* nameLabel = LabelTTF::create(ud->getName(), defaultFont.c_str(), 12);
     nameLabel->setAnchorPoint(Point(0,0));
     nameLabel->setPosition(Point(61.9, 46.0));
-    nameLabel->setColor(white);
-    LabelTTF* starLabel = LabelTTF::create(ud->getGrade(), "Arial Rounded MT Bold", 10);
+    nameLabel->setColor(whiteColor);
+    LabelTTF* starLabel = LabelTTF::create(ud->getGrade(), defaultFont.c_str(), 10);
     starLabel->setAnchorPoint(Point(0,0));
     starLabel->setPosition(Point(50.0, 16.2));
-    starLabel->setColor(white);
-    LabelTTF* soulLabel = LabelTTF::create("1000", "Arial Rounded MT Bold", 12);
+    starLabel->setColor(whiteColor);
+    LabelTTF* soulLabel = LabelTTF::create("1000", defaultFont.c_str(), 12);
     soulLabel->setAnchorPoint(Point(0,0));
     soulLabel->setPosition(Point(99.5, 16.2));
-    soulLabel->setColor(white);
+    soulLabel->setColor(whiteColor);
     
     node->addChild(frame);
     node->addChild(magic);
@@ -214,6 +229,21 @@ Sprite* ComponentCreator::createMagicIconSprite(const char* magic) {
     }
     return sprite;
 }
+
+std::string ComponentCreator::createMainButtonString(int id) {
+    std::string str;
+    if (id == BUTTON_TAG_Summon) {
+        str = "召喚";
+    } else if (id == BUTTON_TAG_Item) {
+        str = "道具";
+    } else if (id == BUTTON_TAG_Magic) {
+        str = "魔術";
+    } else if (id == BUTTON_TAG_Battle) {
+        str = "対戦";
+    }
+    return str;
+}
+
 
 void ComponentCreator::cleanNode(int nodeTag) {
     auto targetNode = parentLayer->getChildByTag(nodeTag);

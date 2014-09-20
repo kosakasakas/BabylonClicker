@@ -28,6 +28,7 @@ public:
     Node* createMainButtonSprite();
     Node* createMainButtonMenu(SEL_MenuHandler callback);
     Node* getScrollComponent(SEL_MenuHandler callback);
+    Node* getDialogButton(SEL_MenuHandler callback);
     void cleanUiNode();
     bool isSummonButton(Object* sender);
     bool isMagicButton(Object* sender);
@@ -37,6 +38,8 @@ private:
     Layer* parentLayer;
     Size* scrollButtonSize;
     Size* mainButtonSize;
+    Color3B whiteColor;
+    std::string defaultFont;
     enum {
         NODE_TAG_BackNode = 100,
         NODE_TAG_BattleNode = 200,
@@ -57,8 +60,16 @@ private:
         NODE_TAG_HashiraLeftSprite = 22,
         NODE_TAG_HashiraRightSprite = 23
     } NODE_TAG;
+    enum {
+        BUTTON_TAG_Summon,
+        BUTTON_TAG_Item,
+        BUTTON_TAG_Magic,
+        BUTTON_TAG_Battle,
+        DIALOG_TAG_None
+    } BUTTON_TAG;
     Node* createComponent(UnitData* ud);
     Sprite* createMagicIconSprite(const char* magic);
+    std::string createMainButtonString(int id);
     void initScrollView(cocos2d::SEL_MenuHandler);
     bool isCorrectSender(Object* sender, int tag);
     Array* createScrollComponent();
