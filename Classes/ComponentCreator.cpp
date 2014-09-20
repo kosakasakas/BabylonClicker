@@ -12,44 +12,41 @@
 #include "UnitFactory.h"
 #include "cocos-ext.h"
 #include "UnicornMenuSprite.h"
+#include "UnicornScrollView.h"
+#include "UnicornScrollableMenu.h"
 
 USING_NS_CC_EXT;
 
 ComponentCreator::ComponentCreator(Layer* layer) {
     parentLayer = layer;
+    scrollButtonSize = new Size();
+    scrollButtonSize->setSize(180,80);
+    mainButtonSize = new Size();
+    mainButtonSize->setSize(80, 50);
 }
 
-ComponentCreator::~ComponentCreator() {
+ComponentCreator::~ComponentCreator(){
     parentLayer->release();
 }
 
-Node* ComponentCreator::createBattleViewComponent() {
-    Node* node = new Node();
-    return node;
-}
-Node* ComponentCreator::createUIViewComponent() {
-    Node* node = new Node();
-    return node;
-}
-Node* ComponentCreator::createBackNodeComponent() {
-    Node* node = new Node();
-    return node;
-}
-Node* ComponentCreator::createTopNodeComponent() {
-    Node* node = new Node();
-    return node;
+Node* ComponentCreator::getUiNode() {
+    return parentLayer->getChildByTag(NODE_TAG_UINode);
 }
 
-void ComponentCreator::initScrollView(cocos2d::SEL_MenuHandler) {
-    Array* components = ComponentCreator::createScrollComponent();
+Node* ComponentCreator::getBattleNode() {
+    return parentLayer->getChildByTag(NODE_TAG_BattleNode);
+}
+
+Node* ComponentCreator::getTopNode() {
+    return parentLayer->getChildByTag(NODE_TAG_TopNode);
+}
+
+Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
+    Array* components = createScrollComponent();
     
-    auto uiNode = parentLayer->getChildByTag(NODE_TAG_UINode);
-    auto battleStageNode = parentLayer->getChildByTag(NODE_TAG_BattleNode);
-    cleanNode(uiNode);
-    
-    uiNode->addChild(ComponentCreator::createIbaraSprite());
-    uiNode->addChild(ComponentCreator::createWingSprite());
-    
+    auto uiNode = getUiNode();
+    auto battleStageNode = getBattleNode();
+    cleanUiNode();
     Size battleViewSize = battleStageNode->getContentSize();
     
     Size winSize = Director::getInstance()->getWinSize();
@@ -57,7 +54,7 @@ void ComponentCreator::initScrollView(cocos2d::SEL_MenuHandler) {
     float topPosOffset = 0;
     float bottomPosOffset = 10;
     float buttonPosOffset = 20;
-    Size buttonSize = *ComponentCreator::getComponentSize();
+    Size buttonSize = *scrollButtonSize;
     float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
     Size scrollSize = Size(battleViewSize.width, scrollHeight);
     Node* container = Node::create();
@@ -67,9 +64,8 @@ void ComponentCreator::initScrollView(cocos2d::SEL_MenuHandler) {
     
     Array* menuItemArray = Array::create();
     for (int i = 0; i < buttonNum; ++i) {
-        Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
-        buttonSprite->setContentSize(buttonSize);
-        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, menu_selector(MainScene::buttonCallback));
+        auto buttonSprite = ComponentCreator::createScrollButtonSprite();
+        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
         menuItemArray->addObject(btnItem);
         btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
     }
@@ -79,7 +75,6 @@ void ComponentCreator::initScrollView(cocos2d::SEL_MenuHandler) {
     container->addChild(btnMenu);
     
     UnicornScrollView *scrollViewNode = UnicornScrollView::create(btnMenu);
-    scrollViewNode->setTag(NODE_TAG_ScrolleView);
     scrollViewNode->setClippingToBounds(true);
     scrollViewNode->setContainer(container);
     scrollViewNode->setViewSize(Size(battleViewSize.width, battleViewSize.height - topPosOffset));
@@ -87,63 +82,59 @@ void ComponentCreator::initScrollView(cocos2d::SEL_MenuHandler) {
     scrollViewNode->setDirection(CustomScrollView::Direction::VERTICAL);
     scrollViewNode->setPosition(battlePoint - Point(0.5*battleViewSize.width, 0.5*battleViewSize.height) - (battlePoint - uiNodePoint) - (battlePoint - uiNodePoint));
     scrollViewNode->setTag(NODE_TAG_ScrolleView);
-    uiNode->addChild(scrollViewNode);
-
+    return scrollViewNode;
 }
 
-Node* ComponentCreator::createIbaraSprite() {
-    Node* node = Sprite::create("hashira_left.png");
-    node->setPosition(Point(24.f, 250.f));
-    node->setTag(NODE_TAG_IbaraSprite);
-    return node;
+Node* ComponentCreator::createMainButtonMenu(cocos2d::SEL_MenuHandler callback) {
+    int buttonNum = 4;
+    Size winSize = Director::getInstance()->getWinSize();
+    Array* menuItemArray = Array::create();
+    for (int i = 0; i < buttonNum; ++i) {
+        Scale9Sprite* buttonSprite = Scale9Sprite::create("button_black.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
+        buttonSprite->setContentSize(*mainButtonSize);
+        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+        btnItem->setTag(NODE_TAG_SummonButton+i);
+        menuItemArray->addObject(btnItem);
+    }
+    Menu* btnMenu = Menu::createWithArray(menuItemArray);
+    btnMenu->alignItemsHorizontallyWithPadding(0.f);
+    btnMenu->setPosition(Point(0.5f*winSize.width, 70.f));
+    return btnMenu;
 }
-Node* ComponentCreator::createWingSprite() {
-    Sprite* wingSprite = Sprite::create("hashira_right.png");
-    wingSprite->setPosition(Point(298.f, 250.f));
+
+Node* ComponentCreator::createScrollButtonSprite() {
+    Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
+    buttonSprite->setContentSize(*scrollButtonSize);
+    return buttonSprite;
+}
+
+Node* ComponentCreator::getIbaraSprite() {
+    Sprite* ibaraSprite = Sprite::create("ibara.png");
+    ibaraSprite->setPosition(Point(268.f, 262.f));
+    ibaraSprite->setTag(NODE_TAG_IbaraSprite);
+    return ibaraSprite;
+}
+
+Node* ComponentCreator::getWingSprite() {
+    Sprite* wingSprite = Sprite::create("wing.png");
+    wingSprite->setPosition(Point(14.f, 259.f));
     wingSprite->setTag(NODE_TAG_WingSprite);
     return wingSprite;
 }
-Node* ComponentCreator::createScrollViewNode() {
-    Array* components = createScrollComponent();
-    Size battleViewSize = battleStageNode->getContentSize();
-    
-    Size winSize = Director::getInstance()->getWinSize();
-    int buttonNum = components->count();
-    float topPosOffset = 0;
-    float bottomPosOffset = 10;
-    float buttonPosOffset = 20;
-    Size buttonSize = *ComponentCreator::getComponentSize();
-    float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
-    Size scrollSize = Size(battleViewSize.width, scrollHeight);
-    Node* container = Node::create();
-    //Point battlePoint = battleStageNode->getPosition();
-    //Point uiNodePoint = uiNode->getPosition();
-    container->setContentSize(scrollSize);
-    
-    Array* menuItemArray = Array::create();
-    for (int i = 0; i < buttonNum; ++i) {
-        Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
-        buttonSprite->setContentSize(buttonSize);
-        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
-        menuItemArray->addObject(btnItem);
-        btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
-    }
-    UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
-    btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);
-    btnMenu->setPosition(Point(0.5*scrollSize.width, 0.5*scrollSize.height));
-    container->addChild(btnMenu);
-    
-    UnicornScrollView *scrollViewNode = UnicornScrollView::create(btnMenu);
-    scrollViewNode->setTag(NODE_TAG_ScrolleView);
-    scrollViewNode->setClippingToBounds(true);
-    scrollViewNode->setContainer(container);
-    scrollViewNode->setViewSize(Size(battleViewSize.width, battleViewSize.height - topPosOffset));
-    scrollViewNode->setContentOffset(Point(0,-(scrollHeight-2*battleViewSize.height) - battleViewSize.height - topPosOffset));
-    scrollViewNode->setDirection(CustomScrollView::Direction::VERTICAL);
-    scrollViewNode->setPosition(battlePoint - Point(0.5*battleViewSize.width, 0.5*battleViewSize.height) - (battlePoint - uiNodePoint) - (battlePoint - uiNodePoint));
-    scrollViewNode->setTag(NODE_TAG_ScrolleView);
+
+Node* ComponentCreator::getLeftHashiraSprite() {
+    Node* node = Sprite::create("hashira_left.png");
+    node->setPosition(Point(24.f, 250.f));
+    node->setTag(NODE_TAG_HashiraLeftSprite);
+    return node;
 }
 
+Node* ComponentCreator::getRightHashiraSprite() {
+    Sprite* wingSprite = Sprite::create("hashira_right.png");
+    wingSprite->setPosition(Point(298.f, 250.f));
+    wingSprite->setTag(NODE_TAG_HashiraRightSprite);
+    return wingSprite;
+}
 
 Array* ComponentCreator::createScrollComponent()
 {
@@ -169,7 +160,7 @@ Array* ComponentCreator::createScrollComponent()
 
 Node* ComponentCreator::createComponent(UnitData* ud) {
     Node *node = new Node();
-    node->setContentSize(*getComponentSize());
+    node->setContentSize(*scrollButtonSize);
     
     Sprite* frame = Sprite::create("type.png");
     frame->setPosition(Point(40.0, 52.5));
@@ -205,12 +196,6 @@ Node* ComponentCreator::createComponent(UnitData* ud) {
     return node;
 }
 
-Size* ComponentCreator::getComponentSize() {
-    Size* size = new Size();
-    size->setSize(180, 80);
-    return size;
-}
-
 Sprite* ComponentCreator::createMagicIconSprite(const char* magic) {
     Sprite* sprite;
     Field::MagicFieldType magicType = Field::getMagicFieldType(magic);
@@ -230,11 +215,36 @@ Sprite* ComponentCreator::createMagicIconSprite(const char* magic) {
     return sprite;
 }
 
-
-
-void ComponentCreator::cleanNode(Node* targetNode) {
+void ComponentCreator::cleanNode(int nodeTag) {
+    auto targetNode = parentLayer->getChildByTag(nodeTag);
     if (targetNode == NULL) {
         return;
     }
     targetNode->removeAllChildren();
+}
+
+void ComponentCreator::cleanUiNode() {
+    cleanNode(NODE_TAG_UINode);
+}
+
+bool ComponentCreator::isCorrectSender(Object* sender, int tag) {
+    Node* node = dynamic_cast<Node*>(sender);
+    int senderTag = node->getTag();
+    return (tag == senderTag) ? true : false;
+}
+
+bool ComponentCreator::isSummonButton(Object* sender) {
+    return isCorrectSender(sender, NODE_TAG_SummonButton);
+}
+
+bool ComponentCreator::isVSModeButton(Object* sender) {
+    return isCorrectSender(sender, NODE_TAG_VSModeButton);
+}
+
+bool ComponentCreator::isMagicButton(Object* sender) {
+    return isCorrectSender(sender, NODE_TAG_MagicButton);
+}
+
+bool ComponentCreator::isItemButton(Object* sender) {
+    return isCorrectSender(sender, NODE_TAG_ItemButton);
 }

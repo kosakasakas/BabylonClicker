@@ -13,9 +13,6 @@
 #include "GameController.h"
 #include "BattleController.h"
 #include "UnitField.h"
-#include "UnicornScrollView.h"
-#include "UnicornMenuSprite.h"
-#include "UnicornScrollableMenu.h"
 #include "ComponentCreator.h"
 
 MainScene::MainScene()
@@ -32,7 +29,7 @@ MainScene::MainScene()
     
     // critical node
     this->addChild(BattleController::getInstance()->getCritical());
-    
+    _componentCreator = new ComponentCreator(this);
 }
 
 MainScene::~MainScene()
@@ -76,22 +73,9 @@ bool MainScene::init() {
 }
 
 void MainScene::initFirst() {
-    int buttonNum = 4;
-    Size buttonSize = Size(80, 50);
-    Size winSize = Director::getInstance()->getWinSize();
-    Array* menuItemArray = Array::create();
-    for (int i = 0; i < buttonNum; ++i) {
-        Scale9Sprite* buttonSprite = Scale9Sprite::create("button_black.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
-        buttonSprite->setContentSize(buttonSize);
-        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
-        btnItem->setTag(NODE_TAG_SummonButton+i);
-        menuItemArray->addObject(btnItem);
-    }
-    Menu* btnMenu = Menu::createWithArray(menuItemArray);
-    btnMenu->alignItemsHorizontallyWithPadding(0.f);
-    btnMenu->setPosition(Point(0.5f*winSize.width, 70.f));
-    this->getChildByTag(NODE_TAG_TopNode)->addChild(btnMenu);
-    
+    auto btnMenu = _componentCreator->createMainButtonMenu(menu_selector(MainScene::buttonCallback));
+    auto topNode = _componentCreator->getTopNode();
+    topNode->addChild(btnMenu);
     showBattleView();
 }
 
@@ -107,95 +91,40 @@ MainScene* MainScene::create() {
 }
 
 void MainScene::initDialog() {
-    Array* components = ComponentCreator::createScrollComponent();
-    
-    auto uiNode = this->getChildByTag(NODE_TAG_UINode);
-    auto battleStageNode = this->getChildByTag(NODE_TAG_BattleNode);
-    cleanNode(uiNode);
-    
-    uiNode->addChild(ComponentCreator::createIbaraSprite());
-    uiNode->addChild(ComponentCreator::createWingSprite());
-    
-    Size battleViewSize = battleStageNode->getContentSize();
-    
-    Size winSize = Director::getInstance()->getWinSize();
-    int buttonNum = components->count();
-    float topPosOffset = 0;
-    float bottomPosOffset = 10;
-    float buttonPosOffset = 20;
-    Size buttonSize = *ComponentCreator::getComponentSize();
-    float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
-    Size scrollSize = Size(battleViewSize.width, scrollHeight);
-    Node* container = Node::create();
-    Point battlePoint = battleStageNode->getPosition();
-    Point uiNodePoint = uiNode->getPosition();
-    container->setContentSize(scrollSize);
-    
-    Array* menuItemArray = Array::create();
-    for (int i = 0; i < buttonNum; ++i) {
-        Scale9Sprite* buttonSprite = Scale9Sprite::create("button.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
-        buttonSprite->setContentSize(buttonSize);
-        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, this, menu_selector(MainScene::buttonCallback));
-        menuItemArray->addObject(btnItem);
-        btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
-    }
-    UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
-    btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);
-    btnMenu->setPosition(Point(0.5*scrollSize.width, 0.5*scrollSize.height));
-    container->addChild(btnMenu);
-    
-    UnicornScrollView *scrollViewNode = UnicornScrollView::create(btnMenu);
-    scrollViewNode->setTag(NODE_TAG_ScrolleView);
-    scrollViewNode->setClippingToBounds(true);
-    scrollViewNode->setContainer(container);
-    scrollViewNode->setViewSize(Size(battleViewSize.width, battleViewSize.height - topPosOffset));
-    scrollViewNode->setContentOffset(Point(0,-(scrollHeight-2*battleViewSize.height) - battleViewSize.height - topPosOffset));
-    scrollViewNode->setDirection(CustomScrollView::Direction::VERTICAL);
-    scrollViewNode->setPosition(battlePoint - Point(0.5*battleViewSize.width, 0.5*battleViewSize.height) - (battlePoint - uiNodePoint) - (battlePoint - uiNodePoint));
-    scrollViewNode->setTag(NODE_TAG_ScrolleView);
-    uiNode->addChild(scrollViewNode);
 }
 
 void MainScene::showDialog(int dialogID) {
     if(!isShowingDialog()) {
-        initDialog();
+        auto scrollViewNode = _componentCreator->getScrollComponent(menu_selector(MainScene::buttonCallback));
+        auto uiNode = _componentCreator->getUiNode();
+        auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
+        auto rightHashiraSprite = _componentCreator->getRightHashiraSprite();
+        uiNode->addChild(leftHashiraSprite);
+        uiNode->addChild(rightHashiraSprite);
+        uiNode->addChild(scrollViewNode);
     }
     _currentDialog = dialogID;
 }
 
 void MainScene::showBattleView() {
-    auto uiNode = this->getChildByTag(NODE_TAG_UINode);
-    cleanNode(uiNode);
+    auto uiNode = _componentCreator->getUiNode();
+    _componentCreator->cleanUiNode();
     
-    Sprite* ibaraSprite = Sprite::create("ibara.png");
-    ibaraSprite->setPosition(Point(268.f, 262.f));
-    ibaraSprite->setTag(NODE_TAG_IbaraSprite);
-    Sprite* wingSprite = Sprite::create("wing.png");
-    wingSprite->setPosition(Point(14.f, 259.f));
-    wingSprite->setTag(NODE_TAG_WingSprite);
+    auto* ibaraSprite = _componentCreator->getIbaraSprite();
+    auto wingSprite = _componentCreator->getWingSprite();
     
     uiNode->addChild(ibaraSprite);
     uiNode->addChild(wingSprite);
 }
 
 void MainScene::hideDialog() {
-    Node* uiNode = this->getChildByTag(NODE_TAG_UINode);
-    cleanNode(uiNode);
+    _componentCreator->cleanUiNode();
     _currentDialog = DIALOG_TAG_None;
-}
-
-void MainScene::cleanNode(Node* targetNode) {
-    if (targetNode == NULL) {
-        return;
-    }
-    targetNode->removeAllChildren();
 }
 
 void MainScene::buttonCallback(Object* sender) {
     CCLOG("call setting button");
-    Node* node = dynamic_cast<Node*>(sender);
-    int tag = node->getTag();
-    if (tag == NODE_TAG_SummonButton) {
+    if (_componentCreator->isSummonButton(sender)) {
         CCLOG("tappedSummonButton");
         if (_currentDialog == DIALOG_TAG_Summon) {
             hideDialog();
@@ -221,7 +150,7 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
         return true;
     }
     
-    auto battleStage = this->getChildByTag(NODE_TAG_BattleNode);
+    auto battleStage = _componentCreator->getBattleNode();
     if (battleStage->getBoundingBox().containsPoint(touch->getLocation())) {
         if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
             _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
@@ -262,7 +191,7 @@ void MainScene::initDraw() {
 void MainScene::addBossNode() {
     if (_bossSprite == NULL) {
         _bossSprite = Sprite::create("star.png");
-        auto battleStage = this->getChildByTag(NODE_TAG_BattleNode);
+        auto battleStage = _componentCreator->getBattleNode();
         Size size = battleStage->getContentSize();
         _bossSprite->setPosition(Point(size.width/2.0, size.height/2.0));
         battleStage->addChild(_bossSprite);

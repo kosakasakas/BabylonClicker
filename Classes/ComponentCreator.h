@@ -17,17 +17,26 @@ class ComponentCreator : public BaseObject {
 public:
     ComponentCreator(Layer* layer);
     virtual ~ComponentCreator();
-    static Node* createBattleViewComponent();
-    static Node* createUIViewComponent();
-    static Node* createBackNodeComponent();
-    static Node* createTopNodeComponent();
-    static Node* createIbaraSprite();
-    static Node* createWingSprite();
-    static Node* createScrollViewNode();
-    static Array* createScrollComponent();
-    static Array* createButtonComponent();
-    static Size* getComponentSize();
+    Node* getIbaraSprite();
+    Node* getWingSprite();
+    Node* createScrollViewNode();
+    Node* getUiNode();
+    Node* getBattleNode();
+    Node* getTopNode();
+    Node* getLeftHashiraSprite();
+    Node* getRightHashiraSprite();
+    Node* createMainButtonSprite();
+    Node* createMainButtonMenu(SEL_MenuHandler callback);
+    Node* getScrollComponent(SEL_MenuHandler callback);
+    void cleanUiNode();
+    bool isSummonButton(Object* sender);
+    bool isMagicButton(Object* sender);
+    bool isItemButton(Object* sender);
+    bool isVSModeButton(Object* sender);
 private:
+    Layer* parentLayer;
+    Size* scrollButtonSize;
+    Size* mainButtonSize;
     enum {
         NODE_TAG_BackNode = 100,
         NODE_TAG_BattleNode = 200,
@@ -48,11 +57,14 @@ private:
         NODE_TAG_HashiraLeftSprite = 22,
         NODE_TAG_HashiraRightSprite = 23
     } NODE_TAG;
-    static Node* createComponent(UnitData* ud);
-    static Sprite* createMagicIconSprite(const char* magic);
+    Node* createComponent(UnitData* ud);
+    Sprite* createMagicIconSprite(const char* magic);
     void initScrollView(cocos2d::SEL_MenuHandler);
-    void cleanNode(Node* targetNode);
-    Layer* parentLayer;
+    bool isCorrectSender(Object* sender, int tag);
+    Array* createScrollComponent();
+    Array* createButtonComponent();
+    Node* createScrollButtonSprite();
+    void cleanNode(int nodeTag);
 };
 
 #endif /* defined(__BabylonClicker__ComponentCreator__) */

@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "cocos-ext.h"
 #include <array>
+#include "ComponentCreator.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -19,28 +20,15 @@ USING_NS_CC_EXT;
 class MainScene : public Layer
 , public CCBSelectorResolver
 {
-private:
-    enum {
-        NODE_TAG_BackNode = 100,
-        NODE_TAG_BattleNode = 200,
-        NODE_TAG_UINode = 300,
-        NODE_TAG_TopNode = 400,
-        
-        NODE_TAG_SummonButton = 11,
-        NODE_TAG_MagicButton = 12,
-        NODE_TAG_ItemButton = 13,
-        NODE_TAG_VSModeButton = 14,
-        NODE_TAG_NameLabel = 15,
-        NODE_TAG_HPLabel = 16,
-        NODE_TAG_ScrolleView = 17,
-        NODE_TAG_SelectButton = 18,
-        NODE_TAG_ScrolleLayer = 19,
-        NODE_TAG_IbaraSprite = 20,
-        NODE_TAG_WingSprite = 21,
-        NODE_TAG_HashiraLeftSprite = 22,
-        NODE_TAG_HashiraRightSprite = 23
-    } NODE_TAG;
     
+public:
+    MainScene();
+    virtual ~MainScene();
+    static MainScene* create();
+    void initFirst();
+    virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
+    virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
+private:
     enum {
         DIALOG_TAG_Summon,
         DIALOG_TAG_Item,
@@ -52,6 +40,7 @@ private:
     bool _doneInitDraw = false;
     int _currentDialog;
     Sprite* _bossSprite;
+    ComponentCreator* _componentCreator;
     
     void update(float delta);
     void draw(float delta);
@@ -80,19 +69,6 @@ private:
     void hideDialog();
     void initDialog();
     void showBattleView();
-    void cleanNode(Node* targetNode);
-    
-public:
-    virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
-    virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
-    
-    MainScene();
-    virtual ~MainScene();
-    
-    static MainScene* create();
-    //CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(MainScene, create);
-    
-    void initFirst();
 };
 
 class MainSceneLoader : public cocos2d::extension::LayerLoader
