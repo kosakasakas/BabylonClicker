@@ -8,7 +8,6 @@
 
 #import "OpeningLayer.h"
 #import "MainScene.h"
-#import "LiquidScene.h"
 #include "BattleController.h"
 
 USING_NS_CC;
@@ -61,18 +60,6 @@ void OpeningLayer::tappedStartSampleGameButton(Object* pSender, Control::EventTy
 }
 
 void OpeningLayer::startLiquidPhysScene() {
-    auto director = Director::getInstance();
-    NodeLoaderLibrary* nodeLoaderLibrary = NodeLoaderLibrary::getInstance();
-    nodeLoaderLibrary->registerNodeLoader("LiquidScene", LiquidSceneLoader::loader());
-    CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
-    Node* node = ccbReader->readNodeGraphFromFile("LiquidScene.ccbi");
-    Scene* scene = Scene::create();
-    if (node != NULL)
-    {
-        scene->addChild(node);
-    }
-    ccbReader->release();
-    director->replaceScene(scene);
 }
 
 void OpeningLayer::startMainScene() {
