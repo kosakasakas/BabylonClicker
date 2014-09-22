@@ -65,7 +65,6 @@
 		14BF991B19C0882300949007 /* UnicornGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF991919C0882300949007 /* UnicornGestureLayer.cpp */; };
 		14BF995D19C1C80100949007 /* CustomScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF995C19C1C80100949007 /* CustomScrollView.cpp */; };
 		14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */; };
-		14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */; };
 		14ED3CC019A1DB37002D5CF0 /* FieldObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */; };
 		14ED3CCA19A1F230002D5CF0 /* UnitField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CC819A1F230002D5CF0 /* UnitField.cpp */; };
 		14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CD119A22360002D5CF0 /* Subject.cpp */; };
@@ -417,8 +416,6 @@
 		14BF995C19C1C80100949007 /* CustomScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomScrollView.cpp; sourceTree = "<group>"; };
 		14DADDDA193F27AB0026DEE0 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "../Classes/GLES-Render.h"; sourceTree = "<group>"; };
 		14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "../Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
-		14DADDE6193F2B120026DEE0 /* LiquidScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiquidScene.h; path = ../Classes/LiquidScene.h; sourceTree = "<group>"; };
-		14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LiquidScene.cpp; path = ../Classes/LiquidScene.cpp; sourceTree = "<group>"; };
 		14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FieldObject.cpp; path = ../Classes/FieldObject.cpp; sourceTree = "<group>"; };
 		14ED3CBF19A1DB37002D5CF0 /* FieldObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FieldObject.h; path = ../Classes/FieldObject.h; sourceTree = "<group>"; };
 		14ED3CC819A1F230002D5CF0 /* UnitField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitField.cpp; path = ../Classes/UnitField.cpp; sourceTree = "<group>"; };
@@ -581,14 +578,12 @@
 		14A6B94E19A6F8A800FBD3C9 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				14DADDE7193F2B120026DEE0 /* LiquidScene.cpp */,
 				14DADDDA193F27AB0026DEE0 /* GLES-Render.h */,
 				14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */,
 				145D32071907B8130067B357 /* OpeningLayer.cpp */,
 				145D32081907B8130067B357 /* OpeningLayer.h */,
 				145D320C1907B8130067B357 /* MainScene.cpp */,
 				145D320D1907B8130067B357 /* MainScene.h */,
-				14DADDE6193F2B120026DEE0 /* LiquidScene.h */,
 				1434B82119C87120008F6056 /* ComponentCreator.cpp */,
 				1434B82219C87120008F6056 /* ComponentCreator.h */,
 			);
@@ -1188,7 +1183,6 @@
 				1483411C199CB31F00717A59 /* GameObject.cpp in Sources */,
 				14834134199CC58600717A59 /* Test.cpp in Sources */,
 				14BF995D19C1C80100949007 /* CustomScrollView.cpp in Sources */,
-				14DADDE8193F2B120026DEE0 /* LiquidScene.cpp in Sources */,
 				143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				14A6B95C19A720CD00FBD3C9 /* RandomBossFactory.cpp in Sources */,
