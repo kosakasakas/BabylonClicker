@@ -2,7 +2,11 @@
 .AppleDouble
 .LSOverride
 Icon
-
+proj.android/assets/
+proj.android/bin/
+proj.android/gen/
+proj.android/obj/
+proj.ios_mac/BabylonClicker.xcodeproj/project.xcworkspace/xcshareddata/
 
 # Thumbnails
 ._*
