@@ -6,10 +6,10 @@ LOCAL_MODULE := cocos2dcpp_shared
 
 LOCAL_MODULE_FILENAME := libcocos2dcpp
 
-FILE_LIST := $(wildcard $(LOCAL_PATH)/../../../Classes/*.cpp)
-FILE_LIST += $(wildcard $(LOCAL_PATH)/../../../UnicornEngine/*.cpp)
+FILE_LIST := $(wildcard $(LOCAL_PATH)/../../Classes/*.cpp)
+FILE_LIST += $(wildcard $(LOCAL_PATH)/../../UnicornEngine/*.cpp)
 
-LOCAL_SRC_FILES := main.cpp
+LOCAL_SRC_FILES := hellocpp/main.cpp
 LOCAL_SRC_FILES += $(FILE_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
