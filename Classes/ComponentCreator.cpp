@@ -54,7 +54,6 @@ Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
     Size winSize = Director::getInstance()->getWinSize();
     int buttonNum = components->count();
     float topPosOffset = 90;
-    float bottomPosOffset = 10;
     float buttonPosOffset = 20;
     Size buttonSize = *scrollButtonSize;
     float scrollHeight =  buttonNum*buttonSize.height + buttonPosOffset*(buttonNum -1);
@@ -169,8 +168,10 @@ Array* ComponentCreator::createScrollComponent()
             Unit* unit = (Unit*)uFactory->create(val->intValue());
             Node* node = createComponent((UnitData*)unit->getObjectData());
             result->addObject(node);
+            CC_SAFE_RELEASE(uFactory);
         }
     }
+    CC_SAFE_DELETE(upLoader);
     return result;
 }
 

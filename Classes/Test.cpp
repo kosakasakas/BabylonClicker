@@ -60,16 +60,11 @@ void Test::run() {
     unit4->summon();
     unit5->summon();
     cage->dump();
+    CC_SAFE_RELEASE(ufact);
     
     CCLOG("******Item class******");
-    ItemFactory* ifact = new ItemFactory();
-    Item* item = (Item*)ifact->create(0);
-    item->dump();
     
     CCLOG("******Magic class******");
-    MagicFactory* mfact = new MagicFactory();
-    Magic* magic = (Magic*)mfact->create(0);
-    magic->dump();
     
     CCLOG("******BattleController class******");
     

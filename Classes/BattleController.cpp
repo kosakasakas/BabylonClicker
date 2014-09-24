@@ -51,4 +51,5 @@ void BattleController::onTargetBossDestroyed() {
     targetBoss = (Boss*)rbFactory->create();
     CCLOG("new boss is created..");
     targetBoss->dump();
+    CC_SAFE_RELEASE(rbFactory);
 }

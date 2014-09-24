@@ -24,5 +24,6 @@ GameObject* MagicFactory::createObject(int objectID)
     MagicDataFactory* udFactory = new MagicDataFactory("magicData.plist");
     MagicData* mData = (MagicData*)udFactory->create(objectID);
     Magic* magic = new Magic(mData);
+    CC_SAFE_RELEASE(udFactory);
     return magic;
 }
