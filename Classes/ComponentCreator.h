@@ -34,6 +34,7 @@ public:
     bool isMagicButton(Object* sender);
     bool isItemButton(Object* sender);
     bool isVSModeButton(Object* sender);
+    int getIdfromScrollViewButtonSender(Object* sender);
 private:
     Layer* parentLayer;
     Size* scrollButtonSize;
@@ -45,6 +46,7 @@ private:
         NODE_TAG_BattleNode = 200,
         NODE_TAG_UINode = 300,
         NODE_TAG_TopNode = 400,
+        NODE_TAG_ScrollViewButtons = 500,
         
         NODE_TAG_SummonButton = 11,
         NODE_TAG_MagicButton = 12,

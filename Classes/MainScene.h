@@ -34,6 +34,9 @@ private:
         DIALOG_TAG_Item,
         DIALOG_TAG_Magic,
         DIALOG_TAG_Battle,
+        DIALOG_TAG_SummonDetail,
+        DIALOG_TAG_ItemDetail,
+        DIALOG_TAG_MagicDetail,
         DIALOG_TAG_None
     } DIALOG_TAG;
     
@@ -63,9 +66,11 @@ private:
     void addBossNode();
     void addUnitNode();
     void buttonCallback(Object* sender);
+    void scrollViewButtonCallback(Object* sender);
     bool isShowingDialog();
     
     void showDialog(int dialogID);
+    void showDetail(int objectID);
     void hideDialog();
     void initDialog();
     void showBattleView();

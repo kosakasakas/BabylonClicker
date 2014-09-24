@@ -69,6 +69,7 @@ Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
         UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
         menuItemArray->addObject(btnItem);
         btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
+        btnItem->setTag(NODE_TAG_ScrollViewButtons + i);
     }
     UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
     btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);
@@ -262,6 +263,12 @@ bool ComponentCreator::isCorrectSender(Object* sender, int tag) {
     Node* node = dynamic_cast<Node*>(sender);
     int senderTag = node->getTag();
     return (tag == senderTag) ? true : false;
+}
+
+int ComponentCreator::getIdfromScrollViewButtonSender(Object* sender) {
+    Node* node = dynamic_cast<Node*>(sender);
+    int senderTag = node->getTag() - NODE_TAG_ScrollViewButtons;
+    return (senderTag >= 0) ? senderTag : -1;
 }
 
 bool ComponentCreator::isSummonButton(Object* sender) {
