@@ -27,7 +27,8 @@ public:
     Node* getRightHashiraSprite();
     Node* createMainButtonSprite();
     Node* createMainButtonMenu(SEL_MenuHandler callback);
-    Node* getScrollComponent(SEL_MenuHandler callback);
+    Node* getScrollComponent(int dialogID, SEL_MenuHandler callback);
+    Node* getDetailComponent(int dialogID, int objectID, SEL_MenuHandler callback);
     Node* getDialogButton(SEL_MenuHandler callback);
     void cleanUiNode();
     bool isSummonButton(Object* sender);
@@ -35,6 +36,8 @@ public:
     bool isItemButton(Object* sender);
     bool isVSModeButton(Object* sender);
     int getIdfromScrollViewButtonSender(Object* sender);
+    ObjectData* getObjectData(int dialogID, int objectID);
+    std::string getDialogTypeString(int dialogID);
 private:
     Layer* parentLayer;
     Size* scrollButtonSize;
@@ -46,7 +49,12 @@ private:
         NODE_TAG_BattleNode = 200,
         NODE_TAG_UINode = 300,
         NODE_TAG_TopNode = 400,
-        NODE_TAG_ScrollViewButtons = 500,
+        
+        NODE_TAG_ScrollSummonButtons = 1000,
+        NODE_TAG_ScrollItemButtons = 2000,
+        NODE_TAG_ScrollMagicButtons = 3000,
+        NODE_TAG_ScrollBattleButtons = 4000,
+        NODE_TAG_DetailFireButton = 5000,
         
         NODE_TAG_SummonButton = 11,
         NODE_TAG_MagicButton = 12,
@@ -74,10 +82,11 @@ private:
     std::string createMainButtonString(int id);
     void initScrollView(cocos2d::SEL_MenuHandler);
     bool isCorrectSender(Object* sender, int tag);
-    Array* createScrollComponent();
+    Array* createScrollComponent(int dialogID);
     Array* createButtonComponent();
     Node* createScrollButtonSprite();
     void cleanNode(int nodeTag);
+    int getNodeTagFromDialogID(int dialogID);
 };
 
 #endif /* defined(__BabylonClicker__ComponentCreator__) */

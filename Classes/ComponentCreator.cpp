@@ -14,6 +14,7 @@
 #include "UnicornMenuSprite.h"
 #include "UnicornScrollView.h"
 #include "UnicornScrollableMenu.h"
+#include "MainScene.h"
 
 USING_NS_CC_EXT;
 
@@ -43,8 +44,9 @@ Node* ComponentCreator::getTopNode() {
     return parentLayer->getChildByTag(NODE_TAG_TopNode);
 }
 
-Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
-    Array* components = createScrollComponent();
+Node* ComponentCreator::getScrollComponent(int dialogID, SEL_MenuHandler callback) {
+    Array* components = createScrollComponent(dialogID);
+    int nodeTag = getNodeTagFromDialogID(dialogID);
     
     auto uiNode = getUiNode();
     auto battleStageNode = getBattleNode();
@@ -69,7 +71,7 @@ Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
         UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
         menuItemArray->addObject(btnItem);
         btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
-        btnItem->setTag(NODE_TAG_ScrollViewButtons + i);
+        btnItem->setTag(nodeTag + i);
     }
     UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
     btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);
@@ -86,6 +88,40 @@ Node* ComponentCreator::getScrollComponent(SEL_MenuHandler callback) {
     scrollViewNode->setTag(NODE_TAG_ScrolleView);
     return scrollViewNode;
 }
+
+Node* ComponentCreator::getDetailComponent(int dialogID, int objectID, SEL_MenuHandler callback) {
+    
+    Node* output = new Node();
+    output->setContentSize(getBattleNode()->getContentSize());
+    
+    
+    UnitFactory* uFactory = new UnitFactory();
+    Unit* unit = (Unit*)uFactory->create(objectID);
+    UnitData *ud = (UnitData*)unit->getObjectData();
+    LabelTTF* nameLabel = LabelTTF::create(ud->getName(), defaultFont.c_str(), 12);
+    
+    
+    nameLabel->setAnchorPoint(Point(0,0));
+    nameLabel->setPosition(Point(61.9, 46.0));
+    nameLabel->setColor(whiteColor);
+    CC_SAFE_RELEASE(uFactory);
+    
+    char fileName[256] ;
+    sprintf(fileName, "%s_%d.png", getDialogTypeString(dialogID).c_str(), objectID);
+    
+    auto objectSprite = Sprite::create(fileName);
+    output->addChild(objectSprite);
+    
+    auto buttonSprite = ComponentCreator::createScrollButtonSprite();
+    UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+    LabelTTF* buttonLabel = LabelTTF::create("召喚", defaultFont.c_str(), 12);
+    btnItem->addChild(buttonLabel);
+    btnItem->setTag(NODE_TAG_DetailFireButton + objectID);
+    
+    output->addChild(btnItem);
+    return output;
+}
+
 
 Node* ComponentCreator::createMainButtonMenu(cocos2d::SEL_MenuHandler callback) {
     int buttonNum = 4;
@@ -152,12 +188,15 @@ Node* ComponentCreator::getDialogButton(SEL_MenuHandler callback) {
     return btnMenu;
 }
 
-Array* ComponentCreator::createScrollComponent()
+Array* ComponentCreator::createScrollComponent(int dialogID)
 {
     Array* result = Array::create();
     UnicornPlistLoader* upLoader = new UnicornPlistLoader("revelReleaseList.plist");
     Dictionary* dic = upLoader->getDictionary();
-    Array* list = (Array*)(dic->objectForKey("Summon"));
+    
+    const char* typeName = getDialogTypeString(dialogID).c_str();
+    
+    Array* list = (Array*)(dic->objectForKey(typeName));
     FieldObject* summonField = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUserField()->getObjectAtIndex(Field::UFT_Summon));
     for (int i=0,n=summonField->getLevel(); i <= n; ++i) {
         Array* numList = dynamic_cast<Array*>(list->getObjectAtIndex(i));
@@ -247,6 +286,21 @@ std::string ComponentCreator::createMainButtonString(int id) {
 }
 
 
+int ComponentCreator::getNodeTagFromDialogID(int dialogID) {
+    if (dialogID == MainScene::DIALOG_TAG_Summon) {
+        return NODE_TAG_ScrollSummonButtons;
+    } else if (dialogID == MainScene::DIALOG_TAG_Magic) {
+        return NODE_TAG_ScrollMagicButtons;
+    } else if (dialogID == MainScene::DIALOG_TAG_Item) {
+        return NODE_TAG_ScrollItemButtons;
+    } else if (dialogID == MainScene::DIALOG_TAG_Battle) {
+        return NODE_TAG_ScrollBattleButtons;
+    } else {
+        return -1;
+    }
+}
+
+
 void ComponentCreator::cleanNode(int nodeTag) {
     auto targetNode = parentLayer->getChildByTag(nodeTag);
     if (targetNode == NULL) {
@@ -267,8 +321,46 @@ bool ComponentCreator::isCorrectSender(Object* sender, int tag) {
 
 int ComponentCreator::getIdfromScrollViewButtonSender(Object* sender) {
     Node* node = dynamic_cast<Node*>(sender);
-    int senderTag = node->getTag() - NODE_TAG_ScrollViewButtons;
-    return (senderTag >= 0) ? senderTag : -1;
+    int senderTag = node->getTag();
+    // 値の大きいものから評価する
+    if (senderTag / NODE_TAG_ScrollBattleButtons > 0) {
+        return senderTag - NODE_TAG_ScrollSummonButtons;
+    } else if (senderTag / NODE_TAG_ScrollMagicButtons > 0) {
+        return senderTag - NODE_TAG_ScrollMagicButtons;
+    } else if (senderTag / NODE_TAG_ScrollItemButtons > 0) {
+        return senderTag - NODE_TAG_ScrollItemButtons;
+    } else if (senderTag / NODE_TAG_ScrollSummonButtons > 0) {
+        return senderTag - NODE_TAG_ScrollSummonButtons;
+    }
+    return -1;
+}
+
+std::string ComponentCreator::getDialogTypeString(int dialogID) {
+    std::string name;
+    if (dialogID == MainScene::DIALOG_TAG_Summon) {
+        name = "summon";
+    } else if (dialogID == MainScene::DIALOG_TAG_Item) {
+        name = "item";
+    } else if (dialogID == MainScene::DIALOG_TAG_Magic) {
+        name = "magic";
+    } else if (dialogID == MainScene::DIALOG_TAG_Battle) {
+        name = "battle";
+    }
+    return name;
+}
+
+ObjectData* ComponentCreator::getObjectData(int dialogID, int objectID) {
+    ObjectData* objectData;
+    GameObjectFactory* objectFactory;
+    if (dialogID == MainScene::DIALOG_TAG_Summon) {
+        objectFactory = new UnitFactory();
+    } else if (dialogID == MainScene::DIALOG_TAG_Item) {
+    } else if (dialogID == MainScene::DIALOG_TAG_Magic) {
+    } else if (dialogID == MainScene::DIALOG_TAG_Battle) {
+    }
+    GameObject* gameObject = objectFactory->create(objectID);
+    objectData = gameObject->getObjectData();
+    return objectData;
 }
 
 bool ComponentCreator::isSummonButton(Object* sender) {

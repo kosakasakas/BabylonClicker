@@ -95,7 +95,7 @@ void MainScene::initDialog() {
 
 void MainScene::showDialog(int dialogID) {
     if(!isShowingDialog()) {
-        auto scrollViewNode = _componentCreator->getScrollComponent(menu_selector(MainScene::scrollViewButtonCallback));
+        auto scrollViewNode = _componentCreator->getScrollComponent(dialogID, menu_selector(MainScene::scrollViewButtonCallback));
         auto uiNode = _componentCreator->getUiNode();
         auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
         auto rightHashiraSprite = _componentCreator->getRightHashiraSprite();
@@ -108,9 +108,11 @@ void MainScene::showDialog(int dialogID) {
     _currentDialog = dialogID;
 }
 
-void MainScene::showDetail(int objectID) {
+void MainScene::showDetail(int dialogID, int objectID) {
     if(!isShowingDialog()) {
+        auto detailComponent = _componentCreator->getDetailComponent(dialogID, objectID, menu_selector(MainScene::scrollViewButtonCallback));
     }
+    _currentDialog = dialogID;
 }
 
 void MainScene::showBattleView() {
@@ -147,8 +149,10 @@ void MainScene::scrollViewButtonCallback(Object* sender) {
     int id = _componentCreator->getIdfromScrollViewButtonSender(sender);
     if (id != -1) {
         CCLOG("catch view button id: %d", id);
-        hideDialog();
-        _currentDialog = DIALOG_TAG_SummonDetail;
+        if (_currentDialog == DIALOG_TAG_Summon) {
+            hideDialog();
+            showDetail(DIALOG_TAG_Summon, id);
+        }
     }
 }
 

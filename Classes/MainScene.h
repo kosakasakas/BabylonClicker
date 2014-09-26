@@ -22,13 +22,6 @@ class MainScene : public Layer
 {
     
 public:
-    MainScene();
-    virtual ~MainScene();
-    static MainScene* create();
-    void initFirst();
-    virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
-    virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
-private:
     enum {
         DIALOG_TAG_Summon,
         DIALOG_TAG_Item,
@@ -39,7 +32,13 @@ private:
         DIALOG_TAG_MagicDetail,
         DIALOG_TAG_None
     } DIALOG_TAG;
-    
+    MainScene();
+    virtual ~MainScene();
+    static MainScene* create();
+    void initFirst();
+    virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
+    virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
+private:
     bool _doneInitDraw = false;
     int _currentDialog;
     Sprite* _bossSprite;
@@ -70,7 +69,7 @@ private:
     bool isShowingDialog();
     
     void showDialog(int dialogID);
-    void showDetail(int objectID);
+    void showDetail(int dialogID, int objectID);
     void hideDialog();
     void initDialog();
     void showBattleView();
