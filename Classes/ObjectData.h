@@ -38,7 +38,8 @@ public:
     void setCharValue(const char* val, const char* key);
     virtual void updateStatus(const BaseObject* data);
     void setLevel(int inputLevel);
-   
+    std::string getSpriteFilePath();
+    std::string getMiniSpriteFilePath();
     
 protected:
     void updateCost();
@@ -48,6 +49,8 @@ protected:
     static const char* NAME_KEY;
     static const char* DESCRIPTION_KEY;
     static const char* COST_GROWTH_KEY;
+    std::string getSpriteFileString();
+    virtual const char* getObjectType() const = 0;
 };
 
 #endif /* defined(__BabylonClicker__ObjectData__) */

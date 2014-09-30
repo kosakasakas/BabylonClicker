@@ -27,9 +27,6 @@ public:
         DIALOG_TAG_Item,
         DIALOG_TAG_Magic,
         DIALOG_TAG_Battle,
-        DIALOG_TAG_SummonDetail,
-        DIALOG_TAG_ItemDetail,
-        DIALOG_TAG_MagicDetail,
         DIALOG_TAG_None
     } DIALOG_TAG;
     MainScene();
@@ -41,6 +38,7 @@ public:
 private:
     bool _doneInitDraw = false;
     int _currentDialog;
+    int _currentObjectID;
     Sprite* _bossSprite;
     ComponentCreator* _componentCreator;
     
@@ -65,12 +63,17 @@ private:
     void addBossNode();
     void addUnitNode();
     void buttonCallback(Object* sender);
+    void dialogCloseCallback(Object* sender);
+    void dialogReturnCallback(Object* sender);
     void scrollViewButtonCallback(Object* sender);
+    void detailButtonCallback(Object* sender);
     bool isShowingDialog();
+    bool isShowingDetail();
     
     void showDialog(int dialogID);
     void showDetail(int dialogID, int objectID);
     void hideDialog();
+    void hideBattleView();
     void initDialog();
     void showBattleView();
 };

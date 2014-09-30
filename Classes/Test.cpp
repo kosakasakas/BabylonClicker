@@ -46,21 +46,7 @@ void Test::run() {
     
     CCLOG("******Unit class******");
     UnitCage* cage = BattleController::getInstance()->getActiveUnitCage();
-    UnitFactory* ufact = new UnitFactory();
-    Unit* unit1 = (Unit*)ufact->create(0);
-    Unit* unit2 = (Unit*)ufact->create(1);
-    Unit* unit5 = (Unit*)ufact->create(2);
-    Unit* unit3 = (Unit*)ufact->create(4);
-    Unit* unit4 = (Unit*)ufact->create(5);
-    unit2->dump();
-    unit1->summon();
-    unit2->dump();
-    unit2->summon();
-    unit3->summon();
-    unit4->summon();
-    unit5->summon();
     cage->dump();
-    CC_SAFE_RELEASE(ufact);
     
     CCLOG("******Item class******");
     

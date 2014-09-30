@@ -10,6 +10,8 @@
 #include "UnicornPlistLoader.h"
 #include "BattleController.h"
 #include "UnitFactory.h"
+#include "ItemFactory.h"
+#include "MagicFactory.h"
 #include "cocos-ext.h"
 #include "UnicornMenuSprite.h"
 #include "UnicornScrollView.h"
@@ -93,32 +95,38 @@ Node* ComponentCreator::getDetailComponent(int dialogID, int objectID, SEL_MenuH
     
     Node* output = new Node();
     output->setContentSize(getBattleNode()->getContentSize());
+    output->setPosition(0.f, 95.f);
     
-    
-    UnitFactory* uFactory = new UnitFactory();
-    Unit* unit = (Unit*)uFactory->create(objectID);
-    UnitData *ud = (UnitData*)unit->getObjectData();
-    LabelTTF* nameLabel = LabelTTF::create(ud->getName(), defaultFont.c_str(), 12);
-    
-    
-    nameLabel->setAnchorPoint(Point(0,0));
-    nameLabel->setPosition(Point(61.9, 46.0));
-    nameLabel->setColor(whiteColor);
-    CC_SAFE_RELEASE(uFactory);
+    ObjectData* od = getObjectData(dialogID, objectID);
+    CCASSERT(od != NULL, "can not get Object Data.");
+    LabelTTF* damageLabel = getTopDamageLabel();
+    CCASSERT(damageLabel != NULL, "damage label is gone.");
+    damageLabel->setFontSize(12.f);
+    damageLabel->setFontName(defaultFont.c_str());
+    damageLabel->setString(od->getName());
+    damageLabel->setColor(whiteColor);
     
     char fileName[256] ;
     sprintf(fileName, "%s_%d.png", getDialogTypeString(dialogID).c_str(), objectID);
-    
     auto objectSprite = Sprite::create(fileName);
+    if (objectSprite == NULL) {
+        return output;
+    }
+    objectSprite->setPosition(Point(120.f, 175.f));
     output->addChild(objectSprite);
     
-    auto buttonSprite = ComponentCreator::createScrollButtonSprite();
+    Scale9Sprite* buttonSprite = Scale9Sprite::create("button_black.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
+    Size buttonSize = Size(180.f, 35.f);
+    buttonSprite->setContentSize(buttonSize);
     UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
     LabelTTF* buttonLabel = LabelTTF::create("召喚", defaultFont.c_str(), 12);
+    buttonLabel->setPosition(Point(0.5*buttonSize.width, 0.5*buttonSize.height));
     btnItem->addChild(buttonLabel);
-    btnItem->setTag(NODE_TAG_DetailFireButton + objectID);
+    Menu* btnMenu = Menu::create(btnItem, NULL);
+    btnMenu->setPosition(Point(160.f, 35.f));
+    btnMenu->setTag(NODE_TAG_DetailFireButton + objectID);
+    output->addChild(btnMenu);
     
-    output->addChild(btnItem);
     return output;
 }
 
@@ -180,8 +188,13 @@ Node* ComponentCreator::getRightHashiraSprite() {
     return wingSprite;
 }
 
-Node* ComponentCreator::getDialogButton(SEL_MenuHandler callback) {
-    Sprite* buttonSprite = Sprite::create("dialog_button.png");
+Node* ComponentCreator::getDialogButton(int type, SEL_MenuHandler callback) {
+    Sprite* buttonSprite;
+    if (type == 0) {
+        buttonSprite = Sprite::create("dialog_button.png");
+    } else {
+        buttonSprite = Sprite::create("dialog_button_return.png");
+    }
     UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
     Menu* btnMenu = Menu::createWithItem(btnItem);
     btnMenu->setPosition(Point(298.f, 381.f));
@@ -350,17 +363,26 @@ std::string ComponentCreator::getDialogTypeString(int dialogID) {
 }
 
 ObjectData* ComponentCreator::getObjectData(int dialogID, int objectID) {
-    ObjectData* objectData;
+    GameObject* gameObject = getGameObject(dialogID, objectID);
+    if (gameObject == NULL) {
+        return NULL;
+    }
+    return gameObject->getObjectData();
+}
+
+GameObject* ComponentCreator::getGameObject(int dialogID, int objectID) {
     GameObjectFactory* objectFactory;
     if (dialogID == MainScene::DIALOG_TAG_Summon) {
         objectFactory = new UnitFactory();
     } else if (dialogID == MainScene::DIALOG_TAG_Item) {
+        objectFactory = new ItemFactory();
     } else if (dialogID == MainScene::DIALOG_TAG_Magic) {
+        objectFactory = new MagicFactory();
     } else if (dialogID == MainScene::DIALOG_TAG_Battle) {
     }
     GameObject* gameObject = objectFactory->create(objectID);
-    objectData = gameObject->getObjectData();
-    return objectData;
+    CC_SAFE_RELEASE(objectFactory);
+    return gameObject;
 }
 
 bool ComponentCreator::isSummonButton(Object* sender) {
@@ -377,4 +399,13 @@ bool ComponentCreator::isMagicButton(Object* sender) {
 
 bool ComponentCreator::isItemButton(Object* sender) {
     return isCorrectSender(sender, NODE_TAG_ItemButton);
+}
+
+LabelTTF* ComponentCreator::getTopDamageLabel() {
+    auto node = getTopNode();
+    auto damage = node->getChildByTag(NODE_TAG_TopDamage);
+    if (damage == NULL) {
+        return NULL;
+    }
+    return (LabelTTF*)damage->getChildByTag(NODE_TAG_TopDamageLabel);
 }

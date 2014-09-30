@@ -106,3 +106,7 @@ void UnitData::dump() const{
         CCLOG("sacrifice1 ID: %d, num: %d", getSacrifice(i), getSacrificeNum(i));
     }
 }
+
+const char* UnitData::getObjectType() {
+    return "unit";
+}

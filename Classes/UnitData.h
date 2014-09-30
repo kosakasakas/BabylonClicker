@@ -43,6 +43,7 @@ protected:
     static const char* ATTACK_GROWTH_KEY;
     static const char* SACRIFICE_KEY[];
     static const char* SACRIFICE_NUM_KEY[];
+    virtual const char* getObjectType();
 };
 
 #endif /* defined(__BabylonClicker__UnitData__) */

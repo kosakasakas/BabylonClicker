@@ -16,6 +16,8 @@ class MagicData : public ObjectData {
 public:
     MagicData(Dictionary* data);
     virtual ~MagicData();
+protected:
+     virtual const char* getObjectType();
 };
 
 #endif /* defined(__BabylonClicker__MagicData__) */

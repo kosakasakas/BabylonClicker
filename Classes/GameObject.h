@@ -26,7 +26,7 @@ public:
     virtual bool canSummon() const;
     virtual void purchase() const;
     virtual void sacrifice();
-    virtual void summon();
+    virtual void summon(Node* parent);
     virtual void dump() const;
 };
 

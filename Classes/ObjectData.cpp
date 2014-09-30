@@ -89,6 +89,32 @@ const char* ObjectData::getDescription() const {
     return getCharValue(DESCRIPTION_KEY);
 }
 
+std::string ObjectData::getSpriteFileString() {
+    int i = getObjectID();
+    char buf[5];
+    sprintf(buf, "%d", i);
+    
+    std::string path;
+    path.append(getObjectType());
+    path.append("_");
+    path.append(buf);
+    
+    return path;
+}
+
+std::string ObjectData::getSpriteFilePath() {
+    std::string file = getSpriteFileString();
+    file.append(".png");
+    return file;
+}
+
+std::string ObjectData::getMiniSpriteFilePath() {
+    std::string file = getSpriteFileString();
+    file.append("_mini_");
+    file.append(".png");
+    return file;
+}
+
 void ObjectData::updateStatus(const BaseObject* data){
     update();
 }

@@ -45,7 +45,7 @@ void GameObject::sacrifice() {
     CCLOG("needless to sacrifice.");
 }
 
-void GameObject::summon() {
+void GameObject::summon(Node* parent) {
     if (canSacrifice()) {
         // notify to UnitCage.
         CCLOG("summon successfully!!");

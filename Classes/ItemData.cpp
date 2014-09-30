@@ -16,3 +16,7 @@ ItemData::ItemData(Dictionary* data)
 ItemData::~ItemData()
 {
 }
+
+const char* ItemData::getObjectType() {
+    return "item";
+}

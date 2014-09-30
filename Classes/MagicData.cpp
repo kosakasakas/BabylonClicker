@@ -16,3 +16,7 @@ MagicData::MagicData(Dictionary* data)
 MagicData::~MagicData()
 {
 }
+
+const char* MagicData::getObjectType() {
+    return "magic";
+}

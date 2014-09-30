@@ -24,7 +24,7 @@ Unit::~Unit()
     unitNode->release();
 }
 
-void Unit::summon() {
+void Unit::summon(Node* parent) {
     UnitCage* uc = BattleController::getInstance()->getActiveUnitCage();
     if (!canPurchase() || !canSacrifice() || !uc->canAddUnit()) {
         CCLOG("%s can not summon!!", getObjectData()->getName());
@@ -38,6 +38,9 @@ void Unit::summon() {
     purchase();
     CCLOG("%s is summoned.", getObjectData()->getName());
     objectData->incrementLevel();
+    
+    auto unitNode = getUnitNode();
+    parent->addChild(unitNode);
 }
 
 bool Unit::canSummon() const {

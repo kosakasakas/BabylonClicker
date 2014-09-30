@@ -12,6 +12,7 @@
 #include <iostream>
 #include "BaseObject.h"
 #include "UnitData.h"
+#include "GameObject.h"
 
 class ComponentCreator : public BaseObject {
 public:
@@ -29,7 +30,7 @@ public:
     Node* createMainButtonMenu(SEL_MenuHandler callback);
     Node* getScrollComponent(int dialogID, SEL_MenuHandler callback);
     Node* getDetailComponent(int dialogID, int objectID, SEL_MenuHandler callback);
-    Node* getDialogButton(SEL_MenuHandler callback);
+    Node* getDialogButton(int type, SEL_MenuHandler callback);
     void cleanUiNode();
     bool isSummonButton(Object* sender);
     bool isMagicButton(Object* sender);
@@ -37,6 +38,7 @@ public:
     bool isVSModeButton(Object* sender);
     int getIdfromScrollViewButtonSender(Object* sender);
     ObjectData* getObjectData(int dialogID, int objectID);
+    GameObject* getGameObject(int dialogID, int objectID);
     std::string getDialogTypeString(int dialogID);
 private:
     Layer* parentLayer;
@@ -49,6 +51,8 @@ private:
         NODE_TAG_BattleNode = 200,
         NODE_TAG_UINode = 300,
         NODE_TAG_TopNode = 400,
+        NODE_TAG_TopDamage = 410,
+        NODE_TAG_TopDamageLabel = 411,
         
         NODE_TAG_ScrollSummonButtons = 1000,
         NODE_TAG_ScrollItemButtons = 2000,
@@ -85,6 +89,7 @@ private:
     Array* createScrollComponent(int dialogID);
     Array* createButtonComponent();
     Node* createScrollButtonSprite();
+    LabelTTF* getTopDamageLabel();
     void cleanNode(int nodeTag);
     int getNodeTagFromDialogID(int dialogID);
 };

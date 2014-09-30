@@ -18,7 +18,9 @@
 MainScene::MainScene()
 : _bossSprite(NULL)
 , _currentDialog(DIALOG_TAG_None)
+, _currentObjectID(-1)
 {
+    /*
     Array* unitArray = BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
     Object* it;
     CCARRAY_FOREACH(unitArray, it)
@@ -26,6 +28,7 @@ MainScene::MainScene()
         Unit* u = dynamic_cast<Unit*>(it);
         this->addChild(u->getUnitNode());
     }
+     */
     
     // critical node
     this->addChild(BattleController::getInstance()->getCritical());
@@ -94,28 +97,40 @@ void MainScene::initDialog() {
 }
 
 void MainScene::showDialog(int dialogID) {
-    if(!isShowingDialog()) {
+    if(!isShowingDialog() || isShowingDetail()) {
         auto scrollViewNode = _componentCreator->getScrollComponent(dialogID, menu_selector(MainScene::scrollViewButtonCallback));
         auto uiNode = _componentCreator->getUiNode();
         auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
         auto rightHashiraSprite = _componentCreator->getRightHashiraSprite();
-        auto cancelButtonMenu = _componentCreator->getDialogButton(menu_selector(MainScene::buttonCallback));
+        auto cancelButtonMenu = _componentCreator->getDialogButton(0, menu_selector(MainScene::dialogCloseCallback));
         uiNode->addChild(leftHashiraSprite);
         uiNode->addChild(rightHashiraSprite);
         uiNode->addChild(scrollViewNode);
         uiNode->addChild(cancelButtonMenu);
+        hideBattleView();
     }
     _currentDialog = dialogID;
+    _currentObjectID = -1;
 }
 
 void MainScene::showDetail(int dialogID, int objectID) {
-    if(!isShowingDialog()) {
-        auto detailComponent = _componentCreator->getDetailComponent(dialogID, objectID, menu_selector(MainScene::scrollViewButtonCallback));
+    if(!isShowingDetail()) {
+        auto detailComponent = _componentCreator->getDetailComponent(dialogID, objectID, menu_selector(MainScene::detailButtonCallback));
+        auto uiNode = _componentCreator->getUiNode();
+        auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
+        auto rightHashiraSprite = _componentCreator->getRightHashiraSprite();
+        auto returnButtonMenu = _componentCreator->getDialogButton(1, menu_selector(MainScene::dialogReturnCallback));
+        uiNode->addChild(leftHashiraSprite);
+        uiNode->addChild(rightHashiraSprite);
+        uiNode->addChild(returnButtonMenu);
+        uiNode->addChild(detailComponent);
     }
-    _currentDialog = dialogID;
+    _currentObjectID = objectID;
 }
 
 void MainScene::showBattleView() {
+    auto battleView = _componentCreator->getBattleNode();
+    battleView->setVisible(true);
     auto uiNode = _componentCreator->getUiNode();
     _componentCreator->cleanUiNode();
     
@@ -128,7 +143,11 @@ void MainScene::showBattleView() {
 
 void MainScene::hideDialog() {
     _componentCreator->cleanUiNode();
-    _currentDialog = DIALOG_TAG_None;
+}
+
+void MainScene::hideBattleView() {
+    auto battleView = _componentCreator->getBattleNode();
+    battleView->setVisible(false);
 }
 
 void MainScene::buttonCallback(Object* sender) {
@@ -144,6 +163,19 @@ void MainScene::buttonCallback(Object* sender) {
     }
 }
 
+void MainScene::dialogCloseCallback(Object* sender) {
+    CCLOG("MainScene::dialogCloseCallback");
+    _currentDialog = DIALOG_TAG_None;
+    hideDialog();
+    showBattleView();
+}
+
+void MainScene::dialogReturnCallback(Object* sender) {
+    CCLOG("MainScene::dialogReturnCallback");
+    hideDialog();
+    showDialog(_currentDialog);
+}
+
 void MainScene::scrollViewButtonCallback(Object* sender) {
     CCLOG("MainScene::scrollViewButtonCallback called.");
     int id = _componentCreator->getIdfromScrollViewButtonSender(sender);
@@ -154,6 +186,12 @@ void MainScene::scrollViewButtonCallback(Object* sender) {
             showDetail(DIALOG_TAG_Summon, id);
         }
     }
+}
+
+void MainScene::detailButtonCallback(Object* sender) {
+    CCLOG("MainScene::detailButtonCallback called.");
+    GameObject* obj = _componentCreator->getGameObject(_currentDialog, _currentObjectID);
+    obj->summon(_componentCreator->getBattleNode());
 }
 
 void MainScene::initTouchEventListener() {
@@ -178,9 +216,11 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
             
             // family level up
             //FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitFamilyField()->getObjectAtIndex(Field::UFFT_Maririka));
+            /*
             FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitMagicField()->getObjectAtIndex(Field::MFT_Dark));
             fo->incrementLevel();
             fo->dump();
+             */
         }
     }
     return true;
@@ -211,7 +251,7 @@ void MainScene::initDraw() {
 
 void MainScene::addBossNode() {
     if (_bossSprite == NULL) {
-        _bossSprite = Sprite::create("star.png");
+        _bossSprite = Sprite::create("summon_4.png");
         auto battleStage = _componentCreator->getBattleNode();
         Size size = battleStage->getContentSize();
         _bossSprite->setPosition(Point(size.width/2.0, size.height/2.0));
@@ -244,6 +284,13 @@ void MainScene::tappedPreviousButton(Object* pSender, Control::EventType pContro
 
 bool MainScene::isShowingDialog() {
     if (_currentDialog != DIALOG_TAG_None) {
+        return true;
+    }
+    return false;
+}
+
+bool MainScene::isShowingDetail() {
+    if (_currentObjectID != -1) {
         return true;
     }
     return false;

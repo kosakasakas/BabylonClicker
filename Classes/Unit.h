@@ -18,7 +18,7 @@ class Unit : public GameObject
 public:
     Unit(UnitData* data);
     virtual ~Unit();
-    virtual void summon();
+    virtual void summon(Node* parent);
     void attack();
     void onAction();
     CC_SYNTHESIZE(Node*, unitNode, UnitNode);
