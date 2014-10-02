@@ -17,7 +17,7 @@ public:
     ItemData(Dictionary* data);
     virtual ~ItemData();
 protected:
-     virtual const char* getObjectType();
+     virtual const char* getObjectType() const;
 };
 
 #endif /* defined(__BabylonClicker__ItemData__) */

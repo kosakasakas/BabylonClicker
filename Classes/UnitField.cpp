@@ -7,6 +7,8 @@
 //
 
 #include "UnitField.h"
+#include "UnicornPlistLoader.h"
+#include "BattleController.h"
 
 UnitField::UnitField()
 : unitNum(0)

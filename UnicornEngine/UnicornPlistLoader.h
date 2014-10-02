@@ -24,6 +24,9 @@ public:
     void dumpPropertyValueAtIndex(int index) const;
     void dump() const;
     CC_SYNTHESIZE_READONLY(Dictionary*, dictionary, Dictionary);
+    static int getInt(Dictionary* dic, const char* key);
+    static const char* getChar(Dictionary* dic, const char* key);
+    static float getFloat(Dictionary* dic, const char* key);
 };
 
 #endif /* defined(__BabylonClicker__UnicornPlistLoader__) */

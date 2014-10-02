@@ -19,6 +19,7 @@
 		143C5C50199E2C6F0041FFEB /* MagicData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C4E199E2C6F0041FFEB /* MagicData.cpp */; };
 		143C5C53199E31E70041FFEB /* MagicDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */; };
 		143C5C55199E484F0041FFEB /* bossData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 143C5C54199E484F0041FFEB /* bossData.plist */; };
+		143E7C0519DAB51F00AD0FE0 /* battleFieldData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 143E7C0419DAB51F00AD0FE0 /* battleFieldData.plist */; };
 		145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D32071907B8130067B357 /* OpeningLayer.cpp */; };
 		145D32121907B8130067B357 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145D320C1907B8130067B357 /* MainScene.cpp */; };
 		145D32271907B8270067B357 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145D321A1907B8270067B357 /* fileLookup.plist */; };
@@ -48,7 +49,6 @@
 		1483414F199CE46400717A59 /* BaseObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483414D199CE46400717A59 /* BaseObject.cpp */; };
 		14834151199CEE7800717A59 /* config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14834150199CEE7800717A59 /* config.plist */; };
 		14991091197FD474004672FA /* unitData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14991090197FD474004672FA /* unitData.plist */; };
-		1499109A197FDFDE004672FA /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14991099197FDFDE004672FA /* GameController.cpp */; };
 		14998D751945B9C70062FF0A /* RigidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D731945B9C70062FF0A /* RigidScene.ccbi */; };
 		14998D761945B9C70062FF0A /* LiquidScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 14998D741945B9C70062FF0A /* LiquidScene.ccbi */; };
 		14A6B95919A700EA00FBD3C9 /* UserDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14A6B95719A700EA00FBD3C9 /* UserDataDisplay.cpp */; };
@@ -335,6 +335,7 @@
 		143C5C51199E31E70041FFEB /* MagicDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MagicDataFactory.cpp; path = ../Classes/MagicDataFactory.cpp; sourceTree = "<group>"; };
 		143C5C52199E31E70041FFEB /* MagicDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MagicDataFactory.h; path = ../Classes/MagicDataFactory.h; sourceTree = "<group>"; };
 		143C5C54199E484F0041FFEB /* bossData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bossData.plist; sourceTree = "<group>"; };
+		143E7C0419DAB51F00AD0FE0 /* battleFieldData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = battleFieldData.plist; sourceTree = "<group>"; };
 		144FAD38196E5BA600F787E5 /* NendIconModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendIconModule.h; path = ../Classes/NendIconModule.h; sourceTree = "<group>"; };
 		144FAD3F196E5BC600F787E5 /* NendModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NendModule.h; path = ../Classes/NendModule.h; sourceTree = "<group>"; };
 		145D32071907B8130067B357 /* OpeningLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OpeningLayer.cpp; path = ../Classes/OpeningLayer.cpp; sourceTree = "<group>"; };
@@ -387,8 +388,6 @@
 		1483414E199CE46400717A59 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseObject.h; path = ../Classes/BaseObject.h; sourceTree = "<group>"; };
 		14834150199CEE7800717A59 /* config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = config.plist; sourceTree = "<group>"; };
 		14991090197FD474004672FA /* unitData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = unitData.plist; sourceTree = "<group>"; };
-		14991098197FDFDE004672FA /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameController.h; path = ../Classes/GameController.h; sourceTree = "<group>"; };
-		14991099197FDFDE004672FA /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameController.cpp; path = ../Classes/GameController.cpp; sourceTree = "<group>"; };
 		14998D731945B9C70062FF0A /* RigidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = RigidScene.ccbi; sourceTree = "<group>"; };
 		14998D741945B9C70062FF0A /* LiquidScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = LiquidScene.ccbi; sourceTree = "<group>"; };
 		14A6B95719A700EA00FBD3C9 /* UserDataDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserDataDisplay.cpp; path = ../Classes/UserDataDisplay.cpp; sourceTree = "<group>"; };
@@ -649,8 +648,6 @@
 		14A6B95119A6F92800FBD3C9 /* Contoroller */ = {
 			isa = PBXGroup;
 			children = (
-				14991098197FDFDE004672FA /* GameController.h */,
-				14991099197FDFDE004672FA /* GameController.cpp */,
 				14834144199CD22900717A59 /* BattleController.cpp */,
 				14834145199CD22900717A59 /* BattleController.h */,
 				F8E592DD199E657300306809 /* UnitCage.cpp */,
@@ -881,6 +878,7 @@
 				14834150199CEE7800717A59 /* config.plist */,
 				14991090197FD474004672FA /* unitData.plist */,
 				1434B81619C862D7008F6056 /* revelReleaseList.plist */,
+				143E7C0419DAB51F00AD0FE0 /* battleFieldData.plist */,
 				F8F56D7F197104330011EE0C /* ccbResources */,
 				F8F56D77197104250011EE0C /* resources-large */,
 				F8F56D78197104250011EE0C /* resources-medium */,
@@ -1141,6 +1139,7 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				143C5C55199E484F0041FFEB /* bossData.plist in Resources */,
 				145D322B1907B8270067B357 /* InputResultScene.ccbi in Resources */,
+				143E7C0519DAB51F00AD0FE0 /* battleFieldData.plist in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				F8F56D7E197104250011EE0C /* resources-xlarge in Resources */,
 				145D32271907B8270067B357 /* fileLookup.plist in Resources */,
@@ -1208,7 +1207,6 @@
 				14ED3CCA19A1F230002D5CF0 /* UnitField.cpp in Sources */,
 				14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */,
 				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
-				1499109A197FDFDE004672FA /* GameController.cpp in Sources */,
 				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
 				143C5C50199E2C6F0041FFEB /* MagicData.cpp in Sources */,
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,

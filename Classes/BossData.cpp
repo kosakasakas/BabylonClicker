@@ -58,6 +58,6 @@ void BossData::dump() const{
     CCLOG("hp: %f", hp);
 }
 
-const char* BossData::getObjectType() {
+const char* BossData::getObjectType() const{
     return "boss";
 }

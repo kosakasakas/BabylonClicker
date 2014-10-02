@@ -7,7 +7,6 @@
 //
 
 #include "Test.h"
-#include "GameController.h"
 #include "ItemFactory.h"
 #include "MagicFactory.h"
 #include "UnitFactory.h"
@@ -38,7 +37,7 @@ void Test::run() {
     User* user = BattleController::getInstance()->getField()->getUser();
     
     CCLOG("******UnitDataFactory class******");
-    GameConfig* config = GameController::getInstance()->getConfig();
+    GameConfig* config = BattleController::getInstance()->getConfig();
     config->dump();
     
     CCLOG("******User class******");

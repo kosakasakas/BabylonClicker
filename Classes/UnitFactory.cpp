@@ -22,7 +22,7 @@ UnitFactory::~UnitFactory()
 {
 }
 
-GameObject* UnitFactory::createObject(int objectID) {
+Unit* UnitFactory::createObject(int objectID) {
     UnitData* uData;
     if (BattleController::getInstance()->getField() != NULL) {
         uData = BattleController::getInstance()->getField()->getSharedUnitData(objectID);

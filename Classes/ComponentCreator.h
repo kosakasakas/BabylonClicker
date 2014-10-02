@@ -32,6 +32,7 @@ public:
     Node* getDetailComponent(int dialogID, int objectID, SEL_MenuHandler callback);
     Node* getDialogButton(int type, SEL_MenuHandler callback);
     void cleanUiNode();
+    void cleanBattleNode();
     bool isSummonButton(Object* sender);
     bool isMagicButton(Object* sender);
     bool isItemButton(Object* sender);
@@ -40,6 +41,8 @@ public:
     ObjectData* getObjectData(int dialogID, int objectID);
     GameObject* getGameObject(int dialogID, int objectID);
     std::string getDialogTypeString(int dialogID);
+    void updateUnitSprite();
+    static Point bossPosition;
 private:
     Layer* parentLayer;
     Size* scrollButtonSize;
@@ -92,6 +95,8 @@ private:
     LabelTTF* getTopDamageLabel();
     void cleanNode(int nodeTag);
     int getNodeTagFromDialogID(int dialogID);
+    void updateUnitPosition();
+    void updateUnitOrder();
 };
 
 #endif /* defined(__BabylonClicker__ComponentCreator__) */

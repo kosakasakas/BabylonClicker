@@ -7,6 +7,7 @@
 //
 
 #include "CriticalSubjectNode.h"
+#include "Utility.h"
 
 CriticalSubjectNode::CriticalSubjectNode()
 {
@@ -26,7 +27,7 @@ void CriticalSubjectNode::onUpdateCriticalLot(float delta) {
 }
 
 float CriticalSubjectNode::generateCriticalLot() {
-    int num = arc4random()%10000;
+    int num = Utility::getRandomInt(10000);
     return (float)num/100.f;
 }
 

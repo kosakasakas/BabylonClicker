@@ -17,6 +17,6 @@ MagicData::~MagicData()
 {
 }
 
-const char* MagicData::getObjectType() {
+const char* MagicData::getObjectType() const{
     return "magic";
 }

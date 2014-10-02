@@ -8,7 +8,6 @@
 
 #include "BattleController.h"
 #include "RandomBossFactory.h"
-#include "GameController.h"
 #include "UnitField.h"
 
 USING_NS_CC;
@@ -17,12 +16,13 @@ BattleController* BattleController::_singleton = NULL;
 
 BattleController::BattleController()
 {
+    config = new GameConfig();
     BossFactory* bFactory = new BossFactory();
     targetBoss = (Boss*)bFactory->create(0); // todo load from saved data.
-    activeUnitCage = new UnitCage(GameController::getInstance()->getConfig()->getMaxUnitNum());
+    activeUnitCage = new UnitCage(config->getMaxUnitNum());
     field = new Field();
     critical = new CriticalSubjectNode();
-    critical->schedule(schedule_selector(CriticalSubjectNode::onUpdateCriticalLot), GameController::getInstance()->getConfig()->getCriticalInterval());
+    critical->schedule(schedule_selector(CriticalSubjectNode::onUpdateCriticalLot), config->getCriticalInterval());
     CC_SAFE_RELEASE(bFactory);
 }
 
@@ -33,6 +33,7 @@ BattleController::~BattleController()
     activeUnitCage->release();
     critical->unscheduleAllSelectors();
     critical->release();
+    config->release();
 }
 
 BattleController* BattleController::getInstance()

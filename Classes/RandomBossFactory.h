@@ -21,7 +21,6 @@ public:
     Boss* create();
 private:
     BossFactory* bossFactory;
-    float getRandomNum();
 };
 
 #endif /* defined(__BabylonClicker__RandomBossFactory__) */

@@ -20,6 +20,7 @@ private:
 public:
     static bool isDecimalValue(const char* text);
     static const char* getStrFromFloatValue(float val);
+    static int getRandomInt(int limit);
 };
 
 #endif /* defined(__UnicornEngine__Utility__) */

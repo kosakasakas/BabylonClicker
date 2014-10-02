@@ -8,9 +8,10 @@
 
 #include "Unit.h"
 #include "BattleController.h"
-#include "GameController.h"
 #include "UnitNode.h"
 #include "UnitNodeCriticalDecorator.h"
+#include "UCAnimation.h"
+#include "ComponentCreator.h"
 
 Unit::Unit(UnitData* data)
 : GameObject(data)
@@ -39,7 +40,9 @@ void Unit::summon(Node* parent) {
     CCLOG("%s is summoned.", getObjectData()->getName());
     objectData->incrementLevel();
     
+    auto unitSprite = Sprite::create(objectData->getSpriteFilePath().c_str());
     auto unitNode = getUnitNode();
+    unitNode->addChild(unitSprite);
     parent->addChild(unitNode);
 }
 
@@ -99,10 +102,14 @@ void Unit::attack() {
     CCLOG("Attacker power: %f", uData->getAttack());
     float attack = uData->getAttack();
     if(isEdge()) {
-        float magicOffset = GameController::getInstance()->getConfig()->getMagicOffsetRate();
+        float magicOffset = BattleController::getInstance()->getConfig()->getMagicOffsetRate();
         attack *= magicOffset;
     }
     BattleController::getInstance()->getTargetBoss()->damage(attack);
+    
+    // attack anim.
+    Node* uiNode = getUnitNode();
+    uiNode->runAction(UCAnimation::getAttackAction(uiNode->getPosition(), ComponentCreator::bossPosition));
 }
 
 void Unit::onAction() {

@@ -15,6 +15,7 @@
 #include "UnitCage.h"
 #include "Field.h"
 #include "CriticalSubjectNode.h"
+#include "GameConfig.h"
 
 class BattleController
 {
@@ -28,6 +29,7 @@ public:
     CC_SYNTHESIZE(UnitCage*, activeUnitCage, ActiveUnitCage);
     CC_SYNTHESIZE_READONLY(Field*, field, Field);
     CC_SYNTHESIZE_READONLY(CriticalSubjectNode*, critical, Critical);
+    CC_SYNTHESIZE_READONLY(GameConfig*, config, Config);
     void onTargetBossDestroyed();
 };
 

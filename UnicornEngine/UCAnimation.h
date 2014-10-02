@@ -19,6 +19,7 @@ class UCAnimation
 public:
     static Point getRotatePoint(Point from, float distance, float degree);
     static ActionInterval* getDamageAction(Point from);
+    static ActionInterval* getAttackAction(Point from, Point to);
 };
 
 #endif /* defined(__BabylonClicker__UCAnimation__) */

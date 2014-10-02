@@ -11,6 +11,7 @@
 #include "BattleController.h"
 #include "UnitField.h"
 #include "UnitNodeCriticalDecorator.h"
+#include "UnicornPlistLoader.h"
 
 UnitCage::UnitCage(int unitNum)
 : maxUnitNum(unitNum)
@@ -52,6 +53,7 @@ void UnitCage::removeUnit(Unit* unit) {
     UnitNodeCriticalDecorator* uNode = (UnitNodeCriticalDecorator*)unit->getUnitNode();
     BattleController::getInstance()->getCritical()->removeObserver(uNode);
     unit->release();
+    
     CCLOG("remove unit: %s", name);
 }
 

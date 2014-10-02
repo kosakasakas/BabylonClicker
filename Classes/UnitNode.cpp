@@ -15,6 +15,7 @@ UnitNode::UnitNode(Unit* u)
 
 UnitNode::~UnitNode()
 {
+    this->removeAllChildren();
 }
 
 void UnitNode::onScheduleUpdate(float delta) {

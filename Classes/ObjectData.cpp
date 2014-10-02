@@ -156,3 +156,7 @@ void ObjectData::dump() const{
     CCLOG("name: %s", getName());
     CCLOG("description: %s", getDescription());
 }
+
+const char* ObjectData::getObjectType() const {
+    return "undefined";
+}

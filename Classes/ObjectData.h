@@ -50,7 +50,7 @@ protected:
     static const char* DESCRIPTION_KEY;
     static const char* COST_GROWTH_KEY;
     std::string getSpriteFileString();
-    virtual const char* getObjectType() const = 0;
+    virtual const char* getObjectType() const;
 };
 
 #endif /* defined(__BabylonClicker__ObjectData__) */

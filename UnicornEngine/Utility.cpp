@@ -27,3 +27,11 @@ const char* Utility::getStrFromFloatValue(float val) {
     std::string result = str;
     return result.c_str();
 }
+
+int Utility::getRandomInt(int limit) {
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    srand(tv.tv_sec + tv.tv_usec);
+    int randNum = rand()%limit;
+    return randNum;
+}

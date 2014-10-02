@@ -10,7 +10,6 @@
 #import "OpeningLayer.h"
 #include "NendModule.h"
 #import "UCAnimation.h"
-#include "GameController.h"
 #include "BattleController.h"
 #include "UnitField.h"
 #include "ComponentCreator.h"
@@ -67,7 +66,7 @@ bool MainScene::init() {
     
     scheduleUpdate();
     
-    GameConfig* config = GameController::getInstance()->getConfig();
+    GameConfig* config = BattleController::getInstance()->getConfig();
     char* apiKey = (char*)config->getNendApiKey();
     char* spotID = (char*)config->getNendSpotID();
     //NendModule::createNADViewBottom(apiKey, spotID);
@@ -79,6 +78,12 @@ void MainScene::initFirst() {
     auto btnMenu = _componentCreator->createMainButtonMenu(menu_selector(MainScene::buttonCallback));
     auto topNode = _componentCreator->getTopNode();
     topNode->addChild(btnMenu);
+    
+    // boss init
+    _bossSprite = Sprite::create("summon_4.png");
+    _bossSprite->setPosition(ComponentCreator::bossPosition);
+    _componentCreator->getBattleNode()->addChild(_bossSprite, 1000);
+    
     showBattleView();
 }
 
@@ -109,7 +114,6 @@ void MainScene::showDialog(int dialogID) {
         uiNode->addChild(cancelButtonMenu);
         hideBattleView();
     }
-    _currentDialog = dialogID;
     _currentObjectID = -1;
 }
 
@@ -125,20 +129,24 @@ void MainScene::showDetail(int dialogID, int objectID) {
         uiNode->addChild(returnButtonMenu);
         uiNode->addChild(detailComponent);
     }
-    _currentObjectID = objectID;
 }
 
 void MainScene::showBattleView() {
     auto battleView = _componentCreator->getBattleNode();
     battleView->setVisible(true);
+    
+    // setting for uiNode
     auto uiNode = _componentCreator->getUiNode();
     _componentCreator->cleanUiNode();
-    
     auto* ibaraSprite = _componentCreator->getIbaraSprite();
     auto wingSprite = _componentCreator->getWingSprite();
-    
     uiNode->addChild(ibaraSprite);
     uiNode->addChild(wingSprite);
+    
+    // setting for Unit Sprites.
+    _componentCreator->updateUnitSprite();
+    
+    // setting for Boss Sprite.
 }
 
 void MainScene::hideDialog() {
@@ -154,11 +162,13 @@ void MainScene::buttonCallback(Object* sender) {
     CCLOG("call setting button");
     if (_componentCreator->isSummonButton(sender)) {
         CCLOG("tappedSummonButton");
-        if (_currentDialog == DIALOG_TAG_Summon) {
+        if (!isShowingDialog()) {
+            showDialog(DIALOG_TAG_Summon);
+            _currentDialog = DIALOG_TAG_Summon;
+        } else if (_currentDialog == DIALOG_TAG_Summon) {
             hideDialog();
             showBattleView();
-        } else {
-            showDialog(DIALOG_TAG_Summon);
+            _currentDialog = DIALOG_TAG_None;
         }
     }
 }
@@ -184,6 +194,7 @@ void MainScene::scrollViewButtonCallback(Object* sender) {
         if (_currentDialog == DIALOG_TAG_Summon) {
             hideDialog();
             showDetail(DIALOG_TAG_Summon, id);
+            _currentObjectID = id;
         }
     }
 }
@@ -245,8 +256,7 @@ void MainScene::update(float delta){
 }
 
 void MainScene::initDraw() {
-    addBossNode();
-    addUnitNode();
+    showBattleView();
 }
 
 void MainScene::addBossNode() {

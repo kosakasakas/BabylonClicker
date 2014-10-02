@@ -20,6 +20,8 @@
 
 USING_NS_CC_EXT;
 
+Point ComponentCreator::bossPosition = Point(160, 160);
+
 ComponentCreator::ComponentCreator(Layer* layer) {
     parentLayer = layer;
     scrollButtonSize = new Size();
@@ -106,9 +108,8 @@ Node* ComponentCreator::getDetailComponent(int dialogID, int objectID, SEL_MenuH
     damageLabel->setString(od->getName());
     damageLabel->setColor(whiteColor);
     
-    char fileName[256] ;
-    sprintf(fileName, "%s_%d.png", getDialogTypeString(dialogID).c_str(), objectID);
-    auto objectSprite = Sprite::create(fileName);
+    std::string spritePath = od->getSpriteFilePath();
+    auto objectSprite = Sprite::create(spritePath.c_str());
     if (objectSprite == NULL) {
         return output;
     }
@@ -326,6 +327,10 @@ void ComponentCreator::cleanUiNode() {
     cleanNode(NODE_TAG_UINode);
 }
 
+void ComponentCreator::cleanBattleNode() {
+    cleanNode(NODE_TAG_BattleNode);
+}
+
 bool ComponentCreator::isCorrectSender(Object* sender, int tag) {
     Node* node = dynamic_cast<Node*>(sender);
     int senderTag = node->getTag();
@@ -408,4 +413,59 @@ LabelTTF* ComponentCreator::getTopDamageLabel() {
         return NULL;
     }
     return (LabelTTF*)damage->getChildByTag(NODE_TAG_TopDamageLabel);
+}
+
+void ComponentCreator::updateUnitSprite() {
+    updateUnitPosition();
+    updateUnitOrder();
+}
+
+void ComponentCreator::updateUnitPosition() {
+    Array* unitArray = BattleController::getInstance()->getActiveUnitCage()->getUnitArray();
+    Dictionary* dic = Dictionary::createWithContentsOfFile("battleFieldData.plist");
+    Array* array = (Array*)dic->objectForKey("field");
+    int summonedNum = BattleController::getInstance()->getActiveUnitCage()->getUnitArray()->count();
+    int num = 0;
+    for (int i = 0; i < array->count(); ++i) {
+        Dictionary* posDic = dynamic_cast<Dictionary*>(array->getObjectAtIndex(i));
+        int columnNum = UnicornPlistLoader::getInt(posDic, "num");
+        float height = UnicornPlistLoader::getFloat(posDic, "height");
+        float scale = UnicornPlistLoader::getFloat(posDic, "scale");
+        float interval = UnicornPlistLoader::getFloat(posDic, "interval");
+        for (int j = 0; j < columnNum; ++j) {
+            if (num >= summonedNum) {
+                CC_SAFE_DELETE(dic);
+                return;
+            }
+            Unit* unit = dynamic_cast<Unit*>(unitArray->getObjectAtIndex(summonedNum - 1 - num));
+            Node* uNode = unit->getUnitNode();
+            uNode->setScale(scale);
+            float winWidth = Director::getInstance()->getWinSize().width;
+            Point pos = Point(0.5*winWidth - pow(-1,(j%2))*((j+1)/2)*interval, height);
+            uNode->setPosition(pos);
+            ++num;
+        }
+    }
+}
+
+void ComponentCreator::updateUnitOrder() {
+    UnitCage* uCage = BattleController::getInstance()->getActiveUnitCage();
+    Array* uArray = uCage->getUnitArray();
+    int order = 0;
+    int bossOrder = 1000;
+    Size size = getBattleNode()->getContentSize();
+    float heightThreshold = 0.5*size.height;
+    float unitHeight;
+    Object* it;
+    CCARRAY_FOREACH_REVERSE(uArray, it) {
+        Unit* u = dynamic_cast<Unit*>(it);
+        Node* uNode = u->getUnitNode();
+        unitHeight = uNode->getPosition().y;
+        if (unitHeight < heightThreshold) {
+            uNode->setZOrder(order);
+        } else {
+            uNode->setZOrder(order - bossOrder - 1);
+        }
+        --order;
+    }
 }

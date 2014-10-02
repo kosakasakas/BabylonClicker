@@ -30,7 +30,7 @@ protected:
     static const char* HP_KEY;
     static const char* HP_GROWTH_KEY;
     static const char* LOT_WEIGHT_KEY;
-    virtual const char* getObjectType();
+    virtual const char* getObjectType() const;
 };
 
 #endif /* defined(__BabylonClicker__BossData__) */

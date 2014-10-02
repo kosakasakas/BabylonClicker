@@ -117,3 +117,16 @@ Dictionary* UnicornPlistLoader::getPropertyValueAtIndex(int index) const {
     }
     return result;
 }
+
+int UnicornPlistLoader::getInt(Dictionary* dic, const char* key) {
+    String* val = dynamic_cast<String*>(dic->objectForKey(key));
+    return val->intValue();
+}
+const char* UnicornPlistLoader::getChar(Dictionary* dic, const char* key) {
+    String* val = dynamic_cast<String*>(dic->objectForKey(key));
+    return val->getCString();
+}
+float UnicornPlistLoader::getFloat(Dictionary* dic, const char* key) {
+    String* val = dynamic_cast<String*>(dic->objectForKey(key));
+    return val->floatValue();
+}

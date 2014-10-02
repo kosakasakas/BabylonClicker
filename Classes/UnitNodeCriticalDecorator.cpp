@@ -8,18 +8,20 @@
 
 #include "UnitNodeCriticalDecorator.h"
 #include "CriticalSubjectNode.h"
-#include "GameController.h"
 #include "BattleController.h"
+#include "Utility.h"
 
 UnitNodeCriticalDecorator::UnitNodeCriticalDecorator( UnitNode* uNode )
 : UnitNode(uNode->getUnitRef())
 , isCritical(false)
 {
     unitNode = uNode;
-    int num = arc4random_uniform(10000);
+    int num = Utility::getRandomInt(10000);
     myCriticalLot = (float)num/100.f;
     UnitData* uData = (UnitData*)unitRef->getObjectData();
-    this->schedule(schedule_selector(UnitNode::onScheduleUpdate), uData->getInterval());
+    float interval = uData->getInterval();
+    float delay = (float)Utility::getRandomInt(interval*1000) / 1000.f;
+    this->schedule(schedule_selector(UnitNode::onScheduleUpdate), interval, UINT_MAX -1, delay);
 }
 
 UnitNodeCriticalDecorator::~UnitNodeCriticalDecorator()
@@ -46,7 +48,7 @@ void UnitNodeCriticalDecorator::updateStatus(const BaseObject* data) {
     UnitData* uData = (UnitData*)unitRef->getObjectData();
     if (!isCritical && isCriticalNew) { // on critical
         this->unscheduleAllSelectors();
-        float criticalInterval = GameController::getInstance()->getConfig()->getAttackInterval();
+        float criticalInterval = BattleController::getInstance()->getConfig()->getAttackInterval();
         this->schedule(schedule_selector(UnitNode::onScheduleUpdate), criticalInterval);
         isCritical = true;
         CCLOG("%s 's critical time start now!!", uData->getName());

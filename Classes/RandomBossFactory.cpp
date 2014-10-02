@@ -9,6 +9,7 @@
 #include "RandomBossFactory.h"
 #include "BossDataFactory.h"
 #include "BattleController.h"
+#include "Utility.h"
 
 RandomBossFactory::RandomBossFactory()
 {
@@ -21,7 +22,7 @@ RandomBossFactory::~RandomBossFactory()
 }
 
 Boss* RandomBossFactory::create() {
-    float lot = getRandomNum();
+    float lot = (float)Utility::getRandomInt(10000) / 100.f;
     Boss* boss;
     Field* fd = BattleController::getInstance()->getField();
     for(int i=0,n=fd->getBossNum(); i<n; ++i) {
@@ -38,9 +39,4 @@ Boss* RandomBossFactory::create() {
         lot -= lotWeight;
     }
     return NULL;
-}
-
-float RandomBossFactory::getRandomNum() {
-    int num = arc4random()%10000;
-    return (float)num/100.f;
 }

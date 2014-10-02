@@ -107,6 +107,6 @@ void UnitData::dump() const{
     }
 }
 
-const char* UnitData::getObjectType() {
+const char* UnitData::getObjectType() const{
     return "unit";
 }

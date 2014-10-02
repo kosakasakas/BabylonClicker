@@ -17,6 +17,6 @@ ItemData::~ItemData()
 {
 }
 
-const char* ItemData::getObjectType() {
+const char* ItemData::getObjectType() const{
     return "item";
 }
