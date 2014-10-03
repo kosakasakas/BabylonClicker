@@ -98,19 +98,18 @@ Node* ComponentCreator::getScrollComponent(int dialogID, SEL_MenuHandler callbac
 }
 
 Node* ComponentCreator::getDetailComponent(int dialogID, int objectID, SEL_MenuHandler callback) {
-    
     Node* output = new Node();
     output->setContentSize(getBattleNode()->getContentSize());
     output->setPosition(0.f, 95.f);
     
     ObjectData* od = getObjectData(dialogID, objectID);
     CCASSERT(od != NULL, "can not get Object Data.");
+    
+    // update damage frame.
     LabelTTF* damageLabel = getTopDamageLabel();
-    CCASSERT(damageLabel != NULL, "damage label is gone.");
-    damageLabel->setFontSize(12.f);
-    damageLabel->setFontName(defaultFont.c_str());
-    damageLabel->setString(od->getName());
-    damageLabel->setColor(whiteColor);
+    if (damageLabel != NULL) {
+        damageLabel->setString(od->getName());
+    }
     
     std::string spritePath = od->getSpriteFilePath();
     auto objectSprite = Sprite::create(spritePath.c_str());
@@ -335,6 +334,14 @@ void ComponentCreator::cleanBattleNode() {
     cleanNode(NODE_TAG_BattleNode);
 }
 
+void ComponentCreator::cleanDamageFrame() {
+    auto targetNode = parentLayer->getChildByTag(NODE_TAG_TopNode)->getChildByTag(NODE_TAG_TopDamage);
+    if (targetNode == NULL) {
+        return;
+    }
+    targetNode->removeAllChildren();
+}
+
 bool ComponentCreator::isCorrectSender(Object* sender, int tag) {
     Node* node = dynamic_cast<Node*>(sender);
     int senderTag = node->getTag();
@@ -411,12 +418,7 @@ bool ComponentCreator::isItemButton(Object* sender) {
 }
 
 LabelTTF* ComponentCreator::getTopDamageLabel() {
-    auto node = getTopNode();
-    auto damage = node->getChildByTag(NODE_TAG_TopDamage);
-    if (damage == NULL) {
-        return NULL;
-    }
-    return (LabelTTF*)damage->getChildByTag(NODE_TAG_TopDamageLabel);
+    return (LabelTTF*)getTopNode()->getChildByTag(NODE_TAG_TopDamage)->getChildByTag(NODE_TAG_TopDamageLabel);
 }
 
 void ComponentCreator::updateUnitSprite() {
@@ -473,6 +475,60 @@ void ComponentCreator::updateUnitOrder() {
     }
 }
 
+void ComponentCreator::initDamageFrame(int sceneTag) {
+    cleanDamageFrame();
+    if (sceneTag == SCENE_TAG_DETAIL) {
+        LabelTTF* damageLabel = LabelTTF::create();
+        damageLabel->setFontSize(12.f);
+        damageLabel->setFontName(defaultFont.c_str());
+        damageLabel->setString("initialized.");
+        damageLabel->setColor(whiteColor);
+        damageLabel->setTag(NODE_TAG_TopDamageLabel);
+        auto damage = getTopNode()->getChildByTag(NODE_TAG_TopDamage);
+        Size damageFrameSize = damage->getContentSize();
+        damageLabel->setPosition(Point(0.5*damageFrameSize.width, 0.5*damageFrameSize.height));
+        damage->addChild(damageLabel);
+    } else if(sceneTag == SCENE_TAG_SELECT) {
+    } else if (sceneTag == SCENE_TAG_BATTLE) {
+        LabelTTF* damageLabel = LabelTTF::create();
+        damageLabel->setFontSize(10.f);
+        damageLabel->setFontName(defaultFont.c_str());
+        damageLabel->setString("Player Data");
+        damageLabel->setColor(whiteColor);
+        damageLabel->setPosition(Point(95, 36));
+        damageLabel->setTag(NODE_TAG_TopDamageLabel);
+        auto damage = getTopNode()->getChildByTag(NODE_TAG_TopDamage);
+    
+        User* user = (User*) BattleController::getInstance()->getField()->getUser();
+        Sprite* soulIcon = Sprite::create("icon_soul.png");
+        soulIcon->setPosition(Point(19, 22));
+        LabelTTF* soulLabel = LabelTTF::create();
+        soulLabel->setAnchorPoint(Point(0,0.5));
+        soulLabel->setFontSize(10.f);
+        soulLabel->setColor(whiteColor);
+        soulLabel->setString(Utility::getStrFromFloatValue(user->getSoul()));
+        soulLabel->setPosition(Point(41,22));
+        soulLabel->setTag(NODE_TAG_TopDamageSoulLabel);
+    
+        UnitCage* cage = (UnitCage*) BattleController::getInstance()->getActiveUnitCage();
+        Sprite* unitIcon = Sprite::create("icon_star.png");
+        unitIcon->setPosition(Point(123, 22));
+        LabelTTF* unitLabel = LabelTTF::create();
+        unitLabel->setAnchorPoint(Point(0,0.5));
+        unitLabel->setFontSize(10.f);
+        unitLabel->setColor(whiteColor);
+        unitLabel->setString(Utility::getStrFromFloatInt(cage->getUnitArray()->count()));
+        unitLabel->setPosition(Point(144, 22));
+        unitLabel->setTag(NODE_TAG_TopDamageUnitLanel);
+    
+        damage->addChild(damageLabel);
+        damage->addChild(soulIcon);
+        damage->addChild(soulLabel);
+        damage->addChild(unitIcon);
+        damage->addChild(unitLabel);
+    }
+}
+
 void ComponentCreator::updateBossSprite() {
     auto boss = BattleController::getInstance()->getTargetBoss();
     auto bossNode = boss->getUnitNode();
@@ -499,4 +555,25 @@ void ComponentCreator::updateBossSprite() {
     magicSprite->setPosition(Point(0.5*frameSize.width+1, 0.5*frameSize.height));
     magicFrame->removeAllChildren();
     magicFrame->addChild(magicSprite);
+}
+
+void ComponentCreator::initBattleView() {
+    initDamageFrame(SCENE_TAG_BATTLE);
+}
+
+void ComponentCreator::initDetailView() {
+    initDamageFrame(SCENE_TAG_DETAIL);
+}
+
+void ComponentCreator::initSelectView(int dialogID) {
+    initDamageFrame(SCENE_TAG_SELECT);
+    std::string dialogName = getDialogTypeString(dialogID);
+    std::string path = "title_";
+    path.append(dialogName);
+    path.append(".png");
+    Sprite* title = Sprite::create(path.c_str());
+    auto frame = getTopNode()->getChildByTag(NODE_TAG_TopDamage);
+    Size frameSize = frame->getContentSize();
+    title->setPosition(Point(0.5*frameSize.width, 0.5*frameSize.height + 2));
+    frame->addChild(title);
 }

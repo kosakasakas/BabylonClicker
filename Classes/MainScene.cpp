@@ -102,6 +102,8 @@ void MainScene::initDialog() {
 
 void MainScene::showDialog(int dialogID) {
     if(!isShowingDialog() || isShowingDetail()) {
+        _componentCreator->initSelectView(dialogID);
+        
         auto scrollViewNode = _componentCreator->getScrollComponent(dialogID, menu_selector(MainScene::scrollViewButtonCallback));
         auto uiNode = _componentCreator->getUiNode();
         auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
@@ -118,6 +120,8 @@ void MainScene::showDialog(int dialogID) {
 
 void MainScene::showDetail(int dialogID, int objectID) {
     if(!isShowingDetail()) {
+        _componentCreator->initDetailView();
+        
         auto detailComponent = _componentCreator->getDetailComponent(dialogID, objectID, menu_selector(MainScene::detailButtonCallback));
         auto uiNode = _componentCreator->getUiNode();
         auto leftHashiraSprite = _componentCreator->getLeftHashiraSprite();
@@ -141,6 +145,9 @@ void MainScene::showBattleView() {
     auto wingSprite = _componentCreator->getWingSprite();
     uiNode->addChild(ibaraSprite);
     uiNode->addChild(wingSprite);
+    
+    // setting for Damage.
+    _componentCreator->initBattleView();
     
     // setting for Unit Sprites.
     _componentCreator->updateUnitSprite();

@@ -33,6 +33,7 @@ public:
     Node* getDialogButton(int type, SEL_MenuHandler callback);
     void cleanUiNode();
     void cleanBattleNode();
+    void cleanDamageFrame();
     bool isSummonButton(Object* sender);
     bool isMagicButton(Object* sender);
     bool isItemButton(Object* sender);
@@ -43,6 +44,10 @@ public:
     std::string getDialogTypeString(int dialogID);
     void updateUnitSprite();
     void updateBossSprite();
+    void initBattleView();
+    void initSelectView(int dialogID);
+    void initDetailView();
+    void initDamageFrame(int sceneTag);
     static Point bossPosition;
 private:
     Layer* parentLayer;
@@ -58,6 +63,8 @@ private:
         NODE_TAG_TopNode = 400,
         NODE_TAG_TopDamage = 410,
         NODE_TAG_TopDamageLabel = 411,
+        NODE_TAG_TopDamageSoulLabel = 412,
+        NODE_TAG_TopDamageUnitLanel = 413,
         
         NODE_TAG_ScrollSummonButtons = 1000,
         NODE_TAG_ScrollItemButtons = 2000,
@@ -89,6 +96,11 @@ private:
         BUTTON_TAG_Battle,
         DIALOG_TAG_None
     } BUTTON_TAG;
+    enum {
+        SCENE_TAG_DETAIL,
+        SCENE_TAG_SELECT,
+        SCENE_TAG_BATTLE
+    } SCENE_TAG;
     Node* createComponent(UnitData* ud);
     Sprite* createMagicIconSprite(const char* magic);
     std::string createMainButtonString(int id);
