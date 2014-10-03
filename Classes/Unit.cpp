@@ -16,16 +16,26 @@
 Unit::Unit(UnitData* data)
 : GameObject(data)
 {
-    // Notice: スケジューラ登録はUnitNodeCriticalDecoratorでやります
-    unitNode = new UnitNodeCriticalDecorator(new UnitNode(this));
 }
 
 Unit::~Unit()
 {
-    unitNode->release();
+    if (unitNode) {
+        unitNode->removeFromParent();
+        unitNode->removeAllChildren();
+        unitNode->release();
+    }
+}
+
+void Unit::initUnitNode() {
+    // Notice: スケジューラ登録はUnitNodeCriticalDecoratorでやります
+    unitNode = new UnitNodeCriticalDecorator(new UnitNode(this));
 }
 
 void Unit::summon(Node* parent) {
+    // add node.
+    initUnitNode();
+    
     UnitCage* uc = BattleController::getInstance()->getActiveUnitCage();
     if (!canPurchase() || !canSacrifice() || !uc->canAddUnit()) {
         CCLOG("%s can not summon!!", getObjectData()->getName());
@@ -41,7 +51,6 @@ void Unit::summon(Node* parent) {
     objectData->incrementLevel();
     
     auto unitSprite = Sprite::create(objectData->getSpriteFilePath().c_str());
-    auto unitNode = getUnitNode();
     unitNode->addChild(unitSprite);
     parent->addChild(unitNode);
 }
@@ -105,11 +114,17 @@ void Unit::attack() {
         float magicOffset = BattleController::getInstance()->getConfig()->getMagicOffsetRate();
         attack *= magicOffset;
     }
-    BattleController::getInstance()->getTargetBoss()->damage(attack);
+    auto boss = BattleController::getInstance()->getTargetBoss();
+    if (boss == NULL) return;
+    boss->damage(attack);
     
     // attack anim.
-    Node* uiNode = getUnitNode();
-    uiNode->runAction(UCAnimation::getAttackAction(uiNode->getPosition(), ComponentCreator::bossPosition));
+    if(unitNode && unitNode->isVisible()) {
+        Node* uiNode = getUnitNode();
+        if (uiNode->getNumberOfRunningActions() == 0) {
+            uiNode->runAction(UCAnimation::getAttackAction(uiNode->getPosition(), ComponentCreator::bossPosition));
+        }
+    }
 }
 
 void Unit::onAction() {

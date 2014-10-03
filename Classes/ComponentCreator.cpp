@@ -22,7 +22,9 @@ USING_NS_CC_EXT;
 
 Point ComponentCreator::bossPosition = Point(160, 160);
 
-ComponentCreator::ComponentCreator(Layer* layer) {
+ComponentCreator::ComponentCreator(Layer* layer)
+: bossOrder(-1000)
+{
     parentLayer = layer;
     scrollButtonSize = new Size();
     scrollButtonSize->setSize(180,80);
@@ -452,7 +454,6 @@ void ComponentCreator::updateUnitOrder() {
     UnitCage* uCage = BattleController::getInstance()->getActiveUnitCage();
     Array* uArray = uCage->getUnitArray();
     int order = 0;
-    int bossOrder = 1000;
     Size size = getBattleNode()->getContentSize();
     float heightThreshold = 0.5*size.height;
     float unitHeight;
@@ -464,8 +465,15 @@ void ComponentCreator::updateUnitOrder() {
         if (unitHeight < heightThreshold) {
             uNode->setZOrder(order);
         } else {
-            uNode->setZOrder(order - bossOrder - 1);
+            uNode->setZOrder(order + bossOrder - 1);
         }
         --order;
     }
+}
+
+void ComponentCreator::updateBossSprite() {
+    auto boss = BattleController::getInstance()->getTargetBoss();
+    auto bossNode = boss->getUnitNode();
+    bossNode->setZOrder(bossOrder);
+    bossNode->setPosition(bossPosition);
 }

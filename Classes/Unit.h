@@ -21,15 +21,16 @@ public:
     virtual void summon(Node* parent);
     void attack();
     void onAction();
-    CC_SYNTHESIZE(Node*, unitNode, UnitNode);
     bool isHoldingNode() const;
     virtual void dump() const;
     bool canSummon() const;
+    CC_SYNTHESIZE_READONLY(Node*, unitNode, UnitNode);
 protected:
     bool canSacrificeAt(int slotID) const;
     void sacrificeAt(int slotID);
     void updateAttack();
     bool isEdge();
+    virtual void initUnitNode();
 };
 
 #endif /* defined(__BabylonClicker__Unit__) */

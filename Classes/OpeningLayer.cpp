@@ -69,6 +69,7 @@ void OpeningLayer::startMainScene() {
     CCBReader* ccbReader = new CCBReader(nodeLoaderLibrary);
     MainScene* node = (MainScene*)ccbReader->readNodeGraphFromFile("MainScene.ccbi");
     node->initFirst();
+    BattleController::getInstance()->setMainScene(node);
     Scene* scene = Scene::create();
     if (node != NULL)
     {

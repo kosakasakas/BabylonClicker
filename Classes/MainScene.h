@@ -35,6 +35,8 @@ public:
     void initFirst();
     virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(Object* pTarget, const char* pSelectorName);
     virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
+    Node* getBattleViewNode();
+    void showBattleView();
 private:
     bool _doneInitDraw = false;
     int _currentDialog;
@@ -75,7 +77,6 @@ private:
     void hideDialog();
     void hideBattleView();
     void initDialog();
-    void showBattleView();
 };
 
 class MainSceneLoader : public cocos2d::extension::LayerLoader

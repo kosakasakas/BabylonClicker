@@ -16,6 +16,7 @@
 #include "Field.h"
 #include "CriticalSubjectNode.h"
 #include "GameConfig.h"
+#include "MainScene.h"
 
 class BattleController
 {
@@ -30,6 +31,7 @@ public:
     CC_SYNTHESIZE_READONLY(Field*, field, Field);
     CC_SYNTHESIZE_READONLY(CriticalSubjectNode*, critical, Critical);
     CC_SYNTHESIZE_READONLY(GameConfig*, config, Config);
+    CC_SYNTHESIZE(MainScene*, mainScene, MainScene);
     void onTargetBossDestroyed();
 };
 

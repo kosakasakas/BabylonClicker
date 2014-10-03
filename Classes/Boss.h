@@ -18,8 +18,10 @@ public:
     Boss(BossData* data, int level);
     virtual ~Boss();
     void damage(float val);
+    virtual void summon(Node* parent);
 private:
     void onDestroyed();
+    virtual void initUnitNode();
 };
 
 #endif /* defined(__BabylonClicker__Boss__) */

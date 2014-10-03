@@ -79,10 +79,9 @@ void MainScene::initFirst() {
     auto topNode = _componentCreator->getTopNode();
     topNode->addChild(btnMenu);
     
-    // boss init
-    _bossSprite = Sprite::create("summon_4.png");
-    _bossSprite->setPosition(ComponentCreator::bossPosition);
-    _componentCreator->getBattleNode()->addChild(_bossSprite, 1000);
+    // summon boss.
+    auto boss = BattleController::getInstance()->getTargetBoss();
+    boss->summon(_componentCreator->getBattleNode());
     
     showBattleView();
 }
@@ -147,6 +146,7 @@ void MainScene::showBattleView() {
     _componentCreator->updateUnitSprite();
     
     // setting for Boss Sprite.
+    _componentCreator->updateBossSprite();
 }
 
 void MainScene::hideDialog() {
@@ -175,9 +175,9 @@ void MainScene::buttonCallback(Object* sender) {
 
 void MainScene::dialogCloseCallback(Object* sender) {
     CCLOG("MainScene::dialogCloseCallback");
-    _currentDialog = DIALOG_TAG_None;
     hideDialog();
     showBattleView();
+    _currentDialog = DIALOG_TAG_None;
 }
 
 void MainScene::dialogReturnCallback(Object* sender) {
@@ -222,16 +222,9 @@ bool MainScene::onTouchBegan(Touch *touch, Event *event) {
     
     auto battleStage = _componentCreator->getBattleNode();
     if (battleStage->getBoundingBox().containsPoint(touch->getLocation())) {
-        if(_bossSprite != NULL && _bossSprite->getNumberOfRunningActions() == 0) {
-            _bossSprite->runAction(UCAnimation::getDamageAction(_bossSprite->getPosition()));
-            
-            // family level up
-            //FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitFamilyField()->getObjectAtIndex(Field::UFFT_Maririka));
-            /*
-            FieldObject* fo = dynamic_cast<FieldObject*>(BattleController::getInstance()->getField()->getUnitMagicField()->getObjectAtIndex(Field::MFT_Dark));
-            fo->incrementLevel();
-            fo->dump();
-             */
+        auto boss = BattleController::getInstance()->getTargetBoss();
+        if (boss) {
+            boss->damage(100.f); // todo get val from user data.
         }
     }
     return true;
@@ -330,4 +323,8 @@ void MainScene::tappedItemButton(Object* pSender, Control::EventType pControlEve
 void MainScene::onExit() {
     EventDispatcher::getInstance()->removeAllListeners();
     Layer::onExit();
+}
+
+Node* MainScene::getBattleViewNode() {
+    return _componentCreator->getBattleNode();
 }

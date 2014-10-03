@@ -15,10 +15,11 @@ USING_NS_CC;
 BattleController* BattleController::_singleton = NULL;
 
 BattleController::BattleController()
+: mainScene(NULL)
 {
     config = new GameConfig();
     BossFactory* bFactory = new BossFactory();
-    targetBoss = (Boss*)bFactory->create(0); // todo load from saved data.
+    targetBoss = (Boss*)bFactory->create(0);
     activeUnitCage = new UnitCage(config->getMaxUnitNum());
     field = new Field();
     critical = new CriticalSubjectNode();
@@ -34,6 +35,7 @@ BattleController::~BattleController()
     critical->unscheduleAllSelectors();
     critical->release();
     config->release();
+    mainScene->release();
 }
 
 BattleController* BattleController::getInstance()
@@ -50,6 +52,8 @@ void BattleController::onTargetBossDestroyed() {
     targetBoss = NULL;
     RandomBossFactory* rbFactory = new RandomBossFactory();
     targetBoss = (Boss*)rbFactory->create();
+    if(mainScene) targetBoss->summon(mainScene->getBattleViewNode());
+    mainScene->showBattleView();
     CCLOG("new boss is created..");
     targetBoss->dump();
     CC_SAFE_RELEASE(rbFactory);

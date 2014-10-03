@@ -15,6 +15,7 @@ UnitNode::UnitNode(Unit* u)
 
 UnitNode::~UnitNode()
 {
+    this->removeFromParent();
     this->removeAllChildren();
 }
 

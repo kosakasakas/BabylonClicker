@@ -42,6 +42,7 @@ public:
     GameObject* getGameObject(int dialogID, int objectID);
     std::string getDialogTypeString(int dialogID);
     void updateUnitSprite();
+    void updateBossSprite();
     static Point bossPosition;
 private:
     Layer* parentLayer;
@@ -49,6 +50,7 @@ private:
     Size* mainButtonSize;
     Color3B whiteColor;
     std::string defaultFont;
+    int bossOrder;
     enum {
         NODE_TAG_BackNode = 100,
         NODE_TAG_BattleNode = 200,

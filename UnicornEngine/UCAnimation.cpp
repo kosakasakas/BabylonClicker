@@ -30,7 +30,7 @@ ActionInterval* UCAnimation::getDamageAction(Point from) {
 }
 
 ActionInterval* UCAnimation::getAttackAction(Point from, Point to) {
-    int length = 20;
+    int length = 30;
     Point delta = (to - from).normalize();
     Point destination = Point(length*delta.x + from.x, length*delta.y + from.y);
     auto go = MoveTo::create(0.05f, destination);
