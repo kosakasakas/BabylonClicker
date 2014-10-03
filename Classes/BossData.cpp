@@ -15,6 +15,7 @@ const char* BossData::LOT_WEIGHT_KEY = "lotWeight";
 
 BossData::BossData(Dictionary* data)
 :UnitData(data)
+, maxHP(0)
 {
     updateHP();
 }
@@ -29,6 +30,11 @@ void BossData::updateHP() {
     for(int i = 0; i < level; i++) {
         hp *= growth;
     }
+    maxHP = hp;
+}
+
+float BossData::getMaxHP() const {
+    return maxHP;
 }
 
 float BossData::getDefaultHP() const{

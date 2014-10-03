@@ -17,6 +17,8 @@
 #include "UnicornScrollView.h"
 #include "UnicornScrollableMenu.h"
 #include "MainScene.h"
+#include "Utility.h"
+#include "UnitNode.h"
 
 USING_NS_CC_EXT;
 
@@ -440,11 +442,11 @@ void ComponentCreator::updateUnitPosition() {
                 return;
             }
             Unit* unit = dynamic_cast<Unit*>(unitArray->getObjectAtIndex(summonedNum - 1 - num));
-            Node* uNode = unit->getUnitNode();
+            UnitNode* uNode = (UnitNode*)unit->getUnitNode();
             uNode->setScale(scale);
             float winWidth = Director::getInstance()->getWinSize().width;
             Point pos = Point(0.5*winWidth - pow(-1,(j%2))*((j+1)/2)*interval, height);
-            uNode->setPosition(pos);
+            uNode->setDefaultPoint(pos);
             ++num;
         }
     }
@@ -474,6 +476,27 @@ void ComponentCreator::updateUnitOrder() {
 void ComponentCreator::updateBossSprite() {
     auto boss = BattleController::getInstance()->getTargetBoss();
     auto bossNode = boss->getUnitNode();
+    BossData* bData = (BossData*) boss->getObjectData();
     bossNode->setZOrder(bossOrder);
-    bossNode->setPosition(bossPosition);
+    bossNode->setDefaultPoint(bossPosition);
+    
+    auto topNode = getTopNode();
+    LabelTTF* name = (LabelTTF*) topNode->getChildByTag(NODE_TAG_NameLabel);
+    LabelTTF* lebel = (LabelTTF*) topNode->getChildByTag(NODE_TAG_LebelLabel);
+    LabelTTF* hp = (LabelTTF*) topNode->getChildByTag(NODE_TAG_HPLabel);
+    name->setString(bData->getName());
+    lebel->setString(Utility::getStrFromFloatInt(bData->getLevel()));
+    hp->setString(Utility::getStrFromFloatValue(bData->getHP()));
+    
+    auto hpBar = topNode->getChildByTag(NODE_TAG_HPBar);
+    float scale = (float)bData->getHP()/(float)bData->getMaxHP();
+    scale = std::min(1.f,std::max(scale, 0.01f));
+    hpBar->setScaleX(scale);
+    
+    auto magicFrame = topNode->getChildByTag(NODE_TAG_MagicFrame);
+    Size frameSize = magicFrame->getContentSize();
+    auto magicSprite = createMagicIconSprite(bData->getMagic());
+    magicSprite->setPosition(Point(0.5*frameSize.width+1, 0.5*frameSize.height));
+    magicFrame->removeAllChildren();
+    magicFrame->addChild(magicSprite);
 }

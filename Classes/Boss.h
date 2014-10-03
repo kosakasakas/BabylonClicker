@@ -12,6 +12,7 @@
 #include <iostream>
 #include "Unit.h"
 #include "BossData.h"
+#include "BossDataDisplay.h"
 
 class Boss : public Unit {
 public:
@@ -19,6 +20,7 @@ public:
     virtual ~Boss();
     void damage(float val);
     virtual void summon(Node* parent);
+    CC_SYNTHESIZE(BossDataDisplay*, bossDataDisplay, BossDataDisplay);
 private:
     void onDestroyed();
     virtual void initUnitNode();

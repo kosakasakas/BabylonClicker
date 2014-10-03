@@ -8,14 +8,14 @@
 
 #include "Boss.h"
 #include "BattleController.h"
-#include "BossDataDisplay.h"
 #include "UCAnimation.h"
 
 Boss::Boss(BossData* data, int level)
 : Unit(data)
 {
-    BossDataDisplay* bdDisplay = new BossDataDisplay();
-    data->registerObserver(bdDisplay);
+    bossDataDisplay = new BossDataDisplay();
+    bossDataDisplay->retain();
+    data->registerObserver(bossDataDisplay);
     ((BossData*)objectData)->setLevel(level);
 }
 
@@ -24,7 +24,7 @@ Boss::~Boss()
 }
 
 void Boss::initUnitNode() {
-    unitNode = new Node();
+    unitNode = new UnitNode(this);
 }
 
 void Boss::damage(float val) {
@@ -35,7 +35,7 @@ void Boss::damage(float val) {
     auto node = getUnitNode();
     if (node && node->isVisible()) {
         node->stopAllActions();
-        node->runAction(UCAnimation::getDamageAction(ComponentCreator::bossPosition));
+        node->runAction(UCAnimation::getDamageAction(node->getDefaultPoint()));
     }
     
     if (bData->getHP() <= 0) {

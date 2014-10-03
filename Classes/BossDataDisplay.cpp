@@ -8,6 +8,8 @@
 
 #include "BossDataDisplay.h"
 #include "BossData.h"
+#include "MainScene.h"
+#include "BattleController.h"
 
 BossDataDisplay::BossDataDisplay()
 {
@@ -19,6 +21,11 @@ BossDataDisplay::~BossDataDisplay()
 
 void BossDataDisplay::updateStatus(const BaseObject* data) {
     CCLOG("BossDataDisplay updated");
+    
+    MainScene* main = BattleController::getInstance()->getMainScene();
+    if (main) {
+        main->updateBattleVeiw();
+    }
     draw(data);
 }
 

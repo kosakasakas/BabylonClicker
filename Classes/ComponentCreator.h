@@ -77,7 +77,10 @@ private:
         NODE_TAG_IbaraSprite = 20,
         NODE_TAG_WingSprite = 21,
         NODE_TAG_HashiraLeftSprite = 22,
-        NODE_TAG_HashiraRightSprite = 23
+        NODE_TAG_HashiraRightSprite = 23,
+        NODE_TAG_LebelLabel = 24,
+        NODE_TAG_HPBar = 25,
+        NODE_TAG_MagicFrame = 26,
     } NODE_TAG;
     enum {
         BUTTON_TAG_Summon,

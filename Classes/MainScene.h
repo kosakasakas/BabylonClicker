@@ -37,6 +37,7 @@ public:
     virtual Control::Handler onResolveCCBCCControlSelector(Object* pTarget, const char* pSelectorName);
     Node* getBattleViewNode();
     void showBattleView();
+    void updateBattleVeiw();
 private:
     bool _doneInitDraw = false;
     int _currentDialog;

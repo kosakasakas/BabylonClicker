@@ -120,10 +120,8 @@ void Unit::attack() {
     
     // attack anim.
     if(unitNode && unitNode->isVisible()) {
-        Node* uiNode = getUnitNode();
-        if (uiNode->getNumberOfRunningActions() == 0) {
-            uiNode->runAction(UCAnimation::getAttackAction(uiNode->getPosition(), ComponentCreator::bossPosition));
-        }
+        unitNode->stopAllActions();
+        unitNode->runAction(UCAnimation::getAttackAction(unitNode->getDefaultPoint(), ComponentCreator::bossPosition));
     }
 }
 

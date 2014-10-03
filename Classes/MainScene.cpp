@@ -149,6 +149,10 @@ void MainScene::showBattleView() {
     _componentCreator->updateBossSprite();
 }
 
+void MainScene::updateBattleVeiw() {
+    _componentCreator->updateBossSprite();
+}
+
 void MainScene::hideDialog() {
     _componentCreator->cleanUiNode();
 }

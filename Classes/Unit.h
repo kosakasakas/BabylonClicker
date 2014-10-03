@@ -12,6 +12,9 @@
 #include <iostream>
 #include "GameObject.h"
 #include "UnitData.h"
+#include "UnitNode.h"
+
+class UnitNode;
 
 class Unit : public GameObject
 {
@@ -24,7 +27,7 @@ public:
     bool isHoldingNode() const;
     virtual void dump() const;
     bool canSummon() const;
-    CC_SYNTHESIZE_READONLY(Node*, unitNode, UnitNode);
+    CC_SYNTHESIZE_READONLY(UnitNode*, unitNode, UnitNode);
 protected:
     bool canSacrificeAt(int slotID) const;
     void sacrificeAt(int slotID);

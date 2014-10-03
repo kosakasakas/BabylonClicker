@@ -53,7 +53,7 @@ void BattleController::onTargetBossDestroyed() {
     RandomBossFactory* rbFactory = new RandomBossFactory();
     targetBoss = (Boss*)rbFactory->create();
     if(mainScene) targetBoss->summon(mainScene->getBattleViewNode());
-    mainScene->showBattleView();
+    mainScene->updateBattleVeiw();
     CCLOG("new boss is created..");
     targetBoss->dump();
     CC_SAFE_RELEASE(rbFactory);

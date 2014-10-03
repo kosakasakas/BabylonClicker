@@ -16,12 +16,19 @@
 
 USING_NS_CC;
 
+class Unit;
+
 class UnitNode : public Node {
 public:
     UnitNode(Unit* u);
+    UnitNode();
     virtual ~UnitNode();
     virtual void onScheduleUpdate(float delta);
+    void setDefaultPoint(Point pos);
+    Point& getDefaultPoint();
     CC_SYNTHESIZE_READONLY(Unit*, unitRef, UnitRef);
+protected:
+    Point defaultPoint;
 };
 
 #endif /* defined(__BabylonClicker__UnitNode__) */

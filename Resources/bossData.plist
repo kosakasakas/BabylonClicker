@@ -5,10 +5,10 @@
 	<key>magic</key>
 	<array>
 		<string>光</string>
-		<string>光</string>
-		<string>光</string>
-		<string>光</string>
+		<string>闇</string>
+		<string>火</string>
 		<string>水</string>
+		<string>木</string>
 		<string>光</string>
 	</array>
 	<key>lotWeight</key>

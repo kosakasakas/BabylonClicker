@@ -18,6 +18,7 @@ public:
     BossData(Dictionary* data);
     virtual ~BossData();
     float getDefaultHP() const;
+    float getMaxHP() const;
     float getHpGrowth() const;
     float getLotWeight() const;
     void reduceHP(float damage);
@@ -31,6 +32,7 @@ protected:
     static const char* HP_GROWTH_KEY;
     static const char* LOT_WEIGHT_KEY;
     virtual const char* getObjectType() const;
+    float maxHP;
 };
 
 #endif /* defined(__BabylonClicker__BossData__) */

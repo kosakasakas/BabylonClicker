@@ -11,6 +11,7 @@
 UnitNode::UnitNode(Unit* u)
 : unitRef(u)
 {
+    defaultPoint = Point(0,0);
 }
 
 UnitNode::~UnitNode()
@@ -25,4 +26,13 @@ void UnitNode::onScheduleUpdate(float delta) {
     } else {
         CCLOG("node is not exist or already released.");
     }
+}
+
+void UnitNode::setDefaultPoint(Point pos) {
+    defaultPoint = pos;
+    this->setPosition(defaultPoint);
+}
+
+Point& UnitNode::getDefaultPoint() {
+    return defaultPoint;
 }

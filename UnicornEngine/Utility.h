@@ -21,6 +21,7 @@ public:
     static bool isDecimalValue(const char* text);
     static const char* getStrFromFloatValue(float val);
     static int getRandomInt(int limit);
+    static const char* getStrFromFloatInt(int val);
 };
 
 #endif /* defined(__UnicornEngine__Utility__) */

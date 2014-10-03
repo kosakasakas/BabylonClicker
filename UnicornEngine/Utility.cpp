@@ -35,3 +35,10 @@ int Utility::getRandomInt(int limit) {
     int randNum = rand()%limit;
     return randNum;
 }
+
+const char* Utility::getStrFromFloatInt(int val) {
+    char str[256];
+    sprintf(str, "%d", val);
+    const char* ret = const_cast<char*>(str);
+    return ret;
+}
