@@ -107,7 +107,7 @@
 						<key>type</key>
 						<string>String</string>
 						<key>value</key>
-						<string>流体テスト</string>
+						<string></string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -315,7 +315,7 @@
 						<key>type</key>
 						<string>String</string>
 						<key>value</key>
-						<string>剛体テスト</string>
+						<string>ゲームスタート</string>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -550,7 +550,7 @@
 						<key>type</key>
 						<string>Text</string>
 						<key>value</key>
-						<string>Box2D Sample</string>
+						<string>Sample</string>
 					</dict>
 				</array>
 			</dict>
@@ -639,7 +639,7 @@
 						<key>type</key>
 						<string>String</string>
 						<key>value</key>
-						<string>サンプルゲーム</string>
+						<string></string>
 					</dict>
 					<dict>
 						<key>name</key>

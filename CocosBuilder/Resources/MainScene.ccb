@@ -1721,7 +1721,7 @@
 										<key>value</key>
 										<array>
 											<real>95</real>
-											<real>34</real>
+											<real>35</real>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -1813,8 +1813,6 @@
 										<string>User Data</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
