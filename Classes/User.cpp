@@ -9,7 +9,7 @@
 #include "User.h"
 
 User::User()
-: soul(10000.f)
+: soul(100000.f)
 {
 }
 
