@@ -1,6 +1,6 @@
 //
 //  AppManager.cpp
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by 小坂 昂大 on 2014/07/12.
 //

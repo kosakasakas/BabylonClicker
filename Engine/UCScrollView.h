@@ -1,12 +1,12 @@
 //
-//  UnicornScrollView.h
+//  UCScrollView.h
 //
 //  Created by 小坂 昂大 on 2014/09/06.
 //
 //
 
-#ifndef __BabylonClicker__UnicornScrollView__
-#define __BabylonClicker__UnicornScrollView__
+#ifndef __BabylonClicker__UCScrollView__
+#define __BabylonClicker__UCScrollView__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -16,18 +16,18 @@
 USING_NS_CC;
 USING_NS_CC_EXT;
 
-class UnicornScrollView : public CustomScrollView {
+class UCScrollView : public CustomScrollView {
 public:
-    UnicornScrollView(Menu* menu);
-    virtual ~UnicornScrollView(){};
-    static UnicornScrollView* create(Menu* menu);
-    static UnicornScrollView* create(Size size, Node* container, Menu* menu);
+    UCScrollView(Menu* menu);
+    virtual ~UCScrollView(){};
+    static UCScrollView* create(Menu* menu);
+    static UCScrollView* create(Size size, Node* container, Menu* menu);
     virtual bool onTouchBegan(Touch* touch, Event* event);
     virtual void onTouchCancelled(Touch* touch, Event* event);
     virtual void onTouchEnded(Touch* touch, Event* event);
     virtual void onTouchMoved(Touch* touch, Event* event);
     enum {
-        kUnicornScrollViewPriority = -129
+        kUCScrollViewPriority = -129
     };
 private:
     virtual bool init();
@@ -39,4 +39,4 @@ private:
     bool waitingTouchEnd;
 };
 
-#endif /* defined(__BabylonClicker__UnicornScrollView__) */
+#endif /* defined(__BabylonClicker__UCScrollView__) */

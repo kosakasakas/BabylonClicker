@@ -1,13 +1,13 @@
 //
 //  AppMacros.h
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by Takahiro Kosaka on 2014/04/14.
 //
 //
 
-#ifndef UnicornEngine_AppMacros_h
-#define UnicornEngine_AppMacros_h
+#ifndef UCEngine_AppMacros_h
+#define UCEngine_AppMacros_h
 
 #include "cocos2d.h"
 

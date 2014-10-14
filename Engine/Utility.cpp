@@ -1,6 +1,6 @@
 //
 //  Utility.cpp
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by Takahiro Kosaka on 2014/04/23.
 //

@@ -7,15 +7,15 @@
 //
 
 #include "ComponentCreator.h"
-#include "UnicornPlistLoader.h"
+#include "UCPlistLoader.h"
 #include "BattleController.h"
 #include "UnitFactory.h"
 #include "ItemFactory.h"
 #include "MagicFactory.h"
 #include "cocos-ext.h"
-#include "UnicornMenuSprite.h"
-#include "UnicornScrollView.h"
-#include "UnicornScrollableMenu.h"
+#include "UCMenuSprite.h"
+#include "UCScrollView.h"
+#include "UCScrollableMenu.h"
 #include "MainScene.h"
 #include "Utility.h"
 #include "UnitNode.h"
@@ -76,17 +76,17 @@ Node* ComponentCreator::getScrollComponent(int dialogID, SEL_MenuHandler callbac
     Array* menuItemArray = Array::create();
     for (int i = 0; i < buttonNum; ++i) {
         auto buttonSprite = ComponentCreator::createScrollButtonSprite();
-        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+        UCMenuSprite* btnItem = UCMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
         menuItemArray->addObject(btnItem);
         btnItem->addChild(dynamic_cast<Node*>(components->getObjectAtIndex(i)));
         btnItem->setTag(nodeTag + i);
     }
-    UnicornScrollableMenu* btnMenu = (UnicornScrollableMenu*)UnicornScrollableMenu::createWithArray(menuItemArray);
+    UCScrollableMenu* btnMenu = (UCScrollableMenu*)UCScrollableMenu::createWithArray(menuItemArray);
     btnMenu->alignItemsVerticallyWithPadding(buttonPosOffset);
     btnMenu->setPosition(Point(0.5*scrollSize.width, 0.5*scrollSize.height));
     container->addChild(btnMenu);
     
-    UnicornScrollView *scrollViewNode = UnicornScrollView::create(btnMenu);
+    UCScrollView *scrollViewNode = UCScrollView::create(btnMenu);
     scrollViewNode->setClippingToBounds(true);
     scrollViewNode->setContainer(container);
     scrollViewNode->setViewSize(Size(battleViewSize.width, battleViewSize.height - topPosOffset));
@@ -122,7 +122,7 @@ Node* ComponentCreator::getDetailComponent(int dialogID, int objectID, SEL_MenuH
     Scale9Sprite* buttonSprite = Scale9Sprite::create("button_black.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
     Size buttonSize = Size(180.f, 35.f);
     buttonSprite->setContentSize(buttonSize);
-    UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+    UCMenuSprite* btnItem = UCMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
     LabelTTF* buttonLabel = LabelTTF::create("召喚", defaultFont.c_str(), 12);
     buttonLabel->setPosition(Point(0.5*buttonSize.width, 0.5*buttonSize.height));
     btnItem->addChild(buttonLabel);
@@ -142,7 +142,7 @@ Node* ComponentCreator::createMainButtonMenu(cocos2d::SEL_MenuHandler callback) 
     for (int i = 0; i < buttonNum; ++i) {
         Scale9Sprite* buttonSprite = Scale9Sprite::create("button_black.png", Rect(0,0,81.5, 51.5), Rect(20,10,41.5,31.5));
         buttonSprite->setContentSize(*mainButtonSize);
-        UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+        UCMenuSprite* btnItem = UCMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
         btnItem->setTag(NODE_TAG_SummonButton+i);
         
         LabelTTF* nameLabel = LabelTTF::create(createMainButtonString(i).c_str(), defaultFont.c_str(), 12);
@@ -199,7 +199,7 @@ Node* ComponentCreator::getDialogButton(int type, SEL_MenuHandler callback) {
     } else {
         buttonSprite = Sprite::create("dialog_button_return.png");
     }
-    UnicornMenuSprite* btnItem = UnicornMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
+    UCMenuSprite* btnItem = UCMenuSprite::create(buttonSprite, buttonSprite, parentLayer, callback);
     Menu* btnMenu = Menu::createWithItem(btnItem);
     btnMenu->setPosition(Point(298.f, 381.f));
     return btnMenu;
@@ -208,7 +208,7 @@ Node* ComponentCreator::getDialogButton(int type, SEL_MenuHandler callback) {
 Array* ComponentCreator::createScrollComponent(int dialogID)
 {
     Array* result = Array::create();
-    UnicornPlistLoader* upLoader = new UnicornPlistLoader("revelReleaseList.plist");
+    UCPlistLoader* upLoader = new UCPlistLoader("revelReleaseList.plist");
     Dictionary* dic = upLoader->getDictionary();
     
     const char* typeName = getDialogTypeString(dialogID).c_str();
@@ -434,10 +434,10 @@ void ComponentCreator::updateUnitPosition() {
     int num = 0;
     for (int i = 0; i < array->count(); ++i) {
         Dictionary* posDic = dynamic_cast<Dictionary*>(array->getObjectAtIndex(i));
-        int columnNum = UnicornPlistLoader::getInt(posDic, "num");
-        float height = UnicornPlistLoader::getFloat(posDic, "height");
-        float scale = UnicornPlistLoader::getFloat(posDic, "scale");
-        float interval = UnicornPlistLoader::getFloat(posDic, "interval");
+        int columnNum = UCPlistLoader::getInt(posDic, "num");
+        float height = UCPlistLoader::getFloat(posDic, "height");
+        float scale = UCPlistLoader::getFloat(posDic, "scale");
+        float interval = UCPlistLoader::getFloat(posDic, "interval");
         for (int j = 0; j < columnNum; ++j) {
             if (num >= summonedNum) {
                 CC_SAFE_DELETE(dic);

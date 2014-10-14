@@ -13,7 +13,7 @@
 #include "BaseObject.h"
 #include "cocos2d.h"
 #include "ObjectData.h"
-#include "UnicornPlistLoader.h"
+#include "UCPlistLoader.h"
 
 USING_NS_CC;
 
@@ -32,7 +32,7 @@ public:
     Dictionary* getDictionary();
 protected:
     virtual ObjectData* createObjectData(int index);
-    UnicornPlistLoader* unicornPlistLoader;
+    UCPlistLoader* _ucPlistLoader;
 };
 
 #endif /* defined(__BabylonClicker__ObjectDataFactory__) */

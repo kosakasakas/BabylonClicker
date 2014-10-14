@@ -1,13 +1,13 @@
 //
 //  AudioManager.h
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by Takahiro Kosaka on 2014/02/08.
 //
 //
 
-#ifndef __UnicornEngine__AudioManager__
-#define __UnicornEngine__AudioManager__
+#ifndef __UCEngine__AudioManager__
+#define __UCEngine__AudioManager__
 
 #include <iostream>
 

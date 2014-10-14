@@ -1,13 +1,13 @@
 //
 //  UserData.h
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by Takahiro Kosaka on 2013/11/17.
 //
 //
 
-#ifndef __UnicornEngine__UserData__
-#define __UnicornEngine__UserData__
+#ifndef __UCEngine__UserData__
+#define __UCEngine__UserData__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -53,4 +53,4 @@ public:
     int  validateSelectableStageID( int stageID );
 };
 
-#endif /* defined(__UnicornEngine__UserData__) */
+#endif /* defined(__UCEngine__UserData__) */

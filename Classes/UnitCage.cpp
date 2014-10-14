@@ -11,7 +11,7 @@
 #include "BattleController.h"
 #include "UnitField.h"
 #include "UnitNodeCriticalDecorator.h"
-#include "UnicornPlistLoader.h"
+#include "UCPlistLoader.h"
 
 UnitCage::UnitCage(int unitNum)
 : maxUnitNum(unitNum)

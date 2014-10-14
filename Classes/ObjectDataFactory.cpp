@@ -10,38 +10,38 @@
 
 ObjectDataFactory::ObjectDataFactory(const char* filePath)
 {
-    unicornPlistLoader = new UnicornPlistLoader(filePath);
+    _ucPlistLoader = new UCPlistLoader(filePath);
 }
 
 ObjectDataFactory::~ObjectDataFactory()
 {
-    delete unicornPlistLoader;
+    delete _ucPlistLoader;
 }
 
 void ObjectDataFactory::dump() const {
     CCLOG("======ObjectDataFactory::dump()======");
-    unicornPlistLoader->dump();
+    _ucPlistLoader->dump();
 }
 
 void ObjectDataFactory::dumpPropertyValueAtIndex(int index) const {
     CCLOG("======ObjectDataFactory::dumpPropertyValueAtIndex======");
-    unicornPlistLoader->dumpPropertyValueAtIndex(index);
+    _ucPlistLoader->dumpPropertyValueAtIndex(index);
 }
 
 int ObjectDataFactory::getPropertyNum() const {
-    return unicornPlistLoader->getPropertyNum();
+    return _ucPlistLoader->getPropertyNum();
 }
 
 int ObjectDataFactory::getObjectNum() const {
-    return unicornPlistLoader->getObjectNum();
+    return _ucPlistLoader->getObjectNum();
 }
 
 Array* ObjectDataFactory::getPropertyArray() const {
-    return unicornPlistLoader->getPropertyArray();
+    return _ucPlistLoader->getPropertyArray();
 }
 
 Dictionary* ObjectDataFactory::getPropertyValueAtIndex(int index) const {
-    return unicornPlistLoader->getPropertyValueAtIndex(index);
+    return _ucPlistLoader->getPropertyValueAtIndex(index);
 }
 
 ObjectData* ObjectDataFactory::create(int index){
@@ -55,5 +55,5 @@ ObjectData* ObjectDataFactory::createObjectData(int index){
 }
 
 Dictionary* ObjectDataFactory::getDictionary() {
-    return unicornPlistLoader->getDictionary();
+    return _ucPlistLoader->getDictionary();
 }

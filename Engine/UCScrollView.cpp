@@ -1,17 +1,17 @@
 //
-//  UnicornScrollView.cpp
+//  UCScrollView.cpp
 //  BabylonClicker
 //
 //  Created by 小坂 昂大 on 2014/09/06.
 //
 //
 
-#include "UnicornScrollView.h"
-#include "UnicornScrollableMenu.h"
+#include "UCScrollView.h"
+#include "UCScrollableMenu.h"
 
-const float UnicornScrollView::MIN_DISTANCE = 10;
+const float UCScrollView::MIN_DISTANCE = 10;
 
-UnicornScrollView::UnicornScrollView(Menu* menu)
+UCScrollView::UCScrollView(Menu* menu)
 : CustomScrollView::CustomScrollView()
 , menu(NULL)
 , waitingTouchEnd(false)
@@ -19,8 +19,8 @@ UnicornScrollView::UnicornScrollView(Menu* menu)
     setMenu(menu);
 }
 
-UnicornScrollView* UnicornScrollView::create(Menu* menu) {
-    UnicornScrollView* pRet = new UnicornScrollView(menu);
+UCScrollView* UCScrollView::create(Menu* menu) {
+    UCScrollView* pRet = new UCScrollView(menu);
     if (pRet && pRet->init())
     {
         pRet->autorelease();
@@ -32,9 +32,9 @@ UnicornScrollView* UnicornScrollView::create(Menu* menu) {
     return pRet;
 }
 
-UnicornScrollView* UnicornScrollView::create(Size size, Node* container, Menu* menu)
+UCScrollView* UCScrollView::create(Size size, Node* container, Menu* menu)
 {
-    UnicornScrollView* pRet = new UnicornScrollView(menu);
+    UCScrollView* pRet = new UCScrollView(menu);
     if (pRet && pRet->initWithViewSize(size, container))
     {
         pRet->autorelease();
@@ -48,15 +48,15 @@ UnicornScrollView* UnicornScrollView::create(Size size, Node* container, Menu* m
 
 
 
-bool UnicornScrollView::init() {
+bool UCScrollView::init() {
     if ( !CustomScrollView::init() ) {
         return false;
     }
     return true;
 }
 
-bool UnicornScrollView::onTouchBegan(Touch* touch, Event* event) {
-    CCLOG("UnicornScrollView onTouchBegan called.");
+bool UCScrollView::onTouchBegan(Touch* touch, Event* event) {
+    CCLOG("UCScrollView onTouchBegan called.");
     pressPoint = touch->getLocationInView();
     if (menu && !waitingTouchEnd) {
         CCLOG("onTouchBegin-onTouchbegin");
@@ -65,7 +65,7 @@ bool UnicornScrollView::onTouchBegan(Touch* touch, Event* event) {
     return CustomScrollView::onTouchBegan(touch, event);
 }
 
-void UnicornScrollView::onTouchCancelled(Touch* touch, Event* event) {
+void UCScrollView::onTouchCancelled(Touch* touch, Event* event) {
     if (menu && waitingTouchEnd) {
         CCLOG("onTouchCancelled-onTouchCancelled");
         menu->onTouchCancelled(touch, event);
@@ -74,7 +74,7 @@ void UnicornScrollView::onTouchCancelled(Touch* touch, Event* event) {
     CustomScrollView::onTouchCancelled(touch, event);
 }
 
-void UnicornScrollView::onTouchEnded(Touch* touch, Event* event) {
+void UCScrollView::onTouchEnded(Touch* touch, Event* event) {
     if (menu && waitingTouchEnd) {
         Point endPoint = touch->getLocationInView();
         float distance = endPoint.getDistance(pressPoint);
@@ -90,7 +90,7 @@ void UnicornScrollView::onTouchEnded(Touch* touch, Event* event) {
     CustomScrollView::onTouchEnded(touch, event);
 }
 
-void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
+void UCScrollView::onTouchMoved(Touch* touch, Event* event) {
     if (menu && waitingTouchEnd) {
         Point endPoint = touch->getLocationInView();
         float distance = endPoint.getDistance(pressPoint);
@@ -106,7 +106,7 @@ void UnicornScrollView::onTouchMoved(Touch* touch, Event* event) {
     CustomScrollView::onTouchMoved(touch, event);
 }
 
-void UnicornScrollView::addTouchListener() {
+void UCScrollView::addTouchListener() {
     if (_touchListener != nullptr) {
         return;
     }
@@ -116,12 +116,12 @@ void UnicornScrollView::addTouchListener() {
         // Register Touch Event
         auto listener = EventListenerTouch::create(Touch::DispatchMode::ALL_AT_ONCE);
         
-        listener->onTouchBegan = CC_CALLBACK_2(UnicornScrollView::onTouchBegan, this);
-        listener->onTouchMoved = CC_CALLBACK_2(UnicornScrollView::onTouchMoved, this);
-        listener->onTouchEnded = CC_CALLBACK_2(UnicornScrollView::onTouchEnded, this);
-        listener->onTouchCancelled = CC_CALLBACK_2(UnicornScrollView::onTouchCancelled, this);
+        listener->onTouchBegan = CC_CALLBACK_2(UCScrollView::onTouchBegan, this);
+        listener->onTouchMoved = CC_CALLBACK_2(UCScrollView::onTouchMoved, this);
+        listener->onTouchEnded = CC_CALLBACK_2(UCScrollView::onTouchEnded, this);
+        listener->onTouchCancelled = CC_CALLBACK_2(UCScrollView::onTouchCancelled, this);
         
-        dispatcher->addEventListenerWithFixedPriority(listener, kUnicornScrollViewPriority);
+        dispatcher->addEventListenerWithFixedPriority(listener, kUCScrollViewPriority);
         _touchListener = listener;
     }
     else
@@ -130,19 +130,19 @@ void UnicornScrollView::addTouchListener() {
         auto listener = EventListenerTouch::create(Touch::DispatchMode::ONE_BY_ONE);
         listener->setSwallowTouches(isSwallowsTouches());
         
-        listener->onTouchBegan = CC_CALLBACK_2(UnicornScrollView::onTouchBegan, this);
-        listener->onTouchMoved = CC_CALLBACK_2(UnicornScrollView::onTouchMoved, this);
-        listener->onTouchEnded = CC_CALLBACK_2(UnicornScrollView::onTouchEnded, this);
-        listener->onTouchCancelled = CC_CALLBACK_2(UnicornScrollView::onTouchCancelled, this);
+        listener->onTouchBegan = CC_CALLBACK_2(UCScrollView::onTouchBegan, this);
+        listener->onTouchMoved = CC_CALLBACK_2(UCScrollView::onTouchMoved, this);
+        listener->onTouchEnded = CC_CALLBACK_2(UCScrollView::onTouchEnded, this);
+        listener->onTouchCancelled = CC_CALLBACK_2(UCScrollView::onTouchCancelled, this);
         
-        dispatcher->addEventListenerWithFixedPriority(listener, kUnicornScrollViewPriority);
+        dispatcher->addEventListenerWithFixedPriority(listener, kUCScrollViewPriority);
         _touchListener = listener;
     }
 }
 
-void UnicornScrollView::setMenu(Menu *menu) {
+void UCScrollView::setMenu(Menu *menu) {
     this->menu = menu;
-    UnicornScrollableMenu* scrollableMenu = dynamic_cast<UnicornScrollableMenu*>(menu);
+    UCScrollableMenu* scrollableMenu = dynamic_cast<UCScrollableMenu*>(menu);
     if(scrollableMenu) {
         scrollableMenu->setValidTouchRectInWorldSpace(getViewRect());
     }

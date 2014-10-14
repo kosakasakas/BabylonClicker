@@ -1,24 +1,24 @@
 //
-//  UnicornScrollableMenu.cpp
+//  UCScrollableMenu.cpp
 //  BabylonClicker
 //
 //  Created by 小坂 昂大 on 2014/09/07.
 //
 //
 
-#include "UnicornScrollableMenu.h"
+#include "UCScrollableMenu.h"
 
-UnicornScrollableMenu::UnicornScrollableMenu(){
+UCScrollableMenu::UCScrollableMenu(){
     
 }
 
-UnicornScrollableMenu::~UnicornScrollableMenu(){
+UCScrollableMenu::~UCScrollableMenu(){
     
 }
 
-UnicornScrollableMenu* UnicornScrollableMenu::createWithArray(Array* pArrayOfItems)
+UCScrollableMenu* UCScrollableMenu::createWithArray(Array* pArrayOfItems)
 {
-    UnicornScrollableMenu *pRet = new UnicornScrollableMenu();
+    UCScrollableMenu *pRet = new UCScrollableMenu();
     if (pRet && pRet->initWithArray(pArrayOfItems))
     {
         pRet->autorelease();
@@ -31,7 +31,7 @@ UnicornScrollableMenu* UnicornScrollableMenu::createWithArray(Array* pArrayOfIte
     return pRet;
 }
 
-bool UnicornScrollableMenu::onTouchBegan(Touch *touch, Event *event) {
+bool UCScrollableMenu::onTouchBegan(Touch *touch, Event *event) {
     if (!validTouchRectInWorldSpace.size.width || !validTouchRectInWorldSpace.size.height) {
         return Menu::onTouchBegan(touch, event);
     }

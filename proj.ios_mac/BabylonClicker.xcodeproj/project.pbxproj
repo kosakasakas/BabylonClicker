@@ -10,7 +10,6 @@
 		14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14151C34199DB8BC0097B3A1 /* ObjectDataFactory.cpp */; };
 		1418415319AB5E5700338672 /* Scroll.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 1418415219AB5E5600338672 /* Scroll.ccbi */; };
 		1434B81719C862D7008F6056 /* revelReleaseList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1434B81619C862D7008F6056 /* revelReleaseList.plist */; };
-		1434B82019C8689D008F6056 /* UnicornPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1434B81E19C8689D008F6056 /* UnicornPlistLoader.cpp */; };
 		1434B82319C87120008F6056 /* ComponentCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1434B82119C87120008F6056 /* ComponentCreator.cpp */; };
 		143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */; };
 		143C5C47199E26650041FFEB /* BossData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 143C5C45199E26650041FFEB /* BossData.cpp */; };
@@ -31,7 +30,6 @@
 		145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145F0D8A199DCF930063F8FB /* ObjectData.cpp */; };
 		145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145F0D93199DDD830063F8FB /* UnitData.cpp */; };
 		145F0D98199DDEA00063F8FB /* UnitDataFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */; };
-		147947C01998990D00649875 /* UCAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 147947BE1998990D00649875 /* UCAnimation.cpp */; };
 		1483411C199CB31F00717A59 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483411A199CB31F00717A59 /* GameObject.cpp */; };
 		1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1483411D199CB81E00717A59 /* GameObjectFactory.cpp */; };
 		14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14834120199CBBF400717A59 /* UnitFactory.cpp */; };
@@ -61,10 +59,20 @@
 		14AC7760196E4C7D005047F1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14AC775F196E4C7D005047F1 /* ImageIO.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		14AC7777196E5897005047F1 /* NendModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AC7775196E5897005047F1 /* NendModule.mm */; };
 		14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */ = {isa = PBXBuildFile; fileRef = 14AC7776196E5897005047F1 /* NendIconModule.mm */; };
-		14BF991819C087AF00949007 /* XTLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF991719C087AF00949007 /* XTLayer.cpp */; };
-		14BF991B19C0882300949007 /* UnicornGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF991919C0882300949007 /* UnicornGestureLayer.cpp */; };
-		14BF995D19C1C80100949007 /* CustomScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14BF995C19C1C80100949007 /* CustomScrollView.cpp */; };
 		14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */; };
+		14E1922A19ECB15700A32281 /* AppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921019ECB15700A32281 /* AppManager.cpp */; };
+		14E1922B19ECB15700A32281 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921219ECB15700A32281 /* AudioManager.cpp */; };
+		14E1922C19ECB15700A32281 /* custommenusprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921419ECB15700A32281 /* custommenusprite.cpp */; };
+		14E1922D19ECB15700A32281 /* CustomScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921619ECB15700A32281 /* CustomScrollView.cpp */; };
+		14E1922E19ECB15700A32281 /* UCAnimation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921819ECB15700A32281 /* UCAnimation.cpp */; };
+		14E1922F19ECB15700A32281 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921A19ECB15700A32281 /* UCGestureLayer.cpp */; };
+		14E1923019ECB15700A32281 /* UCMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921C19ECB15700A32281 /* UCMenuSprite.cpp */; };
+		14E1923119ECB15700A32281 /* UCPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1921E19ECB15700A32281 /* UCPlistLoader.cpp */; };
+		14E1923219ECB15700A32281 /* UCScrollableMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1922019ECB15700A32281 /* UCScrollableMenu.cpp */; };
+		14E1923319ECB15700A32281 /* UCScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1922219ECB15700A32281 /* UCScrollView.cpp */; };
+		14E1923419ECB15700A32281 /* UserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1922419ECB15700A32281 /* UserData.cpp */; };
+		14E1923519ECB15700A32281 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1922619ECB15700A32281 /* Utility.cpp */; };
+		14E1923619ECB15700A32281 /* XTLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14E1922819ECB15700A32281 /* XTLayer.cpp */; };
 		14ED3CC019A1DB37002D5CF0 /* FieldObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */; };
 		14ED3CCA19A1F230002D5CF0 /* UnitField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CC819A1F230002D5CF0 /* UnitField.cpp */; };
 		14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14ED3CD119A22360002D5CF0 /* Subject.cpp */; };
@@ -122,10 +130,6 @@
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
-		F80C8FE619BB07090076909B /* UnicornMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */; };
-		F80C8FEF19BB1A530076909B /* UnicornScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FED19BB1A530076909B /* UnicornScrollView.cpp */; };
-		F80C8FF219BB53100076909B /* custommenusprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FF019BB53100076909B /* custommenusprite.cpp */; };
-		F80C8FFB19BC24720076909B /* UnicornScrollableMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */; };
 		F8E592DF199E657300306809 /* UnitCage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592DD199E657300306809 /* UnitCage.cpp */; };
 		F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F1199F20DE00306809 /* BossDataDisplay.cpp */; };
 		F8E592F6199F262200306809 /* GameConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8E592F4199F262200306809 /* GameConfig.cpp */; };
@@ -135,10 +139,6 @@
 		F8F56D7D197104250011EE0C /* resources-small in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D79197104250011EE0C /* resources-small */; };
 		F8F56D7E197104250011EE0C /* resources-xlarge in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D7A197104250011EE0C /* resources-xlarge */; };
 		F8F56D80197104330011EE0C /* ccbResources in Resources */ = {isa = PBXBuildFile; fileRef = F8F56D7F197104330011EE0C /* ccbResources */; };
-		F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D8B1971183B0011EE0C /* AppManager.cpp */; };
-		F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D8E19711AFA0011EE0C /* AudioManager.cpp */; };
-		F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9019711AFA0011EE0C /* UserData.cpp */; };
-		F8F56D9619711AFA0011EE0C /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F56D9219711AFA0011EE0C /* Utility.cpp */; };
 		F8F87EBD19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F8F87EBB19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp */; };
 /* End PBXBuildFile section */
 
@@ -318,8 +318,6 @@
 		14151C35199DB8BC0097B3A1 /* ObjectDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectDataFactory.h; path = ../Classes/ObjectDataFactory.h; sourceTree = "<group>"; };
 		1418415219AB5E5600338672 /* Scroll.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Scroll.ccbi; sourceTree = "<group>"; };
 		1434B81619C862D7008F6056 /* revelReleaseList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = revelReleaseList.plist; sourceTree = "<group>"; };
-		1434B81E19C8689D008F6056 /* UnicornPlistLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornPlistLoader.cpp; sourceTree = "<group>"; };
-		1434B81F19C8689D008F6056 /* UnicornPlistLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornPlistLoader.h; sourceTree = "<group>"; };
 		1434B82119C87120008F6056 /* ComponentCreator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ComponentCreator.cpp; path = ../Classes/ComponentCreator.cpp; sourceTree = "<group>"; };
 		1434B82219C87120008F6056 /* ComponentCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComponentCreator.h; path = ../Classes/ComponentCreator.h; sourceTree = "<group>"; };
 		143C5C3C199E25A10041FFEB /* BossDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BossDataFactory.cpp; path = ../Classes/BossDataFactory.cpp; sourceTree = "<group>"; };
@@ -354,8 +352,6 @@
 		145F0D94199DDD830063F8FB /* UnitData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitData.h; path = ../Classes/UnitData.h; sourceTree = "<group>"; };
 		145F0D96199DDEA00063F8FB /* UnitDataFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitDataFactory.cpp; path = ../Classes/UnitDataFactory.cpp; sourceTree = "<group>"; };
 		145F0D97199DDEA00063F8FB /* UnitDataFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitDataFactory.h; path = ../Classes/UnitDataFactory.h; sourceTree = "<group>"; };
-		147947BE1998990D00649875 /* UCAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCAnimation.cpp; sourceTree = "<group>"; };
-		147947BF1998990D00649875 /* UCAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCAnimation.h; sourceTree = "<group>"; };
 		1483411A199CB31F00717A59 /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../Classes/GameObject.cpp; sourceTree = "<group>"; };
 		1483411B199CB31F00717A59 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameObject.h; path = ../Classes/GameObject.h; sourceTree = "<group>"; };
 		1483411D199CB81E00717A59 /* GameObjectFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObjectFactory.cpp; path = ../Classes/GameObjectFactory.cpp; sourceTree = "<group>"; };
@@ -407,14 +403,35 @@
 		14AC775F196E4C7D005047F1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		14AC7775196E5897005047F1 /* NendModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NendModule.mm; path = ios/NendModule.mm; sourceTree = SOURCE_ROOT; };
 		14AC7776196E5897005047F1 /* NendIconModule.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NendIconModule.mm; path = ios/NendIconModule.mm; sourceTree = SOURCE_ROOT; };
-		14BF991619C087AF00949007 /* XTLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLayer.h; sourceTree = "<group>"; };
-		14BF991719C087AF00949007 /* XTLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTLayer.cpp; sourceTree = "<group>"; };
-		14BF991919C0882300949007 /* UnicornGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornGestureLayer.cpp; sourceTree = "<group>"; };
-		14BF991A19C0882300949007 /* UnicornGestureLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornGestureLayer.h; sourceTree = "<group>"; };
-		14BF995B19C1C80100949007 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
-		14BF995C19C1C80100949007 /* CustomScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomScrollView.cpp; sourceTree = "<group>"; };
 		14DADDDA193F27AB0026DEE0 /* GLES-Render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GLES-Render.h"; path = "../Classes/GLES-Render.h"; sourceTree = "<group>"; };
 		14DADDDB193F27AB0026DEE0 /* GLES-Render.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "GLES-Render.cpp"; path = "../Classes/GLES-Render.cpp"; sourceTree = "<group>"; };
+		14E1920F19ECB15700A32281 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
+		14E1921019ECB15700A32281 /* AppManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppManager.cpp; sourceTree = "<group>"; };
+		14E1921119ECB15700A32281 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		14E1921219ECB15700A32281 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
+		14E1921319ECB15700A32281 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
+		14E1921419ECB15700A32281 /* custommenusprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = custommenusprite.cpp; sourceTree = "<group>"; };
+		14E1921519ECB15700A32281 /* custommenusprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = custommenusprite.h; sourceTree = "<group>"; };
+		14E1921619ECB15700A32281 /* CustomScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CustomScrollView.cpp; sourceTree = "<group>"; };
+		14E1921719ECB15700A32281 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
+		14E1921819ECB15700A32281 /* UCAnimation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCAnimation.cpp; sourceTree = "<group>"; };
+		14E1921919ECB15700A32281 /* UCAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCAnimation.h; sourceTree = "<group>"; };
+		14E1921A19ECB15700A32281 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
+		14E1921B19ECB15700A32281 /* UCGestureLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCGestureLayer.h; sourceTree = "<group>"; };
+		14E1921C19ECB15700A32281 /* UCMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCMenuSprite.cpp; sourceTree = "<group>"; };
+		14E1921D19ECB15700A32281 /* UCMenuSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCMenuSprite.h; sourceTree = "<group>"; };
+		14E1921E19ECB15700A32281 /* UCPlistLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCPlistLoader.cpp; sourceTree = "<group>"; };
+		14E1921F19ECB15700A32281 /* UCPlistLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCPlistLoader.h; sourceTree = "<group>"; };
+		14E1922019ECB15700A32281 /* UCScrollableMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCScrollableMenu.cpp; sourceTree = "<group>"; };
+		14E1922119ECB15700A32281 /* UCScrollableMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCScrollableMenu.h; sourceTree = "<group>"; };
+		14E1922219ECB15700A32281 /* UCScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCScrollView.cpp; sourceTree = "<group>"; };
+		14E1922319ECB15700A32281 /* UCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCScrollView.h; sourceTree = "<group>"; };
+		14E1922419ECB15700A32281 /* UserData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserData.cpp; sourceTree = "<group>"; };
+		14E1922519ECB15700A32281 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		14E1922619ECB15700A32281 /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		14E1922719ECB15700A32281 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		14E1922819ECB15700A32281 /* XTLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTLayer.cpp; sourceTree = "<group>"; };
+		14E1922919ECB15700A32281 /* XTLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLayer.h; sourceTree = "<group>"; };
 		14ED3CBE19A1DB37002D5CF0 /* FieldObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FieldObject.cpp; path = ../Classes/FieldObject.cpp; sourceTree = "<group>"; };
 		14ED3CBF19A1DB37002D5CF0 /* FieldObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FieldObject.h; path = ../Classes/FieldObject.h; sourceTree = "<group>"; };
 		14ED3CC819A1F230002D5CF0 /* UnitField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitField.cpp; path = ../Classes/UnitField.cpp; sourceTree = "<group>"; };
@@ -466,14 +483,6 @@
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornMenuSprite.cpp; sourceTree = "<group>"; };
-		F80C8FE519BB07090076909B /* UnicornMenuSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornMenuSprite.h; sourceTree = "<group>"; };
-		F80C8FED19BB1A530076909B /* UnicornScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornScrollView.cpp; sourceTree = "<group>"; };
-		F80C8FEE19BB1A530076909B /* UnicornScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornScrollView.h; sourceTree = "<group>"; };
-		F80C8FF019BB53100076909B /* custommenusprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = custommenusprite.cpp; sourceTree = "<group>"; };
-		F80C8FF119BB53100076909B /* custommenusprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = custommenusprite.h; sourceTree = "<group>"; };
-		F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UnicornScrollableMenu.cpp; sourceTree = "<group>"; };
-		F80C8FFA19BC24720076909B /* UnicornScrollableMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnicornScrollableMenu.h; sourceTree = "<group>"; };
 		F8E592D5199E642000306809 /* Iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Iterator.h; path = ../Classes/Iterator.h; sourceTree = "<group>"; };
 		F8E592DD199E657300306809 /* UnitCage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitCage.cpp; path = ../Classes/UnitCage.cpp; sourceTree = "<group>"; };
 		F8E592DE199E657300306809 /* UnitCage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitCage.h; path = ../Classes/UnitCage.h; sourceTree = "<group>"; };
@@ -491,15 +500,6 @@
 		F8F56D79197104250011EE0C /* resources-small */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-small"; sourceTree = "<group>"; };
 		F8F56D7A197104250011EE0C /* resources-xlarge */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-xlarge"; sourceTree = "<group>"; };
 		F8F56D7F197104330011EE0C /* ccbResources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ccbResources; sourceTree = "<group>"; };
-		F8F56D8A1971180A0011EE0C /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
-		F8F56D8B1971183B0011EE0C /* AppManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppManager.cpp; sourceTree = "<group>"; };
-		F8F56D8C1971183B0011EE0C /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
-		F8F56D8E19711AFA0011EE0C /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
-		F8F56D8F19711AFA0011EE0C /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
-		F8F56D9019711AFA0011EE0C /* UserData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserData.cpp; sourceTree = "<group>"; };
-		F8F56D9119711AFA0011EE0C /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
-		F8F56D9219711AFA0011EE0C /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
-		F8F56D9319711AFA0011EE0C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		F8F87EBB19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnitNodeCriticalDecorator.cpp; path = ../Classes/UnitNodeCriticalDecorator.cpp; sourceTree = "<group>"; };
 		F8F87EBC19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnitNodeCriticalDecorator.h; path = ../Classes/UnitNodeCriticalDecorator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -732,6 +732,41 @@
 			path = "../library/NendSDK_iOS-2.4.0/Nend/NendAd";
 			sourceTree = "<group>";
 		};
+		14E1920E19ECB15700A32281 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				14E1920F19ECB15700A32281 /* AppMacros.h */,
+				14E1921019ECB15700A32281 /* AppManager.cpp */,
+				14E1921119ECB15700A32281 /* AppManager.h */,
+				14E1921219ECB15700A32281 /* AudioManager.cpp */,
+				14E1921319ECB15700A32281 /* AudioManager.h */,
+				14E1921419ECB15700A32281 /* custommenusprite.cpp */,
+				14E1921519ECB15700A32281 /* custommenusprite.h */,
+				14E1921619ECB15700A32281 /* CustomScrollView.cpp */,
+				14E1921719ECB15700A32281 /* CustomScrollView.h */,
+				14E1921819ECB15700A32281 /* UCAnimation.cpp */,
+				14E1921919ECB15700A32281 /* UCAnimation.h */,
+				14E1921A19ECB15700A32281 /* UCGestureLayer.cpp */,
+				14E1921B19ECB15700A32281 /* UCGestureLayer.h */,
+				14E1921C19ECB15700A32281 /* UCMenuSprite.cpp */,
+				14E1921D19ECB15700A32281 /* UCMenuSprite.h */,
+				14E1921E19ECB15700A32281 /* UCPlistLoader.cpp */,
+				14E1921F19ECB15700A32281 /* UCPlistLoader.h */,
+				14E1922019ECB15700A32281 /* UCScrollableMenu.cpp */,
+				14E1922119ECB15700A32281 /* UCScrollableMenu.h */,
+				14E1922219ECB15700A32281 /* UCScrollView.cpp */,
+				14E1922319ECB15700A32281 /* UCScrollView.h */,
+				14E1922419ECB15700A32281 /* UserData.cpp */,
+				14E1922519ECB15700A32281 /* UserData.h */,
+				14E1922619ECB15700A32281 /* Utility.cpp */,
+				14E1922719ECB15700A32281 /* Utility.h */,
+				14E1922819ECB15700A32281 /* XTLayer.cpp */,
+				14E1922919ECB15700A32281 /* XTLayer.h */,
+			);
+			name = Engine;
+			path = ../Engine;
+			sourceTree = "<group>";
+		};
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -789,7 +824,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF4C2BB17865D9500122817 /* cocos2d_libs.xcodeproj */,
-				F8F56D891971180A0011EE0C /* UnicornEngine */,
+				14E1920E19ECB15700A32281 /* Engine */,
 				14AC774C196E4C2B005047F1 /* NendAd */,
 				15AA9C4015B7EC450033D6C2 /* Classes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -895,41 +930,6 @@
 			);
 			name = Resources;
 			path = ../Resources;
-			sourceTree = "<group>";
-		};
-		F8F56D891971180A0011EE0C /* UnicornEngine */ = {
-			isa = PBXGroup;
-			children = (
-				14BF995B19C1C80100949007 /* CustomScrollView.h */,
-				14BF995C19C1C80100949007 /* CustomScrollView.cpp */,
-				14BF991619C087AF00949007 /* XTLayer.h */,
-				14BF991719C087AF00949007 /* XTLayer.cpp */,
-				F8F56D8E19711AFA0011EE0C /* AudioManager.cpp */,
-				F8F56D8F19711AFA0011EE0C /* AudioManager.h */,
-				F8F56D9019711AFA0011EE0C /* UserData.cpp */,
-				F8F56D9119711AFA0011EE0C /* UserData.h */,
-				F8F56D9219711AFA0011EE0C /* Utility.cpp */,
-				F8F56D9319711AFA0011EE0C /* Utility.h */,
-				F8F56D8A1971180A0011EE0C /* AppMacros.h */,
-				F8F56D8B1971183B0011EE0C /* AppManager.cpp */,
-				F8F56D8C1971183B0011EE0C /* AppManager.h */,
-				147947BE1998990D00649875 /* UCAnimation.cpp */,
-				147947BF1998990D00649875 /* UCAnimation.h */,
-				F80C8FE419BB07090076909B /* UnicornMenuSprite.cpp */,
-				F80C8FE519BB07090076909B /* UnicornMenuSprite.h */,
-				F80C8FED19BB1A530076909B /* UnicornScrollView.cpp */,
-				F80C8FEE19BB1A530076909B /* UnicornScrollView.h */,
-				F80C8FF019BB53100076909B /* custommenusprite.cpp */,
-				F80C8FF119BB53100076909B /* custommenusprite.h */,
-				F80C8FF919BC24720076909B /* UnicornScrollableMenu.cpp */,
-				F80C8FFA19BC24720076909B /* UnicornScrollableMenu.h */,
-				14BF991919C0882300949007 /* UnicornGestureLayer.cpp */,
-				14BF991A19C0882300949007 /* UnicornGestureLayer.h */,
-				1434B81E19C8689D008F6056 /* UnicornPlistLoader.cpp */,
-				1434B81F19C8689D008F6056 /* UnicornPlistLoader.h */,
-			);
-			name = UnicornEngine;
-			path = ../UnicornEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1174,60 +1174,60 @@
 			buildActionMask = 2147483647;
 			files = (
 				14834143199CD05700717A59 /* Boss.cpp in Sources */,
-				14BF991819C087AF00949007 /* XTLayer.cpp in Sources */,
+				14E1922D19ECB15700A32281 /* CustomScrollView.cpp in Sources */,
 				14ED3CC019A1DB37002D5CF0 /* FieldObject.cpp in Sources */,
-				F8F56D9619711AFA0011EE0C /* Utility.cpp in Sources */,
 				1483411F199CB81E00717A59 /* GameObjectFactory.cpp in Sources */,
 				14DADDDE193F27AB0026DEE0 /* GLES-Render.cpp in Sources */,
 				1483411C199CB31F00717A59 /* GameObject.cpp in Sources */,
 				14834134199CC58600717A59 /* Test.cpp in Sources */,
-				14BF995D19C1C80100949007 /* CustomScrollView.cpp in Sources */,
 				143C5C4A199E2AED0041FFEB /* ItemDataFactory.cpp in Sources */,
 				14AC7777196E5897005047F1 /* NendModule.mm in Sources */,
 				14A6B95C19A720CD00FBD3C9 /* RandomBossFactory.cpp in Sources */,
 				145F0D8C199DCF930063F8FB /* ObjectData.cpp in Sources */,
 				14A6B96019A74E7500FBD3C9 /* CriticalSubjectNode.cpp in Sources */,
 				F8E592F3199F20DE00306809 /* BossDataDisplay.cpp in Sources */,
+				14E1922A19ECB15700A32281 /* AppManager.cpp in Sources */,
 				14ED3CD219A22360002D5CF0 /* Subject.cpp in Sources */,
-				F80C8FE619BB07090076909B /* UnicornMenuSprite.cpp in Sources */,
 				143C5C47199E26650041FFEB /* BossData.cpp in Sources */,
+				14E1923219ECB15700A32281 /* UCScrollableMenu.cpp in Sources */,
 				1483414F199CE46400717A59 /* BaseObject.cpp in Sources */,
-				F8F56D9519711AFA0011EE0C /* UserData.cpp in Sources */,
+				14E1922C19ECB15700A32281 /* custommenusprite.cpp in Sources */,
 				1483412E199CC05300717A59 /* MagicFactory.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1434B82319C87120008F6056 /* ComponentCreator.cpp in Sources */,
+				14E1922B19ECB15700A32281 /* AudioManager.cpp in Sources */,
 				145F0D98199DDEA00063F8FB /* UnitDataFactory.cpp in Sources */,
 				14834125199CBCCF00717A59 /* Unit.cpp in Sources */,
+				14E1922F19ECB15700A32281 /* UCGestureLayer.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				143C5C53199E31E70041FFEB /* MagicDataFactory.cpp in Sources */,
-				F8F56D9419711AFA0011EE0C /* AudioManager.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				F80C8FEF19BB1A530076909B /* UnicornScrollView.cpp in Sources */,
 				14ED3CCA19A1F230002D5CF0 /* UnitField.cpp in Sources */,
 				14151C36199DB8BC0097B3A1 /* ObjectDataFactory.cpp in Sources */,
 				14834140199CCF4C00717A59 /* BossFactory.cpp in Sources */,
 				1483412B199CBF3000717A59 /* Item.cpp in Sources */,
 				143C5C50199E2C6F0041FFEB /* MagicData.cpp in Sources */,
+				14E1923419ECB15700A32281 /* UserData.cpp in Sources */,
 				145D32121907B8130067B357 /* MainScene.cpp in Sources */,
 				145D32101907B8130067B357 /* OpeningLayer.cpp in Sources */,
 				14A6B95919A700EA00FBD3C9 /* UserDataDisplay.cpp in Sources */,
 				F8E592FF19A069ED00306809 /* UnitNode.cpp in Sources */,
 				14834146199CD22900717A59 /* BattleController.cpp in Sources */,
-				F8F56D8D1971183B0011EE0C /* AppManager.cpp in Sources */,
 				14834131199CC12800717A59 /* Magic.cpp in Sources */,
+				14E1923019ECB15700A32281 /* UCMenuSprite.cpp in Sources */,
+				14E1923519ECB15700A32281 /* Utility.cpp in Sources */,
 				1483414C199CDF3100717A59 /* User.cpp in Sources */,
 				F8E592DF199E657300306809 /* UnitCage.cpp in Sources */,
-				1434B82019C8689D008F6056 /* UnicornPlistLoader.cpp in Sources */,
 				143C5C3E199E25A10041FFEB /* BossDataFactory.cpp in Sources */,
-				F80C8FF219BB53100076909B /* custommenusprite.cpp in Sources */,
 				14834128199CBE6D00717A59 /* ItemFactory.cpp in Sources */,
 				145F0D95199DDD830063F8FB /* UnitData.cpp in Sources */,
-				F80C8FFB19BC24720076909B /* UnicornScrollableMenu.cpp in Sources */,
 				143C5C4D199E2BEF0041FFEB /* ItemData.cpp in Sources */,
-				147947C01998990D00649875 /* UCAnimation.cpp in Sources */,
-				14BF991B19C0882300949007 /* UnicornGestureLayer.cpp in Sources */,
+				14E1923619ECB15700A32281 /* XTLayer.cpp in Sources */,
+				14E1922E19ECB15700A32281 /* UCAnimation.cpp in Sources */,
+				14E1923119ECB15700A32281 /* UCPlistLoader.cpp in Sources */,
 				14834149199CD6D200717A59 /* Field.cpp in Sources */,
+				14E1923319ECB15700A32281 /* UCScrollView.cpp in Sources */,
 				14834122199CBBF400717A59 /* UnitFactory.cpp in Sources */,
 				14AC7778196E5897005047F1 /* NendIconModule.mm in Sources */,
 				F8F87EBD19A8BBAC00BF47FD /* UnitNodeCriticalDecorator.cpp in Sources */,
@@ -1316,7 +1316,7 @@
 					CC_TARGET_OS_IPHONE,
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_BOX2D_INTEGRATION=1",
-					UNICORN_DEBUG,
+					UC_DEBUG,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1332,7 +1332,7 @@
 					"$(SRCROOT)/../../../cocos2dx/platform/ios",
 					"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation",
 					"$(SRCROOT)/../../../external/Box2D",
-					"$(SRCROOT)/../UnicornEngine",
+					"$(SRCROOT)/../Engine",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
@@ -1378,7 +1378,7 @@
 					"$(SRCROOT)/../../../cocos2dx/platform/ios",
 					"$(SRCROOT)/../../../cocos2dx/platform/ios/Simulation",
 					"$(SRCROOT)/../../../external/Box2D",
-					"$(SRCROOT)/../UnicornEngine",
+					"$(SRCROOT)/../Engine",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;

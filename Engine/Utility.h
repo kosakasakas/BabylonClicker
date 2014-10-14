@@ -1,13 +1,13 @@
 //
 //  Utility.h
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by Takahiro Kosaka on 2014/04/23.
 //
 //
 
-#ifndef __UnicornEngine__Utility__
-#define __UnicornEngine__Utility__
+#ifndef __UCEngine__Utility__
+#define __UCEngine__Utility__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -24,4 +24,4 @@ public:
     static const char* getStrFromFloatInt(int val);
 };
 
-#endif /* defined(__UnicornEngine__Utility__) */
+#endif /* defined(__UCEngine__Utility__) */

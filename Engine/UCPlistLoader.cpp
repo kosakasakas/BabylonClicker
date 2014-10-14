@@ -1,25 +1,25 @@
 //
-//  UnicornPlistLoader.cpp
+//  UCPlistLoader.cpp
 //  BabylonClicker
 //
 //  Created by Takahiro Kosaka on 2014/09/16.
 //
 //
 
-#include "UnicornPlistLoader.h"
+#include "UCPlistLoader.h"
 
-UnicornPlistLoader::UnicornPlistLoader(const char* filePath)
+UCPlistLoader::UCPlistLoader(const char* filePath)
 {
     dictionary = Dictionary::createWithContentsOfFile(filePath);
 }
 
-UnicornPlistLoader::~UnicornPlistLoader()
+UCPlistLoader::~UCPlistLoader()
 {
     dictionary->release();
 }
 
-void UnicornPlistLoader::dump() const {
-    CCLOG("======UnicornPlistLoader::dump()======");
+void UCPlistLoader::dump() const {
+    CCLOG("======UCPlistLoader::dump()======");
     if (dictionary != NULL) {
         CCLOG("property num: %d", getPropertyNum());
         CCLOG("object num: %d", getObjectNum());
@@ -47,8 +47,8 @@ void UnicornPlistLoader::dump() const {
     CCLOG("dump ended.");
 }
 
-void UnicornPlistLoader::dumpPropertyValueAtIndex(int index) const {
-    CCLOG("UnicornPlistLoader::dumpPropertyValueAtIndex: %d", index);
+void UCPlistLoader::dumpPropertyValueAtIndex(int index) const {
+    CCLOG("UCPlistLoader::dumpPropertyValueAtIndex: %d", index);
     if(0 > index || index > getObjectNum()) {
         CCLOG("index over flow..");
         return;
@@ -66,7 +66,7 @@ void UnicornPlistLoader::dumpPropertyValueAtIndex(int index) const {
     CCLOG("dump ended.");
 }
 
-int UnicornPlistLoader::getPropertyNum() const {
+int UCPlistLoader::getPropertyNum() const {
     Array* array = getPropertyArray();
     if (array != NULL) {
         return array->count();
@@ -75,7 +75,7 @@ int UnicornPlistLoader::getPropertyNum() const {
     }
 }
 
-int UnicornPlistLoader::getObjectNum() const {
+int UCPlistLoader::getObjectNum() const {
     if (dictionary != NULL) {
         Array* property = getPropertyArray();
         if(property != NULL) {
@@ -89,7 +89,7 @@ int UnicornPlistLoader::getObjectNum() const {
     return 0;
 }
 
-Array* UnicornPlistLoader::getPropertyArray() const {
+Array* UCPlistLoader::getPropertyArray() const {
     if (dictionary != NULL) {
         return dictionary->allKeys();
     } else {
@@ -97,7 +97,7 @@ Array* UnicornPlistLoader::getPropertyArray() const {
     }
 }
 
-Dictionary* UnicornPlistLoader::getPropertyValueAtIndex(int index) const {
+Dictionary* UCPlistLoader::getPropertyValueAtIndex(int index) const {
     if(0 > index || index > getObjectNum()) {
         return NULL;
     }
@@ -118,15 +118,15 @@ Dictionary* UnicornPlistLoader::getPropertyValueAtIndex(int index) const {
     return result;
 }
 
-int UnicornPlistLoader::getInt(Dictionary* dic, const char* key) {
+int UCPlistLoader::getInt(Dictionary* dic, const char* key) {
     String* val = dynamic_cast<String*>(dic->objectForKey(key));
     return val->intValue();
 }
-const char* UnicornPlistLoader::getChar(Dictionary* dic, const char* key) {
+const char* UCPlistLoader::getChar(Dictionary* dic, const char* key) {
     String* val = dynamic_cast<String*>(dic->objectForKey(key));
     return val->getCString();
 }
-float UnicornPlistLoader::getFloat(Dictionary* dic, const char* key) {
+float UCPlistLoader::getFloat(Dictionary* dic, const char* key) {
     String* val = dynamic_cast<String*>(dic->objectForKey(key));
     return val->floatValue();
 }

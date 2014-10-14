@@ -1,22 +1,22 @@
 //
-//  UnicornPlistLoader.h
+//  UCPlistLoader.h
 //  BabylonClicker
 //
 //  Created by Takahiro Kosaka on 2014/09/16.
 //
 //
 
-#ifndef __BabylonClicker__UnicornPlistLoader__
-#define __BabylonClicker__UnicornPlistLoader__
+#ifndef __BabylonClicker__UCPlistLoader__
+#define __BabylonClicker__UCPlistLoader__
 
 #include "cocos2d.h"
 
 USING_NS_CC;
 
-class UnicornPlistLoader {
+class UCPlistLoader {
 public:
-    UnicornPlistLoader(const char* filePath);
-    virtual ~UnicornPlistLoader();
+    UCPlistLoader(const char* filePath);
+    virtual ~UCPlistLoader();
     Dictionary* getPropertyValueAtIndex(int index) const;
     int getObjectNum() const;
     int getPropertyNum() const;
@@ -29,4 +29,4 @@ public:
     static float getFloat(Dictionary* dic, const char* key);
 };
 
-#endif /* defined(__BabylonClicker__UnicornPlistLoader__) */
+#endif /* defined(__BabylonClicker__UCPlistLoader__) */

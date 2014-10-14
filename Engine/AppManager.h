@@ -1,13 +1,13 @@
 //
 //  AppManager.h
-//  UnicornEngine
+//  UCEngine
 //
 //  Created by 小坂 昂大 on 2014/07/12.
 //
 //
 
-#ifndef __UnicornEngine__AppManager__
-#define __UnicornEngine__AppManager__
+#ifndef __UCEngine__AppManager__
+#define __UCEngine__AppManager__
 
 #include <iostream>
 #include "cocos2d.h"
@@ -30,4 +30,4 @@ public:
     CC_SYNTHESIZE_READONLY(Resource*, _resource, Resource);
 };
 
-#endif /* defined(__UnicornEngine__AppManager__) */
+#endif /* defined(__UCEngine__AppManager__) */
