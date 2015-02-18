@@ -19,6 +19,9 @@
 		14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB91A942DCC004DAAB7 /* AppManager.cpp */; };
 		14982FD11A942DCC004DAAB7 /* UserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBB1A942DCC004DAAB7 /* UserData.cpp */; };
 		14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBD1A942DCC004DAAB7 /* Utility.cpp */; };
+		14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */; };
+		14982FD81A94AB3B004DAAB7 /* FactoryBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD61A94AB3B004DAAB7 /* FactoryBridge.cpp */; };
+		14982FDA1A94BA0F004DAAB7 /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* test.plist */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -136,6 +139,11 @@
 		14982FBC1A942DCC004DAAB7 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		14982FBD1A942DCC004DAAB7 /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
 		14982FBE1A942DCC004DAAB7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeFactory.cpp; sourceTree = "<group>"; };
+		14982FD41A9463F8004DAAB7 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
+		14982FD61A94AB3B004DAAB7 /* FactoryBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FactoryBridge.cpp; sourceTree = "<group>"; };
+		14982FD71A94AB3B004DAAB7 /* FactoryBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactoryBridge.h; sourceTree = "<group>"; };
+		14982FD91A94BA0F004DAAB7 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -286,6 +294,8 @@
 		14982F931A942DCC004DAAB7 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */,
+				14982FD41A9463F8004DAAB7 /* NodeFactory.h */,
 				14982F941A942DCC004DAAB7 /* BaseObject.cpp */,
 				14982F951A942DCC004DAAB7 /* BaseObject.h */,
 			);
@@ -342,6 +352,8 @@
 				14982FBC1A942DCC004DAAB7 /* UserData.h */,
 				14982FBD1A942DCC004DAAB7 /* Utility.cpp */,
 				14982FBE1A942DCC004DAAB7 /* Utility.h */,
+				14982FD61A94AB3B004DAAB7 /* FactoryBridge.cpp */,
+				14982FD71A94AB3B004DAAB7 /* FactoryBridge.h */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -410,6 +422,7 @@
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				14982FD91A94BA0F004DAAB7 /* test.plist */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -589,6 +602,7 @@
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				14982FDA1A94BA0F004DAAB7 /* test.plist in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
@@ -625,8 +639,10 @@
 			files = (
 				14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */,
 				14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */,
+				14982FD81A94AB3B004DAAB7 /* FactoryBridge.cpp in Sources */,
 				14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */,
 				14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */,
