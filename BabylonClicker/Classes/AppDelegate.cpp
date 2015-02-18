@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "littlePony.h"
 
 USING_NS_CC;
 
@@ -34,11 +35,22 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // turn on display FPS
     director->setDisplayStats(true);
 
+    // set up multi resolution
+    const Resource* res = AppManager::getInstance()->getResource();
+    std::vector<std::string> searchPath;
+    searchPath.push_back(res->directory);
+    FileUtils::getInstance()->setSearchResolutionsOrder(searchPath);
+    glview->setDesignResolutionSize(res->size.width, res->size.height, res->policy);
+    director->setContentScaleFactor(res->scaleFactor);
+    
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
     auto scene = HelloWorld::createScene();
+    
+    // create opening layer
+    
 
     // run
     director->runWithScene(scene);

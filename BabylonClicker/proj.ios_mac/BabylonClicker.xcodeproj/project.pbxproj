@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F911A942DCC004DAAB7 /* AudioManager.cpp */; };
+		14982FC01A942DCC004DAAB7 /* BaseObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F941A942DCC004DAAB7 /* BaseObject.cpp */; };
+		14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */; };
+		14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */; };
+		14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */; };
+		14982FCC1A942DCC004DAAB7 /* custommenusprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FAF1A942DCC004DAAB7 /* custommenusprite.cpp */; };
+		14982FCD1A942DCC004DAAB7 /* XTLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB21A942DCC004DAAB7 /* XTLayer.cpp */; };
+		14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB41A942DCC004DAAB7 /* littlePony.cpp */; };
+		14982FCF1A942DCC004DAAB7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB61A942DCC004DAAB7 /* README.md */; };
+		14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB91A942DCC004DAAB7 /* AppManager.cpp */; };
+		14982FD11A942DCC004DAAB7 /* UserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBB1A942DCC004DAAB7 /* UserData.cpp */; };
+		14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBD1A942DCC004DAAB7 /* Utility.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -100,6 +112,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14982F911A942DCC004DAAB7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
+		14982F921A942DCC004DAAB7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
+		14982F941A942DCC004DAAB7 /* BaseObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseObject.cpp; sourceTree = "<group>"; };
+		14982F951A942DCC004DAAB7 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
+		14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
+		14982FA41A942DCC004DAAB7 /* UCGestureLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCGestureLayer.h; sourceTree = "<group>"; };
+		14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCMenuSprite.cpp; sourceTree = "<group>"; };
+		14982FA61A942DCC004DAAB7 /* UCMenuSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCMenuSprite.h; sourceTree = "<group>"; };
+		14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCPlistLoader.cpp; sourceTree = "<group>"; };
+		14982FA81A942DCC004DAAB7 /* UCPlistLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCPlistLoader.h; sourceTree = "<group>"; };
+		14982FAF1A942DCC004DAAB7 /* custommenusprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = custommenusprite.cpp; sourceTree = "<group>"; };
+		14982FB01A942DCC004DAAB7 /* custommenusprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = custommenusprite.h; sourceTree = "<group>"; };
+		14982FB21A942DCC004DAAB7 /* XTLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTLayer.cpp; sourceTree = "<group>"; };
+		14982FB31A942DCC004DAAB7 /* XTLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLayer.h; sourceTree = "<group>"; };
+		14982FB41A942DCC004DAAB7 /* littlePony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = littlePony.cpp; sourceTree = "<group>"; };
+		14982FB51A942DCC004DAAB7 /* littlePony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = littlePony.h; sourceTree = "<group>"; };
+		14982FB61A942DCC004DAAB7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		14982FB81A942DCC004DAAB7 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
+		14982FB91A942DCC004DAAB7 /* AppManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppManager.cpp; sourceTree = "<group>"; };
+		14982FBA1A942DCC004DAAB7 /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		14982FBB1A942DCC004DAAB7 /* UserData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserData.cpp; sourceTree = "<group>"; };
+		14982FBC1A942DCC004DAAB7 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		14982FBD1A942DCC004DAAB7 /* Utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utility.cpp; sourceTree = "<group>"; };
+		14982FBE1A942DCC004DAAB7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -214,6 +250,102 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		14982F561A9423E5004DAAB7 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				14982F8F1A942DCC004DAAB7 /* littlePonyEngine */,
+			);
+			name = library;
+			sourceTree = "<group>";
+		};
+		14982F8F1A942DCC004DAAB7 /* littlePonyEngine */ = {
+			isa = PBXGroup;
+			children = (
+				14982FB41A942DCC004DAAB7 /* littlePony.cpp */,
+				14982FB51A942DCC004DAAB7 /* littlePony.h */,
+				14982FB61A942DCC004DAAB7 /* README.md */,
+				14982F901A942DCC004DAAB7 /* audio */,
+				14982F931A942DCC004DAAB7 /* base */,
+				14982F9E1A942DCC004DAAB7 /* custom */,
+				14982FAD1A942DCC004DAAB7 /* external */,
+				14982FB71A942DCC004DAAB7 /* utility */,
+			);
+			name = littlePonyEngine;
+			path = ../../library/littlePonyEngine;
+			sourceTree = "<group>";
+		};
+		14982F901A942DCC004DAAB7 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				14982F911A942DCC004DAAB7 /* AudioManager.cpp */,
+				14982F921A942DCC004DAAB7 /* AudioManager.h */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		14982F931A942DCC004DAAB7 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				14982F941A942DCC004DAAB7 /* BaseObject.cpp */,
+				14982F951A942DCC004DAAB7 /* BaseObject.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		14982F9E1A942DCC004DAAB7 /* custom */ = {
+			isa = PBXGroup;
+			children = (
+				14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */,
+				14982FA41A942DCC004DAAB7 /* UCGestureLayer.h */,
+				14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */,
+				14982FA61A942DCC004DAAB7 /* UCMenuSprite.h */,
+				14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */,
+				14982FA81A942DCC004DAAB7 /* UCPlistLoader.h */,
+			);
+			path = custom;
+			sourceTree = "<group>";
+		};
+		14982FAD1A942DCC004DAAB7 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				14982FAE1A942DCC004DAAB7 /* custommenusprite */,
+				14982FB11A942DCC004DAAB7 /* XTLayer */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
+		14982FAE1A942DCC004DAAB7 /* custommenusprite */ = {
+			isa = PBXGroup;
+			children = (
+				14982FAF1A942DCC004DAAB7 /* custommenusprite.cpp */,
+				14982FB01A942DCC004DAAB7 /* custommenusprite.h */,
+			);
+			path = custommenusprite;
+			sourceTree = "<group>";
+		};
+		14982FB11A942DCC004DAAB7 /* XTLayer */ = {
+			isa = PBXGroup;
+			children = (
+				14982FB21A942DCC004DAAB7 /* XTLayer.cpp */,
+				14982FB31A942DCC004DAAB7 /* XTLayer.h */,
+			);
+			path = XTLayer;
+			sourceTree = "<group>";
+		};
+		14982FB71A942DCC004DAAB7 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				14982FB81A942DCC004DAAB7 /* AppMacros.h */,
+				14982FB91A942DCC004DAAB7 /* AppManager.cpp */,
+				14982FBA1A942DCC004DAAB7 /* AppManager.h */,
+				14982FBB1A942DCC004DAAB7 /* UserData.cpp */,
+				14982FBC1A942DCC004DAAB7 /* UserData.h */,
+				14982FBD1A942DCC004DAAB7 /* Utility.cpp */,
+				14982FBE1A942DCC004DAAB7 /* Utility.h */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +367,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				14982F561A9423E5004DAAB7 /* library */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -402,6 +535,9 @@
 				Japanese,
 				French,
 				German,
+				en,
+				Base,
+				"zh-Hans",
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -487,10 +623,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */,
+				14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */,
+				14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */,
+				14982FCC1A942DCC004DAAB7 /* custommenusprite.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				14982FC01A942DCC004DAAB7 /* BaseObject.cpp in Sources */,
+				14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */,
+				14982FCD1A942DCC004DAAB7 /* XTLayer.cpp in Sources */,
+				14982FCF1A942DCC004DAAB7 /* README.md in Sources */,
+				14982FD11A942DCC004DAAB7 /* UserData.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +675,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/facebook/proj.ios/sdk",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/facebookads/proj.ios",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -545,7 +698,164 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/win32/debug-lib",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/win32/release-lib",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp8/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/glfw3/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/glfw3/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/lua/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp8/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp8/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/gles/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/icon/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/MP3Decoder/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/OggDecoder/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/OpenalSoft/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/zlib/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/angle/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/angle/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/zlib/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/zlib/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/angle/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/angle/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/zlib/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/zlib/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/angle/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/angle/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/zlib/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/zlib/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/angle/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/angle/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/zlib/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/zlib/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/admob/proj.ios/Admob",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/flurry/proj.ios/FlurryAds",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/flurry/proj.ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/umeng/proj.ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/tools/bindings-generator/libclang",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/tools/fbx-conv/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/NendSDK_iOS-2.4.0/Nend/NendAd",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -563,6 +873,11 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/facebook/proj.ios/sdk",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/facebookads/proj.ios",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -579,7 +894,164 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/win32/debug-lib",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/win32/release-lib",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/chipmunk/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp8/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/curl/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/freetype2/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/glfw3/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/glfw3/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/jpeg/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/lua/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/lua/luajit/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/png/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp8/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/sqlite3/libraries/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp8/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp8/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/tiff/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/webp/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/android/armeabi",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/android/armeabi-v7a",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/android/x86",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/linux/32-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/linux/64-bit",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/winrt_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/winrt_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp8/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp8/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp_8.1/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/websockets/prebuilt/wp_8.1/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/gles/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/icon/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/MP3Decoder/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/OggDecoder/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/OpenalSoft/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/win32-specific/zlib/prebuilt",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/angle/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/angle/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/zlib/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt-specific/zlib/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/angle/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/angle/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/zlib/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/winrt_8.1-specific/zlib/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/angle/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/angle/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/zlib/prebuilt/ARM",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp8-specific/zlib/prebuilt/Win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/angle/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/angle/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/zlib/prebuilt/arm",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/external/wp_8.1-specific/zlib/prebuilt/win32",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/admob/proj.ios/Admob",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/flurry/proj.ios/FlurryAds",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/flurry/proj.ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/plugin/plugins/umeng/proj.ios",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/tools/bindings-generator/libclang",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/cocos2d-x-3.4/tools/fbx-conv/mac",
+					"/Users/takahiro.kosaka/git/kosakasakas/BabylonClicker/library/NendSDK_iOS-2.4.0/Nend/NendAd",
+				);
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
