@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F911A942DCC004DAAB7 /* AudioManager.cpp */; };
-		14982FC01A942DCC004DAAB7 /* BaseObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F941A942DCC004DAAB7 /* BaseObject.cpp */; };
 		14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */; };
 		14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */; };
 		14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */; };
@@ -20,8 +19,11 @@
 		14982FD11A942DCC004DAAB7 /* UserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBB1A942DCC004DAAB7 /* UserData.cpp */; };
 		14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBD1A942DCC004DAAB7 /* Utility.cpp */; };
 		14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */; };
-		14982FD81A94AB3B004DAAB7 /* FactoryBridge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD61A94AB3B004DAAB7 /* FactoryBridge.cpp */; };
+		14982FD81A94AB3B004DAAB7 /* AssetLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD61A94AB3B004DAAB7 /* AssetLoader.cpp */; };
 		14982FDA1A94BA0F004DAAB7 /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* test.plist */; };
+		14F5F6171A971D1F006A8651 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F5F6151A971D1F006A8651 /* Test.cpp */; };
+		14F5F6191A973415006A8651 /* uidef.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F5F6181A973415006A8651 /* uidef.plist */; };
+		14F5F61C1A973FC9006A8651 /* UIFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F5F61A1A973FC9006A8651 /* UIFactory.cpp */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -117,8 +119,6 @@
 /* Begin PBXFileReference section */
 		14982F911A942DCC004DAAB7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
 		14982F921A942DCC004DAAB7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
-		14982F941A942DCC004DAAB7 /* BaseObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseObject.cpp; sourceTree = "<group>"; };
-		14982F951A942DCC004DAAB7 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
 		14982FA41A942DCC004DAAB7 /* UCGestureLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCGestureLayer.h; sourceTree = "<group>"; };
 		14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCMenuSprite.cpp; sourceTree = "<group>"; };
@@ -141,9 +141,14 @@
 		14982FBE1A942DCC004DAAB7 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeFactory.cpp; sourceTree = "<group>"; };
 		14982FD41A9463F8004DAAB7 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
-		14982FD61A94AB3B004DAAB7 /* FactoryBridge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FactoryBridge.cpp; sourceTree = "<group>"; };
-		14982FD71A94AB3B004DAAB7 /* FactoryBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FactoryBridge.h; sourceTree = "<group>"; };
+		14982FD61A94AB3B004DAAB7 /* AssetLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetLoader.cpp; sourceTree = "<group>"; };
+		14982FD71A94AB3B004DAAB7 /* AssetLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetLoader.h; sourceTree = "<group>"; };
 		14982FD91A94BA0F004DAAB7 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
+		14F5F6151A971D1F006A8651 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
+		14F5F6161A971D1F006A8651 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		14F5F6181A973415006A8651 /* uidef.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = uidef.plist; sourceTree = "<group>"; };
+		14F5F61A1A973FC9006A8651 /* UIFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIFactory.cpp; sourceTree = "<group>"; };
+		14F5F61B1A973FC9006A8651 /* UIFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFactory.h; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -277,6 +282,8 @@
 				14982F9E1A942DCC004DAAB7 /* custom */,
 				14982FAD1A942DCC004DAAB7 /* external */,
 				14982FB71A942DCC004DAAB7 /* utility */,
+				14F5F6151A971D1F006A8651 /* Test.cpp */,
+				14F5F6161A971D1F006A8651 /* Test.h */,
 			);
 			name = littlePonyEngine;
 			path = ../../library/littlePonyEngine;
@@ -296,8 +303,8 @@
 			children = (
 				14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */,
 				14982FD41A9463F8004DAAB7 /* NodeFactory.h */,
-				14982F941A942DCC004DAAB7 /* BaseObject.cpp */,
-				14982F951A942DCC004DAAB7 /* BaseObject.h */,
+				14F5F61A1A973FC9006A8651 /* UIFactory.cpp */,
+				14F5F61B1A973FC9006A8651 /* UIFactory.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -352,8 +359,8 @@
 				14982FBC1A942DCC004DAAB7 /* UserData.h */,
 				14982FBD1A942DCC004DAAB7 /* Utility.cpp */,
 				14982FBE1A942DCC004DAAB7 /* Utility.h */,
-				14982FD61A94AB3B004DAAB7 /* FactoryBridge.cpp */,
-				14982FD71A94AB3B004DAAB7 /* FactoryBridge.h */,
+				14982FD61A94AB3B004DAAB7 /* AssetLoader.cpp */,
+				14982FD71A94AB3B004DAAB7 /* AssetLoader.h */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -423,6 +430,7 @@
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				14982FD91A94BA0F004DAAB7 /* test.plist */,
+				14F5F6181A973415006A8651 /* uidef.plist */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -597,6 +605,7 @@
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				14F5F6191A973415006A8651 /* uidef.plist in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -639,16 +648,17 @@
 			files = (
 				14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */,
 				14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */,
-				14982FD81A94AB3B004DAAB7 /* FactoryBridge.cpp in Sources */,
+				14982FD81A94AB3B004DAAB7 /* AssetLoader.cpp in Sources */,
 				14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */,
+				14F5F61C1A973FC9006A8651 /* UIFactory.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */,
 				14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */,
+				14F5F6171A971D1F006A8651 /* Test.cpp in Sources */,
 				14982FCC1A942DCC004DAAB7 /* custommenusprite.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				14982FC01A942DCC004DAAB7 /* BaseObject.cpp in Sources */,
 				14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */,

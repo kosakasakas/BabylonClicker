@@ -50,7 +50,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto scene = HelloWorld::createScene();
     
     // create opening layer
-    
+    auto t = Test::create();
+    t->go();
 
     // run
     director->runWithScene(scene);

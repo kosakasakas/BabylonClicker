@@ -5,17 +5,97 @@
 	<key>hoge</key>
 	<dict>
 		<key>type</key>
-		<string>Node</string>
+		<string>node</string>
 	</dict>
 	<key>huga</key>
 	<dict>
 		<key>type</key>
-		<string>Data</string>
+		<string>data</string>
 	</dict>
 	<key>saga</key>
 	<dict>
 		<key>type</key>
-		<string></string>
+		<string>data</string>
+	</dict>
+	<key>opening</key>
+	<dict>
+		<key>type</key>
+		<string>node</string>
+		<key>body</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>button</string>
+					<key>def</key>
+					<string>normalButton</string>
+					<key>text</key>
+					<string>ゲームスタート</string>
+					<key>anchor_x</key>
+					<real>0.5</real>
+					<key>anchor_y</key>
+					<real>0.5</real>
+					<key>scale</key>
+					<integer>1</integer>
+					<key>pos_x</key>
+					<integer>160</integer>
+					<key>pos_y</key>
+					<integer>252</integer>
+					<key>tag</key>
+					<integer>0</integer>
+					<key>order</key>
+					<string>0</string>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>label</string>
+					<key>text</key>
+					<string>バビロンクリッカー</string>
+					<key>anchor_x</key>
+					<real>0.5</real>
+					<key>anchor_y</key>
+					<real>0.5</real>
+					<key>scale</key>
+					<integer>1</integer>
+					<key>pos_x</key>
+					<integer>160</integer>
+					<key>pos_y</key>
+					<integer>398</integer>
+					<key>tag</key>
+					<integer>0</integer>
+					<key>order</key>
+					<string>0</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>buttonDef</key>
+	<dict>
+		<key>type</key>
+		<string>uidef</string>
+		<key>body</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>button</string>
+					<key>name</key>
+					<string>normalButton</string>
+					<key>normalSprite</key>
+					<string></string>
+					<key>selectedSprite</key>
+					<string></string>
+					<key>normalOpacity</key>
+					<integer>100</integer>
+					<key>selectedOpacity</key>
+					<integer>100</integer>
+					<key>selectedScale</key>
+					<integer>1</integer>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 </dict>
 </plist>
