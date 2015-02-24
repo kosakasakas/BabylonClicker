@@ -2,21 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>hoge</key>
-	<dict>
-		<key>type</key>
-		<string>node</string>
-	</dict>
-	<key>huga</key>
-	<dict>
-		<key>type</key>
-		<string>data</string>
-	</dict>
-	<key>saga</key>
-	<dict>
-		<key>type</key>
-		<string>data</string>
-	</dict>
 	<key>opening</key>
 	<dict>
 		<key>type</key>
@@ -28,7 +13,7 @@
 				<dict>
 					<key>type</key>
 					<string>button</string>
-					<key>def</key>
+					<key>name</key>
 					<string>normalButton</string>
 					<key>text</key>
 					<string>ゲームスタート</string>
@@ -48,6 +33,8 @@
 					<string>0</string>
 				</dict>
 				<dict>
+					<key>name</key>
+					<string>normalLabel</string>
 					<key>type</key>
 					<string>label</string>
 					<key>text</key>
@@ -83,16 +70,41 @@
 					<string>button</string>
 					<key>name</key>
 					<string>normalButton</string>
-					<key>normalSprite</key>
-					<string></string>
-					<key>selectedSprite</key>
-					<string></string>
+					<key>normalImage</key>
+					<string>CloseNormal.png</string>
+					<key>selectedImage</key>
+					<string>CloseSelected.png</string>
 					<key>normalOpacity</key>
 					<integer>100</integer>
 					<key>selectedOpacity</key>
 					<integer>100</integer>
 					<key>selectedScale</key>
 					<integer>1</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>labelDef</key>
+	<dict>
+		<key>type</key>
+		<string>uidef</string>
+		<key>body</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>label</string>
+					<key>name</key>
+					<string>normalLabel</string>
+					<key>font</key>
+					<string>Arial</string>
+					<key>fontType</key>
+					<string>system</string>
+					<key>size</key>
+					<integer>20</integer>
+					<key>opacity</key>
+					<integer>100</integer>
 				</dict>
 			</array>
 		</dict>

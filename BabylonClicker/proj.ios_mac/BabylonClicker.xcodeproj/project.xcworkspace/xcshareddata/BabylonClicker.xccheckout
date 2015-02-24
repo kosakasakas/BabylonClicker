@@ -10,6 +10,8 @@
 	<string>BabylonClicker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>B8F76F9A6873669AD8A959094FF5A7D76560F3CB</key>
+		<string>https://github.com/kosakasakas/littlePonyEngine.git</string>
 		<key>F1123AF72C2870A1200CE03CB1144DFE32AFCDA0</key>
 		<string>https://github.com/kosakasakas/BabylonClicker.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>BabylonClicker/proj.ios_mac/BabylonClicker.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>B8F76F9A6873669AD8A959094FF5A7D76560F3CB</key>
+		<string>../../../../library/littlePonyEngine/</string>
 		<key>F1123AF72C2870A1200CE03CB1144DFE32AFCDA0</key>
 		<string>../../../..</string>
 	</dict>
@@ -35,6 +39,14 @@
 			<string>F1123AF72C2870A1200CE03CB1144DFE32AFCDA0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>BabylonClicker</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B8F76F9A6873669AD8A959094FF5A7D76560F3CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>littlePonyEngine</string>
 		</dict>
 	</array>
 </dict>
