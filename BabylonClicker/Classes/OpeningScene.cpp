@@ -20,10 +20,11 @@ bool Opening::init()
         return false;
     }
     
-    // load scene by little pony.
-    auto al = AssetLoader::getInstatnce();
-    auto openingNode = (Node*)al->create("test.plist", "opening");
-    this->addChild(openingNode);
+    // load scene node from plist.
+    auto littlePony = LittlePonyController::getInstatnce();
+    auto opening = (Node*)littlePony->getData("test.plist", "opening");
+    
+    this->addChild(opening);
     
     return true;
 }
