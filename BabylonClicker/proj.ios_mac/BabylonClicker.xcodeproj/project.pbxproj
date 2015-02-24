@@ -10,6 +10,7 @@
 		1461EDEE1A9B3FD000E4C3B5 /* ButtonFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EDEC1A9B3FD000E4C3B5 /* ButtonFactory.cpp */; };
 		1461EDF11A9B44C400E4C3B5 /* LabelFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EDEF1A9B44C400E4C3B5 /* LabelFactory.cpp */; };
 		1461EDF41A9C144400E4C3B5 /* AbstructComponentFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EDF21A9C144400E4C3B5 /* AbstructComponentFactory.cpp */; };
+		1461EDF81A9C254200E4C3B5 /* OpeningScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EDF61A9C254200E4C3B5 /* OpeningScene.cpp */; };
 		14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F911A942DCC004DAAB7 /* AudioManager.cpp */; };
 		14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */; };
 		14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */; };
@@ -126,6 +127,8 @@
 		1461EDF01A9B44C400E4C3B5 /* LabelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelFactory.h; sourceTree = "<group>"; };
 		1461EDF21A9C144400E4C3B5 /* AbstructComponentFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbstructComponentFactory.cpp; sourceTree = "<group>"; };
 		1461EDF31A9C144400E4C3B5 /* AbstructComponentFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstructComponentFactory.h; sourceTree = "<group>"; };
+		1461EDF61A9C254200E4C3B5 /* OpeningScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpeningScene.cpp; sourceTree = "<group>"; };
+		1461EDF71A9C254200E4C3B5 /* OpeningScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningScene.h; sourceTree = "<group>"; };
 		14982F911A942DCC004DAAB7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
 		14982F921A942DCC004DAAB7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
@@ -454,6 +457,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1461EDF61A9C254200E4C3B5 /* OpeningScene.cpp */,
+				1461EDF71A9C254200E4C3B5 /* OpeningScene.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -684,6 +689,7 @@
 				14982FD11A942DCC004DAAB7 /* UserData.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1461EDF41A9C144400E4C3B5 /* AbstructComponentFactory.cpp in Sources */,
+				1461EDF81A9C254200E4C3B5 /* OpeningScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
