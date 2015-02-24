@@ -14,9 +14,9 @@
 					<key>type</key>
 					<string>button</string>
 					<key>name</key>
-					<string>normalButton</string>
-					<key>text</key>
-					<string>ゲームスタート</string>
+					<string>startButton</string>
+					<key>def</key>
+					<string>normalButtonDef</string>
 					<key>anchor_x</key>
 					<real>0.5</real>
 					<key>anchor_y</key>
@@ -27,18 +27,51 @@
 					<integer>160</integer>
 					<key>pos_y</key>
 					<integer>252</integer>
+					<key>size_width</key>
+					<integer>280</integer>
+					<key>size_height</key>
+					<string>50</string>
 					<key>tag</key>
 					<integer>0</integer>
 					<key>order</key>
 					<string>0</string>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>name</key>
+							<string>startButtonLabel</string>
+							<key>def</key>
+							<string>normalLabelDef</string>
+							<key>type</key>
+							<string>label</string>
+							<key>text</key>
+							<string>Start Game</string>
+							<key>anchor_x</key>
+							<real>0.5</real>
+							<key>anchor_y</key>
+							<real>0.5</real>
+							<key>scale</key>
+							<integer>1</integer>
+							<key>pos_x</key>
+							<integer>0</integer>
+							<key>pos_y</key>
+							<integer>0</integer>
+							<key>tag</key>
+							<integer>0</integer>
+							<key>order</key>
+							<string>0</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>name</key>
-					<string>normalLabel</string>
+					<string>openingLabel</string>
+					<key>def</key>
+					<string>normalLabelDef</string>
 					<key>type</key>
 					<string>label</string>
 					<key>text</key>
-					<string>バビロンクリッカー</string>
+					<string>ハロー リトルポニー</string>
 					<key>anchor_x</key>
 					<real>0.5</real>
 					<key>anchor_y</key>
@@ -69,17 +102,23 @@
 					<key>type</key>
 					<string>button</string>
 					<key>name</key>
-					<string>normalButton</string>
+					<string>normalButtonDef</string>
 					<key>normalImage</key>
-					<string>CloseNormal.png</string>
+					<string>button_black.png</string>
 					<key>selectedImage</key>
-					<string>CloseSelected.png</string>
+					<string>button_black.png</string>
 					<key>normalOpacity</key>
 					<integer>100</integer>
 					<key>selectedOpacity</key>
 					<integer>100</integer>
 					<key>selectedScale</key>
 					<integer>1</integer>
+					<key>use9sprite_width</key>
+					<true/>
+					<key>use9sprite_height</key>
+					<false/>
+					<key>cap_scale_width</key>
+					<real>0.45</real>
 				</dict>
 			</array>
 		</dict>
@@ -96,13 +135,40 @@
 					<key>type</key>
 					<string>label</string>
 					<key>name</key>
-					<string>normalLabel</string>
+					<string>normalLabelDef</string>
+					<key>font</key>
+					<string>Arial</string>
+					<key>fontType</key>
+					<string>system</string>
+					<key>colorDef</key>
+					<string>normalColorDef</string>
+					<key>size</key>
+					<integer>18</integer>
+					<key>opacity</key>
+					<integer>100</integer>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>colorDef</key>
+	<dict>
+		<key>type</key>
+		<string>uidef</string>
+		<key>body</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<dict>
+					<key>type</key>
+					<string>color</string>
+					<key>name</key>
+					<string>normalColorDef</string>
 					<key>font</key>
 					<string>Arial</string>
 					<key>fontType</key>
 					<string>system</string>
 					<key>size</key>
-					<integer>20</integer>
+					<integer>18</integer>
 					<key>opacity</key>
 					<integer>100</integer>
 				</dict>

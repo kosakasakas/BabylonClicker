@@ -36,7 +36,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // turn on display FPS
     director->setDisplayStats(true);
 
-    // set up multi resolution
+    // set up multi resolution by little pony.
     const Resource* res = AppManager::getInstance()->getResource();
     std::vector<std::string> searchPath;
     searchPath.push_back(res->directory);
