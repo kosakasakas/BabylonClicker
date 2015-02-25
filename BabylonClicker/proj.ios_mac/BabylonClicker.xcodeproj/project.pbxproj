@@ -207,11 +207,10 @@
 		1461EF801A9C2AEE00E4C3B5 /* unit_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1461EEBD1A9C2AEE00E4C3B5 /* unit_5.png */; };
 		1461EF811A9C2AEE00E4C3B5 /* wing.png in Resources */ = {isa = PBXBuildFile; fileRef = 1461EEBE1A9C2AEE00E4C3B5 /* wing.png */; };
 		1461EF871A9C736500E4C3B5 /* UIDefMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EF851A9C736500E4C3B5 /* UIDefMap.cpp */; };
+		1461EF8A1A9CACB000E4C3B5 /* LPMenuItemSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EF881A9CACB000E4C3B5 /* LPMenuItemSprite.cpp */; };
 		14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F911A942DCC004DAAB7 /* AudioManager.cpp */; };
 		14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */; };
-		14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */; };
 		14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */; };
-		14982FCC1A942DCC004DAAB7 /* custommenusprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FAF1A942DCC004DAAB7 /* custommenusprite.cpp */; };
 		14982FCD1A942DCC004DAAB7 /* XTLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB21A942DCC004DAAB7 /* XTLayer.cpp */; };
 		14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB41A942DCC004DAAB7 /* littlePony.cpp */; };
 		14982FCF1A942DCC004DAAB7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 14982FB61A942DCC004DAAB7 /* README.md */; };
@@ -522,16 +521,14 @@
 		1461EEBE1A9C2AEE00E4C3B5 /* wing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wing.png; sourceTree = "<group>"; };
 		1461EF851A9C736500E4C3B5 /* UIDefMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UIDefMap.cpp; sourceTree = "<group>"; };
 		1461EF861A9C736500E4C3B5 /* UIDefMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefMap.h; sourceTree = "<group>"; };
+		1461EF881A9CACB000E4C3B5 /* LPMenuItemSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPMenuItemSprite.cpp; sourceTree = "<group>"; };
+		1461EF891A9CACB000E4C3B5 /* LPMenuItemSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMenuItemSprite.h; sourceTree = "<group>"; };
 		14982F911A942DCC004DAAB7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
 		14982F921A942DCC004DAAB7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
 		14982FA41A942DCC004DAAB7 /* UCGestureLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCGestureLayer.h; sourceTree = "<group>"; };
-		14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCMenuSprite.cpp; sourceTree = "<group>"; };
-		14982FA61A942DCC004DAAB7 /* UCMenuSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCMenuSprite.h; sourceTree = "<group>"; };
 		14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCPlistLoader.cpp; sourceTree = "<group>"; };
 		14982FA81A942DCC004DAAB7 /* UCPlistLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCPlistLoader.h; sourceTree = "<group>"; };
-		14982FAF1A942DCC004DAAB7 /* custommenusprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = custommenusprite.cpp; sourceTree = "<group>"; };
-		14982FB01A942DCC004DAAB7 /* custommenusprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = custommenusprite.h; sourceTree = "<group>"; };
 		14982FB21A942DCC004DAAB7 /* XTLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = XTLayer.cpp; sourceTree = "<group>"; };
 		14982FB31A942DCC004DAAB7 /* XTLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTLayer.h; sourceTree = "<group>"; };
 		14982FB41A942DCC004DAAB7 /* littlePony.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = littlePony.cpp; sourceTree = "<group>"; };
@@ -943,10 +940,10 @@
 			children = (
 				14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */,
 				14982FA41A942DCC004DAAB7 /* UCGestureLayer.h */,
-				14982FA51A942DCC004DAAB7 /* UCMenuSprite.cpp */,
-				14982FA61A942DCC004DAAB7 /* UCMenuSprite.h */,
 				14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */,
 				14982FA81A942DCC004DAAB7 /* UCPlistLoader.h */,
+				1461EF881A9CACB000E4C3B5 /* LPMenuItemSprite.cpp */,
+				1461EF891A9CACB000E4C3B5 /* LPMenuItemSprite.h */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -954,19 +951,9 @@
 		14982FAD1A942DCC004DAAB7 /* external */ = {
 			isa = PBXGroup;
 			children = (
-				14982FAE1A942DCC004DAAB7 /* custommenusprite */,
 				14982FB11A942DCC004DAAB7 /* XTLayer */,
 			);
 			path = external;
-			sourceTree = "<group>";
-		};
-		14982FAE1A942DCC004DAAB7 /* custommenusprite */ = {
-			isa = PBXGroup;
-			children = (
-				14982FAF1A942DCC004DAAB7 /* custommenusprite.cpp */,
-				14982FB01A942DCC004DAAB7 /* custommenusprite.h */,
-			);
-			path = custommenusprite;
 			sourceTree = "<group>";
 		};
 		14982FB11A942DCC004DAAB7 /* XTLayer */ = {
@@ -1477,6 +1464,7 @@
 			files = (
 				1461EDEE1A9B3FD000E4C3B5 /* ButtonFactory.cpp in Sources */,
 				14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */,
+				1461EF8A1A9CACB000E4C3B5 /* LPMenuItemSprite.cpp in Sources */,
 				14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */,
 				14982FD81A94AB3B004DAAB7 /* LittlePonyController.cpp in Sources */,
 				14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */,
@@ -1485,9 +1473,7 @@
 				14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */,
 				14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
-				14982FC81A942DCC004DAAB7 /* UCMenuSprite.cpp in Sources */,
 				14F5F6171A971D1F006A8651 /* Test.cpp in Sources */,
-				14982FCC1A942DCC004DAAB7 /* custommenusprite.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,

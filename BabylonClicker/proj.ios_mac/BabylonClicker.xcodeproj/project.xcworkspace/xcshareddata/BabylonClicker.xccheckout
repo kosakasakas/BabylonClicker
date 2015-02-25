@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>B8F76F9A6873669AD8A959094FF5A7D76560F3CB</key>
-		<string>../../../../library/littlePonyEngine/</string>
+		<string>../../../../library/littlePonyEngine</string>
 		<key>F1123AF72C2870A1200CE03CB1144DFE32AFCDA0</key>
 		<string>../../../..</string>
 	</dict>
