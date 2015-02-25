@@ -220,6 +220,7 @@
 		14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */; };
 		14982FD81A94AB3B004DAAB7 /* LittlePonyController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */; };
 		14982FDA1A94BA0F004DAAB7 /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* test.plist */; };
+		14DE05B41A9DD34B004BDD61 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DE05B21A9DD34B004BDD61 /* Subject.cpp */; };
 		14F5F6171A971D1F006A8651 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F5F6151A971D1F006A8651 /* Test.cpp */; };
 		14F5F6191A973415006A8651 /* uidef.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F5F6181A973415006A8651 /* uidef.plist */; };
 		14F5F61C1A973FC9006A8651 /* UIFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F5F61A1A973FC9006A8651 /* UIFactory.cpp */; };
@@ -546,6 +547,9 @@
 		14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LittlePonyController.cpp; sourceTree = "<group>"; };
 		14982FD71A94AB3B004DAAB7 /* LittlePonyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittlePonyController.h; sourceTree = "<group>"; };
 		14982FD91A94BA0F004DAAB7 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
+		14DE05B11A9DD34B004BDD61 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
+		14DE05B21A9DD34B004BDD61 /* Subject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Subject.cpp; sourceTree = "<group>"; };
+		14DE05B31A9DD34B004BDD61 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
 		14F5F6151A971D1F006A8651 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
 		14F5F6161A971D1F006A8651 /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		14F5F6181A973415006A8651 /* uidef.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = uidef.plist; sourceTree = "<group>"; };
@@ -968,6 +972,9 @@
 		14982FB71A942DCC004DAAB7 /* utility */ = {
 			isa = PBXGroup;
 			children = (
+				14DE05B11A9DD34B004BDD61 /* Observer.h */,
+				14DE05B21A9DD34B004BDD61 /* Subject.cpp */,
+				14DE05B31A9DD34B004BDD61 /* Subject.h */,
 				14982FB81A942DCC004DAAB7 /* AppMacros.h */,
 				14982FB91A942DCC004DAAB7 /* AppManager.cpp */,
 				14982FBA1A942DCC004DAAB7 /* AppManager.h */,
@@ -1482,6 +1489,7 @@
 				14982FCF1A942DCC004DAAB7 /* README.md in Sources */,
 				1461EDF11A9B44C400E4C3B5 /* LabelFactory.cpp in Sources */,
 				14982FD11A942DCC004DAAB7 /* UserData.cpp in Sources */,
+				14DE05B41A9DD34B004BDD61 /* Subject.cpp in Sources */,
 				1461EF871A9C736500E4C3B5 /* UIDefMap.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1461EDF41A9C144400E4C3B5 /* AbstructComponentFactory.cpp in Sources */,

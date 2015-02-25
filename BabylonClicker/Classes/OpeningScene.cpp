@@ -3,6 +3,8 @@
 
 USING_NS_CC;
 
+#define START_GAME_BUTTON_TAG 10
+
 Scene* Opening::createScene()
 {
     auto scene = Scene::create();
@@ -12,7 +14,6 @@ Scene* Opening::createScene()
     return scene;
 }
 
-// on "init" you need to initialize your instance
 bool Opening::init()
 {
     if ( !Layer::init() )
@@ -20,11 +21,20 @@ bool Opening::init()
         return false;
     }
     
-    // load scene node from plist.
+    // plistからシーンを読み込む
     auto littlePony = LittlePonyController::getInstatnce();
     auto opening = (Node*)littlePony->getData("test.plist", "opening");
-    
     this->addChild(opening);
     
+    // UIのコールバック通知を受け取るために自身を登録
+    LittlePonyController::getInstatnce()->addToUINotificationCenter(this);
+    
     return true;
+}
+
+
+void Opening::onNotice(Ref* sender) {
+    if (((Node*)sender)->getTag() == START_GAME_BUTTON_TAG) {
+         CCLOG("Start Game Button pressed!!");
+    }
 }
