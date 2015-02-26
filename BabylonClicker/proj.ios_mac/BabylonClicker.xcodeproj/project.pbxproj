@@ -219,7 +219,7 @@
 		14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FBD1A942DCC004DAAB7 /* Utility.cpp */; };
 		14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */; };
 		14982FD81A94AB3B004DAAB7 /* LittlePonyController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */; };
-		14982FDA1A94BA0F004DAAB7 /* test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* test.plist */; };
+		14982FDA1A94BA0F004DAAB7 /* sceneNode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* sceneNode.plist */; };
 		14DE05B41A9DD34B004BDD61 /* Subject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14DE05B21A9DD34B004BDD61 /* Subject.cpp */; };
 		14F5F6171A971D1F006A8651 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14F5F6151A971D1F006A8651 /* Test.cpp */; };
 		14F5F6191A973415006A8651 /* uidef.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F5F6181A973415006A8651 /* uidef.plist */; };
@@ -546,7 +546,7 @@
 		14982FD41A9463F8004DAAB7 /* NodeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeFactory.h; sourceTree = "<group>"; };
 		14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LittlePonyController.cpp; sourceTree = "<group>"; };
 		14982FD71A94AB3B004DAAB7 /* LittlePonyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittlePonyController.h; sourceTree = "<group>"; };
-		14982FD91A94BA0F004DAAB7 /* test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = test.plist; sourceTree = "<group>"; };
+		14982FD91A94BA0F004DAAB7 /* sceneNode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sceneNode.plist; sourceTree = "<group>"; };
 		14DE05B11A9DD34B004BDD61 /* Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		14DE05B21A9DD34B004BDD61 /* Subject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Subject.cpp; sourceTree = "<group>"; };
 		14DE05B31A9DD34B004BDD61 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
@@ -1055,7 +1055,7 @@
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
-				14982FD91A94BA0F004DAAB7 /* test.plist */,
+				14982FD91A94BA0F004DAAB7 /* sceneNode.plist */,
 				14F5F6181A973415006A8651 /* uidef.plist */,
 			);
 			name = Resources;
@@ -1310,7 +1310,7 @@
 				1461EF1A1A9C2AEE00E4C3B5 /* icon_dark.png in Resources */,
 				1461EEEC1A9C2AEE00E4C3B5 /* main_mock.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
-				14982FDA1A94BA0F004DAAB7 /* test.plist in Resources */,
+				14982FDA1A94BA0F004DAAB7 /* sceneNode.plist in Resources */,
 				1461EF4F1A9C2AEE00E4C3B5 /* clickme.png in Resources */,
 				1461EEC11A9C2AEE00E4C3B5 /* boss_0.png in Resources */,
 				1461EF581A9C2AEE00E4C3B5 /* heart.png in Resources */,
