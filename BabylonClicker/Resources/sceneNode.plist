@@ -60,6 +60,8 @@
 							<integer>0</integer>
 							<key>order</key>
 							<string>0</string>
+							<key>useRelative</key>
+							<true/>
 						</dict>
 					</array>
 				</dict>
