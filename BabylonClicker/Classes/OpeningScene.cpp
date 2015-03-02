@@ -23,7 +23,7 @@ bool Opening::init()
     
     // plistからシーンを読み込む
     auto littlePony = LittlePonyController::getInstatnce();
-    auto opening = (Node*)littlePony->getData("sceneNode.plist", "opening");
+    auto opening = (Node*)littlePony->getData("sceneNode.plist", "main");
     this->addChild(opening);
     
     // UIのコールバック通知を受け取るために自身を登録

@@ -208,6 +208,7 @@
 		1461EF811A9C2AEE00E4C3B5 /* wing.png in Resources */ = {isa = PBXBuildFile; fileRef = 1461EEBE1A9C2AEE00E4C3B5 /* wing.png */; };
 		1461EF871A9C736500E4C3B5 /* UIDefMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EF851A9C736500E4C3B5 /* UIDefMap.cpp */; };
 		1461EF8A1A9CACB000E4C3B5 /* LPMenuItemSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1461EF881A9CACB000E4C3B5 /* LPMenuItemSprite.cpp */; };
+		146FB0AB1AA46C2F00B15BDD /* SpriteFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146FB0A91AA46C2F00B15BDD /* SpriteFactory.cpp */; };
 		14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F911A942DCC004DAAB7 /* AudioManager.cpp */; };
 		14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */; };
 		14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */; };
@@ -524,6 +525,8 @@
 		1461EF861A9C736500E4C3B5 /* UIDefMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefMap.h; sourceTree = "<group>"; };
 		1461EF881A9CACB000E4C3B5 /* LPMenuItemSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPMenuItemSprite.cpp; sourceTree = "<group>"; };
 		1461EF891A9CACB000E4C3B5 /* LPMenuItemSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMenuItemSprite.h; sourceTree = "<group>"; };
+		146FB0A91AA46C2F00B15BDD /* SpriteFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpriteFactory.cpp; sourceTree = "<group>"; };
+		146FB0AA1AA46C2F00B15BDD /* SpriteFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteFactory.h; sourceTree = "<group>"; };
 		14982F911A942DCC004DAAB7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
 		14982F921A942DCC004DAAB7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
@@ -935,6 +938,8 @@
 				1461EDF31A9C144400E4C3B5 /* AbstructComponentFactory.h */,
 				1461EF851A9C736500E4C3B5 /* UIDefMap.cpp */,
 				1461EF861A9C736500E4C3B5 /* UIDefMap.h */,
+				146FB0A91AA46C2F00B15BDD /* SpriteFactory.cpp */,
+				146FB0AA1AA46C2F00B15BDD /* SpriteFactory.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -1047,9 +1052,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1461EDF91A9C2AEE00E4C3B5 /* resources-xlarge */,
-				1461EE3B1A9C2AEE00E4C3B5 /* resources-large */,
 				1461EE7D1A9C2AEE00E4C3B5 /* resources-medium */,
+				1461EE3B1A9C2AEE00E4C3B5 /* resources-large */,
+				1461EDF91A9C2AEE00E4C3B5 /* resources-xlarge */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -1492,6 +1497,7 @@
 				14DE05B41A9DD34B004BDD61 /* Subject.cpp in Sources */,
 				1461EF871A9C736500E4C3B5 /* UIDefMap.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				146FB0AB1AA46C2F00B15BDD /* SpriteFactory.cpp in Sources */,
 				1461EDF41A9C144400E4C3B5 /* AbstructComponentFactory.cpp in Sources */,
 				1461EDF81A9C254200E4C3B5 /* OpeningScene.cpp in Sources */,
 			);
