@@ -4,12 +4,11 @@
 #include "LPLayer.h"
 #include "Observer.h"
 
-class Opening : public LPLayer, public Observer
+class Opening : public LPLayer
 {
 public:
     static cocos2d::Scene* createScene();
     virtual bool init();
-    virtual void willExit();
     CREATE_FUNC(Opening);
     
     virtual void onNotice(Ref* sender);

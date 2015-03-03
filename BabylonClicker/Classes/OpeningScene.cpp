@@ -17,7 +17,7 @@ Scene* Opening::createScene()
 
 bool Opening::init()
 {
-    if ( !LPLayer::init() )
+    if ( !Layer::init() )
     {
         return false;
     }
@@ -27,20 +27,12 @@ bool Opening::init()
     auto opening = (Node*)littlePony->getData("sceneNode.plist", "opening");
     this->addChild(opening);
     
-    // UIのコールバック通知を受け取るために自身を登録
-    LittlePonyController::getInstatnce()->addToUINotificationCenter(this);
-    
     return true;
-}
-
-void Opening::willExit() {
-    // UIコールバックから自身を外す。onExitだと遅い。
-    LittlePonyController::getInstatnce()->removeFromUINotificationCenter(this);
 }
 
 void Opening::onNotice(Ref* sender) {
     if (((Node*)sender)->getTag() == START_MAIN_BUTTON_TAG) {
-        // シーンの切り替え。LittlePonyのreplaceSceneを使う
-        LittlePonyController::getInstatnce()->replaceScene(Main::createScene());
+        // シーンの切り替え。
+        Director::getInstance()->replaceScene(Main::createScene());
     }
 }
