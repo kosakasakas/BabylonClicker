@@ -7,6 +7,8 @@
 class Opening : public cocos2d::Layer, public Observer
 {
 public:
+    Opening();
+    virtual ~Opening();
     static cocos2d::Scene* createScene();
     virtual bool init();
     CREATE_FUNC(Opening);

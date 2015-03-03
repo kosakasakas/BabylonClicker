@@ -5,6 +5,16 @@ USING_NS_CC;
 
 #define START_GAME_BUTTON_TAG 10
 
+Opening::Opening()
+{
+}
+
+Opening::~Opening()
+{
+    // UIコールバックから自身を外す
+    LittlePonyController::getInstatnce()->removeFromUINotificationCenter(this);
+}
+
 Scene* Opening::createScene()
 {
     auto scene = Scene::create();
@@ -31,7 +41,6 @@ bool Opening::init()
     
     return true;
 }
-
 
 void Opening::onNotice(Ref* sender) {
     if (((Node*)sender)->getTag() == START_GAME_BUTTON_TAG) {
