@@ -1,19 +1,10 @@
-#include "OpeningScene.h"
 #include "littlePony.h"
+#include "OpeningScene.h"
+#include "MainScene.h"
 
 USING_NS_CC;
 
-#define START_GAME_BUTTON_TAG 10
-
-Opening::Opening()
-{
-}
-
-Opening::~Opening()
-{
-    // UIコールバックから自身を外す
-    LittlePonyController::getInstatnce()->removeFromUINotificationCenter(this);
-}
+#define START_MAIN_BUTTON_TAG 10
 
 Scene* Opening::createScene()
 {
@@ -26,14 +17,14 @@ Scene* Opening::createScene()
 
 bool Opening::init()
 {
-    if ( !Layer::init() )
+    if ( !LPLayer::init() )
     {
         return false;
     }
     
     // plistからシーンを読み込む
     auto littlePony = LittlePonyController::getInstatnce();
-    auto opening = (Node*)littlePony->getData("sceneNode.plist", "main");
+    auto opening = (Node*)littlePony->getData("sceneNode.plist", "opening");
     this->addChild(opening);
     
     // UIのコールバック通知を受け取るために自身を登録
@@ -42,8 +33,14 @@ bool Opening::init()
     return true;
 }
 
+void Opening::willExit() {
+    // UIコールバックから自身を外す。onExitだと遅い。
+    LittlePonyController::getInstatnce()->removeFromUINotificationCenter(this);
+}
+
 void Opening::onNotice(Ref* sender) {
-    if (((Node*)sender)->getTag() == START_GAME_BUTTON_TAG) {
-         CCLOG("Start Game Button pressed!!");
+    if (((Node*)sender)->getTag() == START_MAIN_BUTTON_TAG) {
+        // シーンの切り替え。LittlePonyのreplaceSceneを使う
+        LittlePonyController::getInstatnce()->replaceScene(Main::createScene());
     }
 }
