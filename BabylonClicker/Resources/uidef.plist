@@ -59,6 +59,22 @@
 					<key>opacity</key>
 					<integer>100</integer>
 				</dict>
+				<dict>
+					<key>type</key>
+					<string>label</string>
+					<key>name</key>
+					<string>miniLabelDef</string>
+					<key>font</key>
+					<string>Arial</string>
+					<key>fontType</key>
+					<string>system</string>
+					<key>colorDef</key>
+					<string>normalColorDef</string>
+					<key>size</key>
+					<integer>11</integer>
+					<key>opacity</key>
+					<integer>100</integer>
+				</dict>
 			</array>
 		</dict>
 	</dict>
@@ -76,11 +92,11 @@
 					<key>name</key>
 					<string>normalColorDef</string>
 					<key>r</key>
-					<integer>255</integer>
+					<integer>235</integer>
 					<key>g</key>
-					<integer>228</integer>
+					<integer>208</integer>
 					<key>b</key>
-					<integer>196</integer>
+					<integer>175</integer>
 					<key>alfa</key>
 					<integer>100</integer>
 				</dict>

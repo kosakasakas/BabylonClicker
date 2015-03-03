@@ -17,6 +17,7 @@
 		146FB0B01AA5706000B15BDD /* resources-xlarge in Resources */ = {isa = PBXBuildFile; fileRef = 146FB0AD1AA5706000B15BDD /* resources-xlarge */; };
 		146FB0B11AA5706000B15BDD /* resources-large in Resources */ = {isa = PBXBuildFile; fileRef = 146FB0AE1AA5706000B15BDD /* resources-large */; };
 		146FB0B21AA5706000B15BDD /* resources-medium in Resources */ = {isa = PBXBuildFile; fileRef = 146FB0AF1AA5706000B15BDD /* resources-medium */; };
+		146FB0B51AA57E8500B15BDD /* LayerFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 146FB0B31AA57E8500B15BDD /* LayerFactory.cpp */; };
 		14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982F911A942DCC004DAAB7 /* AudioManager.cpp */; };
 		14982FC71A942DCC004DAAB7 /* UCGestureLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */; };
 		14982FC91A942DCC004DAAB7 /* UCPlistLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FA71A942DCC004DAAB7 /* UCPlistLoader.cpp */; };
@@ -143,6 +144,8 @@
 		146FB0AD1AA5706000B15BDD /* resources-xlarge */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-xlarge"; sourceTree = "<group>"; };
 		146FB0AE1AA5706000B15BDD /* resources-large */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-large"; sourceTree = "<group>"; };
 		146FB0AF1AA5706000B15BDD /* resources-medium */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "resources-medium"; sourceTree = "<group>"; };
+		146FB0B31AA57E8500B15BDD /* LayerFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LayerFactory.cpp; sourceTree = "<group>"; };
+		146FB0B41AA57E8500B15BDD /* LayerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerFactory.h; sourceTree = "<group>"; };
 		14982F911A942DCC004DAAB7 /* AudioManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioManager.cpp; sourceTree = "<group>"; };
 		14982F921A942DCC004DAAB7 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		14982FA31A942DCC004DAAB7 /* UCGestureLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UCGestureLayer.cpp; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 				1461EF861A9C736500E4C3B5 /* UIDefMap.h */,
 				146FB0A91AA46C2F00B15BDD /* SpriteFactory.cpp */,
 				146FB0AA1AA46C2F00B15BDD /* SpriteFactory.h */,
+				146FB0B31AA57E8500B15BDD /* LayerFactory.cpp */,
+				146FB0B41AA57E8500B15BDD /* LayerFactory.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				1461EDEE1A9B3FD000E4C3B5 /* ButtonFactory.cpp in Sources */,
 				14982FBF1A942DCC004DAAB7 /* AudioManager.cpp in Sources */,
 				1461EF8A1A9CACB000E4C3B5 /* LPMenuItemSprite.cpp in Sources */,
+				146FB0B51AA57E8500B15BDD /* LayerFactory.cpp in Sources */,
 				14982FD01A942DCC004DAAB7 /* AppManager.cpp in Sources */,
 				14982FD81A94AB3B004DAAB7 /* LittlePonyController.cpp in Sources */,
 				14982FD21A942DCC004DAAB7 /* Utility.cpp in Sources */,
