@@ -33,6 +33,6 @@ bool Opening::init()
 void Opening::onNotice(Ref* sender) {
     if (((Node*)sender)->getTag() == START_MAIN_BUTTON_TAG) {
         // シーンの切り替え。
-        Director::getInstance()->replaceScene(Main::createScene());
+        Director::getInstance()->replaceScene(TransitionFade::create(1.0f, Main::createScene()));
     }
 }
