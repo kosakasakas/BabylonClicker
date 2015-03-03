@@ -416,7 +416,7 @@
 							<key>anchor_y</key>
 							<real>0.5</real>
 							<key>scale</key>
-							<real>1.2</real>
+							<real>1</real>
 							<key>pos_x</key>
 							<integer>24</integer>
 							<key>pos_y</key>
@@ -442,7 +442,7 @@
 							<key>scale</key>
 							<integer>1</integer>
 							<key>pos_x</key>
-							<integer>298</integer>
+							<integer>286</integer>
 							<key>pos_y</key>
 							<integer>300</integer>
 							<key>tag</key>

@@ -40,7 +40,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     const Resource* res = AppManager::getInstance()->getResource();
     std::vector<std::string> searchPath;
     searchPath.push_back(res->directory);
-    FileUtils::getInstance()->setSearchResolutionsOrder(searchPath);
+    FileUtils::getInstance()->setSearchPaths(searchPath);
     glview->setDesignResolutionSize(res->size.width, res->size.height, res->policy);
     director->setContentScaleFactor(res->scaleFactor);
     
