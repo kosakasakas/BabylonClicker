@@ -32,6 +32,46 @@
 					<key>cap_scale_width</key>
 					<real>0.45</real>
 				</dict>
+				<dict>
+					<key>type</key>
+					<string>button</string>
+					<key>name</key>
+					<string>backButtonDef</string>
+					<key>normalImage</key>
+					<string>dialog_button.png</string>
+					<key>selectedImage</key>
+					<string>dialog_button.png</string>
+					<key>normalOpacity</key>
+					<integer>100</integer>
+					<key>selectedOpacity</key>
+					<integer>100</integer>
+					<key>use9sprite_width</key>
+					<true/>
+					<key>use9sprite_height</key>
+					<false/>
+					<key>selectedScale</key>
+					<integer>1</integer>
+				</dict>
+				<dict>
+					<key>type</key>
+					<string>button</string>
+					<key>name</key>
+					<string>returnButtonDef</string>
+					<key>normalImage</key>
+					<string>dialog_button_return.png</string>
+					<key>selectedImage</key>
+					<string>dialog_button_return.png</string>
+					<key>normalOpacity</key>
+					<integer>100</integer>
+					<key>selectedOpacity</key>
+					<integer>100</integer>
+					<key>selectedScale</key>
+					<integer>1</integer>
+					<key>use9sprite_width</key>
+					<true/>
+					<key>use9sprite_height</key>
+					<false/>
+				</dict>
 			</array>
 		</dict>
 	</dict>
