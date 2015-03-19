@@ -72,6 +72,30 @@
 					<key>use9sprite_height</key>
 					<false/>
 				</dict>
+				<dict>
+					<key>type</key>
+					<string>button</string>
+					<key>name</key>
+					<string>scrollableButtonDef</string>
+					<key>normalImage</key>
+					<string>button_black.png</string>
+					<key>selectedImage</key>
+					<string>button_black.png</string>
+					<key>normalOpacity</key>
+					<integer>100</integer>
+					<key>selectedOpacity</key>
+					<integer>100</integer>
+					<key>selectedScale</key>
+					<integer>1</integer>
+					<key>use9sprite_width</key>
+					<true/>
+					<key>use9sprite_height</key>
+					<false/>
+					<key>cap_scale_width</key>
+					<real>0.45</real>
+					<key>scrollable</key>
+					<true/>
+				</dict>
 			</array>
 		</dict>
 	</dict>
