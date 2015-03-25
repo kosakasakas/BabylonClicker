@@ -1179,75 +1179,6 @@
 					<array>
 						<dict>
 							<key>name</key>
-							<string>scrollView</string>
-							<key>type</key>
-							<string>layer</string>
-							<key>anchor_x</key>
-							<real>0.5</real>
-							<key>anchor_y</key>
-							<real>0.5</real>
-							<key>pos_x</key>
-							<integer>0</integer>
-							<key>pos_y</key>
-							<integer>144</integer>
-							<key>size_width</key>
-							<integer>320</integer>
-							<key>size_height</key>
-							<integer>320</integer>
-							<key>tag</key>
-							<integer>0</integer>
-							<key>order</key>
-							<string>0</string>
-							<key>useRelative</key>
-							<true/>
-							<key>scrollable</key>
-							<true/>
-							<key>scroll_direction</key>
-							<string>vertical</string>
-							<key>container</key>
-							<array>
-								<dict>
-									<key>type</key>
-									<string>button</string>
-									<key>name</key>
-									<string>scrollableButtonList</string>
-									<key>def</key>
-									<string>scrollableButtonDef</string>
-									<key>anchor_x</key>
-									<real>0.5</real>
-									<key>anchor_y</key>
-									<real>0.5</real>
-									<key>scale</key>
-									<integer>1</integer>
-									<key>pos_x</key>
-									<integer>160</integer>
-									<key>pos_y</key>
-									<integer>0</integer>
-									<key>size_width</key>
-									<integer>200</integer>
-									<key>size_height</key>
-									<string>40</string>
-									<key>tag</key>
-									<integer>300</integer>
-									<key>order</key>
-									<string>0</string>
-									<key>useRelative</key>
-									<true/>
-									<key>use_list</key>
-									<true/>
-									<key>list_row_num</key>
-									<integer>1</integer>
-									<key>list_column_num</key>
-									<integer>50</integer>
-									<key>list_w_padding</key>
-									<integer>0</integer>
-									<key>list_h_padding</key>
-									<integer>20</integer>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>name</key>
 							<string>hashiraLeft</string>
 							<key>type</key>
 							<string>sprite</string>
@@ -1318,7 +1249,7 @@
 							<key>tag</key>
 							<integer>300</integer>
 							<key>order</key>
-							<string>0</string>
+							<string>1</string>
 							<key>useRelative</key>
 							<true/>
 						</dict>
@@ -1346,9 +1277,91 @@
 							<key>tag</key>
 							<integer>301</integer>
 							<key>order</key>
+							<string>1</string>
+							<key>useRelative</key>
+							<true/>
+						</dict>
+						<dict>
+							<key>name</key>
+							<string>scrollView</string>
+							<key>type</key>
+							<string>layer</string>
+							<key>anchor_x</key>
+							<real>0.5</real>
+							<key>anchor_y</key>
+							<real>0.5</real>
+							<key>pos_x</key>
+							<integer>0</integer>
+							<key>pos_y</key>
+							<integer>144</integer>
+							<key>size_width</key>
+							<integer>320</integer>
+							<key>size_height</key>
+							<integer>320</integer>
+							<key>tag</key>
+							<integer>0</integer>
+							<key>order</key>
 							<string>0</string>
 							<key>useRelative</key>
 							<true/>
+							<key>scrollable</key>
+							<true/>
+							<key>scroll_direction</key>
+							<string>vertical</string>
+							<key>container</key>
+							<array>
+								<dict>
+									<key>type</key>
+									<string>button</string>
+									<key>name</key>
+									<string>scrollableButtonList</string>
+									<key>def</key>
+									<string>scrollableButtonDef</string>
+									<key>anchor_x</key>
+									<real>0.5</real>
+									<key>anchor_y</key>
+									<real>0.5</real>
+									<key>scale</key>
+									<integer>1</integer>
+									<key>pos_x</key>
+									<integer>160</integer>
+									<key>pos_y</key>
+									<integer>0</integer>
+									<key>size_width</key>
+									<integer>200</integer>
+									<key>size_height</key>
+									<string>40</string>
+									<key>tag</key>
+									<integer>300</integer>
+									<key>order</key>
+									<string>0</string>
+									<key>useRelative</key>
+									<true/>
+									<key>use_list</key>
+									<true/>
+									<key>list_row_num</key>
+									<integer>1</integer>
+									<key>list_column_num</key>
+									<integer>50</integer>
+									<key>list_w_padding</key>
+									<integer>0</integer>
+									<key>list_h_padding</key>
+									<integer>20</integer>
+								</dict>
+							</array>
+							<key>maskArea</key>
+							<array>
+								<dict>
+									<key>x</key>
+									<integer>297</integer>
+									<key>y</key>
+									<integer>281</integer>
+									<key>width</key>
+									<integer>40</integer>
+									<key>height</key>
+									<integer>40</integer>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
