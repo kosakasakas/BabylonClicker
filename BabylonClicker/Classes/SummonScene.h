@@ -17,6 +17,8 @@ public:
 private:
     void showBackButton();
     void showReturnButton();
+    
+    void setScrollableContainer();
 };
 
 #endif // __Summon_SCENE_H__
