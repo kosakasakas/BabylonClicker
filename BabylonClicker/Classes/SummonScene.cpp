@@ -6,15 +6,15 @@
 USING_NS_CC;
 
 // nodeのタグ一覧。桁数が増える＝下の階層を意味する
-#define ROOT_NODE_TAG 3
+#define ROOT_NODE_TAG      3
+#define SUB_VIEW_TAG       30
+#define BACK_BUTTON_TAG    300
+#define RETURN_BUTTON_TAG  301
+#define SCROLL_VIEW_TAG    302
+#define SCROLL_BUTTON_TAG  3000
 
-#define SUB_VIEW_TAG 30
-
-#define BACK_BUTTON_TAG 300
-#define RETURN_BUTTON_TAG 301
-#define SCROLL_VIEW_TAG 302
-
-#define SCROLL_BUTTON_TAG 3000
+#define DIAPLAY_NODE_TAG   4
+#define DISPLAY_LABEL_TAG  40
 
 Scene* Summon::createScene()
 {
@@ -91,7 +91,7 @@ void Summon::setScrollableContainer() {
     
     // パラメータからcontainerNodeを作成する
     NodeFactory* nf = NodeFactory::create();
-    Node* container = nf->getContainerNode(containerValueMap);
+    Menu* container = (Menu*)nf->getContainerNode(containerValueMap);
     Size containerSize = container->getContentSize();
     
     // scrollViewに対してcontainerNodeをsetする
@@ -99,6 +99,20 @@ void Summon::setScrollableContainer() {
     Size viewSize = slayer->getViewSize();
     slayer->setContentSize(containerSize);
     slayer->setContentOffset(Vec2(0, (viewSize.height - containerSize.height)), false);
-    slayer->setLPContainer((Menu*)container);
+    slayer->setLPContainer(container);
+    
+    // 動的にラベルにテキストを書き込む
+    auto lpc = LittlePonyController::getInstatnce();
+    for (int i = 0; i < buttonNum; ++i) {
+        char text[256];
+        sprintf(text, "hoge %d", i);
+        
+        Node* button = container->getChildByTag(SCROLL_BUTTON_TAG + i);
+        Node* display = (Node*)lpc->getData("sceneNode.plist", "scrollButtonDisplay");
+        Label* label = (Label*) display->getChildByTag(DISPLAY_LABEL_TAG);
+        label->setString(text);
+        button->addChild(display);
+    }
+    
     
 }
