@@ -31,6 +31,8 @@
 		14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD31A9463F8004DAAB7 /* NodeFactory.cpp */; };
 		14982FD81A94AB3B004DAAB7 /* LittlePonyController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */; };
 		14982FDA1A94BA0F004DAAB7 /* sceneNode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* sceneNode.plist */; };
+		14CB6EF31AC3CCC700212057 /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CB6EF11AC3CCC700212057 /* ActionFactory.cpp */; };
+		14CB6EF51AC3D6A500212057 /* action.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB6EF41AC3D6A500212057 /* action.plist */; };
 		14D97DCA1AB056EF00A59682 /* SummonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DC81AB056EF00A59682 /* SummonScene.cpp */; };
 		14D97DD31AB064F100A59682 /* LPScrollableLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DD11AB064F100A59682 /* LPScrollableLayer.cpp */; };
 		14D97DD61AB0697700A59682 /* LPScrollableMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DD41AB0697700A59682 /* LPScrollableMenu.cpp */; };
@@ -178,6 +180,9 @@
 		14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LittlePonyController.cpp; sourceTree = "<group>"; };
 		14982FD71A94AB3B004DAAB7 /* LittlePonyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittlePonyController.h; sourceTree = "<group>"; };
 		14982FD91A94BA0F004DAAB7 /* sceneNode.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sceneNode.plist; sourceTree = "<group>"; };
+		14CB6EF11AC3CCC700212057 /* ActionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactory.cpp; sourceTree = "<group>"; };
+		14CB6EF21AC3CCC700212057 /* ActionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactory.h; sourceTree = "<group>"; };
+		14CB6EF41AC3D6A500212057 /* action.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = action.plist; sourceTree = "<group>"; };
 		14D97DC81AB056EF00A59682 /* SummonScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SummonScene.cpp; sourceTree = "<group>"; };
 		14D97DC91AB056EF00A59682 /* SummonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonScene.h; sourceTree = "<group>"; };
 		14D97DD11AB064F100A59682 /* LPScrollableLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPScrollableLayer.cpp; sourceTree = "<group>"; };
@@ -368,6 +373,8 @@
 				14D97E5D1AB951FD00A59682 /* MenuItemFactory.h */,
 				14D97E5F1AB9529700A59682 /* MenuFactory.cpp */,
 				14D97E601AB9529700A59682 /* MenuFactory.h */,
+				14CB6EF11AC3CCC700212057 /* ActionFactory.cpp */,
+				14CB6EF21AC3CCC700212057 /* ActionFactory.h */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -498,6 +505,7 @@
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 				14982FD91A94BA0F004DAAB7 /* sceneNode.plist */,
 				14F5F6181A973415006A8651 /* uidef.plist */,
+				14CB6EF41AC3D6A500212057 /* action.plist */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -696,6 +704,7 @@
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
+				14CB6EF51AC3D6A500212057 /* action.plist in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				146FB0B11AA5706000B15BDD /* resources-large in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
@@ -754,6 +763,7 @@
 				146FB0AB1AA46C2F00B15BDD /* SpriteFactory.cpp in Sources */,
 				14D97DD61AB0697700A59682 /* LPScrollableMenu.cpp in Sources */,
 				146FB0D61AA59E8C00B15BDD /* MainScene.cpp in Sources */,
+				14CB6EF31AC3CCC700212057 /* ActionFactory.cpp in Sources */,
 				1461EDF41A9C144400E4C3B5 /* AbstructComponentFactory.cpp in Sources */,
 				1461EDF81A9C254200E4C3B5 /* OpeningScene.cpp in Sources */,
 			);

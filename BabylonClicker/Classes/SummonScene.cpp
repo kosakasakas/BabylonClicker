@@ -33,8 +33,8 @@ bool Summon::init()
     }
     
     auto littlePony = LittlePonyController::getInstatnce();
-    auto Summon = (Node*)littlePony->getData("sceneNode.plist", "summon");
-    this->addChild(Summon);
+    auto summon = (Node*)littlePony->getData("sceneNode.plist", "summon");
+    this->addChild(summon);
     
     showBackButton();
     
@@ -46,9 +46,20 @@ bool Summon::init()
 void Summon::onNotice(Ref* sender) {
     if (((Node*)sender)->getTag() == BACK_BUTTON_TAG) {
         Director::getInstance()->replaceScene(Main::createScene());
-    } else if (((Node*)sender)->getTag() == RETURN_BUTTON_TAG) {
+    }
+    else if (((Node*)sender)->getTag() == RETURN_BUTTON_TAG)
+    {
         CCLOG("Tool button pressed!!");
-    } else {
+    }
+    else if (((Node*)sender)->getTag() == SCROLL_BUTTON_TAG)
+    {
+        auto littlePony = LittlePonyController::getInstatnce();
+        auto fadeIn = (Action*)littlePony->getData("action.plist", "fadeIn");
+        ((Node*)sender)->setOpacity(0);
+        ((Node*)sender)->runAction(fadeIn);
+    }
+    else
+    {
         CCLOG("unknown button pressed");
     }
 }
