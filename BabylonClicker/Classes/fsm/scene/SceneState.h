@@ -11,6 +11,8 @@
 
 #include "littlePony.h"
 
+using namespace FSM;
+
 //
 // SceneStateMapの定義
 //
@@ -97,12 +99,22 @@ public:
 //
 // TransitionConditionの定義
 //
-class TestCondition : public TransitCondition
+class ToMainCondition : public TransitCondition
 {
 public:
-    TestCondition();
-    virtual ~TestCondition();
-    CREATE_FUNC(TestCondition);
+    ToMainCondition();
+    virtual ~ToMainCondition();
+    CREATE_FUNC(ToMainCondition);
+    
+    virtual bool canTransit(State* state, const ValueMap& args);
+};
+
+class ToSummonCondition : public TransitCondition
+{
+public:
+    ToSummonCondition();
+    virtual ~ToSummonCondition();
+    CREATE_FUNC(ToSummonCondition);
     
     virtual bool canTransit(State* state, const ValueMap& args);
 };

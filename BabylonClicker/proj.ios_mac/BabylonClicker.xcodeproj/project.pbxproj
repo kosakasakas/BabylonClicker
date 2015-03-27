@@ -34,6 +34,8 @@
 		14CB6EF31AC3CCC700212057 /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CB6EF11AC3CCC700212057 /* ActionFactory.cpp */; };
 		14CB6EF51AC3D6A500212057 /* action.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB6EF41AC3D6A500212057 /* action.plist */; };
 		14CB6F771AC512D000212057 /* SceneState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CB6F751AC512D000212057 /* SceneState.cpp */; };
+		14CB6F7A1AC5330E00212057 /* GameController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CB6F781AC5330E00212057 /* GameController.cpp */; };
+		14CB6F7D1AC5536700212057 /* FSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CB6F7B1AC5536700212057 /* FSM.cpp */; };
 		14D97DD31AB064F100A59682 /* LPScrollableLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DD11AB064F100A59682 /* LPScrollableLayer.cpp */; };
 		14D97DD61AB0697700A59682 /* LPScrollableMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DD41AB0697700A59682 /* LPScrollableMenu.cpp */; };
 		14D97E5E1AB951FD00A59682 /* MenuItemFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97E5C1AB951FD00A59682 /* MenuItemFactory.cpp */; };
@@ -186,6 +188,9 @@
 		14CB6F721AC50D2900212057 /* FSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSM.h; sourceTree = "<group>"; };
 		14CB6F751AC512D000212057 /* SceneState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneState.cpp; sourceTree = "<group>"; };
 		14CB6F761AC512D000212057 /* SceneState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneState.h; sourceTree = "<group>"; };
+		14CB6F781AC5330E00212057 /* GameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameController.cpp; sourceTree = "<group>"; };
+		14CB6F791AC5330E00212057 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		14CB6F7B1AC5536700212057 /* FSM.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FSM.cpp; sourceTree = "<group>"; };
 		14D97DD11AB064F100A59682 /* LPScrollableLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPScrollableLayer.cpp; sourceTree = "<group>"; };
 		14D97DD21AB064F100A59682 /* LPScrollableLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPScrollableLayer.h; sourceTree = "<group>"; };
 		14D97DD41AB0697700A59682 /* LPScrollableMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPScrollableMenu.cpp; sourceTree = "<group>"; };
@@ -433,6 +438,7 @@
 				14982FBE1A942DCC004DAAB7 /* Utility.h */,
 				14982FD61A94AB3B004DAAB7 /* LittlePonyController.cpp */,
 				14982FD71A94AB3B004DAAB7 /* LittlePonyController.h */,
+				14CB6F7B1AC5536700212057 /* FSM.cpp */,
 				14CB6F721AC50D2900212057 /* FSM.h */,
 			);
 			path = utility;
@@ -542,6 +548,8 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
+				14CB6F781AC5330E00212057 /* GameController.cpp */,
+				14CB6F791AC5330E00212057 /* GameController.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -762,6 +770,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				14982FD51A9463F8004DAAB7 /* NodeFactory.cpp in Sources */,
 				14982FCE1A942DCC004DAAB7 /* littlePony.cpp in Sources */,
+				14CB6F7A1AC5330E00212057 /* GameController.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				14D97E611AB9529700A59682 /* MenuFactory.cpp in Sources */,
 				14F5F6171A971D1F006A8651 /* Test.cpp in Sources */,
@@ -781,6 +790,7 @@
 				146FB0AB1AA46C2F00B15BDD /* SpriteFactory.cpp in Sources */,
 				14D97DD61AB0697700A59682 /* LPScrollableMenu.cpp in Sources */,
 				146FB0D61AA59E8C00B15BDD /* MainScene.cpp in Sources */,
+				14CB6F7D1AC5536700212057 /* FSM.cpp in Sources */,
 				14CB6EF31AC3CCC700212057 /* ActionFactory.cpp in Sources */,
 				1461EDF41A9C144400E4C3B5 /* AbstructComponentFactory.cpp in Sources */,
 				1461EDF81A9C254200E4C3B5 /* OpeningScene.cpp in Sources */,

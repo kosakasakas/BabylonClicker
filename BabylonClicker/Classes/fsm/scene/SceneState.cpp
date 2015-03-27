@@ -123,7 +123,7 @@ void ToMainScene::transit()
 bool ToMainScene::init()
 {
     // test
-    _condition = TestCondition::create();
+    _condition = ToMainCondition::create();
     _condition->retain();
     
     return true;
@@ -153,7 +153,7 @@ ToSummonScene::~ToSummonScene()
 bool ToSummonScene::init()
 {
     // test
-    _condition = TestCondition::create();
+    _condition = ToSummonCondition::create();
     
     return true;
 }
@@ -178,16 +178,30 @@ State* ToSummonScene::getNextState() {
 // TransitionConditionの定義
 //
 
-// test
-TestCondition::TestCondition()
+// MainSceneStateに遷移するための条件
+ToMainCondition::ToMainCondition()
 {
 }
 
-TestCondition::~TestCondition()
+ToMainCondition::~ToMainCondition()
 {
 }
 
-bool TestCondition::canTransit(State* state, const ValueMap& args)
+bool ToMainCondition::canTransit(State* state, const ValueMap& args)
 {
-    return true;
+    return (state->getStateID() == SCENE_STATE_ID::SUMMON);
+}
+
+// SummonSceneStateに遷移するための条件
+ToSummonCondition::ToSummonCondition()
+{
+}
+
+ToSummonCondition::~ToSummonCondition()
+{
+}
+
+bool ToSummonCondition::canTransit(State* state, const ValueMap& args)
+{
+    return (state->getStateID() == SCENE_STATE_ID::MAIN);
 }

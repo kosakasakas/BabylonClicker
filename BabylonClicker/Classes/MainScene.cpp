@@ -1,6 +1,6 @@
 #include "MainScene.h"
 #include "littlePony.h"
-#include "LPScrollableLayer.h"
+#include "GameController.h"
 
 USING_NS_CC;
 
@@ -43,6 +43,10 @@ bool Main::init()
     auto littlePony = LittlePonyController::getInstatnce();
     auto rootNode = (Node*)littlePony->getData("sceneNode.plist", "main");
     this->addChild(rootNode);
+    
+    // これでlayerに紐づいたタイマーが走る。
+    auto game = GameController::getInstatnce();
+    game->setRootLayer(this);
     
     return true;
 }
