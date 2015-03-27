@@ -33,7 +33,6 @@
 		14982FDA1A94BA0F004DAAB7 /* sceneNode.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14982FD91A94BA0F004DAAB7 /* sceneNode.plist */; };
 		14CB6EF31AC3CCC700212057 /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14CB6EF11AC3CCC700212057 /* ActionFactory.cpp */; };
 		14CB6EF51AC3D6A500212057 /* action.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB6EF41AC3D6A500212057 /* action.plist */; };
-		14D97DCA1AB056EF00A59682 /* SummonScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DC81AB056EF00A59682 /* SummonScene.cpp */; };
 		14D97DD31AB064F100A59682 /* LPScrollableLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DD11AB064F100A59682 /* LPScrollableLayer.cpp */; };
 		14D97DD61AB0697700A59682 /* LPScrollableMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97DD41AB0697700A59682 /* LPScrollableMenu.cpp */; };
 		14D97E5E1AB951FD00A59682 /* MenuItemFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 14D97E5C1AB951FD00A59682 /* MenuItemFactory.cpp */; };
@@ -183,8 +182,6 @@
 		14CB6EF11AC3CCC700212057 /* ActionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactory.cpp; sourceTree = "<group>"; };
 		14CB6EF21AC3CCC700212057 /* ActionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactory.h; sourceTree = "<group>"; };
 		14CB6EF41AC3D6A500212057 /* action.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = action.plist; sourceTree = "<group>"; };
-		14D97DC81AB056EF00A59682 /* SummonScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SummonScene.cpp; sourceTree = "<group>"; };
-		14D97DC91AB056EF00A59682 /* SummonScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonScene.h; sourceTree = "<group>"; };
 		14D97DD11AB064F100A59682 /* LPScrollableLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPScrollableLayer.cpp; sourceTree = "<group>"; };
 		14D97DD21AB064F100A59682 /* LPScrollableLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPScrollableLayer.h; sourceTree = "<group>"; };
 		14D97DD41AB0697700A59682 /* LPScrollableMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LPScrollableMenu.cpp; sourceTree = "<group>"; };
@@ -514,8 +511,6 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				14D97DC81AB056EF00A59682 /* SummonScene.cpp */,
-				14D97DC91AB056EF00A59682 /* SummonScene.h */,
 				146FB0D41AA59E8C00B15BDD /* MainScene.cpp */,
 				146FB0D51AA59E8C00B15BDD /* MainScene.h */,
 				1461EDF61A9C254200E4C3B5 /* OpeningScene.cpp */,
@@ -759,7 +754,6 @@
 				14DE05B41A9DD34B004BDD61 /* Subject.cpp in Sources */,
 				1461EF871A9C736500E4C3B5 /* UIDefMap.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				14D97DCA1AB056EF00A59682 /* SummonScene.cpp in Sources */,
 				146FB0AB1AA46C2F00B15BDD /* SpriteFactory.cpp in Sources */,
 				14D97DD61AB0697700A59682 /* LPScrollableMenu.cpp in Sources */,
 				146FB0D61AA59E8C00B15BDD /* MainScene.cpp in Sources */,

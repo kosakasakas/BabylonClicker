@@ -13,6 +13,18 @@ public:
     CREATE_FUNC(Main);
     
     virtual void onNotice(Ref* sender);
+
+private:
+    void hideMainView();
+    void showMainView();
+    
+    void hideScrollView();
+    void showScrollView();
+    
+    void showBackButton();
+    void showReturnButton();
+    
+    void setScrollableContainer();
 };
 
 #endif // __Main_SCENE_H__
