@@ -48,38 +48,20 @@ bool Main::init()
 }
 
 void Main::onNotice(Ref* sender) {
-    if (((Node*)sender)->getTag() == SUMMON_BUTTON_TAG)
-    {
-        hideMainView();
-        showScrollView();
-    }
-    else if (((Node*)sender)->getTag() == TOOL_BUTTON_TAG)
-    {
-        CCLOG("Tool button pressed!!");
-    }
-    else if (((Node*)sender)->getTag() == MAGIC_BUTTON_TAG)
-    {
-        CCLOG("Magic button pressed!!");
-    }
-    else if (((Node*)sender)->getTag() == BATTLE_BUTTON_TAG)
-    {
-        CCLOG("Battle button pressed!!");
-    }
-    else if (((Node*)sender)->getTag() == BACK_BUTTON_TAG) {
-        hideScrollView();
-        showMainView();
-    }
-    else if (((Node*)sender)->getTag() == RETURN_BUTTON_TAG)
-    {
-        CCLOG("Return button pressed!!");
-    }
-    else if (((Node*)sender)->getTag() == SCROLL_BUTTON_TAG)
-    {
-        CCLOG("Scroll button pressed");
-    }
-    else
-    {
-        CCLOG("unknown button pressed");
+    switch (((Node*)sender)->getTag()) {
+        case SUMMON_BUTTON_TAG:
+            hideMainView();
+            showScrollView();
+            break;
+            
+        case BACK_BUTTON_TAG:
+            hideScrollView();
+            showMainView();
+            break;
+            
+        default:
+            CCLOG("unknown button pressed");
+            break;
     }
 }
 
