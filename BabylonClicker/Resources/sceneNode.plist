@@ -214,7 +214,7 @@
 							<key>type</key>
 							<string>button</string>
 							<key>name</key>
-							<string>toolButton</string>
+							<string>deckButton</string>
 							<key>def</key>
 							<string>normalButtonDef</string>
 							<key>anchor_x</key>
@@ -247,7 +247,7 @@
 									<key>type</key>
 									<string>label</string>
 									<key>text</key>
-									<string>道具</string>
+									<string>戦力</string>
 									<key>anchor_x</key>
 									<real>0.5</real>
 									<key>anchor_y</key>
@@ -271,7 +271,7 @@
 							<key>type</key>
 							<string>button</string>
 							<key>name</key>
-							<string>battleButton</string>
+							<string>garageButton</string>
 							<key>def</key>
 							<string>normalButtonDef</string>
 							<key>anchor_x</key>
@@ -298,13 +298,13 @@
 							<array>
 								<dict>
 									<key>name</key>
-									<string>summonButtonLabel</string>
+									<string>ultimateButtonLabel</string>
 									<key>def</key>
 									<string>normalLabelDef</string>
 									<key>type</key>
 									<string>label</string>
 									<key>text</key>
-									<string>対戦</string>
+									<string>禁術</string>
 									<key>anchor_x</key>
 									<real>0.5</real>
 									<key>anchor_y</key>
@@ -361,7 +361,7 @@
 									<key>type</key>
 									<string>label</string>
 									<key>text</key>
-									<string>魔法</string>
+									<string>魔術</string>
 									<key>anchor_x</key>
 									<real>0.5</real>
 									<key>anchor_y</key>
